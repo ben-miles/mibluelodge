@@ -1,0 +1,1377 @@
+/******************************************************************************
+	RESET
+******************************************************************************/
+
+*, 
+::after, 
+::before {
+	-webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+	margin: 0;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/******************************************************************************
+	VARIABLES
+******************************************************************************/
+
+:root {
+	--header-height: 70px;
+	--color-black: #000;
+	--color-gray1: #111;
+	--color-gray2: #222;
+	--color-grayc: #ccc;
+	--color-graye: #eee;
+	--color-white: #fff;
+	--color-bbblu: #b6d9ff;
+	--color-slate: #7c96b2;
+	--color-onyxx: #3e4047;
+}
+
+/******************************************************************************
+	ACCESSIBILITY
+******************************************************************************/
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+	background-color: var(--color-white);
+	clip: auto !important;
+	clip-path: none;
+	color: var(--color-black);
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/******************************************************************************
+	FONTS
+******************************************************************************/
+
+/*	POPPINS -----------------------------------------------------------------*/
+/* 	Via google-webfonts-helper https://google-webfonts-helper.herokuapp.com/ */
+
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 200;
+	src: local(''),
+		 url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-200.woff2') format('woff2'),
+		 url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-200.woff') format('woff'),
+		 url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-200.ttf') format('truetype'),
+		 url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-200.svg#Poppins') format('svg');
+}
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-regular.woff2') format('woff2'),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-regular.woff') format('woff'),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-regular.ttf') format('truetype'),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-regular.svg#Poppins') format('svg');
+}
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 600;
+	src: local(''),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-600.woff2') format('woff2'),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-600.woff') format('woff'),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-600.ttf') format('truetype'),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-600.svg#Poppins') format('svg');
+}
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 800;
+	src: local(''),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-800.woff2') format('woff2'),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-800.woff') format('woff'),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-800.ttf') format('truetype'),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-800.svg#Poppins') format('svg');
+}
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 900;
+	src: local(''),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-900.woff2') format('woff2'),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-900.woff') format('woff'),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-900.ttf') format('truetype'),
+		url('/wp-content/themes/benmiles-wp/assets/fonts/poppins-v20-latin-900.svg#Poppins') format('svg');
+}
+
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+p, 
+ol,
+ul {
+	font-weight: 200;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+.heading {
+	border-bottom: 2px solid var(--color-grayc);
+    color: var(--color-grayc);
+    display: inline-block;
+	font-size: 28px;
+    margin: 30px auto;
+    text-align: center;
+}
+.sub-heading {
+	color: var(--color-grayc);
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin: 20px auto;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+}
+b, strong {
+	font-weight: inherit;
+    font-weight: bolder;
+}
+
+/******************************************************************************
+	ANIMATIONS
+******************************************************************************/
+
+/*	Fade In Up --------------------------------------------------------------*/
+/*	Via animate.css, v3.5.2, Daniel Eden http://daneden.me/animate ----------*/
+
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	opacity: 0;
+}
+.fadeIn {
+	animation-name: fadeIn;
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	} 
+	to {
+		opacity: 1;
+	}
+}
+.fadeInUp {
+	animation-name: fadeInUp;
+}
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translate3d(0,100%,0);
+	} 
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+/*	Bounce ------------------------------------------------------------------*/
+/*	Via codeconvey.com https://codepad.co/snippet/AYXI3hjg ------------------*/
+
+.bounce {
+	-moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 10%, 90%, 100% {
+		-moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+		-moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    60% {
+		-moz-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+}
+
+/*	Float -------------------------------------------------------------------*/
+
+.float {
+	transform-origin: center;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+.float1 {
+	animation-duration: 3s;
+	animation-name: float1;
+}
+@keyframes float1 {
+	0% { transform: scaleX(1.6) scaleY(1.6) translate(55%, 52%); }
+    50%  { transform: scaleX(1.1) scaleY(1.65) translate(55%, 56%); }
+    100%   { transform: scaleX(1.6) scaleY(1.6) translate(55%, 52%); }
+}
+.float2 {
+	animation-duration: 3.25s;
+	animation-name: float2;
+}
+@keyframes float2 {
+    0% { transform: scaleX(1.4) scaleY(1.4) translate(52%, 50%); }
+    50%  { transform: scaleX(1.5) scaleY(1.2) translate(52%, 52%); }
+    100%   { transform: scaleX(1.4) scaleY(1.4) translate(52%, 50%); }
+}
+
+/******************************************************************************
+	LAYOUT
+******************************************************************************/
+
+/*	HTML, BODY, SECTIONS ----------------------------------------------------*/
+
+html {
+    font-size: 16px;
+    overflow-x: hidden;
+	scroll-behavior: smooth;
+	-ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+	background-color: var(--color-gray2);
+}
+
+section {
+	padding: calc( var(--header-height) + 30px) 0;
+	box-sizing: border-box;
+}
+
+/*	CONTAINER ---------------------------------------------------------------*/
+
+.container {
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0 15px;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+@media only screen and ( min-width: 768px ) {
+	.container {
+		max-width: 720px;
+	}
+}
+@media only screen and ( min-width: 992px ) {
+	.container {
+		max-width: 960px;
+	}
+}
+@media only screen and ( min-width: 1200px ) {
+	.container {
+		max-width: 1140px;
+	}
+}
+@media only screen and ( min-width: 1400px ) {
+	.container {
+		max-width: 1320px;
+	}
+}
+
+/*	ROWS --------------------------------------------------------------------*/
+
+.row {
+	display: flex; 
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0;
+	width: 100%;
+}
+
+/*	COLUMNS -----------------------------------------------------------------*/
+
+.column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	flex-basis: 0;
+    -webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+	position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+	flex: 1 1 100%;
+}
+@media only screen and ( min-width: 768px ) {
+	.column:not(.column-12) {
+		max-width: 50%;
+		flex: 1 1 50%;
+	}
+}
+@media only screen and ( min-width: 992px ) {
+	.column.column-12 {
+		max-width: 100%;
+		flex: 1 1 100%;
+	}
+	.column.column-9 {
+		max-width: 75%;
+		flex: 1 1 75%;
+	}
+	.column.column-8 {
+		max-width: 66.66%;
+		flex: 1 1 66.66%;
+	}
+	.column.column-6 {
+		max-width: 50%;
+		flex: 1 1 50%;
+	}
+	.column.column-4 {
+		max-width: 33.33%;
+		flex: 1 1 33.33%;
+	}
+	.column.column-3 {
+		max-width: 25%;
+		flex: 1 1 25%;
+	}
+}
+
+/******************************************************************************
+	COMMON UI
+******************************************************************************/
+
+/*	BUTTONS -----------------------------------------------------------------*/
+
+.button {
+	background-color: var(--color-grayc);
+	border: none;
+	border-radius: 0;
+	color: var(--color-gray2);
+	cursor: pointer;
+	font-family: 'Poppins', 'Arial', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 8px 16px;
+	transition: all .2s ease-in-out;
+}
+.button:hover,
+.button.active {
+	background-color: var(--color-white);
+}
+.button-group {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+/*	BUTTONS > CTA -----------------------------------------------------------*/
+
+.button.cta {
+	align-items: center;
+	background-color: var(--color-white);
+	border: none;
+	border-radius: 0;
+	color: var(--color-gray2);
+	display: flex;
+	flex-direction: row;
+	font-size: 16px;
+	font-weight: 500;
+	gap: 15px;
+	justify-content: center;
+	margin: 0 auto;
+	padding: 10px 15px;
+	transition: all .2s ease-in-out;
+}
+.button.cta:hover {
+	background-color: var(--color-grayc);
+}
+.button.cta .svg-wrapper {
+	width: 30px;
+}
+.button.cta .svg-wrapper svg {
+	fill: var(--color-gray2);
+}
+
+/*	BUTTONS > SECONDARY -----------------------------------------------------*/
+
+.button.cta.secondary {
+	background-color: transparent;
+	border: 3px solid;
+	color: var(--color-white);
+}
+.button.cta.secondary:hover {
+	color: var(--color-grayc);
+}
+.button.cta.secondary .svg-wrapper svg {
+	fill: var(--color-white);
+	transition: all .2s ease-in-out;
+}
+.button.cta.secondary:hover .svg-wrapper svg {
+	fill: var(--color-grayc);
+}
+
+
+/*	LABELS ------------------------------------------------------------------*/
+
+.label {
+	display: block;
+	font-size: 85%;
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+/*	LINKS -------------------------------------------------------------------*/
+
+a {
+	color: var(--color-bbblu);
+	text-decoration: none;
+	background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+a:hover {
+	color: var(--color-slate);
+}
+
+a.external-link {
+	display: inline-block;
+}
+a.external-link .svg-wrapper {
+    float: left;
+	height: 16px;
+	margin: 2px 10px 0 0;
+	width: 16px;
+}
+a.external-link .svg-wrapper svg {
+	fill: var(--color-bbblu);
+}
+a.external-link:hover .svg-wrapper svg {
+	fill: var(--color-slate);
+}
+
+/*	SVGS --------------------------------------------------------------------*/
+
+.svg-wrapper svg {
+	display: block;
+	fill: var(--color-white);
+	height: auto;
+	width: 100%;
+}
+
+/*	SOCIAL MEDIA ------------------------------------------------------------*/
+
+.social-media {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto 100px;
+	width: 256px;
+}
+.social-media svg {
+	width: 30px;
+	height: auto;
+}
+
+/******************************************************************************
+    SITE > HEADER
+******************************************************************************/
+
+header {
+	background-color: rgba(55,55,55,.25);
+	backdrop-filter: blur(10px);
+	padding: 0;
+	border: none;
+	border-width: 0;
+	border-bottom: 1px solid var(--color-white);
+	position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+	height: var(--header-height);
+	transition: height ease-in .4s;
+	overflow: hidden;
+}
+.menu-open header {
+	height: 100vh;
+	transition-timing-function: ease-out;
+}
+header .container {
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+@media only screen and ( min-width: 768px ) {
+	header .container,
+	header #nav,
+	header #nav ul,
+	header #nav ul li,
+	header #nav ul li a {
+		height: 100%;
+	}
+}
+
+/*	BRAND -------------------------------------------------------------------*/
+
+.brand {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space: nowrap;
+}
+.brand .svg-ben-miles_logo svg {
+	width: 150px;
+} 
+@media only screen and ( min-width: 992px ) {
+	.brand {
+		font-size: 24px;
+		margin-right: 1rem;
+		text-align: left;
+	}
+}
+.brand .site-title {
+	display: none;
+	font-size: 100%;
+	font-weight: 700;
+}
+.brand .site-description {
+	display: none;
+	font-size: 43%;
+	font-weight: 400;
+}
+
+/*	NAV TOGGLE --------------------------------------------------------------*/
+
+#nav-toggle {
+	background-color: transparent;
+    border: none;
+    border-radius: 0.25rem;
+	cursor: pointer;
+	display: flex;
+	margin-left: auto;
+	outline: none;
+	padding: 0;
+}
+@media only screen and ( min-width: 768px ) {
+	#nav-toggle {
+		display: none;
+    }
+}
+#nav-toggle:focus, 
+#nav-toggle:hover {
+	-webkit-box-shadow: none;
+    box-shadow: none;
+	outline: none;
+    text-decoration: none;
+}
+#nav-toggle svg {
+	width: 60px;
+}
+
+/*	NAV TOGGLE > SVG --------------------------------------------------------*/
+/*	Via Mikael Ainalem https://codepen.io/ainalem/pen/wvKOEMV ---------------*/
+
+.line {
+	fill: none;
+	stroke: var(--color-white);
+	stroke-width: 6;
+	transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+	stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+	stroke-dasharray: 60 207;
+	stroke-width: 6;
+}
+.line2 {
+	stroke-dasharray: 60 60;
+	stroke-width: 6;
+}
+.line3 {
+	stroke-dasharray: 60 207;
+	stroke-width: 6;
+}
+.menu-open .line1 {
+	stroke-dasharray: 90 207;
+	stroke-dashoffset: -134;
+	stroke-width: 6;
+}
+.menu-open .line2 {
+	stroke-dasharray: 1 60;
+	stroke-dashoffset: -30;
+	stroke-width: 6;
+}
+.menu-open .line3 {
+	stroke-dasharray: 90 207;
+	stroke-dashoffset: -134;
+	stroke-width: 6;
+}
+
+/*	NAV MENU ----------------------------------------------------------------*/
+
+#nav {
+	position: relative;
+	padding: 0;
+	text-align: right;
+	width: 100%;
+}
+@media only screen and ( min-width: 768px ) {
+	#nav {
+		width: auto;
+	}
+}
+#nav ul {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+	margin: 18px 0 18px auto;
+}
+@media only screen and ( min-width: 768px ) {
+    #nav ul {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		margin: 0;
+    }
+}
+
+/*	NAV MENU > MENU ITEMS ---------------------------------------------------*/
+
+.nav-item {
+	opacity: 0;
+	transition: opacity ease-in .6s;
+}
+@media only screen and ( min-width: 768px ) {
+    .nav-item {
+		opacity: 1;
+    }
+}
+.menu-open .nav-item {
+	opacity: 1;
+	transition-delay: .125s;
+}
+.nav-item:nth-of-type(2){
+	transition-delay: .25s;
+}
+.nav-item:nth-of-type(3){
+	transition-delay: .375s;
+}
+.nav-link {
+	color: var(--color-white);
+	display: block;
+    padding: .75em 1em;
+	padding: 15px;
+	font-size: 36px;
+}
+@media only screen and ( min-width: 768px ) {
+    .nav-link {
+		font-size: 24px;
+		padding: 1.1em .5em .3em;
+    }
+}
+.nav-item.active .nav-link,
+.nav-link:hover,
+.navbar-toggler:hover {
+    background-color: var(--color-white) !important;
+    color: var(--color-gray2) !important;
+}
+.nav > li > a {
+    padding: 15px;
+    height: 50px;
+}
+
+/******************************************************************************
+	SITE > FOOTER
+******************************************************************************/
+
+footer {
+    background-color: var(--color-gray1);
+	color: var(--color-white);
+    transition: background 0.3s;
+	padding: 20px 0;
+}
+footer a,
+footer a:hover {
+	color: var(--color-white);
+	text-decoration: underline;
+}
+footer .copyright {
+	font-size: 14px;
+	font-weight: 200;
+}
+footer .social-media {
+	margin: 20px auto 0;
+}
+@media only screen and ( min-width: 768px ) {
+    footer .column-6:first-of-type {
+		align-items: flex-start;
+	}
+	footer .copyright {
+		text-align: center;
+	}
+	footer .column-6:last-of-type {
+		align-items: flex-end;
+	}
+	footer .social-media {
+		margin: 0 0 0 auto;
+	}
+}
+
+/******************************************************************************
+	SECTIONS > 404
+******************************************************************************/
+
+#error-404 {
+	height: calc( 100vh - var(--header-height) );
+}
+
+/******************************************************************************
+	SECTIONS > ABOUT
+******************************************************************************/
+
+#about {
+	background-attachment: scroll;
+    background-color: var(--color-gray2);
+    background-image: url(/wp-content/themes/benmiles-wp/img/ben-miles_about_bkg.jpg);
+    background-position-x: right;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: 200%;
+    min-height: 100vh;
+    padding-top: 40%;
+}
+@media only screen and ( min-width: 768px ) {
+    #about {
+        background-attachment: fixed;
+		background-size: contain;
+		height: 100vh;
+		padding-top: var(--header-height);
+    }
+	#about .row {
+		justify-content: flex-start;
+	}
+	#about .column {
+		max-width: 50%;
+	}
+}
+#about > .container > .row {
+	justify-content: flex-start;
+}
+
+.card {
+	background-color: var(--color-onyxx);
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.25);
+    color: var(--color-graye);
+    line-height: 1.4;
+	margin: 0 auto 30px;
+	padding: 25px 30px;
+}
+
+/*	ABOUT > SKILLS ----------------------------------------------------------*/
+
+.skills .row {
+	align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.skills .skill-icon {
+	flex: 0 1 17%;
+}
+.skills .skill-icon.wide {
+	flex: 0 1 34%;
+}
+.skills .skill-icon svg {
+	opacity: 0.7;
+	transition: all .2s ease-in-out;
+}
+.skills .skill-icon path, 
+.skills .skill-icon polygon {
+	transition: fill 0.2s;
+}
+.skills .skill-icon svg:hover {
+	opacity: 1;
+	transform: scale(1.25);
+}
+.skills .skill-icon svg #mask {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+.skills .skill-icon svg #color {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.skills .skill-icon svg:hover #mask {
+    opacity: 0;
+}
+.skills .skill-icon svg:hover #color {
+    opacity: 1;
+}
+.skills .skill-icon.svg-phpstorm svg {
+    fill: unset;
+}
+
+/*	ABOUT > EXPERIENCE ------------------------------------------------------*/
+/*	Via https://bootsnipp.com/snippets/featured/timeline-responsive ---------*/
+
+.timeline {
+    list-style: none;
+    padding: 17px 0 0;
+    position: relative;
+    margin-bottom: 2.5rem;
+	width: 100%;
+}
+.timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 3px;
+    background-color: var(--color-graye);
+}
+.timeline-item {
+    margin-bottom: 15px;
+    position: relative;
+	left: -23px;
+}
+.timeline-item:after {
+    clear: both;
+}
+.timeline-panel {
+    padding: 7px 15px;
+    position: relative;
+    background-color: var(--color-white);
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.25);
+    left: 55px;
+	width: calc( 100% - 55px );
+}
+.timeline-panel:before {
+    position: absolute;
+    top: 26px;
+    left: -15px;
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-left: 0 solid var(--color-white);
+    border-right: 15px solid var(--color-white);
+    border-bottom: 15px solid transparent;
+    content: " ";
+}
+.timeline-badge {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+    border-radius: 50%;
+    background-color: var(--color-onyxx);
+}
+.timeline-badge svg {
+	opacity: 0.7;
+}
+.timeline-title {
+    margin: 0 0 10px 0;
+    color: inherit;
+}
+.timeline-details {
+	display: flex;
+	flex-direction: column;
+	font-size: 14px;
+	margin: 0;
+	list-style: none;
+	padding: 0;
+}
+@media only screen and ( min-width: 992px ) {
+	.timeline-details {
+		flex-direction: row;
+		gap: 16px;
+	}
+}
+.timeline-details a {
+	color: var(--color-slate);
+}
+.timeline-details a:hover {
+	color: var(--color-onyxx);
+}
+.timeline-details .svg-wrapper {
+	display: inline-block;
+	margin: 0 6px 0 0;
+	width: 12px;
+}
+.timeline-details .svg-wrapper svg path {
+	fill: var(--color-onyxx) !important;
+}
+@media only screen and ( min-width: 576px ) {
+    .timeline {
+        padding: 2.5rem 0 0;
+    }
+    .timeline-item {
+        margin-bottom: 30px;
+    }
+    .timeline-panel {
+      padding: 1.25rem;
+    }
+}
+
+/******************************************************************************
+	SECTIONS > ARCHIVE
+******************************************************************************/
+
+@media only screen and (min-width: 768px) {
+	body.page-archive #archive {
+		min-height: calc( 100vh - var(--header-height) );
+	}
+}
+
+/******************************************************************************
+	SECTIONS > CONTACT
+******************************************************************************/
+
+#contact {
+	background-color: var(--color-onyxx);
+}
+#contact p {
+	color: var(--color-white);
+	margin-bottom: 40px;
+}
+.form-control {
+	background-color: var(--color-graye);
+	border: none;
+	display: block;
+	font-size: 16px;
+	margin-bottom: 10px;
+	outline: none;
+	padding: 10px;
+	width: 100%;
+}
+textarea.form-control {
+	height: 120px;
+	resize: none;
+}
+.form-group span:first-child {
+	display: block;
+	margin-bottom: 10px;
+}
+#submit {
+	cursor: pointer;
+}
+.wpcf7 .row {
+	margin-bottom: 20px;
+}
+.wpcf7 .form-item {
+	width: 100%;
+}
+.wpcf7 .column-6 {
+	justify-content: space-between;
+}
+.wpcf7 label {
+	color: var(--color-white);
+	width: 100%;
+}
+.wpcf7-not-valid-tip {
+	margin-bottom: 10px;
+}
+.wpcf7 .wpcf7-response-output {
+	background-color: var(--color-white);
+    margin: 0;
+	text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+	body.page-contact #contact {
+		height: calc( 100vh - var(--header-height) );
+	}
+}
+
+/******************************************************************************
+	SECTIONS > INTRO
+******************************************************************************/
+
+#intro {
+	color: var(--color-white);
+	height: auto;
+	min-height: 100vh;
+}
+@media only screen and ( min-width: 768px ) {
+	#intro {
+		height: 100vh;
+	}
+}
+#intro #portrait {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	width: 100%;
+    height: auto;
+}
+#intro .site-title {
+    font-size: 4rem;
+    font-weight: 900;
+	text-align: center;
+	display: none;
+}
+#intro .svg-ben-miles_logo .tagline {
+	display: none;
+}
+#intro .site-description {
+	font-size: 28px;
+    font-weight: 200;
+    margin: 0 auto 25px;
+    text-align: center;
+}
+#intro .button.cta {
+	padding: 10px 100px;
+}
+
+/******************************************************************************
+	SECTIONS > PORTFOLIO
+******************************************************************************/
+
+#portfolio .column {
+	justify-content: flex-start;
+}
+.portfolio-item {
+	background-color: var(--color-onyxx);
+	box-shadow: 0 .125rem .25rem rgba(0,0,0,.25);
+    color: var(--color-graye);
+	display: flex;
+    flex-direction: column;
+    height: 100%;
+	line-height: 1.4;
+	margin-bottom: 30px;
+	transition: background-color, box-shadow .125s ease-in-out;
+	width: 100%;
+}
+.portfolio-item:hover {
+	background-color: #4c4e57;
+	box-shadow: 0 0.75rem 1rem rgba(0,0,0,.4);
+}
+.portfolio-item .media {
+	aspect-ratio: 16 / 10;
+	position: relative;
+}
+.portfolio-item .thumbnail-image,
+.portfolio-item .thumbnail-video {
+	width: 100%;
+	height: auto;
+}
+.portfolio-item .thumbnail-image {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.portfolio-item.has-video:hover .thumbnail-image {
+	z-index: 0;
+}
+.portfolio-item .thumbnail-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.portfolio-item .meta {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	padding: 20px;
+	flex-grow: 1;
+}
+.portfolio-item .title { 
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.4;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.portfolio-item .date {
+	font-size: 14px;
+}
+.portfolio-item .external-link {
+	font-size: 14px;
+	margin-top: auto;
+}
+.portfolio-item .external-link .svg-wrapper {
+	height: 14px;
+	width: 14px;
+}
+.portfolio-item .excerpt {
+	text-align: center;
+	line-height: 1.4;
+	margin: 0 0 20px;
+}
+
+/******************************************************************************
+	PAGES > HOME
+******************************************************************************/
+
+/*	HOME > FEATURED PORTFOLIO -----------------------------------------------*/
+
+.category {
+	margin-bottom: 50px;
+}
+
+/******************************************************************************
+	PAGES > PORTFOLIO
+******************************************************************************/
+
+body.page-portfolio #portfolio {
+	min-height: calc( 100vh - var(--header-height) );
+}
+body.page-portfolio #portfolio > .container {
+	height: 100%;
+}
+
+/*	Category Description ----------------------------------------------------*/
+#meta-description p {
+	color: var(--color-white);
+	margin: 0 0 50px;
+}
+
+/*	Filter ------------------------------------------------------------------*/
+.filter {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0 0 30px;
+}
+.filter .label {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 8px;
+    color: var(--color-white);
+    line-height: 1;
+}
+.filter .button-group {
+	gap: 10px;
+	justify-content: flex-start;
+}
+.filter .button-group .button {
+	flex-grow: 1;
+}
+
+/******************************************************************************
+	PAGES > PORTFOLIO ITEM
+******************************************************************************/
+
+/*	Meta --------------------------------------------------------------------*/
+
+#single-portfolio .post-meta {
+	color: var(--color-graye);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 30px;
+	justify-content: center;
+	line-height: 1.4;
+	margin: 0 auto 30px;
+	padding: 25px 30px;
+	width: 100%;
+}
+#single-portfolio .post-meta-item {
+	width: 100%;
+	text-align: center;
+}
+@media only screen and ( min-width: 768px ){
+	#single-portfolio .post-meta-item {
+		width: auto;
+		text-align: center;
+	}
+}
+
+/*	Thumbnail ---------------------------------------------------------------*/
+
+#single-portfolio .wp-post-image {
+	width: 100%; 
+	height: auto;
+	margin-bottom: 30px;
+}
+
+/*	Gallery -----------------------------------------------------------------*/
+
+#single-portfolio .portfolio {
+	width: 100%;
+}
+#single-portfolio .portfolio-item .glightbox {
+	display: block;
+}
+#single-portfolio .portfolio-item img {
+	height: auto;
+	width: 100%;
+}
+
+/*	Text --------------------------------------------------------------------*/
+
+#single-portfolio .content {
+	background-color: var(--color-onyxx);
+	box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.25);
+	color: var(--color-graye);
+	line-height: 1.4;
+	margin: 0 auto 30px;
+	padding: 25px 30px;
+	width: 100%;
+}
+#single-portfolio .categories,
+#single-portfolio .tags {
+	color: var(--color-graye);
+	line-height: 1.4;
+	margin: 0 auto 30px;
+	width: 100%;
+}
+#single-portfolio .content a {
+	font-weight: 400;
+}
+#single-portfolio .content p:first-of-type {
+	margin-top: 0;
+}
+#single-portfolio .content p:last-of-type {
+	margin-bottom: 0;
+}
+#single-portfolio .post-categories,
+#single-portfolio .post-tags {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	font-weight: 400;
+	gap: 25px 10px;
+	list-style: none;
+	margin: 16px 0;
+	padding: 0;
+}
+#single-portfolio .post-categories a,
+#single-portfolio .post-tags a {
+	background-color: var(--color-grayc);
+	border-radius: 50px;
+	color: var(--color-gray2);
+	padding: 5px 15px;
+}
+#single-portfolio .post-categories a:hover, 
+#single-portfolio .post-tags a:hover {
+    background-color: var(--color-white);
+}
+
+/*	Post Navigation ---------------------------------------------------------*/
+
+.post-navigation {
+	margin: 50px 0;
+	width: 100%;
+}
+.post-navigation .nav-links {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+.post-navigation .nav-links .nav-previous, 
+.post-navigation .nav-links .nav-next {
+	width: 50%;
+}
+.post-navigation .nav-links .nav-next {
+	margin-left: auto;
+}
+.post-navigation .nav-links .nav-previous {
+	margin-right: auto;
+}
+.post-navigation .nav-links a {
+	color: var(--color-white);
+	display: block;
+	padding: 20px;
+}
+.post-navigation .nav-links .nav-previous a {
+	background: linear-gradient(90deg, rgba(62,64,71,1) 0%, rgba(62,64,71,0) 75%);
+	text-align: left;
+}
+.post-navigation .nav-links .nav-previous a:hover {
+	background: linear-gradient(90deg, rgba(76,78,87,1) 0%, rgba(76,78,87,0) 75%);
+}
+.post-navigation .nav-links .nav-next a {
+	background: linear-gradient(90deg, rgba(62,64,71,0) 25%, rgba(62,64,71,1) 100%);
+	text-align: right;
+}
+.post-navigation .nav-links .nav-next a:hover {
+	background: linear-gradient(90deg, rgba(76,78,87,0) 25%, rgba(76,78,87,1) 100%);
+}
+
+/******************************************************************************
+	PLUGINS
+******************************************************************************/
+
+/*	Google reCAPTCHA --------------------------------------------------------*/
+
+.grecaptcha-badge {
+    display: none !important;
+}
+
+/*	GLightbox ---------------------------------------------------------------*/
+
+.glightbox-clean .gslide-description {
+    background-color: var(--color-onyxx);
+}
+.glightbox-clean .gslide-title {
+	color: var(--color-white);
+	font-family: 'Poppins', Arial, sans-serif;
+	font-weight: 500;
+}
+.glightbox-clean .gslide-desc {
+	color: var(--color-white);
+	font-family: 'Poppins', Arial, sans-serif;
+	font-weight: 200;
+}

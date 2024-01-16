@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "title": "Teal Scheme",
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "primary",
+          "color": "#029999",
+          "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "#FF6666",
+          "name": "Secondary"
+        },
+        {
+          "slug": "background",
+          "color": "#ffffff",
+          "name": "Background"
+        },
+        {
+          "slug": "foreground",
+          "color": "#404040",
+          "name": "Foreground"
+        },
+
+        {
+          "slug": "background-alt",
+          "color": "#101010",
+          "name": "Background"
+        },
+        {
+          "slug": "foreground-alt",
+          "color": "#fefefe",
+          "name": "Foreground"
+        },
+        {
+          "slug": "nutral",
+          "color": "#EEFCFC",
+          "name": "Neutral"
+        },
+        {
+          "slug": "light-gray",
+          "color": "#a3a3a3",
+          "name": "Light Gray"
+        },
+        {
+          "slug": "light-shade",
+          "color": "#E9EDF7",
+          "name": "Light Shade"
+        }
+      ],
+      "duotone": [
+        {
+          "colors": ["#029999", "#ffffff"],
+          "slug": "primary-white",
+          "name": "Primary White"
+        },
+        {
+          "colors": ["#029999", "#202020"],
+          "slug": "primary-dark",
+          "name": "Primary Dark"
+        },
+        {
+          "colors": ["#FF6666", "#222222"],
+          "slug": "secondary-dark",
+          "name": "Secondary Dark"
+        },
+        {
+          "colors": ["#FF6666", "#ffffff"],
+          "slug": "secondary-white",
+          "name": "Secondary White"
+        },
+        {
+          "colors": ["#029999", "#FF6666"],
+          "slug": "combine-color",
+          "name": "Combines Color"
+        }
+      ]
+    }
+  }
+}

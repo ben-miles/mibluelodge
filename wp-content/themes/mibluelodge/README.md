@@ -1,2 +1,2 @@
-# benmiles-wp
- My custom portfolio site from 2017, made into a WordPress theme.
+# mibluelodge
+ A custom WordPress theme built for Merritt Island Lodge No. 353 F&AM.

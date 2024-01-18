@@ -178,14 +178,6 @@ function controlVideoThumbnails () {
 	}
 }
 
-/* NAV TOGGLER *******************************************************************/
-
-navToggle.addEventListener('click', toggleNav);
-function toggleNav(){
-	let menuIsOpen = document.body.classList.toggle('menu-open');
-	navToggle.setAttribute('aria-expanded', menuIsOpen);
-}
-
 /* GLIGHTBOX ***********************************************************************
 	https://biati-digital.github.io/glightbox/ */
 

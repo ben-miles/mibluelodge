@@ -65,6 +65,27 @@ if ( 'dns-prefetch' == $relation_type ) {
 return $urls;
 }
 
+// Add Menu Support
+register_nav_menus( array(
+	'primary' => __( 'Main Menu', 'mibluelodge' ),
+	) );
+// Register Custom Navigation Walker
+function register_navwalker(){
+	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+}
+add_action( 'after_setup_theme', 'register_navwalker' );
+// Modify WordPress' Navigation Menus to use Bootstrap 5 syntax
+add_filter( 'nav_menu_link_attributes', 'prefix_bs5_dropdown_data_attribute', 20, 3 );
+function prefix_bs5_dropdown_data_attribute( $atts, $item, $args ) {
+	if ( is_a( $args->walker, 'WP_Bootstrap_Navwalker' ) ) {
+		if ( array_key_exists( 'data-toggle', $atts ) ) {
+			unset( $atts['data-toggle'] );
+			$atts['data-bs-toggle'] = 'dropdown';
+		}
+	}
+	return $atts;
+}
+
 // Load Custom Scripts and Styles
 function load_custom_scripts_and_styles() {
 

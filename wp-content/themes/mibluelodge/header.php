@@ -22,50 +22,15 @@
 <body class="<?php echo $args['bodyClass']; ?>">
 	
 <header id="site-header">
-	<div class="container">
-
-		<!-- Branding -->
-		<?php if(is_front_page()){ ?>
-		<a class="brand" href="#intro" target="_self">
-		<?php } else {; ?>
-		<a class="brand" href="<?php bloginfo('url'); ?>" target="_self">
-		<?php } ?>
-			<?php echo displaySVG('ben-miles_logo'); ?>
-			<h1 class="site-title"><?php bloginfo('name'); ?></h1>
-			<h2 class="site-description"><?php bloginfo('description'); ?></h2>
-		</a>
-
-		<!-- Mobile Menu Toggle -->
-		<button id="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle Navigation">
-			<?php echo displaySVG('menu'); ?>
-		</button>
-			
-		<!-- Navigation -->
-		<nav id="nav">
-			<ul>
-			<?php if(is_front_page()){ ?>
-				<li class="nav-item">
-					<a class="nav-link" href="#about" target="_self">About</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#portfolio" target="_self">Portfolio</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#contact" target="_self">Contact</a>
-				</li>
-			<?php } else {; ?>
-				<li class="nav-item">
-					<a class="nav-link" href="/about" target="_self">About</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/portfolio" target="_self">Portfolio</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/contact" target="_self">Contact</a>
-				</li>
-			<?php } ?>
-			</ul>
-		</nav>
-		
-	</div>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Navbar</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<?php wp_nav_menu(['container' => false, 'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0', 'walker' => new WP_Bootstrap_Navwalker()]); ?>
+			</div>
+		</div>
+	</nav>
 </header>

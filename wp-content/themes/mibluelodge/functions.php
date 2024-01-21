@@ -105,7 +105,7 @@ function load_custom_scripts_and_styles() {
 		// wp_enqueue_script( 'glightbox', get_template_directory_uri() . '/assets/js/glightbox.min.js', array(), null, false );
 	}
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), null, false );
-	// wp_enqueue_style( 'custom', get_template_directory_uri() . '/assets/css/custom.css', false, '', 'all' );
+	wp_enqueue_style( 'custom', get_template_directory_uri() . '/assets/css/custom.css', false, '', 'all' );
 	
 	// Load Scripts
 	// wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js?render=' . GOOGLE_RECAPTCHA_SITE_KEY, array(), null, false );
@@ -115,7 +115,7 @@ function load_custom_scripts_and_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'load_custom_scripts_and_styles' );
 
-// Load custom Admin Styles
+// Load Custom Admin Styles
 function load_custom_admin_styles() {
 	// Admin
 	wp_enqueue_style( 'admin', get_template_directory_uri() . '/assets/css/admin.css', array(), null, false );

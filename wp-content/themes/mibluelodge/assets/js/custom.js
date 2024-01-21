@@ -189,7 +189,3 @@ if( document.body.classList.contains('page-portfolio-item') ){
 		closeButton: true
 	});
 }
-	/* Redo the layout after each image loads */
-	imagesLoaded(isotopeItems).on('progress', function() {
-		isotope.layout();
-	});

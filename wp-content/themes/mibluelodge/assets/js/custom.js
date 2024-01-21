@@ -189,50 +189,7 @@ if( document.body.classList.contains('page-portfolio-item') ){
 		closeButton: true
 	});
 }
-
-/* ISOTOPE ************************************************************************
-	https://isotope.metafizzy.co/ */
-
-/* Isolate to Portfolio Page */
-if( document.body.classList.contains('page-portfolio') ){
-
-	/* Declare common vars */
-	var isotopeItems = document.getElementById('portfolio-items');
-	var portfolioItems = document.getElementsByClassName('portfolio-item');
-	var filterButtons = document.getElementsByClassName('filter-button');
-	var metaDescription = document.getElementById('meta-description');
-
-	/* Initialize filtering on Portfolio Items */
-	var isotope = new Isotope(isotopeItems, {
-		itemSelector: '.column',
-		layoutMode: 'masonry'
-	});
-
 	/* Redo the layout after each image loads */
 	imagesLoaded(isotopeItems).on('progress', function() {
 		isotope.layout();
 	});
-
-	/* Filter */
-	for(let filterButton of filterButtons){
-		filterButton.addEventListener('click', function(e) {
-			// Trigger Isotope filtering
-			var selectedCategory = filterButton.dataset.filter;
-			isotope.arrange({filter: selectedCategory});
-			// Update Category Description
-			var selectedDescription = filterButton.dataset.description;
-			metaDescription.innerHTML = '<p>' + selectedDescription + '</p>';
-			// Clear 'active' class from all filter buttons
-			for(let filterButton of filterButtons){
-				filterButton.classList.remove('active');
-			}
-			// Add 'active' class to the clicked filter button
-			filterButton.classList.add('active');
-			// Ensure portolio items are visible
-			for(let portfolioItem of portfolioItems){
-				var animation = portfolioItem.getAttribute('data-animation');
-            	portfolioItem.classList.add( animation );
-			}
-		});
-	}
-}

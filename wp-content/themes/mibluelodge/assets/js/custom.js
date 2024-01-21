@@ -1,7 +1,5 @@
 /* IMPORTS ********************************************************************/
 import { spline } from "/wp-content/themes/mibluelodge/assets/js/spline.min.js";
-import SimplexNoise from "/wp-content/themes/mibluelodge/assets/js/simplex-noise.min.js";
-
 /* VARS ***********************************************************************/
 let navToggle = document.getElementById('nav-toggle');
 let navLinks = document.getElementsByClassName('nav-link');

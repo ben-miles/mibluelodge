@@ -24,7 +24,6 @@
 <header id="site-header">
 	<nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/merritt-island-lodge-no-353-free-and-accepted-masons_logo.png" alt="Merritt Island Lodge No. 353 Free & Accepted Masons - Logo" class="d-inline-block align-text-top">
 				Merritt Island Lodge No. 353
 				<span>Free & Accepted Masons</span>
@@ -34,6 +33,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<?php wp_nav_menu(['container' => false, 'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0', 'walker' => new WP_Bootstrap_Navwalker()]); ?>
+				<a class="navbar-brand d-flex align-items-center" href="<?php echo home_url(); ?>">
 			</div>
 		</div>
 	</nav>

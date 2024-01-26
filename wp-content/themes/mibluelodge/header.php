@@ -5,7 +5,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<title><?php is_front_page() ? bloginfo('description') . ' - ' . bloginfo('name') : wp_title(' - ',TRUE,'right') . bloginfo('name'); ?></title>
+	<title><?php is_front_page() ? bloginfo('description') . ' ' . bloginfo('name') : wp_title(' - ',TRUE,'right') . bloginfo('name'); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,9 +21,9 @@
 </head>
 <body class="<?php echo $args['bodyClass']; ?>">
 	
-<header id="site-header">
+<header id="site-header" class="bg-dark">
 	<div class="container-lg">
-		<nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav">
+		<nav class="navbar navbar-expand-lg" id="nav" data-bs-theme="dark">
 			<div class="container-fluid">
 				<a class="navbar-brand d-flex align-items-center" href="<?php echo home_url(); ?>">
 					<img class="me-2" src="<?php echo get_stylesheet_directory_uri(); ?>/img/merritt-island-lodge-no-353-free-and-accepted-masons_logo.png" alt="Merritt Island Lodge No. 353 Free & Accepted Masons - Logo">
@@ -37,6 +37,6 @@
 					<?php wp_nav_menu(['container' => false, 'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0', 'walker' => new WP_Bootstrap_Navwalker()]); ?>
 				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
+	</div>
 </header>

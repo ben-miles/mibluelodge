@@ -134,12 +134,11 @@ b, strong {
 
 body {
 	background-color: var(--color-gray2);
-}
+} */
 
 section {
-	padding: calc( var(--header-height) + 30px) 0;
-	box-sizing: border-box;
-} */
+	padding: 100px 0;
+}
 
 /******************************************************************************
 	COMMON UI
@@ -413,6 +412,34 @@ textarea.form-control {
 .category {
 	margin-bottom: 50px;
 }
+
+/******************************************************************************
+	SECTIONS > HERO
+******************************************************************************/
+section#hero {
+	background-image: url('../../img/lodge-photo-sm.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 360px;
+}
+section#hero h1,
+section#hero h2 {
+	color: #fff;
+	display: none;
+}
+@media only screen and (min-width: 768px) {
+	section#hero {
+		background-image: url('../../img/lodge-photo-lg.jpg');
+		background-position: center center;
+		padding: 175px 0;
+	}
+	section#hero h1,
+	section#hero h2 {
+		display: block;
+	}
+}
+
 
 /******************************************************************************
 	PLUGINS

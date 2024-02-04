@@ -2,37 +2,42 @@
         <footer id="footer">
             <div class="container">
                 <div class="row">
-
-					<!-- copyright -->
-                    <div class="column column-6">
-						<div class="copyright">
-							© <?php echo date('Y'); ?> <a href="<?php bloginfo('url'); ?>" target="_self">Ben Miles</a>. All Rights Reserved.
-						</div>	
+					<div class="col-10">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/merritt-island-lodge-no-353-free-and-accepted-masons_logo.png" alt="Merritt Island Lodge No. 353 Free & Accepted Masons - Logo">
+						<h2><?php echo get_bloginfo('name'); ?> 
+						<br/><?php echo get_bloginfo('description'); ?></h2>
+						<hr>
+						<div>
+							<?php wp_nav_menu(['container' => false, 'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0', 'theme_location' => 'footer', 'walker' => new WP_Bootstrap_Navwalker()]); ?>
+						</div>
 					</div>
-                    
-					<!-- social media links -->
-					<div class="column column-6">
-						<ul class="social-media">
-							<li>
-								<a href="https://www.linkedin.com/in/benjaminmiles/" target="_blank">
-									<?php echo displaySVG('linkedin'); ?>
-								</a>
-							</li>
-							<li>
-								<a href="https://codepen.io/benmiles/" target="_blank">
-									<?php echo displaySVG('codepen'); ?>
-								</a>
-							</li>
-							<li>
-								<a href="https://github.com/ben-miles" target="_blank">
-									<?php echo displaySVG('github'); ?>
-								</a>
-							</li>
-						</ul>
-                    </div>
-
                 </div>
             </div>
+
+			<div class="container-fluid">
+				<!-- copyright -->
+				<div class="copyright">
+					Copyright (©) <?php echo date('Y'); ?> <a href="<?php bloginfo('url'); ?>" target="_self">Merritt Island Lodge No. 353 F&AM</a>. All Rights Reserved. Site by <a href="https://benmiles.com/" target="_blank">Ben Miles</a>.
+				</div>
+				<!-- social media links -->
+				<div class="social-media">
+					<ul style="list-style:none;display:flex;flex-direction:row;">
+						<li>
+							<a href="https://www.facebook.com/MIBlueLodge353/" target="_blank">Facebook</a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/mibluelodge353/" target="_blank">Instagram</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/mibluelodge353" target="_blank">Twitter</a>
+						</li>
+						<li>
+							<a href="https://www.youtube.com/@merrittislandlodgeno.353fa9" target="_blank">YouTube</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
         </footer>
         <!-- / footer -->
 

@@ -68,6 +68,7 @@ return $urls;
 // Add Menu Support
 register_nav_menus( array(
 	'primary' => __( 'Main Menu', 'mibluelodge' ),
+	'footer' => __( 'Footer Menu', 'mibluelodge' )
 	) );
 // Register Custom Navigation Walker
 function register_navwalker(){

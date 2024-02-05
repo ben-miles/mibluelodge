@@ -23,16 +23,28 @@
 				<div class="social-media">
 					<ul style="list-style:none;display:flex;flex-direction:row;">
 						<li>
-							<a href="https://www.facebook.com/MIBlueLodge353/" target="_blank">Facebook</a>
+							<a href="https://www.facebook.com/MIBlueLodge353/" target="_blank">
+								<?php echo displaySVG('facebook'); ?>
+								<span>Facebook</span>
+							</a>
 						</li>
 						<li>
-							<a href="https://www.instagram.com/mibluelodge353/" target="_blank">Instagram</a>
+							<a href="https://www.instagram.com/mibluelodge353/" target="_blank">
+								<?php echo displaySVG('instagram'); ?>
+								<span>Instagram</span>
+							</a>
 						</li>
 						<li>
-							<a href="https://twitter.com/mibluelodge353" target="_blank">Twitter</a>
+							<a href="https://twitter.com/mibluelodge353" target="_blank">
+								<?php echo displaySVG('twitter-x'); ?>
+								<span>Twitter/X</span>
+							</a>
 						</li>
 						<li>
-							<a href="https://www.youtube.com/@merrittislandlodgeno.353fa9" target="_blank">YouTube</a>
+							<a href="https://www.youtube.com/@merrittislandlodgeno.353fa9" target="_blank">
+								<?php echo displaySVG('youtube'); ?>
+								<span>YouTube</span>
+							</a>
 						</li>
 					</ul>
 				</div>

@@ -31,10 +31,23 @@ Template Name: Section - Social Media
 		<div class="row">
 			<div class="col-12 text-center">
 				<div class="buttons">
-					<button type="button" class="btn btn-outline-primary">Facebook</button>
-					<button type="button" class="btn btn-outline-primary">Instagram</button>
-					<button type="button" class="btn btn-outline-primary">YouTube</button>
-				</div>
+					<a href="https://www.facebook.com/MIBlueLodge353/" target="_blank" class="btn btn-outline-primary">
+						<?php echo displaySVG('facebook'); ?>
+						<span>Facebook</span>
+					</a>
+					<a href="https://www.instagram.com/mibluelodge353/" target="_blank" class="btn btn-outline-primary">
+						<?php echo displaySVG('instagram'); ?>
+						<span>Instagram</span>
+					</a>
+					<a href="https://twitter.com/mibluelodge353" target="_blank" class="btn btn-outline-primary">
+						<?php echo displaySVG('twitter-x'); ?>
+						<span>Twitter / X</span>
+					</a>
+					<a href="https://www.youtube.com/@merrittislandlodgeno.353fa9" target="_blank" class="btn btn-outline-primary">
+						<?php echo displaySVG('youtube'); ?>
+						<span>YouTube</span>
+					</a>
+				</div>				
 			</div>
 		</div>
     </div>

@@ -30,24 +30,9 @@ Template Name: Section - Social Media
 		</div>
 		<div class="row">
 			<div class="col-12 text-center">
-				<div class="buttons">
-					<a href="https://www.facebook.com/MIBlueLodge353/" target="_blank" class="btn btn-outline-primary">
-						<?php echo displaySVG('facebook'); ?>
-						<span>Facebook</span>
-					</a>
-					<a href="https://www.instagram.com/mibluelodge353/" target="_blank" class="btn btn-outline-primary">
-						<?php echo displaySVG('instagram'); ?>
-						<span>Instagram</span>
-					</a>
-					<a href="https://twitter.com/mibluelodge353" target="_blank" class="btn btn-outline-primary">
-						<?php echo displaySVG('twitter-x'); ?>
-						<span>Twitter / X</span>
-					</a>
-					<a href="https://www.youtube.com/@merrittislandlodgeno.353fa9" target="_blank" class="btn btn-outline-primary">
-						<?php echo displaySVG('youtube'); ?>
-						<span>YouTube</span>
-					</a>
-				</div>				
+				<div class="social-media">
+					<?php wp_nav_menu(['container' => false, 'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0', 'theme_location' => 'social', 'walker' => new WP_Bootstrap_Navwalker()]); ?>
+				</div>
 			</div>
 		</div>
     </div>

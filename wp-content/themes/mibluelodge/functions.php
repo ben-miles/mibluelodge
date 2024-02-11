@@ -32,7 +32,6 @@ function remove_wp_block_library_css(){
 	wp_dequeue_style( 'wp-block-library-theme' );
 	wp_dequeue_style( 'wc-blocks-style' );
 	wp_dequeue_style( 'global-styles' );
-
 } 
 add_action( 'wp_enqueue_scripts', 'remove_wp_block_library_css', 100 );
 
@@ -66,10 +65,11 @@ return $urls;
 }
 
 // Add Menu Support
-register_nav_menus( array(
-	'primary' => __( 'Main Menu', 'mibluelodge' ),
-	'footer' => __( 'Footer Menu', 'mibluelodge' )
-	) );
+register_nav_menus([
+	'header' => __( 'Header Menu', 'mibluelodge' ),
+	'footer' => __( 'Footer Menu', 'mibluelodge' ),
+	'social' => __( 'Social Media Menu', 'mibluelodge' )
+]);
 // Register Custom Navigation Walker
 function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
@@ -106,6 +106,8 @@ function load_custom_scripts_and_styles() {
 		// wp_enqueue_script( 'glightbox', get_template_directory_uri() . '/assets/js/glightbox.min.js', array(), null, false );
 	}
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), null, false );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/css/fontawesome.min.css', array(), null, false );
+	wp_enqueue_style( 'fontawesome-brands', get_template_directory_uri() . '/assets/css/brands.min.css', array(), null, false );
 	wp_enqueue_style( 'custom', get_template_directory_uri() . '/assets/css/custom.css', false, '', 'all' );
 	
 	// Load Scripts

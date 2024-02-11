@@ -13,7 +13,7 @@
 					</div>
                 </div>
             </div>
-
+			
 			<div class="container-fluid">
 				<!-- copyright -->
 				<div class="copyright">
@@ -21,32 +21,7 @@
 				</div>
 				<!-- social media links -->
 				<div class="social-media">
-					<ul style="list-style:none;display:flex;flex-direction:row;">
-						<li>
-							<a href="https://www.facebook.com/MIBlueLodge353/" target="_blank">
-								<?php echo displaySVG('facebook'); ?>
-								<span>Facebook</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.instagram.com/mibluelodge353/" target="_blank">
-								<?php echo displaySVG('instagram'); ?>
-								<span>Instagram</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://twitter.com/mibluelodge353" target="_blank">
-								<?php echo displaySVG('twitter-x'); ?>
-								<span>Twitter/X</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.youtube.com/@merrittislandlodgeno.353fa9" target="_blank">
-								<?php echo displaySVG('youtube'); ?>
-								<span>YouTube</span>
-							</a>
-						</li>
-					</ul>
+					<?php wp_nav_menu(['container' => false, 'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0', 'theme_location' => 'social', 'walker' => new WP_Bootstrap_Navwalker()]); ?>
 				</div>
 			</div>
 

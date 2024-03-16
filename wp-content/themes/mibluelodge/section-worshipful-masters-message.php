@@ -10,8 +10,8 @@ Template Name: Section - Worshipful Master's Message
     <div class="container">
     	<div class="row">
 			<div class="col-6">
-				<h1 class="title">Welcome</h1>
-				<h2 class="subtitle">The Worshipful Master's Message</h2>
+				<h2><span class="accent">Welcome</span>
+				The Worshipful Master's Message</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate natus quidem totam excepturi, officiis, ex veritatis odit pariatur quam unde sapiente suscipit dolore aspernatur nostrum, nesciunt numquam nisi libero.</p>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate natus quidem totam excepturi, officiis, ex veritatis odit pariatur quam unde sapiente suscipit dolore aspernatur nostrum, nesciunt numquam nisi libero.</p>
 				<div class="buttons">

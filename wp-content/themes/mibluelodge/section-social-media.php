@@ -10,8 +10,8 @@ Template Name: Section - Social Media
     <div class="container">
     	<div class="row">
 			<div class="col-12">
-				<h1 class="title">Connect</h1>
-				<h2 class="subtitle">Follow us on social media</h2>
+				<h2><span class="accent">Connect</span>
+				Follow us on social media</h2>
 			</div>
 		</div>
 		<div class="row">

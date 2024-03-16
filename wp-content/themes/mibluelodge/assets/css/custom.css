@@ -19,82 +19,33 @@
 	FONTS
 ******************************************************************************/
 
-/*	POPPINS -----------------------------------------------------------------*/
-/* 	Via google-webfonts-helper https://google-webfonts-helper.herokuapp.com/ */
-
-/* @font-face {
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 200;
-	src: local(''),
-		 url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-200.woff2') format('woff2'),
-		 url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-200.woff') format('woff'),
-		 url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-200.ttf') format('truetype'),
-		 url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-200.svg#Poppins') format('svg');
-}
-@font-face {
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 400;
-	src: local(''),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-regular.woff2') format('woff2'),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-regular.woff') format('woff'),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-regular.ttf') format('truetype'),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-regular.svg#Poppins') format('svg');
-}
-@font-face {
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 600;
-	src: local(''),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-600.woff2') format('woff2'),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-600.woff') format('woff'),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-600.ttf') format('truetype'),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-600.svg#Poppins') format('svg');
-}
-@font-face {
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 800;
-	src: local(''),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-800.woff2') format('woff2'),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-800.woff') format('woff'),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-800.ttf') format('truetype'),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-800.svg#Poppins') format('svg');
-}
-@font-face {
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 900;
-	src: local(''),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-900.woff2') format('woff2'),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-900.woff') format('woff'),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-900.ttf') format('truetype'),
-		url('/wp-content/themes/mibluelodge/assets/fonts/poppins-v20-latin-900.svg#Poppins') format('svg');
-}
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 html,
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
-    line-height: 1.15;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+    line-height: 1.25;
 }
-p, 
-ol,
-ul {
-	font-weight: 200;
-}
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
     margin: 0;
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.1;
-    color: inherit;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+	font-variant-numeric: lining-nums;
+	font-feature-settings:"lnum" 1;
 }
-.heading {
+h1 > .accent, h2 > .accent, h3 > .accent {
+	display: block;
+	font-family: 'Jim Nightshade', sans-serif;
+	font-size: 250%;
+	margin-bottom: -60px;
+	opacity: 0.125;
+	text-transform: capitalize;
+}
+/* .heading {
 	border-bottom: 2px solid var(--color-grayc);
     color: var(--color-grayc);
     display: inline-block;

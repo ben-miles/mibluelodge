@@ -10,8 +10,8 @@ Template Name: Section - Calendar
     <div class="container">
     	<div class="row">
 			<div class="col-12 text-center">
-				<h1 class="title">Calendar</h1>
-				<h2 class="subtitle">Important Notices & Events</h2>
+				<h2><span class="accent">Calendar</span>
+				Important Notices & Events</h2>
 				<ul class="schedule" style="list-style:none;">
 					<li><strong>Stated Meetings</strong> - 1st & 3rd Mondays at 7:30PM</li>
 					<li>Dress is business casual (no shorts or open-toed shoes). Supper is served prior, starting at 6:30PM. Donations are accepted.</li>

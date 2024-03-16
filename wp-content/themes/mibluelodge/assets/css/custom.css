@@ -124,18 +124,6 @@ b, strong {
 
 /*	HTML, BODY, SECTIONS ----------------------------------------------------*/
 
-/* html {
-    font-size: 16px;
-    overflow-x: hidden;
-	scroll-behavior: smooth;
-	-ms-overflow-style: scrollbar;
-    -webkit-tap-highlight-color: transparent;
-}
-
-body {
-	background-color: var(--color-gray2);
-} */
-
 section {
 	padding: 100px 0;
 }
@@ -335,37 +323,6 @@ a.external-link:hover .svg-wrapper svg {
 	SITE > FOOTER
 ******************************************************************************/
 
-footer {
-    background-color: var(--color-gray1);
-	color: var(--color-white);
-    transition: background 0.3s;
-	padding: 20px 0;
-}
-footer a,
-footer a:hover {
-	color: var(--color-white);
-	text-decoration: underline;
-}
-footer .copyright {
-	font-size: 14px;
-	font-weight: 200;
-}
-footer .social-media {
-	margin: 20px auto 0;
-}
-@media only screen and ( min-width: 768px ) {
-    footer .column-6:first-of-type {
-		align-items: flex-start;
-	}
-	footer .copyright {
-		text-align: center;
-	}
-	footer .column-6:last-of-type {
-		align-items: flex-end;
-	}
-	footer .social-media {
-		margin: 0 0 0 auto;
-	}
 footer nav .link-text {
 	display: none;
 }

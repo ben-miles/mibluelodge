@@ -203,6 +203,15 @@ section {
 	fill: var(--color-grayc);
 } */
 
+nav .btn-primary a {
+	color: var(--bs-btn-color);
+}
+
+nav .btn:hover a, 
+nav .btn:hover a span {
+	color: var(--bs-btn-hover-color);
+}
+
 
 /*	LABELS ------------------------------------------------------------------*/
 

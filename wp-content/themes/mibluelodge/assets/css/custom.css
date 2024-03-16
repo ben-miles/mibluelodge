@@ -366,6 +366,8 @@ footer .social-media {
 	footer .social-media {
 		margin: 0 0 0 auto;
 	}
+footer nav .link-text {
+	display: none;
 }
 
 /******************************************************************************

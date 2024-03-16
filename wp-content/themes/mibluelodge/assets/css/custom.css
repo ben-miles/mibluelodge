@@ -332,7 +332,7 @@ a.external-link:hover .svg-wrapper svg {
 	SITE > FOOTER
 ******************************************************************************/
 
-footer nav .link-text {
+footer nav#nav-social-footer .link-text {
 	display: none;
 }
 

@@ -1,0 +1,40 @@
+/*
+ Theme Name:   GeneratePress Child
+ Theme URI:    https://generatepress.com
+ Description:  Default GeneratePress child theme
+ Author:       Tom Usborne
+ Author URI:   https://tomusborne.com
+ Template:     generatepress
+ Version:      0.1
+*/
+
+/* Center Blocks in Content Area */
+/* .entry-content,
+.site-footer aside,
+.gb-root-block-generateblocks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.gb-root-block-generateblocks-container[data-align="full"] {
+	align-items: stretch;
+}
+.no-sidebar .entry-content .alignfull {
+	width: 100%;
+} */
+
+/* Fix Raleway Numerals */
+/* h1, h2, h3, .site-branding {
+	font-variant-numeric: lining-nums;
+	font-feature-settings:"lnum" 1;
+} */
+
+/* Heading Accents */
+/* h1>.accent, h2>.accent, h3>.accent {
+	font-family: 'Jim Nightshade', sans-serif;
+	font-size: 250%;
+	margin-bottom: -60px;
+	opacity: 0.125;
+	text-transform: capitalize;
+} */

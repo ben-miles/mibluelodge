@@ -137,10 +137,6 @@
 //     return $output;
 // }
 
-
-
-
-
 // Add Gutenberg / Block Editor support for full-width sections
 // add_theme_support ('align-wide');
 
@@ -149,14 +145,14 @@
  * 
  * @since 1.0.0
  */
-function lesson_one_style() {
-	wp_enqueue_style(
-		'lesson-one-style',
-		get_stylesheet_uri(),
-		array(),
-		wp_get_theme()->get( 'Version' )
-	);
-}
-add_action( 'wp_enqueue_scripts', 'lesson_one_style' );
+// function lesson_one_style() {
+// 	wp_enqueue_style(
+// 		'lesson-one-style',
+// 		get_stylesheet_uri(),
+// 		array(),
+// 		wp_get_theme()->get( 'Version' )
+// 	);
+// }
+// add_action( 'wp_enqueue_scripts', 'lesson_one_style' );
 
 ?>

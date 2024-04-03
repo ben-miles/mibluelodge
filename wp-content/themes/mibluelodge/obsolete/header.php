@@ -23,19 +23,17 @@
 	
 <header id="site-header" class="bg-dark">
 	<div class="container-lg">
-		<nav class="navbar navbar-expand-lg" id="nav" data-bs-theme="dark">
-			<div class="container-fluid">
-				<a class="navbar-brand d-flex align-items-center" href="<?php echo home_url(); ?>">
-					<img class="me-2" src="<?php echo get_stylesheet_directory_uri(); ?>/img/merritt-island-lodge-no-353-free-and-accepted-masons_logo.png" alt="Merritt Island Lodge No. 353 Free & Accepted Masons - Logo">
-					<h2 class="m-0"><?php echo get_bloginfo('name'); ?> 
-					<br/><?php echo get_bloginfo('description'); ?></h2>
-				</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<?php wp_nav_menu(['container' => false, 'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0', 'walker' => new WP_Bootstrap_Navwalker()]); ?>
-				</div>
+		<nav class="navbar navbar-expand-lg" id="navbar-header" data-bs-theme="dark">
+			<a class="navbar-brand d-flex align-items-center" href="<?php echo home_url(); ?>">
+				<img class="me-2" src="<?php echo get_stylesheet_directory_uri(); ?>/img/merritt-island-lodge-no-353-free-and-accepted-masons_logo.png" alt="Merritt Island Lodge No. 353 Free & Accepted Masons - Logo">
+				<h1 class="m-0"><?php echo get_bloginfo('name'); ?> 
+				<br/><?php echo get_bloginfo('description'); ?></h1>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbar-header">
+				<?php wp_nav_menu(['container' => false, 'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0', 'theme_location' => 'header', 'walker' => new WP_Bootstrap_Navwalker()]); ?>
 			</div>
 		</nav>
 	</div>

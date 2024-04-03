@@ -9,9 +9,9 @@ Template Name: Section - Hero
 <section id="hero">
     <div class="container">
     	<div class="row">
-			<div class="col-12">
-				<h1 class="title"><?php echo get_bloginfo('name'); ?></h1>
-				<h2 class="subtitle"><?php echo get_bloginfo('description'); ?></h2>
+			<div class="col-6">
+				<h1><?php echo get_bloginfo('name'); ?>
+				<br/><?php echo get_bloginfo('description'); ?></h1>
 			</div>
 		</div>
     </div>

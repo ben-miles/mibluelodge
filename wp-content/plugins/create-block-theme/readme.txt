@@ -1,9 +1,9 @@
 === Create Block Theme ===
 Contributors: wordpressdotorg, mikachan, onemaggie, pbking, scruffian, mmaattiiaass, jffng, madhudollu, egregor, vcanales, jeffikus, cwhitmore
 Tags: themes, theme, block-theme
-Requires at least: 6.0
-Tested up to: 6.4
-Stable tag: 1.13.8
+Requires at least: 6.5
+Tested up to: 6.5
+Stable tag: 2.0.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,22 +15,18 @@ A WordPress plugin to create block themes.
 This plugin allows you to:
 
 - Create a new theme, blank theme, child theme or style variation.
-- List and preview font families and font faces embeded in your theme.
-- Embed Google Fonts in your theme.
-- Embed local font assets in your theme.
 
 The plugin is development only — not intended for use on production websites, but used as a tool to create new themes.
 
 = Step 1 – Setup =
 Install and activate the [Create Block Theme](https://wordpress.org/plugins/create-block-theme) plugin.
 
-In the WordPress Admin Dashboard, under Appearance there will be three new pages called:
+In the WordPress Admin Dashboard, under Appearance there will be a new page called:
 
 - Create Block Theme
-- Manage fonts
 
 = Step 2 – Style Customizations =
-Make changes to your site styles and templates using the Site Editor. You can also include new fonts using the plugin options.
+Make changes to your site styles and templates using the Site Editor.
 
 = Step 3 – Export =
 Still in the WordPress dashboard, navigate to "Appearance" -> "Create Block Theme" section. Select one of the available options and then, if necessary, add the details for the theme here. These details will be used in the style.css file. Click "Generate” button, to save the theme.
@@ -63,6 +59,36 @@ If you are having problems, please try the following:
 
 
 == Changelog ==
+
+= 2.0.2 =
+* Update readme, remove test files from release build (#548)
+
+= 2.0.1 =
+* Add missing build step to deploy workflow (#546)
+
+= 2.0.0 =
+* Remove reviewer addition (#544)
+* Refactor GitHub release workflows (#542)
+* Fix changelog creation script (#541)
+* Add theme json inspector (#520)
+* Add deprecation notice in theme export admin screen (#540)
+* Replace font management with screen pointing to native font library (#539)
+* Added creation of theme validation to site editor interface (#532)
+* Add/child theme creation (#531)
+* Add blueprint.json file to enable plugin previews (#511)
+* Extracted any logic that may need to be tested from the api class (#522)
+* Use CORE for Font Management (#518)
+* Add integration tests (#393)
+* Remove CODE_OF_CONDUCT.md from .distignore. (#515)
+* Remove repo specific CoC. (#514)
+* GitHub Actions: Add JavaScript Unit Test (#508)
+* Add files and directories not needed for release to `.distignore` (#512)
+* Replace dash icon with SVG icon (#506)
+* Fix browser warning error when clicking the reset button (#505)
+* Add markdown and package.json lint command (#504)
+* Fix react warning error on font upload page (#502)
+* Fix dynamic property deprecation (#501)
+* Add text domain to translation target (#499)
 
 = 1.13.8 =
 

@@ -1,14 +1,15 @@
-﻿/*
-Theme Name: MI Blue Lodge
+/*
+Theme Name: mibluelodge
 Theme URI: https://github.com/ben-miles/mibluelodge
 Author: Ben Miles
 Author URI: https://benmiles.com
-Description: A custom WordPress theme, built for Merritt Island Lodge No. 353 F&AM, by Br. Ben Miles.
-Version: 1.0
+Description: A custom theme for Merritt Island Lodge No. 353, F&AM, based on Twenty Twenty-Four, created by Br. Ben Miles.
+Requires at least: 6.0
+Tested up to: 6.5.2
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mibluelodge
-Requires at least: 5.0 
-Tested up to: 6.4
-Requires PHP: 7.4
-License: TBD
-License URI: https://github.com/ben-miles/mibluelodge?tab=License-1-ov-file#readme
+Tags: education, one-column, wide-blocks, accessibility-ready, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, sticky-post, style-variations, threaded-comments, translation-ready, blog, portfolio, news
 */

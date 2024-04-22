@@ -1,158 +1,206 @@
 <?php
-
-// Enable Featured Image / Post Thumbnail
-// add_theme_support('post-thumbnails');
-
-// Enable Custom Page Titles
-// add_theme_support('title-tag');
-
-// Disable automatic image scaling
-// add_filter( 'big_image_size_threshold', '__return_false' );
-
-// Shorten Automatic Excerpts
-// Via https://www.hostinger.com/tutorials/wordpress-excerpt-length
-// function shorten_auto_excerpts($length){ 
-// 	return 18; 
-// }
-// add_filter('excerpt_length', 'shorten_auto_excerpts');
-
-// Change "More" Indicator on Auto Excerpts
-// function excerpt_more_indicator( $more ) {
-// 	return '...';
-// }
-// add_filter( 'excerpt_more', 'excerpt_more_indicator' );
-
-// Remove Gutenberg / Block Library CSS
-// function remove_wp_block_library_css(){
-// 	wp_dequeue_style( 'wp-block-library' );
-// 	wp_dequeue_style( 'wp-block-library-theme' );
-// 	wp_dequeue_style( 'wc-blocks-style' );
-// 	wp_dequeue_style( 'global-styles' );
-// } 
-// add_action( 'wp_enqueue_scripts', 'remove_wp_block_library_css', 100 );
-
-// Remove Emojis
-// Via https://kinsta.com/knowledgebase/disable-emojis-wordpress/
-// function remove_emojis() {
-// 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-// 	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-// 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
-// 	remove_action( 'admin_print_styles', 'print_emoji_styles' ); 
-// 	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-// 	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' ); 
-// 	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-// 	add_filter( 'tiny_mce_plugins', 'remove_emojis_tinymce' );
-// 	add_filter( 'wp_resource_hints', 'remove_emojis_remove_dns_prefetch', 10, 2 );
-// }
-// add_action( 'init', 'remove_emojis' );
-// function remove_emojis_tinymce( $plugins ) {
-// 	if ( is_array( $plugins ) ) {
-// 		return array_diff( $plugins, array( 'wpemoji' ) );
-// 	} else {
-// 		return array();
-// 	}
-// }
-// function remove_emojis_remove_dns_prefetch( $urls, $relation_type ) {
-// if ( 'dns-prefetch' == $relation_type ) {
-// 	$emoji_svg_url = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/' );
-// 	$urls = array_diff( $urls, array( $emoji_svg_url ) );
-// }
-// return $urls;
-// }
-
-// Add Menu Support
-// register_nav_menus([
-// 	'header' => __( 'Header Menu', 'mibluelodge' ),
-// 	'footer' => __( 'Footer Menu', 'mibluelodge' ),
-// 	'social' => __( 'Social Media Menu', 'mibluelodge' )
-// ]);
-// Register Custom Navigation Walker
-// function register_navwalker(){
-// 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
-// }
-// add_action( 'after_setup_theme', 'register_navwalker' );
-// Modify WordPress' Navigation Menus to use Bootstrap 5 syntax
-// add_filter( 'nav_menu_link_attributes', 'prefix_bs5_dropdown_data_attribute', 20, 3 );
-// function prefix_bs5_dropdown_data_attribute( $atts, $item, $args ) {
-// 	if ( is_a( $args->walker, 'WP_Bootstrap_Navwalker' ) ) {
-// 		if ( array_key_exists( 'data-toggle', $atts ) ) {
-// 			unset( $atts['data-toggle'] );
-// 			$atts['data-bs-toggle'] = 'dropdown';
-// 		}
-// 	}
-// 	return $atts;
-// }
-
-// Load Custom Scripts and Styles
-// function load_custom_scripts_and_styles() {
-
-	// Make sure the custom script gets a `type` attribute set to `module`
-	// add_filter( 'script_loader_tag', 'add_type_to_script', 10, 3 );
-	// function add_type_to_script( $tag, $handle, $src ) {
-	// 	if ( $handle === 'custom' ) {
-	// 		$tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
-	// 	}
-	// 	return $tag;
-	// }
-
-	// Load Styles
-	// if(is_singular( 'portfolio' )){
-		// Single Portfolio Pages Only:
-		// wp_enqueue_style( 'glightbox', get_template_directory_uri() . '/assets/css/glightbox.min.css', array(), null, false );
-		// wp_enqueue_script( 'glightbox', get_template_directory_uri() . '/assets/js/glightbox.min.js', array(), null, false );
-	// }
-	// wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), null, false );
-	// wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/css/fontawesome.min.css', array(), null, false );
-	// wp_enqueue_style( 'fontawesome-brands', get_template_directory_uri() . '/assets/css/brands.min.css', array(), null, false );
-	// wp_enqueue_style( 'custom', get_template_directory_uri() . '/assets/css/custom.css', false, '', 'all' );
-	
-	// Load Scripts
-	// wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js?render=' . GOOGLE_RECAPTCHA_SITE_KEY, array(), null, false );
-
-	// wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), null, false );
-	// wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', array(), null, false );
-// }
-// add_action( 'wp_enqueue_scripts', 'load_custom_scripts_and_styles' );
-
-// Load Custom Admin Styles
-// function load_custom_admin_styles() {
-	// Admin
-	// wp_enqueue_style( 'admin', get_template_directory_uri() . '/assets/css/admin.css', array(), null, false );
-// }
-//add_action( 'admin_enqueue_scripts', 'load_custom_admin_styles' );
-
-/*
-* displaySVG
-* Generates optimized, inline SVG code from an SVG file
-* Accepts: Name of SVG file, Additional CSS Class(es)
-* Returns: String of HTML containing optimized, inline SVG code
-* Based on https://stackoverflow.com/a/30000684/6853842
-*/
-// function displaySVG( $filename = '', $additional_classes = NULL ){
-//     $svg_file = file_get_contents( get_template_directory_uri() . '/assets/icons/' . $filename . '.svg' );
-//     $search_string = '<svg';
-//     $start_position = strpos( $svg_file, $search_string );
-//     $svg_code = substr( $svg_file, $start_position );
-//     $output = '<div class="svg-wrapper svg-' . $filename . ' ' . $additional_classes . '">' . $svg_code . '</div>';
-//     return $output;
-// }
-
-// Add Gutenberg / Block Editor support for full-width sections
-// add_theme_support ('align-wide');
+/**
+ * mibluelodge functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package mibluelodge
+ * @since mibluelodge 1.0
+ */
 
 /**
- * Enqueue the style.css file.
- * 
- * @since 1.0.0
+ * Register block styles.
  */
-// function lesson_one_style() {
-// 	wp_enqueue_style(
-// 		'lesson-one-style',
-// 		get_stylesheet_uri(),
-// 		array(),
-// 		wp_get_theme()->get( 'Version' )
-// 	);
-// }
-// add_action( 'wp_enqueue_scripts', 'lesson_one_style' );
 
-?>
+if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
+	/**
+	 * Register custom block styles
+	 *
+	 * @since mibluelodge 1.0
+	 * @return void
+	 */
+	function mibluelodge_block_styles() {
+
+		register_block_style(
+			'core/details',
+			array(
+				'name'         => 'arrow-icon-details',
+				'label'        => __( 'Arrow icon', 'mibluelodge' ),
+				/*
+				 * Styles for the custom Arrow icon style of the Details block
+				 */
+				'inline_style' => '
+				.is-style-arrow-icon-details {
+					padding-top: var(--wp--preset--spacing--10);
+					padding-bottom: var(--wp--preset--spacing--10);
+				}
+
+				.is-style-arrow-icon-details summary {
+					list-style-type: "\2193\00a0\00a0\00a0";
+				}
+
+				.is-style-arrow-icon-details[open]>summary {
+					list-style-type: "\2192\00a0\00a0\00a0";
+				}',
+			)
+		);
+		register_block_style(
+			'core/post-terms',
+			array(
+				'name'         => 'pill',
+				'label'        => __( 'Pill', 'mibluelodge' ),
+				/*
+				 * Styles variation for post terms
+				 * https://github.com/WordPress/gutenberg/issues/24956
+				 */
+				'inline_style' => '
+				.is-style-pill a,
+				.is-style-pill span:not([class], [data-rich-text-placeholder]) {
+					display: inline-block;
+					background-color: var(--wp--preset--color--base-2);
+					padding: 0.375rem 0.875rem;
+					border-radius: var(--wp--preset--spacing--20);
+				}
+
+				.is-style-pill a:hover {
+					background-color: var(--wp--preset--color--contrast-3);
+				}',
+			)
+		);
+		register_block_style(
+			'core/list',
+			array(
+				'name'         => 'checkmark-list',
+				'label'        => __( 'Checkmark', 'mibluelodge' ),
+				/*
+				 * Styles for the custom checkmark list block style
+				 * https://github.com/WordPress/gutenberg/issues/51480
+				 */
+				'inline_style' => '
+				ul.is-style-checkmark-list {
+					list-style-type: "\2713";
+				}
+
+				ul.is-style-checkmark-list li {
+					padding-inline-start: 1ch;
+				}',
+			)
+		);
+		register_block_style(
+			'core/navigation-link',
+			array(
+				'name'         => 'arrow-link',
+				'label'        => __( 'With arrow', 'mibluelodge' ),
+				/*
+				 * Styles for the custom arrow nav link block style
+				 */
+				'inline_style' => '
+				.is-style-arrow-link .wp-block-navigation-item__label:after {
+					content: "\2197";
+					padding-inline-start: 0.25rem;
+					vertical-align: middle;
+					text-decoration: none;
+					display: inline-block;
+				}',
+			)
+		);
+		register_block_style(
+			'core/heading',
+			array(
+				'name'         => 'asterisk',
+				'label'        => __( 'With asterisk', 'mibluelodge' ),
+				'inline_style' => "
+				.is-style-asterisk:before {
+					content: '';
+					width: 1.5rem;
+					height: 3rem;
+					background: var(--wp--preset--color--contrast-2, currentColor);
+					clip-path: path('M11.93.684v8.039l5.633-5.633 1.216 1.23-5.66 5.66h8.04v1.737H13.2l5.701 5.701-1.23 1.23-5.742-5.742V21h-1.737v-8.094l-5.77 5.77-1.23-1.217 5.743-5.742H.842V9.98h8.162l-5.701-5.7 1.23-1.231 5.66 5.66V.684h1.737Z');
+					display: block;
+				}
+
+				/* Hide the asterisk if the heading has no content, to avoid using empty headings to display the asterisk only, which is an A11Y issue */
+				.is-style-asterisk:empty:before {
+					content: none;
+				}
+
+				.is-style-asterisk:-moz-only-whitespace:before {
+					content: none;
+				}
+
+				.is-style-asterisk.has-text-align-center:before {
+					margin: 0 auto;
+				}
+
+				.is-style-asterisk.has-text-align-right:before {
+					margin-left: auto;
+				}
+
+				.rtl .is-style-asterisk.has-text-align-left:before {
+					margin-right: auto;
+				}",
+			)
+		);
+	}
+endif;
+
+add_action( 'init', 'mibluelodge_block_styles' );
+
+/**
+ * Enqueue block stylesheets.
+ */
+
+if ( ! function_exists( 'mibluelodge_block_stylesheets' ) ) :
+	/**
+	 * Enqueue custom block stylesheets
+	 *
+	 * @since mibluelodge 1.0
+	 * @return void
+	 */
+	function mibluelodge_block_stylesheets() {
+		/**
+		 * The wp_enqueue_block_style() function allows us to enqueue a stylesheet
+		 * for a specific block. These will only get loaded when the block is rendered
+		 * (both in the editor and on the front end), improving performance
+		 * and reducing the amount of data requested by visitors.
+		 *
+		 * See https://make.wordpress.org/core/2021/12/15/using-multiple-stylesheets-per-block/ for more info.
+		 */
+		wp_enqueue_block_style(
+			'core/button',
+			array(
+				'handle' => 'mibluelodge-button-style-outline',
+				'src'    => get_parent_theme_file_uri( 'assets/css/button-outline.css' ),
+				'ver'    => wp_get_theme( get_template() )->get( 'Version' ),
+				'path'   => get_parent_theme_file_path( 'assets/css/button-outline.css' ),
+			)
+		);
+	}
+endif;
+
+add_action( 'init', 'mibluelodge_block_stylesheets' );
+
+/**
+ * Register pattern categories.
+ */
+
+if ( ! function_exists( 'mibluelodge_pattern_categories' ) ) :
+	/**
+	 * Register pattern categories
+	 *
+	 * @since mibluelodge 1.0
+	 * @return void
+	 */
+	function mibluelodge_pattern_categories() {
+
+		register_block_pattern_category(
+			'mibluelodge_page',
+			array(
+				'label'       => _x( 'Pages', 'Block pattern category', 'mibluelodge' ),
+				'description' => __( 'A collection of full page layouts.', 'mibluelodge' ),
+			)
+		);
+	}
+endif;
+
+add_action( 'init', 'mibluelodge_pattern_categories' );

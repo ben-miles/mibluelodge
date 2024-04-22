@@ -268,6 +268,18 @@ if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
 				}",
 			)
 		);
+		register_block_style(
+			'core/heading',
+			array(
+				'name'         => 'accented',
+				'label'        => __( 'Accented', 'mibluelodge' ),
+				'inline_style' => "
+				.is-style-accented {
+					margin-bottom: -3rem;
+					opacity: 0.5;
+				}",
+			)
+		);
 	}
 endif;
 

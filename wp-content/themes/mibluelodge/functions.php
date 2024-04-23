@@ -351,6 +351,20 @@ if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
 				}",
 			)
 		);
+		register_block_style(
+			'core/table',
+			array(
+				'name'         => 'no-cell-borders',
+				'label'        => __( 'No Cell Borders', 'mibluelodge' ),
+				'inline_style' => "
+				.is-style-no-cell-borders td {
+					border: none;
+				}
+				.is-style-no-cell-borders {
+					border: 3px solid gray;
+				}",
+			)
+		);
 	}
 endif;
 

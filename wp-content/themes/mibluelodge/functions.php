@@ -280,6 +280,46 @@ if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
 				}",
 			)
 		);
+		register_block_style(
+			'core/html',
+			array(
+				'name'         => 'google-calendar-embed',
+				'label'        => __( 'Google Calendar Embed', 'mibluelodge' ),
+				'inline_style' => "
+				@media (max-width: 800px) {
+					.responsive-google-calendar-embed .google-calendar-embed-month {
+						display: none;
+					}
+					.responsive-google-calendar-embed .google-calendar-embed-agenda {
+						display: block;
+					}
+				 }
+				 @media (min-width: 800px) {
+					.responsive-google-calendar-embed .google-calendar-embed-month {
+						display: block;
+					}
+					.responsive-google-calendar-embed .google-calendar-embed-agenda {
+						display: none;
+					}
+				 }
+				 .responsive-google-calendar-embed {
+					position: relative;
+					padding-bottom: 56.25%;
+					padding-top: 30px;
+					height: 0;
+					overflow: hidden;
+				 }
+				 .responsive-google-calendar-embed iframe,   
+				 .responsive-google-calendar-embed object,  
+				 .responsive-google-calendar-embed embed {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				 }",
+			)
+		);
 	}
 endif;
 

@@ -340,6 +340,17 @@ if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
 				}",
 			)
 		);
+		register_block_style(
+			'core/paragraph',
+			array(
+				'name'         => 'text-shadow-dark',
+				'label'        => __( 'Text Shadow (Dark)', 'mibluelodge' ),
+				'inline_style' => "
+				.is-style-text-shadow-dark {
+					text-shadow: 1px 2px 3px black;
+				}",
+			)
+		);
 	}
 endif;
 

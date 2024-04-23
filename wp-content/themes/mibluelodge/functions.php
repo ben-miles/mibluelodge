@@ -320,6 +320,26 @@ if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
 				 }",
 			)
 		);
+		register_block_style(
+			'core/image',
+			array(
+				'name'         => 'image-card',
+				'label'        => __( 'Card', 'mibluelodge' ),
+				'inline_style' => "
+				.is-style-image-card {
+					background: #fff;
+					border: 3px solid #fff;
+					box-shadow: 0 0 0 1px var(--wp--preset--color--base-2);
+				}
+				.is-style-image-card figcaption {
+					background: #fff;
+					margin-top: 0;
+					margin-left: -1px;
+					margin-right: -1px;
+					padding: 2px 3px 5px;
+				}",
+			)
+		);
 	}
 endif;
 

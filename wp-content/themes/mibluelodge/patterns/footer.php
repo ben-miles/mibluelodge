@@ -10,10 +10,10 @@
 <div class="wp-block-group has-base-2-color has-text-color has-background has-link-color" style="background-color:#252525;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--40);padding-bottom:0"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:site-logo /-->
 
-<!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group"><!-- wp:site-title /-->
+<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group"><!-- wp:site-title {"style":{"typography":{"fontSize":"1.5rem"}}} /-->
 
-<!-- wp:site-tagline /--></div>
+<!-- wp:site-tagline {"fontSize":"medium"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 

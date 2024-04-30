@@ -73,6 +73,13 @@ class Theme_Media {
 					}
 				}
 			}
+
+			// Gets the absolute URLs of background images in these blocks
+			if ( 'core/group' === $block['blockName'] ) {
+				if ( isset( $block['attrs']['style']['background']['backgroundImage']['url'] ) && Theme_Utils::is_absolute_url( $block['attrs']['style']['background']['backgroundImage']['url'] ) ) {
+					$media[] = $block['attrs']['style']['background']['backgroundImage']['url'];
+				}
+			}
 		}
 
 		return $media;
@@ -97,14 +104,6 @@ class Theme_Media {
 	 */
 	public static function add_media_to_local( $media ) {
 
-		//TODO: Hack to allow http localhost (a common environment...)
-		function turn_off_reject_unsafe_urls( $args ) {
-			$args['reject_unsafe_urls'] = false;
-			$args['sslverify']          = false;
-			return $args;
-		}
-		add_filter( 'http_request_args', 'turn_off_reject_unsafe_urls' );
-
 		foreach ( $media as $url ) {
 
 			$download_file = download_url( $url );
@@ -128,6 +127,7 @@ class Theme_Media {
 				rename( $download_file, $media_path . basename( $url ) );
 			}
 		}
+
 	}
 
 

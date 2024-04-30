@@ -3,7 +3,7 @@ Contributors: wordpressdotorg, mikachan, onemaggie, pbking, scruffian, mmaattiia
 Tags: themes, theme, block-theme
 Requires at least: 6.5
 Tested up to: 6.5
-Stable tag: 2.0.2
+Stable tag: 2.1.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -14,22 +14,75 @@ A WordPress plugin to create block themes.
 
 This plugin allows you to:
 
-- Create a new theme, blank theme, child theme or style variation.
+- Create a blank theme
+- Create a new theme based on the currently active theme
+- Create a child theme of the active parent theme
+- Create a new style variation
+- Export a theme
+- Save user changed templates and styles to the active theme
+
+All newly created themes or style variations will include changes made within the WordPress Editor.
+
+This plugin also makes several changes to the contents of a theme, including:
+
+- Adds all images used in templates to the theme's `assets` folder.
+- Ensures the block markup used in templates and patterns is export-ready.
+- Ensures most strings used in templates and patterns are translate-ready.
 
 The plugin is development only — not intended for use on production websites, but used as a tool to create new themes.
 
 = Step 1 – Setup =
 Install and activate the [Create Block Theme](https://wordpress.org/plugins/create-block-theme) plugin.
 
-In the WordPress Admin Dashboard, under Appearance there will be a new page called:
-
-- Create Block Theme
+There will be a new panel accessible from the WordPress Editor, which you can open by clicking on a new icon to the right of the "Save" button, at the top of the Editor.
 
 = Step 2 – Style Customizations =
-Make changes to your site styles and templates using the Site Editor.
+Make changes to your site styles, fonts and templates using the Editor.
 
 = Step 3 – Export =
-Still in the WordPress dashboard, navigate to "Appearance" -> "Create Block Theme" section. Select one of the available options and then, if necessary, add the details for the theme here. These details will be used in the style.css file. Click "Generate” button, to save the theme.
+Still in the WordPress Editor, navigate to the Create Block Theme menu at the top of the Editor.
+
+To save recent changes made in the Editor to the currently active theme:
+
+- Select "Save Changes" to save any recent changes to the currently active theme.
+
+To install and uninstall fonts:
+
+- Install and activate a font from any source using the WordPress Font Library.
+- Select "Save Changes To Theme" and select "Save Fonts" to save all of the active fonts to the currently active theme. These fonts will then be activated in the theme and deactivated in the system (and may be safely deleted from the system).
+- Any fonts that are installed in the theme that have been deactivated with the WordPress Font Library will be removed from the theme.
+
+or export the theme:
+
+- Select "Export Zip" to export the theme as a zip file.
+
+To edit the theme metadata:
+
+- Select "Edit Theme Metadata" to edit the metadata for the theme. These details will be used in the style.css file.
+
+To inspect the active theme's theme.json contents:
+
+- Select "Inspect Theme JSON"
+
+To create a new blank theme:
+
+- Select "Create Blank Theme"
+- Supply a name for the new theme (and optional additional Metadata)
+- Click "Create Blank Theme"
+
+To create a variation:
+
+- Select "Create Theme Variation"
+- Provide a name for the new Variation
+- Click "Create Theme Variation"
+
+To create a new Clone of the current theme or to create a Child of the current theme:ons for the currently active theme:
+
+- Click "Create Theme"
+- Click "Clone Theme" to create a new Theme based on the active theme with your changes
+- Click "Create Child Theme" to create a new Child Theme with the active theme as a parent with your changes
+
+Many of these options are also available under the older, deprecated Create Block Theme page under Appearance > Create Block Theme.
 
 == Frequently Asked Questions ==
 
@@ -58,7 +111,41 @@ If you are having problems, please try the following:
 - If your theme includes PHP files, ensure those files do **not** use PHP closing tags `?>` at the end of the file. If they do, remove them.
 
 
+== Screenshots ==
+1. Create Block Theme panel in the WordPress Editor
+2. Create Block Theme save panel in the WordPress Editor
+3. Theme Metadata editing panel in the WordPress Editor
+4. theme.json inspector in the WordPress Editor
+5. Create Theme panel 1 in the WordPress Editor
+6. Create Theme panel 2 in the WordPress Editor
+7. Page under Appearance > Create Block Theme
+
+
 == Changelog ==
+
+= 2.1.2 =
+* Document the release process (#594)
+* Make sure code is being deployed to the directory only on Release PR Merge (#593)
+* Remove font management (#595)
+
+= 2.1.1 =
+* Process group background image when saving theme (#586)
+* Removed unnecessary filter rejecting unsafe URLs (#588)
+* Fix/cover-block-content-stripped (#587)
+* When there are no fonts to export an error is thrown (null ref).  This change checks for fonts to copy to the theme before trying to. (#582)
+* Fix hardcoded wp-admin URLs (#576)
+* Code Quality: Remove `no-undef` eslint rule (#577)
+* Move screenshot refs to screenshot section (#580)
+
+= 2.1.0 =
+* Save only templates that have been changed (#572)
+* I18n: Make modal titles translatable (#575)
+* Update readme with changes from UI changes and updated screenshots (#571)
+* Fix concatenation of translation strings (#554)
+* Include activated Fonts on theme zip export functions (#564)
+* Fix/un transposed patterns (#567)
+* Try/refactor editor UI (#563)
+* Update readme files with editor-specific steps and screenshot references (#555)
 
 = 2.0.2 =
 * Update readme, remove test files from release build (#548)

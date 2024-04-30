@@ -144,14 +144,14 @@ if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
 		register_block_style(
 			'core/group',
 			array(
-				'name'         => 'torn-paper-bottom',
-				'label'        => __( 'Torn Paper Bottom', 'mibluelodge' ),
+				'name'         => 'torn-bottom',
+				'label'        => __( 'Torn (Bottom)', 'mibluelodge' ),
 				'inline_style' => "
-				.is-style-torn-paper-bottom {
+				.is-style-torn-bottom {
 					overflow: hidden;
 					position: relative
 				}
-				.is-style-torn-paper-bottom::before {
+				.is-style-torn-bottom::before {
 					content: '';
 					position: absolute;
 					z-index: 3;
@@ -166,7 +166,7 @@ if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
 					background-image: url('" . get_template_directory_uri() . "/assets/images/torn-paper.svg');
 				}
 				@media (min-width:2100px) {
-					.is-style-torn-paper-bottom::before {
+					.is-style-paper-bottom::before {
 						background-size: 100% calc(2vw + 60px);
 					}
 				}",
@@ -175,78 +175,14 @@ if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
 		register_block_style(
 			'core/group',
 			array(
-				'name'         => 'torn-paper-bottom-flipped',
-				'label'        => __( 'Torn Paper Bottom Flipped', 'mibluelodge' ),
+				'name'         => 'torn-top',
+				'label'        => __( 'Torn (Top)', 'mibluelodge' ),
 				'inline_style' => "
-				.is-style-torn-paper-bottom-flipped {
+				.is-style-torn-top {
 					overflow: hidden;
 					position: relative
 				}
-				.is-style-torn-paper-bottom-flipped::before {
-					content: '';
-					position: absolute;
-					transform: rotateY(180deg);
-					z-index: 3;
-					pointer-events: none;
-					background-repeat: no-repeat;
-					bottom: -0.1vw;
-					left: -0.1vw;
-					right: -0.1vw;
-					top: -0.1vw;
-					background-size: 100% 60px;
-					background-position: 50% 100%;
-					background-image: url('" . get_template_directory_uri() . "/assets/images/torn-paper.svg');
-				}
-				@media (min-width:2100px) {
-					.is-style-torn-paper-bottom-flipped::before {
-						background-size: 100% calc(2vw + 60px);
-					}
-				}",
-			)
-		);
-		register_block_style(
-			'core/group',
-			array(
-				'name'         => 'torn-paper-top',
-				'label'        => __( 'Torn Paper Top', 'mibluelodge' ),
-				'inline_style' => "
-				.is-style-torn-paper-top {
-					overflow: hidden;
-					position: relative
-				}
-				.is-style-torn-paper-top::before {
-					content: '';
-					position: absolute;
-					transform: rotateX(180deg);
-					z-index: 3;
-					pointer-events: none;
-					background-repeat: no-repeat;
-					bottom: -0.1vw;
-					left: -0.1vw;
-					right: -0.1vw;
-					top: -0.1vw;
-					background-size: 100% 60px;
-					background-position: 50% 100%;
-					background-image: url('" . get_template_directory_uri() . "/assets/images/torn-paper.svg');
-				}
-				@media (min-width:2100px) {
-					.is-style-torn-paper-top::before {
-						background-size: 100% calc(2vw + 60px);
-					}
-				}",
-			)
-		);
-		register_block_style(
-			'core/group',
-			array(
-				'name'         => 'torn-paper-top-flipped',
-				'label'        => __( 'Torn Paper Top Flipped', 'mibluelodge' ),
-				'inline_style' => "
-				.is-style-torn-paper-top-flipped {
-					overflow: hidden;
-					position: relative
-				}
-				.is-style-torn-paper-top-flipped::before {
+				.is-style-torn-top::before {
 					content: '';
 					position: absolute;
 					transform: rotateZ(180deg);
@@ -262,7 +198,43 @@ if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
 					background-image: url('" . get_template_directory_uri() . "/assets/images/torn-paper.svg');
 				}
 				@media (min-width:2100px) {
-					.is-style-torn-paper-top-flipped::before {
+					.is-style-torn-top::before {
+						background-size: 100% calc(2vw + 60px);
+					}
+				}",
+			)
+		);
+		register_block_style(
+			'core/group',
+			array(
+				'name'         => 'torn-both',
+				'label'        => __( 'Torn (Both)', 'mibluelodge' ),
+				'inline_style' => "
+				.is-style-torn-both {
+					overflow: hidden;
+					position: relative
+				}
+				.is-style-torn-both::before,
+				.is-style-torn-both::after {
+					content: '';
+					position: absolute;
+					z-index: 3;
+					pointer-events: none;
+					background-repeat: no-repeat;
+					bottom: -0.1vw;
+					left: -0.1vw;
+					right: -0.1vw;
+					top: -0.1vw;
+					background-size: 100% 60px;
+					background-position: 50% 100%;
+					background-image: url('" . get_template_directory_uri() . "/assets/images/torn-paper.svg');
+				}
+				.is-style-torn-both::before {
+					transform: rotateZ(180deg);
+				}
+				@media (min-width:2100px) {
+					.is-style-torn-both::before,
+					.is-style-torn-both::after {
 						background-size: 100% calc(2vw + 60px);
 					}
 				}",

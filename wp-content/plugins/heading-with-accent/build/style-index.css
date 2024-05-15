@@ -1,0 +1,41 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-create-block-heading-with-accent {
+  font-size: 2.25rem;
+  padding-top: 6rem;
+  position: relative;
+  z-index: 1;
+  font-family: var(--wp--preset--font-family--raleway), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+
+.wp-block-create-block-heading-with-accent em {
+  white-space: nowrap;
+  position: absolute;
+  z-index: -1;
+  text-transform: none;
+  letter-spacing: 0;
+  top: 0;
+  left: 0;
+  margin-top: 2rem;
+  width: 100%;
+  font-weight: 400;
+  opacity: 0.5;
+  font-family: var(--wp--preset--font-family--jim-nightshade), cursive;
+  font-size: 300%;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

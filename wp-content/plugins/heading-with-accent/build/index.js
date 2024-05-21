@@ -190,7 +190,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/heading-with-accent","version":"0.1.0","title":"Heading With Accent","category":"widgets","description":"A Heading element with a two-tone aesthetic.","example":{},"icon":"heading","attributes":{"headingNormal":{"type":"string"},"headingAccented":{"type":"string"}},"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"fontSize":true}},"textdomain":"heading-with-accent","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/heading-with-accent","version":"0.1.0","title":"Heading With Accent","category":"widgets","description":"A Heading element with a two-tone aesthetic.","example":{},"icon":"heading","attributes":{"headingNormal":{"type":"string"},"headingAccented":{"type":"string"}},"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"customFontSize":true,"fontSize":true,"fontStyle":true,"fontWeight":true,"letterSpacing":true,"textTransform":true}},"textdomain":"heading-with-accent","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ })
 

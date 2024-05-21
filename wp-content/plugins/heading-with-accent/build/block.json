@@ -23,7 +23,12 @@
     },
     "html": false,
     "typography": {
-      "fontSize": true
+      "customFontSize": true,
+      "fontSize": true,
+      "fontStyle": true,
+      "fontWeight": true,
+      "letterSpacing": true,
+      "textTransform": true
     }
   },
   "textdomain": "heading-with-accent",

@@ -3,7 +3,7 @@ Contributors: wordpressdotorg, mikachan, onemaggie, pbking, scruffian, mmaattiia
 Tags: themes, theme, block-theme
 Requires at least: 6.5
 Tested up to: 6.5
-Stable tag: 2.1.3
+Stable tag: 2.1.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -123,6 +123,25 @@ If you are having problems, please try the following:
 
 == Changelog ==
 
+= 2.1.4 =
+* Fix template texts localizing/escaping (#641)
+* Use only major.minor version in 'Tested up to' field (#635)
+* Don't Clobber Metadata (#634)
+* Clean and complete the changelog (#636)
+* Add prefix to the names in the PHP global namespace. (#628)
+* Improve tags UI (#630)
+* Refactor Theme_Readme (readme.txt) PHP class (#626)
+* Metadata screenshot (#621)
+* Allow spaces in slugs.  Changed logic to correctly replace functions.  Updated tests. (#622)
+* Reset changelog and version on clone and theme creation (#623)
+* Use non-default port for wp-env (#611)
+* Update package-lock.json (#620)
+* Tests: use tests-wordpress wp-env for phpunit (#618)
+* Add Repository Management section to contributing docs (#614)
+* Update wp-env version (#619)
+* Update Node version to 20 (#617)
+* ESLint: Add new rules (#616)
+
 = 2.1.3 =
 * Editor Sidebar: Persist "Save Changes" panel settings (#607)
 * Fix problem with zip file creation on Windows (#606)
@@ -188,13 +207,13 @@ If you are having problems, please try the following:
 * Add text domain to translation target (#499)
 
 = 1.13.8 =
-
+* Remove the development-only warning
 
 = 1.13.7 =
-
+* docs: Add recent release notes to the changelog
 
 = 1.13.6 =
-
+* Fix manage fonts page
 
 = 1.13.5 =
 * Make form files more specific to form page
@@ -228,17 +247,10 @@ If you are having problems, please try the following:
 * Update Google Fonts JSON data from API
 
 = 1.13.0 =
-* # Conflicts:
-#	admin/create-theme/theme-readme.php
-#	admin/create-theme/theme-zip.php
-
-* Merge branch 'trunk' into fix/resources-credits-on-save
-* Merge branch 'trunk' into add/subfolder-to-zip
 * Persist copyright info on new theme creation
 * Update Google Fonts JSON data from API
 * Move check for `download_url` higher up
 * Avoid white spaces or other weird characters on font asset paths.
-* Merge branch 'trunk' into add/subfolder-to-zip
 * Adding files to zip subfolder called as theme slug
 * Update Google Fonts JSON data from API
 
@@ -246,9 +258,6 @@ If you are having problems, please try the following:
 * Fix double replacement in replace_namespace
 
 = 1.12.0 =
-* # Conflicts:
-#	src/plugin-sidebar.js
-
 * Add image credits input
 * Update theme `version` logic to use isset()
 * Update Google Fonts JSON data from API
@@ -258,7 +267,7 @@ If you are having problems, please try the following:
 * Add linebreaks before hyphen lists in readme to fix plugin repository display
 * Prevent additional white space in font credits in readme.txt
 * Google fonts: Change onClick handlers to onChange
-* Merge pull request #374 from WordPress/fix/escape-template-text
+* Escape special characters to avoid syntax errors
 * Update required node version and update dependencies
 
 = 1.10.0 =
@@ -270,7 +279,7 @@ If you are having problems, please try the following:
 * Automatically add font license info for local fonts
 
 = 1.9.0 =
-* Merge branch 'trunk' into add/handle-google-font-credits
+* Handle Google Font Credits
 * Update Google Fonts JSON data from API
 * Fix console error in `prepareThemeNameValidation` function
 * Add FAQ section to readme.txt
@@ -278,7 +287,7 @@ If you are having problems, please try the following:
 * Removing donate link
 
 = 1.8.2 =
-* Merge branch 'trunk' into update/tested-up-wp-version-62
+* Bump tested version
 * Updating Tested up to: 6.2 WordPress version
 * fix tag duplication in exported theme
 * Fixing error checking
@@ -286,11 +295,9 @@ If you are having problems, please try the following:
 * Refactor react app code for general purpose
 * add build directory to php exclude list
 * Do not call replace_template_namespace when overwrting theme
-* Merge branch 'trunk' into fix/314
 * Fix error when switching to template edit mode in the post editor
 * Add useRootPaddingAwareAlignments to blank theme
 * Update Google Fonts JSON data from API
-* Merge branch 'trunk' into fix/314
 * Avoid adding Template info to style.css if it's empty
 * Fix delete font family/face when name is different from family
 * Add theme name validation
@@ -430,11 +437,7 @@ If you are having problems, please try the following:
 * Updating google fonts data
 * Force https to load Google fonts preview
 * Add the ability to select/unselect all google font variants
-* Merge branch 'trunk' into try/manage-fonts
 * Update google fonts JSON data automatically using a repo action
-* Merge branch 'trunk' into release-action
-* Merge branch 'trunk' into try/manage-fonts
-* Merge branch 'try/manage-fonts' into release-action
 * Manage theme fonts
 * Automate release: build, version bump, changelog, deploy to wp.org
 * Automate release

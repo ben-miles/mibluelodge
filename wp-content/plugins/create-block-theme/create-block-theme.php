@@ -5,7 +5,7 @@
  * Plugin Name: Create Block Theme
  * Plugin URI: https://wordpress.org/plugins/create-block-theme
  * Description: Generates a block theme
- * Version: 2.1.3
+ * Version: 2.1.4
  * Author: WordPress.org
  * Author URI: https://wordpress.org/
  * License: GNU General Public License v2 or later
@@ -37,10 +37,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-create-block-theme.php';
  *
  * @since    0.0.2
  */
-function run_create_block_theme() {
+function cbt_run_create_block_theme() {
 
-	$plugin = new Create_Block_Theme();
+	$plugin = new CBT_Plugin();
 	$plugin->run();
 
 }
-run_create_block_theme();
+cbt_run_create_block_theme();

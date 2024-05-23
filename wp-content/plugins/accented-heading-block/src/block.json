@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "create-block/accented-heading-block",
 	"version": "0.1.0",
-	"title": "Accented Heading Block",
+	"title": "Accented Heading",
 	"category": "widgets",
 	"description": "A Heading element with a two-tone aesthetic.",
 	"example": {},

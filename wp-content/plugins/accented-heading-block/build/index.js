@@ -54,15 +54,15 @@ function Edit({
     headingAccented
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings', 'heading-with-accent')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings', 'accented-heading-block')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading Normal', 'heading-with-accent'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading Normal', 'accented-heading-block'),
     value: headingNormal || '',
     onChange: value => setAttributes({
       headingNormal: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading Accent', 'heading-with-accent'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading Accent', 'accented-heading-block'),
     value: headingAccented || '',
     onChange: value => setAttributes({
       headingAccented: value
@@ -190,7 +190,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/heading-with-accent","version":"0.1.0","title":"Heading With Accent","category":"widgets","description":"A Heading element with a two-tone aesthetic.","example":{},"icon":"heading","attributes":{"headingNormal":{"type":"string"},"headingAccented":{"type":"string"}},"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"customFontSize":true,"fontSize":true,"fontStyle":true,"fontWeight":true,"letterSpacing":true,"textTransform":true}},"textdomain":"heading-with-accent","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/accented-heading-block","version":"0.1.0","title":"Accented Heading Block","category":"widgets","description":"A Heading element with a two-tone aesthetic.","example":{},"icon":"heading","attributes":{"headingNormal":{"type":"string"},"headingAccented":{"type":"string"}},"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"customFontSize":true,"fontSize":true,"fontStyle":true,"fontWeight":true,"letterSpacing":true,"textTransform":true}},"textdomain":"accented-heading-block","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ })
 
@@ -345,7 +345,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkheading_with_accent"] = globalThis["webpackChunkheading_with_accent"] || [];
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkaccented_heading"] = globalThis["webpackChunkaccented_heading"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

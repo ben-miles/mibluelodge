@@ -1,9 +1,9 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "create-block/heading-with-accent",
+  "name": "create-block/accented-heading-block",
   "version": "0.1.0",
-  "title": "Heading With Accent",
+  "title": "Accented Heading Block",
   "category": "widgets",
   "description": "A Heading element with a two-tone aesthetic.",
   "example": {},
@@ -31,7 +31,7 @@
       "textTransform": true
     }
   },
-  "textdomain": "heading-with-accent",
+  "textdomain": "accented-heading-block",
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css",
   "render": "file:./render.php"

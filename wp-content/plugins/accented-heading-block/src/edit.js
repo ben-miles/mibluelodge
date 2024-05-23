@@ -27,11 +27,11 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={ __( 'Settings', 'heading-with-accent' ) }>
+				<PanelBody title={ __( 'Settings', 'accented-heading-block' ) }>
 					<TextControl
 						label={ __(
 							'Heading Normal',
-							'heading-with-accent'
+							'accented-heading-block'
 						) }
 						value={ headingNormal || '' }
 						onChange={ ( value ) =>
@@ -41,7 +41,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					<TextControl
 						label={ __(
 							'Heading Accent',
-							'heading-with-accent'
+							'accented-heading-block'
 						) }
 						value={ headingAccented || '' }
 						onChange={ ( value ) =>

@@ -1,11 +1,12 @@
 <?php
 /**
  * Plugin Name:       Copyright Date Block
- * Description:       Example block scaffolded with Create Block tool.
+ * Description:       A custom block to display your site's copyright date.
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0
- * Author:            The WordPress Contributors
+ * Author:            Ben Miles
+ * Author URI:        https://benmiles.com/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       copyright-date-block
@@ -24,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_copyright_date_block_block_init() {
+function create_block_copyright_date_block_init() {
 	register_block_type( __DIR__ . '/build' );
 }
-add_action( 'init', 'create_block_copyright_date_block_block_init' );
+add_action( 'init', 'create_block_copyright_date_block_init' );

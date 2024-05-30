@@ -400,3 +400,16 @@ if ( ! function_exists( 'mibluelodge_pattern_categories' ) ) :
 endif;
 
 add_action( 'init', 'mibluelodge_pattern_categories' );
+
+// Add the ability to randomly sort the results of GenerateBlocks' Query Loop block
+add_filter( 'generateblocks_query_loop_args', function( $query_args, $attributes ) {
+    // Custom CSS class to signify random order
+    $randomClass = 'has-order-random';
+	// Check if the block has the custom CSS class
+    if ( !empty( $attributes['className'] ) && strpos( $attributes['className'], $randomClass ) !== false ) {
+    	// Merge the current $query_args with editor defined args
+		return array_merge( $query_args,  [ 'orderby' => 'rand' ] );
+    }
+	// Otherwise just carry on with the default query args
+    return $query_args;
+}, 10, 2 );

@@ -413,3 +413,17 @@ add_filter( 'generateblocks_query_loop_args', function( $query_args, $attributes
 	// Otherwise just carry on with the default query args
     return $query_args;
 }, 10, 2 );
+
+// Add the ability to open links in new tabs for any block (for when there is no control in the block settings)
+function db_rerender_url_new_tab( $block_content, $block ) {
+	// Custom CSS class to signify open link in new tab
+	$newTabLinkClass = 'open-link-in-new-tab';
+	if( !is_admin() && !empty( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], $newTabLinkClass ) !== false  ) {
+			$search='href="';
+			$replace='target="_blank" href="';
+			$output = str_replace($search, $replace, $block_content);
+			return $output;
+	}
+	return $block_content;
+}
+add_filter( 'render_block', 'db_rerender_url_new_tab', 10, 2 );

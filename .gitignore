@@ -1,2 +1,7 @@
 # Wordpress - Configuration
 wp-config.php
+
+# Duplicator Backup Files
+/wp-content/backups-dup-lite/*.bak
+/wp-content/backups-dup-lite/*.log
+/wp-content/backups-dup-lite/*.zip

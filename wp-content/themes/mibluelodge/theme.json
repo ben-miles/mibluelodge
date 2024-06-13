@@ -865,7 +865,7 @@
 			"background": "var(--wp--preset--color--base-2)",
 			"text": "var(--wp--preset--color--contrast)"
 		},
-		"css": ":where(.wp-site-blocks *:focus){outline-width:2px;outline-style:solid}\n\nfooter {margin-top:0}",
+		"css": ":where(.wp-site-blocks *:focus){outline-width:2px;outline-style:solid}\n\nfooter {margin-top:0}\n\n.has-shadow-natural {box-shadow: var(--wp--preset--shadow--natural)}",
 		"elements": {
 			"button": {
 				":active": {

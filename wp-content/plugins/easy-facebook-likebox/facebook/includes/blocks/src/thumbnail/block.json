@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "esf-fb/thumbnail",
+	"version": "0.1.0",
+	"title": "Easy Social Feed Facebook Thumbnail",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Display your Facebook feed in a Thumbnail.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "easy-social-feed-facebook-thumbnail",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

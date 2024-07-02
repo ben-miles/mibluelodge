@@ -1,0 +1,51 @@
+// stylelint-disable declaration-no-important
+
+//
+// Text
+//
+
+// Alignment
+
+.esf-insta-text-justify {
+  text-align: justify !important;
+}
+
+.esf-insta-text-nowrap {
+  white-space: nowrap !important;
+}
+
+.esf-insta-text-truncate {
+  @include text-truncate;
+}
+
+// Responsive alignment
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .esf-insta-text#{$infix}-left {
+      text-align: left !important;
+    }
+    .esf-insta-text#{$infix}-right {
+      text-align: right !important;
+    }
+    .esf-insta-text#{$infix}-center {
+      text-align: center !important;
+    }
+  }
+}
+
+// Transformation
+
+.esf-insta-text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.esf-insta-text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.esf-insta-text-capitalize {
+  text-transform: capitalize !important;
+}

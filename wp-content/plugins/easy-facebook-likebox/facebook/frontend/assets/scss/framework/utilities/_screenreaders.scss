@@ -1,0 +1,11 @@
+//
+// Screenreaders
+//
+
+.efbl-sr-only {
+  @include sr-only();
+}
+
+.efbl-sr-only-focusable {
+  @include sr-only-focusable();
+}

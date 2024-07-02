@@ -1,0 +1,3880 @@
+# Copyright (C) 2021 by the contributors
+# This file is distributed under the same license as the WordPress package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://core.trac.wordpress.org/\n"
+"POT-Creation-Date: 2021-04-16 01:57+0500\n"
+"PO-Revision-Date: 2021-04-16 01:57+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-esf-admin.php:125 instagram/includes/esf-instagram-feed-widget.php:418
+msgid "Select or Upload Image"
+msgstr ""
+
+#: admin/class-esf-admin.php:126 instagram/includes/esf-instagram-feed-widget.php:419
+msgid "Use this Image"
+msgstr ""
+
+#: admin/class-esf-admin.php:139
+msgid "Easy Social Feed"
+msgstr ""
+
+#: admin/class-esf-admin.php:144 admin/views/html-admin-page-wellcome.php:34
+msgid "Welcome"
+msgstr ""
+
+#: admin/class-esf-admin.php:217
+msgid " Activated"
+msgstr ""
+
+#: admin/class-esf-admin.php:221
+msgid " Deactivated"
+msgstr ""
+
+#: admin/class-esf-admin.php:227
+msgid " Successfully"
+msgstr ""
+
+#: admin/class-esf-admin.php:232 admin/class-esf-admin.php:288
+#: facebook/admin/class-easy-facebook-likebox-admin.php:313
+#: facebook/admin/class-easy-facebook-likebox-admin.php:350
+#: facebook/admin/class-easy-facebook-likebox-admin.php:391
+#: facebook/admin/class-easy-facebook-likebox-admin.php:602
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:200
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:234
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:276
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:312
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:610
+msgid "Something Went Wrong! Please try again."
+msgstr ""
+
+#: admin/class-esf-admin.php:283
+#: facebook/admin/class-easy-facebook-likebox-admin.php:229
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:605
+msgid "Deleted"
+msgstr ""
+
+#: admin/class-esf-admin.php:326
+msgid "Awesome, you have been using Easy Social Feed "
+msgstr ""
+
+#: admin/class-esf-admin.php:327
+msgid "for more than a week. I would really appreciate it if you "
+msgstr ""
+
+#: admin/class-esf-admin.php:328
+msgid "review and rate "
+msgstr ""
+
+#: admin/class-esf-admin.php:329
+msgid "the plugin to help spread the word and "
+msgstr ""
+
+#: admin/class-esf-admin.php:330
+msgid "encourage us to make it even better."
+msgstr ""
+
+#: admin/class-esf-admin.php:338
+msgid "I Like Easy Social Feed - It increased engagement on my site"
+msgstr ""
+
+#: admin/class-esf-admin.php:343
+msgid "I already rated it"
+msgstr ""
+
+#: admin/class-esf-admin.php:349
+msgid "No, not good enough, I do not like to rate it"
+msgstr ""
+
+#: admin/class-esf-admin.php:356
+msgid "Dismiss"
+msgstr ""
+
+#: admin/class-esf-admin.php:450
+#: facebook/admin/class-easy-facebook-likebox-admin.php:685
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:676
+msgid "Updated!"
+msgstr ""
+
+#: admin/class-esf-admin.php:452
+#: facebook/admin/class-easy-facebook-likebox-admin.php:687
+#: facebook/admin/class-easy-facebook-likebox-admin.php:779
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:678
+msgid "Something went wrong! Please try again"
+msgstr ""
+
+#: admin/class-esf-admin.php:477
+msgid "Visit the Easy Social Feed page for more info"
+msgstr ""
+
+#: admin/class-esf-admin.php:651
+msgid ""
+"Attention! Data access to the current access token is expired. Please re-"
+"authenticate the app."
+msgstr ""
+
+#: admin/class-esf-admin.php:661
+msgid "Attention! Access token is expired. Please re-authenticate the app."
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:32
+msgid "Easy Social Feed (Previously Easy Facebook Likebox)"
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:56
+msgid "Welcome to the modules management page"
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:57
+msgid ""
+"You can disable the module which you are not using. It will help us to include only "
+"required resources to make your site load faster"
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:86
+msgid "Deactivate"
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:90
+msgid "Activate"
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:123 easy-facebook-likebox.php:227
+msgid "Settings"
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:157
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:126
+#: instagram/admin/views/html-admin-page-mif.php:328
+msgid "Love this plugin?"
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:158
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:127
+#: instagram/admin/views/html-admin-page-mif.php:329
+msgid "Then why not try our other FREE plugins."
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:188
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:157
+#: instagram/admin/views/html-admin-page-mif.php:359
+msgid "Active Installs: "
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:194
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:163
+#: instagram/admin/views/html-admin-page-mif.php:365
+msgid "5-Star Rating"
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:199
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:168
+#: instagram/admin/views/html-admin-page-mif.php:370
+msgid "Already Installed"
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:201
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:170
+#: instagram/admin/views/html-admin-page-mif.php:372
+msgid "Install Now Free"
+msgstr ""
+
+#: admin/views/html-admin-page-easy-social-feed.php:206
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:175
+#: instagram/admin/views/html-admin-page-mif.php:377
+msgid "More Info"
+msgstr ""
+
+#: admin/views/html-admin-page-wellcome.php:36
+msgid "Easy Social Feed plugin has the following awesome features"
+msgstr ""
+
+#: admin/views/html-admin-page-wellcome.php:44 easy-facebook-likebox.php:267
+msgid "Custom Instagram Feed"
+msgstr ""
+
+#: admin/views/html-admin-page-wellcome.php:45
+msgid ""
+"Display your stunning photos and videos from your Instagram account on your site. "
+"It’s responsive, highly customizable, and SEO-friendly"
+msgstr ""
+
+#: admin/views/html-admin-page-wellcome.php:49
+#: admin/views/html-admin-page-wellcome.php:64
+#: admin/views/html-admin-page-wellcome.php:79
+msgid "Use this feature"
+msgstr ""
+
+#: admin/views/html-admin-page-wellcome.php:59
+msgid "Custom Facebook Feed"
+msgstr ""
+
+#: admin/views/html-admin-page-wellcome.php:60
+msgid ""
+"Display a customizable, responsive, and SEO-friendly feed of your Facebook posts on "
+"your site. Supports all types of posts, including images, videos, status, and events"
+msgstr ""
+
+#: admin/views/html-admin-page-wellcome.php:74
+msgid "Facebook Page Plugin (Like box)"
+msgstr ""
+
+#: admin/views/html-admin-page-wellcome.php:75
+msgid ""
+"Displays a Facebook Page Plugin. The Facebook Page Plugin is a social plugin that "
+"enables Facebook Page owners to attract and gain Likes from their own website."
+msgstr ""
+
+#: admin/views/html-admin-page-wellcome.php:86
+msgid "Quick Start Video"
+msgstr ""
+
+#: easy-facebook-likebox.php:252
+msgid "Custom Facebook Feed - Page Plugin (Likebox)"
+msgstr ""
+
+#: easy-facebook-likebox.php:255
+msgid ""
+"<p>This module allows you to display:</p>\n"
+"                                                                    <ul>\n"
+"                                                                    <li>Customizable "
+"and mobile-friendly Facebook post, images, videos, events, and albums feed</li>\n"
+"                                                                    <li>Facebook "
+"Page Plugin (previously like box)</li>\n"
+"                                                                    <li>Auto-popup "
+"(display page plugin or anything in the auto popup)</li>\n"
+"                                                                    <li>using "
+"shortcode, widget, inside popup and widget.</li>\n"
+"                                                                     </ul>\n"
+"                                                                    "
+msgstr ""
+
+#: easy-facebook-likebox.php:270
+msgid ""
+"<p>This module allows you to display:</p>\n"
+"                                                                    <ul>\n"
+"                                                                    <li>Display "
+"stunning photos from the Instagram account in the feed</li>\n"
+"                                                                    <li>Any Hashtag "
+"Feed</li>\n"
+"                                                                    <li>Gallery of "
+"photos in the PopUp</li>\n"
+"                                                                    <li>using "
+"shortcode, widget, inside popup and widget.</li>\n"
+"                                                                     </ul>"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:120
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:96
+msgid "Please wait, we are generating preview for you"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:132
+#: instagram/admin/views/html-admin-page-mif.php:117
+msgid "Facebook"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:234
+#: facebook/admin/class-easy-facebook-likebox-admin.php:561
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:433
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:440
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:574
+msgid "Something went wrong! Refresh the page and try again"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:342
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:227
+msgid "Skin is successfully deleted."
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:370
+#: facebook/admin/views/html-how-to-use-tab.php:232
+#: facebook/admin/views/html-how-to-use-tab.php:246
+#: facebook/admin/views/html-how-to-use-tab.php:277
+#: facebook/includes/easy-custom-facebook-feed-widget.php:262
+msgid "None"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:422
+msgid "Approved Pages"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:425
+#: facebook/admin/views/html-authenticate-tab.php:164
+#: facebook/admin/views/html-authenticate-tab.php:244
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:404
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:475
+#: instagram/admin/views/html-autenticate-tab.php:146
+#: instagram/admin/views/html-autenticate-tab.php:175
+msgid "Delete Access Token"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:455
+#: facebook/admin/views/html-authenticate-tab.php:176
+msgid "Username:"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:461
+#: facebook/admin/class-easy-facebook-likebox-admin.php:730
+#: facebook/admin/views/html-authenticate-tab.php:181
+#: facebook/admin/views/html-authenticate-tab.php:267
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:408
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:531
+msgid "ID:"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:471
+#: facebook/admin/class-easy-facebook-likebox-admin.php:737
+#: facebook/admin/views/html-authenticate-tab.php:218
+#: facebook/admin/views/html-authenticate-tab.php:276
+#: facebook/admin/views/html-how-to-use-tab.php:45
+#: facebook/admin/views/html-how-to-use-tab.php:80
+#: facebook/admin/views/html-how-to-use-tab.php:484
+#: facebook/admin/views/html-likebox-tab.php:33
+#: facebook/admin/views/html-likebox-tab.php:247
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:408
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:531
+#: instagram/admin/views/html-autenticate-tab.php:158
+#: instagram/admin/views/html-autenticate-tab.php:203
+#: instagram/admin/views/html-how-to-use-tab.php:48
+#: instagram/admin/views/html-how-to-use-tab.php:341
+msgid "Copy"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:521
+#: facebook/admin/class-easy-facebook-likebox-admin.php:740
+#: facebook/admin/views/html-authenticate-tab.php:281
+msgid "Admin"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:527
+msgid "Save"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:553
+msgid "Successfully Authenticated!"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:598
+msgid "Please wait! We are generating a preview for you."
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:617
+#: facebook/admin/class-easy-facebook-likebox-admin.php:653
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:624
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:649
+msgid "Nonce not verified! Please try again"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:713
+msgid "Please select the group first"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:722
+#: facebook/admin/views/html-authenticate-tab.php:238
+msgid "Approved Group(s)"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:741
+#: facebook/admin/views/html-authenticate-tab.php:282
+msgid "Add Easy Social Feed (A)/(B) App"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:751
+#: facebook/admin/views/html-authenticate-tab.php:295
+msgid "Important"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:752
+#: facebook/admin/views/html-authenticate-tab.php:296
+msgid ""
+"To display a feed from your group you need to add our app in your Facebook group "
+"settings:"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:754
+msgid ""
+"Go to your group settings page by clicking the Add {App Name} app button above in "
+"the list"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:755
+msgid "In the Apps section click Add Apps"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:756
+#: facebook/admin/views/html-authenticate-tab.php:300
+msgid "Search for Easy Social Feed (b) and select and add both of our apps"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:757
+msgid "Click Add"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:759
+msgid "You can now use the plugin to display a feed from your group"
+msgstr ""
+
+#: facebook/admin/class-easy-facebook-likebox-admin.php:775
+msgid "Saved successfully"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer-extend.php:145
+#: instagram/admin/includes/class-esf-insta-customizer-extend.php:145
+#, php-format
+msgid "Upgrade today and get a 30% discount with coupon code <code>OCTPASS</code>"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer-extend.php:147
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:282
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:346
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:367
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:392
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:414
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:436
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:458
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:480
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:502
+#: facebook/admin/views/html-moderate-tab.php:133
+#: instagram/admin/includes/class-esf-insta-customizer-extend.php:147
+#: instagram/admin/views/html-admin-page-mif.php:212
+#: instagram/admin/views/html-admin-page-mif.php:238
+#: instagram/admin/views/html-admin-page-mif.php:264
+#: instagram/admin/views/html-admin-page-mif.php:290
+#: instagram/admin/views/html-moderate-tab.php:101
+msgid "Upgrade to pro"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:82
+#: facebook/includes/easy-custom-facebook-feed-widget.php:12
+msgid "Easy Facebook Feed"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:87
+#: facebook/admin/includes/efbl-customizer.php:339
+#: instagram/admin/includes/class-esf-insta-customizer.php:93
+#: instagram/admin/includes/class-esf-insta-customizer.php:300
+msgid "Layout Settings"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:88
+#: instagram/admin/includes/class-esf-insta-customizer.php:94
+msgid "Select the layout settings in real-time."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:114
+#: instagram/admin/includes/class-esf-insta-customizer.php:120
+msgid "Number of columns"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:117
+#: instagram/admin/includes/class-esf-insta-customizer.php:123
+msgid "Select the number of columns for feeds."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:139
+#: facebook/admin/views/html-how-to-use-tab.php:597
+msgid "Number of posts"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:142
+msgid "Select the number of active posts"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:167
+msgid "Wrapper Background Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:170
+msgid "Select the background color of wrapper."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:182
+#: instagram/admin/includes/class-esf-insta-customizer.php:146
+msgid "Show Next Previous Icon"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:185
+msgid "Show or hide next previous icon"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:198
+#: instagram/admin/includes/class-esf-insta-customizer.php:161
+msgid "Show Bulleted Navigation"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:201
+msgid "Show or hide next navigation icon"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:214
+#: instagram/admin/includes/class-esf-insta-customizer.php:176
+msgid "Navigation Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:217
+#: instagram/admin/includes/class-esf-insta-customizer.php:179
+msgid "Select the color of navigation."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:229
+#: instagram/admin/includes/class-esf-insta-customizer.php:191
+msgid "Navigation Active Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:232
+#: instagram/admin/includes/class-esf-insta-customizer.php:194
+msgid "Select the active color of navigation."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:244
+#: instagram/admin/includes/class-esf-insta-customizer.php:206
+msgid "Loop"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:247
+#: instagram/admin/includes/class-esf-insta-customizer.php:209
+msgid "Infinity loop. Duplicate last and first items to get loop illusion."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:260
+#: instagram/admin/includes/class-esf-insta-customizer.php:222
+msgid "Autoplay"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:263
+msgid "Autoplay carousel"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:280
+#: instagram/admin/includes/class-esf-insta-customizer.php:241
+msgid "Load More Background Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:283
+#: instagram/admin/includes/class-esf-insta-customizer.php:244
+msgid "Select the background color of the load more button."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:295
+#: instagram/admin/includes/class-esf-insta-customizer.php:256
+msgid "Load More Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:298
+#: instagram/admin/includes/class-esf-insta-customizer.php:259
+msgid "Select the text color of the load more button."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:310
+#: instagram/admin/includes/class-esf-insta-customizer.php:271
+msgid "Load More Hover Background Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:313
+#: instagram/admin/includes/class-esf-insta-customizer.php:274
+msgid "Select the hover background color of load more button."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:325
+#: instagram/admin/includes/class-esf-insta-customizer.php:286
+msgid "Load More Hover Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:328
+#: instagram/admin/includes/class-esf-insta-customizer.php:289
+msgid "Select the text color of the hover load more button."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:341
+msgid ""
+"We are sorry, Layout settings are not included in your plan. Please upgrade to the "
+"premium version to unlock the following settings<ul>\n"
+"                \t\t\t\t\t <li>Number Of Columns</li>\n"
+"                \t\t\t\t\t <li>Show Or Hide Load More Button</li>\n"
+"                \t\t\t\t\t <li>Load More Background Color</li>\n"
+"                \t\t\t\t\t <li>Load More Color</li>\n"
+"                \t\t\t\t\t <li>Load More Hover Background Color</li>\n"
+"                \t\t\t\t\t <li>Load More Hover Color</li>\n"
+"                \t\t\t\t\t </ul>"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:360
+#: instagram/admin/includes/class-esf-insta-customizer.php:321
+msgid "Header"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:361
+#: instagram/admin/includes/class-esf-insta-customizer.php:322
+msgid "Customize the header in the real time."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:375
+#: instagram/admin/includes/class-esf-insta-customizer.php:336
+msgid "Show Or Hide Header"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:378
+#: instagram/admin/includes/class-esf-insta-customizer.php:339
+msgid "Show or hide page header."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:391
+#: instagram/admin/includes/class-esf-insta-customizer.php:352
+msgid "Header Background Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:394
+#: instagram/admin/includes/class-esf-insta-customizer.php:355
+msgid "Select the background color of header."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:406
+#: instagram/admin/includes/class-esf-insta-customizer.php:367
+msgid "Header Text Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:409
+#: instagram/admin/includes/class-esf-insta-customizer.php:370
+msgid "Select the content color in header."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:421
+#: instagram/admin/includes/class-esf-insta-customizer.php:382
+msgid "Title Size"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:424
+#: instagram/admin/includes/class-esf-insta-customizer.php:385
+msgid "Select the text size of profile name."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:441
+#: facebook/admin/includes/efbl-customizer.php:961
+#: instagram/admin/includes/class-esf-insta-customizer.php:403
+#: instagram/admin/includes/class-esf-insta-customizer.php:911
+msgid "Show Or Hide Box Shadow"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:444
+#: facebook/admin/includes/efbl-customizer.php:964
+#: instagram/admin/includes/class-esf-insta-customizer.php:406
+#: instagram/admin/includes/class-esf-insta-customizer.php:914
+msgid "Show or Hide box shadow."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:457
+#: facebook/admin/includes/efbl-customizer.php:977
+#: instagram/admin/includes/class-esf-insta-customizer.php:419
+#: instagram/admin/includes/class-esf-insta-customizer.php:927
+msgid "Shadow color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:475
+#: facebook/admin/includes/efbl-customizer.php:536
+#: instagram/admin/includes/class-esf-insta-customizer.php:437
+#: instagram/admin/includes/class-esf-insta-customizer.php:483
+msgid "Show Or Hide Display Picture"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:478
+#: instagram/admin/includes/class-esf-insta-customizer.php:440
+msgid ""
+"Show or Hide the display picture of your account which is displaying in the header."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:491
+#: facebook/admin/includes/efbl-customizer.php:544
+#: instagram/admin/includes/class-esf-insta-customizer.php:453
+#: instagram/admin/includes/class-esf-insta-customizer.php:491
+msgid "Round Display Picture"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:494
+#: instagram/admin/includes/class-esf-insta-customizer.php:456
+msgid "Show rounded or boxed display picture"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:507
+msgid "Show Or Hide Page Category"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:510
+msgid "Show or Hide page category which is displaying in the header."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:523
+#: instagram/admin/includes/class-esf-insta-customizer.php:470
+msgid "Show Or Hide Total Number Of Followers"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:526
+#: instagram/admin/includes/class-esf-insta-customizer.php:473
+msgid "Show or Hide Total Number Of Followers Which are displaying in the header."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:538
+#: instagram/admin/includes/class-esf-insta-customizer.php:485
+msgid "We are sorry, “Show Or Hide Display Picture” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:546
+#: instagram/admin/includes/class-esf-insta-customizer.php:493
+msgid "We are sorry, “Round Display Picture” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:560
+#: instagram/admin/includes/class-esf-insta-customizer.php:507
+msgid "Size of total followers"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:563
+#: instagram/admin/includes/class-esf-insta-customizer.php:510
+msgid "Select the text size of total followers in the header."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:583
+#: facebook/admin/includes/efbl-customizer.php:820
+#: instagram/admin/includes/class-esf-insta-customizer.php:530
+#: instagram/admin/includes/class-esf-insta-customizer.php:767
+msgid "Show Or Hide Bio"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:586
+#: instagram/admin/includes/class-esf-insta-customizer.php:533
+msgid "Show or Hide Bio"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:599
+#: facebook/admin/includes/efbl-customizer.php:828
+#: instagram/admin/includes/class-esf-insta-customizer.php:546
+#: instagram/admin/includes/class-esf-insta-customizer.php:775
+msgid "Text Size of Bio"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:602
+#: instagram/admin/includes/class-esf-insta-customizer.php:549
+msgid "Select the text size of bio."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:619
+#: facebook/admin/includes/efbl-customizer.php:835
+#: instagram/admin/includes/class-esf-insta-customizer.php:566
+#: instagram/admin/includes/class-esf-insta-customizer.php:782
+msgid "Header Border Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:622
+#: instagram/admin/includes/class-esf-insta-customizer.php:569
+msgid "Select the border color of header."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:634
+#: facebook/admin/includes/efbl-customizer.php:843
+#: instagram/admin/includes/class-esf-insta-customizer.php:581
+#: instagram/admin/includes/class-esf-insta-customizer.php:790
+msgid "Border Style"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:637
+#: instagram/admin/includes/class-esf-insta-customizer.php:584
+msgid "Select the border style to make the header look nicer."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:663
+#: facebook/admin/includes/efbl-customizer.php:851
+#: instagram/admin/includes/class-esf-insta-customizer.php:610
+#: instagram/admin/includes/class-esf-insta-customizer.php:798
+msgid "Border Top"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:666
+#: instagram/admin/includes/class-esf-insta-customizer.php:613
+msgid "Select the border size for the topside to make the header look nicer."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:683
+#: facebook/admin/includes/efbl-customizer.php:859
+#: instagram/admin/includes/class-esf-insta-customizer.php:630
+#: instagram/admin/includes/class-esf-insta-customizer.php:806
+msgid "Border Bottom"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:686
+#: instagram/admin/includes/class-esf-insta-customizer.php:633
+msgid "Select the border size for the bottom side to make the header look nicer."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:703
+#: facebook/admin/includes/efbl-customizer.php:867
+#: instagram/admin/includes/class-esf-insta-customizer.php:650
+#: instagram/admin/includes/class-esf-insta-customizer.php:814
+msgid "Border Left"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:706
+#: instagram/admin/includes/class-esf-insta-customizer.php:653
+msgid "Select the border size for the left side to make the header look nicer."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:723
+#: facebook/admin/includes/efbl-customizer.php:875
+#: instagram/admin/includes/class-esf-insta-customizer.php:670
+#: instagram/admin/includes/class-esf-insta-customizer.php:822
+msgid "Border Right"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:726
+#: instagram/admin/includes/class-esf-insta-customizer.php:673
+msgid "Select the border size for the right side to make the header look nicer."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:743
+#: facebook/admin/includes/efbl-customizer.php:883
+#: facebook/admin/includes/efbl-customizer.php:1091
+#: instagram/admin/includes/class-esf-insta-customizer.php:690
+#: instagram/admin/includes/class-esf-insta-customizer.php:830
+#: instagram/admin/includes/class-esf-insta-customizer.php:1043
+msgid "Padding Top"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:746
+#: instagram/admin/includes/class-esf-insta-customizer.php:693
+msgid "Select the padding for the top side to make the header look nicer."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:763
+#: facebook/admin/includes/efbl-customizer.php:891
+#: facebook/admin/includes/efbl-customizer.php:1111
+#: instagram/admin/includes/class-esf-insta-customizer.php:710
+#: instagram/admin/includes/class-esf-insta-customizer.php:838
+#: instagram/admin/includes/class-esf-insta-customizer.php:1063
+msgid "Padding Bottom"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:766
+#: instagram/admin/includes/class-esf-insta-customizer.php:713
+msgid "Select the padding for the bottom side to make the header look nicer."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:784
+#: facebook/admin/includes/efbl-customizer.php:899
+#: instagram/admin/includes/class-esf-insta-customizer.php:731
+#: instagram/admin/includes/class-esf-insta-customizer.php:846
+msgid "Padding Left"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:787
+#: instagram/admin/includes/class-esf-insta-customizer.php:734
+msgid "Select the padding for the left side to make the header look nicer."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:804
+#: facebook/admin/includes/efbl-customizer.php:907
+#: facebook/admin/includes/efbl-customizer.php:1131
+#: instagram/admin/includes/class-esf-insta-customizer.php:751
+#: instagram/admin/includes/class-esf-insta-customizer.php:854
+#: instagram/admin/includes/class-esf-insta-customizer.php:1083
+msgid "Padding Right"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:807
+#: instagram/admin/includes/class-esf-insta-customizer.php:754
+msgid "Select the padding for right side to make header look more nicer."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:822
+#: instagram/admin/includes/class-esf-insta-customizer.php:769
+msgid "We are sorry, “Show Or Hide Bio” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:830
+#: instagram/admin/includes/class-esf-insta-customizer.php:777
+msgid "We are sorry, “Text Size of Bio” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:837
+#: instagram/admin/includes/class-esf-insta-customizer.php:784
+msgid "We are sorry, “Header Border Color” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:845
+#: instagram/admin/includes/class-esf-insta-customizer.php:792
+msgid "We are sorry, “Border Style” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:853
+#: instagram/admin/includes/class-esf-insta-customizer.php:800
+msgid "We are sorry, “Border Top” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:861
+#: instagram/admin/includes/class-esf-insta-customizer.php:808
+msgid "We are sorry, “Border Bottom” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:869
+#: instagram/admin/includes/class-esf-insta-customizer.php:816
+msgid "We are sorry, “Border Left” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:877
+#: instagram/admin/includes/class-esf-insta-customizer.php:824
+msgid "We are sorry, “Border Right” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:885
+#: instagram/admin/includes/class-esf-insta-customizer.php:832
+msgid "We are sorry, “Padding Top” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:893
+#: instagram/admin/includes/class-esf-insta-customizer.php:840
+msgid "We are sorry, “Padding Bottom” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:901
+#: instagram/admin/includes/class-esf-insta-customizer.php:848
+msgid "We are sorry, “Padding Left” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:909
+#: instagram/admin/includes/class-esf-insta-customizer.php:856
+msgid "We are sorry, “Padding Right” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:928
+#: instagram/admin/includes/class-esf-insta-customizer.php:877
+msgid "Background Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:931
+#: instagram/admin/includes/class-esf-insta-customizer.php:880
+msgid "Select the Background color of feed."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:943
+#: instagram/admin/includes/class-esf-insta-customizer.php:892
+msgid "Borders Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:946
+#: instagram/admin/includes/class-esf-insta-customizer.php:895
+msgid "Select the border's color in the feed"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1000
+#: facebook/admin/includes/efbl-customizer.php:1028
+#: instagram/admin/includes/class-esf-insta-customizer.php:950
+#: instagram/admin/includes/class-esf-insta-customizer.php:978
+msgid "Show Or Hide Feed Header"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1003
+#: instagram/admin/includes/class-esf-insta-customizer.php:953
+msgid "Show or Hide feed header, which holds logo, name and time"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1016
+#: facebook/admin/includes/efbl-customizer.php:1036
+#: instagram/admin/includes/class-esf-insta-customizer.php:966
+#: instagram/admin/includes/class-esf-insta-customizer.php:986
+msgid "Show Or Hide Feed Header Logo"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1019
+#: instagram/admin/includes/class-esf-insta-customizer.php:969
+msgid "Show or Hide feed header logo"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1030
+#: instagram/admin/includes/class-esf-insta-customizer.php:980
+msgid "We are sorry, “Show Or Hide Feed Header” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1038
+#: instagram/admin/includes/class-esf-insta-customizer.php:988
+msgid "We are sorry, “Show Or Hide Feed Header Logo” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1058
+#: facebook/admin/includes/efbl-customizer.php:1069
+#: instagram/admin/includes/class-esf-insta-customizer.php:1009
+#: instagram/admin/includes/class-esf-insta-customizer.php:1020
+msgid "Text Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1061
+#: instagram/admin/includes/class-esf-insta-customizer.php:1012
+msgid "Select the text color of feed."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1071
+#: instagram/admin/includes/class-esf-insta-customizer.php:1022
+msgid "We are sorry, “Text Color” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1094
+#: instagram/admin/includes/class-esf-insta-customizer.php:1046
+msgid "Select the padding top"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1114
+#: instagram/admin/includes/class-esf-insta-customizer.php:1066
+msgid "Select the padding bottom of feed."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1134
+#: instagram/admin/includes/class-esf-insta-customizer.php:1086
+msgid "Select the padding right for feed."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1151
+#: instagram/admin/includes/class-esf-insta-customizer.php:1103
+msgid "Padding  Left"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1154
+#: instagram/admin/includes/class-esf-insta-customizer.php:1106
+msgid "Select the padding left for feed."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1186
+#: instagram/admin/includes/class-esf-insta-customizer.php:1141
+msgid "Spacing"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1189
+#: instagram/admin/includes/class-esf-insta-customizer.php:1144
+msgid "Select the spacing between feeds."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1198
+#: instagram/admin/includes/class-esf-insta-customizer.php:1153
+msgid "Feed"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1199
+#: instagram/admin/includes/class-esf-insta-customizer.php:1154
+msgid "Customize the Single Feed Design In Real Time"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1219
+#: facebook/admin/includes/efbl-customizer.php:1231
+#: instagram/admin/includes/class-esf-insta-customizer.php:1174
+#: instagram/admin/includes/class-esf-insta-customizer.php:1186
+msgid "Feed Meta Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1222
+#: instagram/admin/includes/class-esf-insta-customizer.php:1177
+msgid "Select the color for reactions, comments and share."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1233
+#: instagram/admin/includes/class-esf-insta-customizer.php:1188
+msgid "We are sorry, “Feed Meta Color” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1247
+#: facebook/admin/includes/efbl-customizer.php:1711
+msgid "Show Or Hide Reactions Counter"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1250
+msgid "Show or Hide reactions counter"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1263
+msgid "Show Or Hide Comments of feeds"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1266
+msgid "Show or Hide comments of feed"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1279
+msgid "Show Or Hide Shares Counter"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1282
+msgid "Show or Hide shares counter"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1295
+#: instagram/admin/includes/class-esf-insta-customizer.php:1233
+msgid "Show Or Hide Feed Caption"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1298
+msgid "Show or Hide Caption."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1315
+#: facebook/admin/includes/efbl-customizer.php:1455
+#: instagram/admin/includes/class-esf-insta-customizer.php:1252
+#: instagram/admin/includes/class-esf-insta-customizer.php:1390
+msgid "Show Or Hide Open PopUp Icon"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1318
+msgid "Show or Hide Open PopUp Icon"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1331
+#: facebook/admin/includes/efbl-customizer.php:1463
+#: instagram/admin/includes/class-esf-insta-customizer.php:1267
+#: instagram/admin/includes/class-esf-insta-customizer.php:1398
+msgid "Open PopUp Icon color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1334
+#: instagram/admin/includes/class-esf-insta-customizer.php:1270
+msgid "Select the icon color which shows on feed hover for opening popup."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1346
+#: facebook/admin/includes/efbl-customizer.php:1471
+#: instagram/admin/includes/class-esf-insta-customizer.php:1282
+#: instagram/admin/includes/class-esf-insta-customizer.php:1406
+msgid "Feed Type Icon color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1349
+#: instagram/admin/includes/class-esf-insta-customizer.php:1285
+msgid "Select the icon color for feed types like video and carousel"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1363
+#: facebook/admin/includes/efbl-customizer.php:1366
+msgid "Show Or Hide View On Facebook Button"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1379
+#: facebook/admin/includes/efbl-customizer.php:1382
+#: instagram/admin/includes/class-esf-insta-customizer.php:1315
+msgid "Show Or Hide Share Button"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1395
+#: instagram/admin/includes/class-esf-insta-customizer.php:1330
+msgid "Meta Buttons Background Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1398
+#: instagram/admin/includes/class-esf-insta-customizer.php:1333
+msgid "Select the background color for share and view on the Facebook button."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1410
+#: instagram/admin/includes/class-esf-insta-customizer.php:1345
+msgid "Meta Buttons Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1413
+#: instagram/admin/includes/class-esf-insta-customizer.php:1348
+msgid "Select the color for share and view on the Facebook button."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1425
+#: instagram/admin/includes/class-esf-insta-customizer.php:1360
+msgid "Meta Buttons Hover Background Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1428
+#: instagram/admin/includes/class-esf-insta-customizer.php:1363
+msgid "Select the hover background color for share and view on Facebook button."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1440
+#: instagram/admin/includes/class-esf-insta-customizer.php:1375
+msgid "Meta Buttons Hover Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1443
+#: instagram/admin/includes/class-esf-insta-customizer.php:1378
+msgid "Select the hover color for share and view on the Facebook button."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1457
+#: instagram/admin/includes/class-esf-insta-customizer.php:1392
+msgid "We are sorry, “Show Or Hide Open PopUp Icon” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1465
+#: instagram/admin/includes/class-esf-insta-customizer.php:1400
+msgid "We are sorry, “Open PopUp Icon color” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1473
+#: instagram/admin/includes/class-esf-insta-customizer.php:1408
+msgid "We are sorry, “Feed Type Icon color” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1479
+#: instagram/admin/includes/class-esf-insta-customizer.php:1414
+msgid "Show Or Hide Feed Call To Action Buttons"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1481
+#: instagram/admin/includes/class-esf-insta-customizer.php:1416
+msgid "We are sorry, “Show Or Hide Feed Call To Action Buttons” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1500
+#: facebook/admin/includes/efbl-customizer.php:1523
+#: instagram/admin/includes/class-esf-insta-customizer.php:1435
+#: instagram/admin/includes/class-esf-insta-customizer.php:1458
+msgid "Feed Hover Shadow Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1502
+#: instagram/admin/includes/class-esf-insta-customizer.php:1437
+msgid "Select the shadow color which shows on feed hover."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1525
+#: instagram/admin/includes/class-esf-insta-customizer.php:1460
+msgid "We are sorry, “Feed Hover Shadow Color” is a premium feature."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1539
+#: instagram/admin/includes/class-esf-insta-customizer.php:1474
+msgid "Media lightbox"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1540
+#: instagram/admin/includes/class-esf-insta-customizer.php:1475
+msgid "Customize the PopUp In Real Time"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1557
+#: instagram/admin/includes/class-esf-insta-customizer.php:1492
+msgid "Sidebar Background Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1560
+#: instagram/admin/includes/class-esf-insta-customizer.php:1495
+msgid "Select the background color of PopUp Sidebar."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1572
+#: instagram/admin/includes/class-esf-insta-customizer.php:1507
+msgid "Sidebar Content Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1575
+#: instagram/admin/includes/class-esf-insta-customizer.php:1510
+msgid "Select the content color of PopUp Sidebar."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1587
+#: instagram/admin/includes/class-esf-insta-customizer.php:1522
+msgid "Show Or Hide PopUp Header"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1590
+#: instagram/admin/includes/class-esf-insta-customizer.php:1525
+msgid "Show or Hide PopUp header."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1603
+#: instagram/admin/includes/class-esf-insta-customizer.php:1538
+msgid "Show Or Hide Header Logo"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1606
+#: instagram/admin/includes/class-esf-insta-customizer.php:1541
+msgid "Show or Hide header logo."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1619
+#: instagram/admin/includes/class-esf-insta-customizer.php:1554
+msgid "Header Title Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1622
+#: instagram/admin/includes/class-esf-insta-customizer.php:1557
+msgid "Select the color of header title."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1634
+#: instagram/admin/includes/class-esf-insta-customizer.php:1569
+msgid "Post Time Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1637
+#: instagram/admin/includes/class-esf-insta-customizer.php:1572
+msgid "Select the color of post time."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1649
+#: instagram/admin/includes/class-esf-insta-customizer.php:1584
+msgid "Show Or Hide Caption"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1652
+#: instagram/admin/includes/class-esf-insta-customizer.php:1587
+msgid "Show or Hide caption."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1665
+#: instagram/admin/includes/class-esf-insta-customizer.php:1600
+msgid "Show Or Hide Meta Section"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1668
+#: instagram/admin/includes/class-esf-insta-customizer.php:1603
+msgid "Show or Hide Meta Section. Like shares, reactions, and view on Facebook."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1681
+#: instagram/admin/includes/class-esf-insta-customizer.php:1616
+msgid "Meta Border Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1684
+#: instagram/admin/includes/class-esf-insta-customizer.php:1619
+msgid "Select the meta background color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1696
+#: instagram/admin/includes/class-esf-insta-customizer.php:1631
+msgid "Meta Content Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1699
+#: instagram/admin/includes/class-esf-insta-customizer.php:1634
+msgid "Select the meta content color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1714
+msgid "Show or Hide reactions counter."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1727
+#: instagram/admin/includes/class-esf-insta-customizer.php:1217
+#: instagram/admin/includes/class-esf-insta-customizer.php:1661
+msgid "Show Or Hide Comments Counter"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1730
+msgid "Show or Hide comments counter."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1743
+msgid "Show Or Hide View On Facebook Link"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1746
+msgid "Show or Hide view on facebook link"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1759
+#: instagram/admin/includes/class-esf-insta-customizer.php:1691
+msgid "Show Or Hide Comments"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1762
+#: instagram/admin/includes/class-esf-insta-customizer.php:1694
+msgid "Show or Hide comments"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1778
+#: instagram/admin/includes/class-esf-insta-customizer.php:1710
+msgid "Comments Color"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1781
+#: instagram/admin/includes/class-esf-insta-customizer.php:1713
+msgid "Select the color of comments."
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1791
+#: instagram/admin/includes/class-esf-insta-customizer.php:1723
+msgid "Media Lightbox Settings"
+msgstr ""
+
+#: facebook/admin/includes/efbl-customizer.php:1793
+msgid ""
+"We are sorry, Media Lightbox Settings are not included in your plan. Please upgrade "
+"to the premium version to unlock the following settings<ul>\n"
+"                \t\t\t\t\t <li>Sidebar Background Color</li>\n"
+"                \t\t\t\t\t <li>Sidebar Content Color</li>\n"
+"                \t\t\t\t\t <li>Show Or Hide PopUp Header</li>\n"
+"                \t\t\t\t\t <li>Show Or Hide Header Logo</li>\n"
+"                \t\t\t\t\t <li>Header Title Color</li>\n"
+"                \t\t\t\t\t <li>Post Time Color</li>\n"
+"                \t\t\t\t\t <li>Show Or Hide Caption</li>\n"
+"                \t\t\t\t\t <li>Show Or Hide Meta Section</li>\n"
+"                \t\t\t\t\t <li>Meta Background Color</li>\n"
+"                \t\t\t\t\t <li>Meta Content Color</li>\n"
+"                \t\t\t\t\t <li>Show Or Hide Reactions Counter</li>\n"
+"                \t\t\t\t\t <li>Show Or Hide Comments Counter</li>\n"
+"                \t\t\t\t\t <li>Show Or Hide View On Facebook Link</li>\n"
+"                \t\t\t\t\t <li>Show Or Hide Comments</li>\n"
+"                \t\t\t\t\t <li>Comments Background Color</li>\n"
+"                \t\t\t\t\t <li>Comments Color</li>\n"
+"                \t\t\t\t\t </ul>"
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:34
+msgid "Facebook Skins"
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:60
+#: instagram/admin/includes/class-esf-insta-skins.php:122
+msgid "Skin - Half Width"
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:61
+msgid ""
+"This is the half width demo skin created by plugin automatically with default "
+"values. You can edit it and change the look & feel of your Facebook Feeds."
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:72
+#: instagram/admin/includes/class-esf-insta-skins.php:145
+msgid "Skin - Full Width"
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:73
+msgid ""
+"This is the Full width demo skin created by plugin automatically with default "
+"values. You can edit it and change the look & feel of your Facebook Feeds."
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:83
+msgid "Skin - Thumbnail"
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:84
+msgid ""
+"This is the Thumbnail demo skin created by plugin automatically with default values. "
+"You can edit it and change the look & feel of your Facebook Feeds."
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:119
+#: instagram/admin/includes/class-esf-insta-skins.php:61
+msgid "Skin - Grid"
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:120
+msgid ""
+"This is the Grid demo skin created by plugin automatically with default values. You "
+"can edit it and change the look & feel of your Facebook Feeds."
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:140
+#: instagram/admin/includes/class-esf-insta-skins.php:160
+msgid "Skin - Masonry"
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:141
+msgid ""
+"This is the Masonry demo skin created by plugin automatically with default values. "
+"You can edit it and change the look & feel of your Facebook Feeds."
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:158
+#: instagram/admin/includes/class-esf-insta-skins.php:175
+msgid "Skin - Carousel"
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:159
+msgid ""
+"This is the Carousel demo skin created by plugin automatically with default values. "
+"You can edit it and change the look & feel of your Facebook Feeds."
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:188
+msgid "Facebook Demo - Customizer"
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:189
+msgid ""
+"[efb_feed fanpage_id=\"106704037405386\" words_limit=\"25\" show_like_box=\"1\" "
+"post_limit=\"10\" cache_unit=\"5\" cache_duration=\"days\" skin_id="
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:252
+#: facebook/admin/views/html-how-to-use-tab.php:588
+#: instagram/admin/includes/class-esf-insta-skins.php:247
+#: instagram/admin/views/html-how-to-use-tab.php:373
+msgid "Skin"
+msgstr ""
+
+#: facebook/admin/includes/efbl-skins.php:270
+msgid "No skin found."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:56
+#: instagram/admin/views/html-admin-page-mif.php:75
+msgid "1"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:56
+#: facebook/admin/views/html-how-to-use-tab.php:93
+#: instagram/admin/views/html-admin-page-mif.php:75
+msgid "Authenticate"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:61
+#: instagram/admin/views/html-admin-page-mif.php:81
+msgid "2"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:61
+msgid "Use (Display)"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:66
+#: instagram/admin/views/html-admin-page-mif.php:88
+msgid "3"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:66
+#: instagram/admin/views/html-admin-page-mif.php:88
+msgid "Customize (skins)"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:71
+#: instagram/admin/views/html-admin-page-mif.php:95
+msgid "Moderate"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:73
+#: instagram/admin/views/html-admin-page-mif.php:97
+msgid "Pro"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:80
+msgid "Facebook Like box(Page Plugin)"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:85
+#: instagram/admin/views/html-admin-page-mif.php:106
+msgid "Clear Cache"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:95
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:117
+msgid "Instagram"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:214
+msgid ""
+"Sorry, the Plugin is unable to get the page data. Please delete the access token and "
+"select pages in the second step of authentication to give permission."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:218
+msgid "Connect My Facebook Pages"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:234
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:254
+#: instagram/admin/views/html-admin-page-mif.php:139
+#: instagram/admin/views/html-admin-page-mif.php:156
+#: instagram/admin/views/html-skins-tab.php:591
+msgid "Are you sure?"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:235
+#: instagram/admin/views/html-admin-page-mif.php:140
+msgid ""
+"Do you really want to delete the access token? It will delete all the pages data, "
+"access tokens, and permissions given to the app."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:237
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:257
+#: instagram/admin/views/html-admin-page-mif.php:142
+#: instagram/admin/views/html-admin-page-mif.php:159
+#: instagram/admin/views/html-skins-tab.php:594
+msgid "Cancel"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:239
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:259
+#: facebook/admin/views/html-skins-tab.php:220
+#: facebook/admin/views/html-skins-tab.php:267
+#: facebook/admin/views/html-skins-tab.php:309
+#: facebook/admin/views/html-skins-tab.php:352
+#: instagram/admin/views/html-admin-page-mif.php:144
+#: instagram/admin/views/html-admin-page-mif.php:161
+#: instagram/admin/views/html-skins-tab.php:274
+#: instagram/admin/views/html-skins-tab.php:353
+#: instagram/admin/views/html-skins-tab.php:422
+#: instagram/admin/views/html-skins-tab.php:492
+#: instagram/admin/views/html-skins-tab.php:562
+#: instagram/admin/views/html-skins-tab.php:596
+msgid "Delete"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:255
+#: instagram/admin/views/html-skins-tab.php:592
+msgid ""
+"Do you really want to delete the skin? It will delete all the settings values of the "
+"skin."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:273
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:295
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:317
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:337
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:358
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:383
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:408
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:430
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:452
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:474
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:496
+#: instagram/admin/views/html-admin-page-mif.php:202
+#: instagram/admin/views/html-admin-page-mif.php:228
+#: instagram/admin/views/html-admin-page-mif.php:254
+#: instagram/admin/views/html-admin-page-mif.php:280
+#: instagram/admin/views/html-how-to-use-tab.php:154
+#: instagram/admin/views/html-how-to-use-tab.php:260
+#: instagram/admin/views/html-how-to-use-tab.php:315
+msgid "Premium Feature"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:274
+msgid ""
+"We're sorry, posts filter is not included in your plan. Please upgrade to premium "
+"version to unlock this and all other cool features."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:276
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:298
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:340
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:361
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:386
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:518
+#: instagram/admin/views/html-admin-page-mif.php:205
+#: instagram/admin/views/html-admin-page-mif.php:231
+#: instagram/admin/views/html-admin-page-mif.php:257
+#: instagram/admin/views/html-admin-page-mif.php:283
+#: instagram/admin/views/html-admin-page-mif.php:304
+msgid "Check out the demo"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:278
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:300
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:320
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:342
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:363
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:388
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:410
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:432
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:454
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:476
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:498
+#, php-format
+msgid ""
+"Upgrade today and get a 30% discount! On the checkout click on \"Have a promotional "
+"code?"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:296
+msgid ""
+"Add load more button at the bottom of each feed to load more posts, events, photos, "
+"videos, or albums."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:304
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:324
+msgid "Buy Now"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:318
+msgid ""
+"We are sorry Live stream feature is not included in your plan. Please upgrade to "
+"premium version to unlock this and all other cool features."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:338
+msgid ""
+"We are sorry grid layout is not included in your plan. Please upgrade to premium "
+"version to unlock this and all other cool features."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:359
+msgid ""
+"We are sorry masonry layout is not included in your plan. Please upgrade to premium "
+"version to unlock this and all other cool features."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:384
+msgid ""
+"We are sorry carousel layout is not included in your plan. Please upgrade to premium "
+"version to unlock this and all other cool features."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:409
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:475
+msgid ""
+"We're sorry, ability to display posts from other pages not managed by you is not "
+"included in your plan. Please upgrade to premium version to unlock this and all "
+"other cool features."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:431
+msgid ""
+"We are sorry showing tabs in likebox feature is not included in your plan. Please "
+"upgrade to premium version to unlock this and all other cool features."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:453
+msgid ""
+"We are sorry showing popup on specific pages feature is not included in your plan. "
+"Please upgrade to premium version to unlock this and all other cool features."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:497
+msgid ""
+"We are sorry showing popup on exit intent feature is not included in your plan. "
+"Please upgrade to premium version to unlock this and all other cool features."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:516
+#: instagram/admin/views/html-admin-page-mif.php:302
+msgid "Multifeed Add-on"
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:517
+msgid ""
+"The Multifeed add-on gives you the ability to display multiple posts or events from "
+"multiple Facebook accounts (even not owned/managed by you) in one single feed "
+"ordered by date."
+msgstr ""
+
+#: facebook/admin/views/html-admin-page-easy-facebook-likebox.php:523
+#: instagram/admin/views/html-admin-page-mif.php:309
+msgid "Get Started"
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:143
+msgid "Let's connect your Facebook account with the plugin."
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:144
+msgid ""
+"Click the button below, log into your Facebook account and authorize the app to get "
+"access token."
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:148
+msgid "Connect My Facebook Account"
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:158
+msgid "Approved Page(s)"
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:298
+msgid ""
+"Go to your group settings page by clicking the \"Add {App Name} app\" button above "
+"in the list"
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:299
+msgid "In the \"Apps\" section click \"Add Apps\""
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:301
+msgid "Click \"Add\""
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:303
+msgid "You can now use the plugin to display a feed from your group."
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:312
+msgid ""
+"Please note: This does not give us permission to manage your Facebook pages or "
+"groups, it simply allows the plugin to see a list of the pages or groups you "
+"approved and retrieve an Access Token."
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:318
+msgid "Would you like to display a Facebook Page or Group?"
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:325
+msgid "Facebook Page"
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:331
+msgid "Facebook Group"
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:334
+#: instagram/admin/views/html-autenticate-tab.php:253
+msgid "Connect"
+msgstr ""
+
+#: facebook/admin/views/html-authenticate-tab.php:343
+msgid "Select Facebook group(s) from the list to show feed"
+msgstr ""
+
+#: facebook/admin/views/html-clear-cache-tab.php:15
+msgid "Cached Pages"
+msgstr ""
+
+#: facebook/admin/views/html-clear-cache-tab.php:16
+msgid ""
+"Following are the pages cached data from Facebook API. Delete the cache to refresh "
+"your feeds manually"
+msgstr ""
+
+#: facebook/admin/views/html-clear-cache-tab.php:60
+msgid "Page(s) Bio"
+msgstr ""
+
+#: facebook/admin/views/html-clear-cache-tab.php:100
+msgid "Page(s) Feed"
+msgstr ""
+
+#: facebook/admin/views/html-clear-cache-tab.php:136
+msgid "Group(s) Feed"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:26
+#: facebook/admin/views/html-likebox-tab.php:22
+#: instagram/admin/views/html-how-to-use-tab.php:33
+msgid "How to use this plugin?"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:27
+#: instagram/admin/views/html-how-to-use-tab.php:39
+msgid ""
+"Copy and paste the following shortcode in any page, post or text widget to display "
+"the feed."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:36
+msgid "Page Feed"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:71
+msgid "Group Feed"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:92
+msgid "It looks like you did not authenticate the plugin. Please go to "
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:93
+msgid ""
+"page and click on the \"Connect My Facebook Account\" button and approve page(s) or "
+"group(s) from Facebook authentication process"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:98
+#: facebook/admin/views/html-likebox-tab.php:40
+#: instagram/admin/views/html-how-to-use-tab.php:60
+msgid "Need More Options?"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:100
+#: facebook/admin/views/html-likebox-tab.php:41
+#: instagram/admin/views/html-how-to-use-tab.php:61
+msgid "Use the following shortcode generator to further customize the shortcode."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:105
+#: facebook/admin/views/html-likebox-tab.php:45
+msgid "How to use shortcode?"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:107
+#: facebook/admin/views/html-likebox-tab.php:47
+msgid "Generate the shortcode using the shortcode generator below."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:108
+#: facebook/admin/views/html-likebox-tab.php:48
+msgid ""
+"Copy the shortcode in the left column or generate shortcode if you need more options."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:109
+#: facebook/admin/views/html-how-to-use-tab.php:479
+#: facebook/admin/views/html-likebox-tab.php:49
+#: facebook/admin/views/html-likebox-tab.php:242
+msgid "Paste in the page/post content or in text widget"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:115
+#: facebook/admin/views/html-likebox-tab.php:56
+msgid "Shortcode Generator"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:123
+#: facebook/admin/views/html-moderate-tab.php:23
+msgid "Page"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:124
+#: facebook/admin/views/html-moderate-tab.php:24
+msgid "Group"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:126
+#: facebook/admin/views/html-moderate-tab.php:26
+msgid "Feed type"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:157
+#: facebook/admin/views/html-moderate-tab.php:53
+msgid ""
+"No page(s) found, Please connect your Facebook page with plugin first from "
+"authenticate tab"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:162
+#: facebook/admin/views/html-moderate-tab.php:58
+msgid "Select Page"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:167
+msgid ""
+"Multifeed Add-on: Display posts from multiple pages (even not owned by you) in "
+"single feed (pro-addon)"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:192
+#: facebook/admin/views/html-moderate-tab.php:83
+msgid ""
+"No group(s) found, Please connect your Facebook group with plugin first from "
+"authenticate tab"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:197
+#: facebook/admin/views/html-moderate-tab.php:88
+msgid "Select Group"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:209
+#: facebook/admin/views/html-how-to-use-tab.php:542
+msgid "Access Token (Optional)"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:221
+msgid "multiple pages"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:223
+#: facebook/admin/views/html-how-to-use-tab.php:268
+msgid "Any other page ID"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:233
+#: facebook/admin/views/html-how-to-use-tab.php:278
+#: facebook/includes/easy-custom-facebook-feed-widget.php:267
+msgid "Images"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:234
+#: facebook/admin/views/html-how-to-use-tab.php:279
+#: facebook/includes/easy-custom-facebook-feed-widget.php:266
+msgid "Videos"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:235
+#: facebook/admin/views/html-how-to-use-tab.php:280
+#: facebook/admin/views/html-likebox-tab.php:87
+#: facebook/includes/easy-custom-facebook-feed-widget.php:264
+#: facebook/includes/easy-facebook-page-plugin-widget.php:119
+msgid "Events"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:236
+#: facebook/admin/views/html-how-to-use-tab.php:255
+#: facebook/admin/views/html-how-to-use-tab.php:281
+#: facebook/includes/easy-custom-facebook-feed-widget.php:265
+msgid "Albums"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:237
+#: facebook/admin/views/html-how-to-use-tab.php:282
+#: facebook/includes/easy-custom-facebook-feed-widget.php:263
+msgid "Mentioned"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:239
+#: facebook/admin/views/html-how-to-use-tab.php:284
+msgid "Filter Posts"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:296
+msgid ""
+"Due to recent changes by Facebook in the API. You need to create your own "
+"application in order to display events on your site."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:297
+msgid "Please follow the steps in this guide"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:299
+msgid "to create the application. Note: It is required only to display events."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:309
+#: facebook/includes/easy-custom-facebook-feed-widget.php:290
+msgid "Upcoming"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:310
+#: facebook/includes/easy-custom-facebook-feed-widget.php:291
+msgid "Past"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:311
+#: facebook/includes/easy-custom-facebook-feed-widget.php:292
+msgid "All"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:313
+msgid "Filter Events"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:339
+msgid "Grid Skin | Layout: Grid (pro)"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:340
+msgid "Grid Masonry | Layout: Masonry (pro)"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:341
+msgid "Grid Carousel | Layout: Carousel (pro)"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:346
+#: instagram/admin/views/html-how-to-use-tab.php:193
+msgid "Select skin and layout"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:358
+msgid "Number of posts to display"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:368
+#: facebook/admin/views/html-how-to-use-tab.php:606
+msgid "Number of words in caption/content"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:380
+#: instagram/admin/views/html-how-to-use-tab.php:215
+#: instagram/admin/views/html-how-to-use-tab.php:400
+msgid "Cache Unit"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:389
+#: facebook/includes/easy-custom-facebook-feed-widget.php:447
+#: instagram/admin/views/html-how-to-use-tab.php:221
+#: instagram/includes/esf-instagram-feed-widget.php:350
+msgid "Minutes"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:390
+#: facebook/includes/easy-custom-facebook-feed-widget.php:445
+#: instagram/admin/views/html-how-to-use-tab.php:222
+#: instagram/includes/esf-instagram-feed-widget.php:348
+msgid "Hours"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:392
+#: facebook/includes/easy-custom-facebook-feed-widget.php:449
+#: instagram/admin/views/html-how-to-use-tab.php:223
+#: instagram/includes/esf-instagram-feed-widget.php:352
+msgid "Days"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:394
+#: instagram/admin/views/html-how-to-use-tab.php:225
+#: instagram/admin/views/html-how-to-use-tab.php:409
+msgid "Cache Duration"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:408
+#: facebook/admin/views/html-how-to-use-tab.php:419
+#: facebook/admin/views/html-how-to-use-tab.php:633
+#: facebook/frontend/views/html-feed-footer.php:26
+#: facebook/includes/easy-custom-facebook-feed-widget.php:370
+#: facebook/includes/easy-custom-facebook-feed-widget.php:379
+#: instagram/admin/views/html-how-to-use-tab.php:239
+#: instagram/admin/views/html-how-to-use-tab.php:250
+#: instagram/admin/views/html-how-to-use-tab.php:418
+#: instagram/frontend/views/html-feed-footer.php:49
+#: instagram/includes/esf-instagram-feed-widget.php:319
+#: instagram/includes/esf-instagram-feed-widget.php:327
+msgid "Load More"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:433
+msgid "Show Likebox"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:448
+#: facebook/admin/views/html-how-to-use-tab.php:458
+#: facebook/admin/views/html-how-to-use-tab.php:643
+msgid "Show live stream only"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:470
+#: instagram/admin/views/html-how-to-use-tab.php:281
+msgid "Open links in new tab"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:475
+#: facebook/admin/views/html-likebox-tab.php:238
+#: instagram/admin/views/html-how-to-use-tab.php:334
+msgid "Generate"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:493
+#: facebook/admin/views/html-likebox-tab.php:256
+msgid "How to use Widget?"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:495
+#: facebook/admin/views/html-likebox-tab.php:258
+msgid "Go to Appearance > Widgets."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:496
+msgid "Look for Easy Facebook Feed widget in available widgets section."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:497
+#: facebook/admin/views/html-likebox-tab.php:260
+msgid "Drag and drop the widget to any of your active sidebar."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:498
+msgid ""
+"Change default values with your requirements like fanpage ID of your page and post "
+"layout etc."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:499
+msgid "Click the save button and visit your site to see feeds in widget"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:502
+#: facebook/admin/views/html-likebox-tab.php:265
+msgid "Widgets"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:509
+msgid "Unable to understand shortcode parameters?"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:510
+msgid ""
+"No worries, Each shortcode parameter is explained below first read them and generate "
+"your shortocde."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:515
+msgid "Feed Type"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:518
+msgid ""
+"Select which type of feed you want to display. You can select either Page or Group"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:524
+msgid "Pages"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:527
+msgid ""
+"List of pages you approved for plugin to get the feeds. Select the page you want to "
+"display feeds."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:533
+msgid "Groups"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:536
+msgid ""
+"List of groups you approved for plugin to get the feeds. Select the group you want "
+"to display feeds"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:545
+msgid ""
+"Access Token provided from Facebook to display your page feeds. If you have your own "
+"Facebook app and retrieved access token you can use that to display your feed but "
+"this is optional if you don't have your app the default access token will be used. "
+"Please note: Your Access token is required to show your page events you can follow "
+"the steps explained "
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:547
+msgid "here"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:547
+msgid "This step is only required for events filter"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:554
+msgid "Other Pages"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:555
+#: facebook/admin/views/html-how-to-use-tab.php:568
+#: facebook/admin/views/html-how-to-use-tab.php:579
+#: facebook/admin/views/html-how-to-use-tab.php:634
+#: facebook/admin/views/html-how-to-use-tab.php:644
+#: facebook/admin/views/html-likebox-tab.php:288
+#: instagram/admin/views/html-how-to-use-tab.php:418
+msgid "pro"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:559
+msgid ""
+"You can display any other public page feed which you don't owns/manage. eg:gopro"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:567
+msgid "Filter posts"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:572
+msgid ""
+"You can filter page feed by mentioned, events, albums, videos and images. Select any "
+"of them to display only specific type of posts like page mentioned only posts, pages "
+"events only, page albums only, page videos only and page images only."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:578
+msgid "Events Filter"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:582
+#: facebook/includes/easy-custom-facebook-feed-widget.php:295
+msgid ""
+"Filter events to display past, upcoming or all events. Default value is Upcoming"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:591
+msgid ""
+"Skins let's you totally customize the look and feel of your feed in real time. Skin "
+"holds all the design settings like feed layout, page header and single post colors, "
+"margins and alot of cool settings seprately. You can create new skin from Facebook "
+"Likebox - ESPF > Facebook > Skins tab."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:600
+msgid ""
+"You can set number of posts to display on your website page. Like if you set 10 only "
+"first 10 posts from your page will retrieve."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:609
+msgid ""
+"You can set number of words in post description. Like if you set 20 only 20 words "
+"from feed description will display."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:615
+msgid "Cache unit"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:618
+msgid ""
+"Feeds Will be automatically refreshed after selected time interval. In this setting, "
+"the possible values are any number. Recommended value is 5"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:624
+msgid "Cache duration"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:627
+msgid ""
+"Define cache duration to refresh feeds automatically. Like after specified minutes/"
+"hours/days feeds would be refreshed. Recommended value is days"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:637
+#: instagram/admin/views/html-how-to-use-tab.php:421
+msgid ""
+"Load More button at the bottom of each feed to infinitely load more posts, events, "
+"photos, videos, or albums."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:647
+msgid "Display only live stream post when page goes live"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:653
+msgid "Show likebox"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:656
+msgid "It will let you show the page like box or the page plugin at the end of feeds."
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:662
+msgid "Links in new tab"
+msgstr ""
+
+#: facebook/admin/views/html-how-to-use-tab.php:665
+msgid ""
+"If checked all links in feeds will be opened in a new browser tab instead of current "
+"tab."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:23
+msgid ""
+"Copy and paste the following shortcode in any page, post or text widget to display "
+"the likebox/page plugin."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:63
+msgid "Your page full URL"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:73
+#: facebook/admin/views/html-likebox-tab.php:109
+#: facebook/admin/views/html-likebox-tab.php:287
+msgid "Tabs"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:80
+#: facebook/includes/easy-facebook-page-plugin-widget.php:109
+msgid "Timeline"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:94
+#: facebook/includes/easy-facebook-page-plugin-widget.php:128
+msgid "Messages"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:122
+msgid "Box width"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:133
+msgid "Box height"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:154
+msgid "Select language"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:165
+msgid "Facebook App ID(optional)"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:177
+#: facebook/admin/views/html-likebox-tab.php:333
+msgid "Responsive"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:187
+msgid "Show faces"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:198
+#: facebook/admin/views/html-likebox-tab.php:351
+msgid "Show posts stream"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:208
+#: facebook/admin/views/html-likebox-tab.php:360
+msgid "Hide cover"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:221
+msgid "Small header"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:233
+#: facebook/admin/views/html-likebox-tab.php:378
+msgid "Hide call to action button"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:259
+msgid "Look for Easy Facebook Likebox widget in available widgets section."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:261
+msgid ""
+"Change default values with your requirements like fanpage url and animation etc."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:262
+msgid "Click the save button and visit your site to see likebox in widget"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:272
+#: instagram/admin/views/html-how-to-use-tab.php:347
+msgid "Unable to understand shortocde parameters?"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:273
+#: instagram/admin/views/html-how-to-use-tab.php:348
+msgid ""
+"No worries, Each shortocde parameter is explained below first read them and generate "
+"your shortocde."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:278
+msgid "Page URL"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:281
+msgid ""
+"Your Facebook fanpage URL. You can find your page URL from browser address bar when "
+"page is opened. Like https://facebook.com/easysocialfeed"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:291
+msgid ""
+"You can now have timeline, events and messages tabs in the likebox. Simply filter "
+"the feeds from stream"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:297
+msgid "Facebook APP ID"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:300
+msgid ""
+"To get any type of data from Facebook server it requires Facebook developer app "
+"which is responsible of all Facebook calls. Don't worry we have approved apps from "
+"Facebook which will be usind if you don't have app registred. You can register your "
+"app from Facebook developer account and add ID here."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:306
+msgid "Box Width"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:309
+msgid ""
+"Enter Likebox width in pixels. Likebox will be generated according to defined width."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:315
+msgid "Box Height"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:318
+msgid ""
+"Enter Likebox height in pixels. Likebox will be generated according to defined "
+"height."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:324
+msgid "Select Language"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:327
+msgid "Select the language in which you want to display your feeds."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:336
+msgid "If checked box will automatically adjust on mobile and tablet devices"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:342
+msgid "Show Faces"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:345
+msgid "If checked show profile photos of friends who already liked the page."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:354
+msgid "If checked it will show posts of the page after likebox."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:363
+msgid "If checked it will not show your Facebook page cover in likebox."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:369
+msgid "Small Header"
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:372
+msgid "If checked it will show small header. Cover picture size will be minimized."
+msgstr ""
+
+#: facebook/admin/views/html-likebox-tab.php:381
+msgid "If checked it will not display call to action button like Contact Us"
+msgstr ""
+
+#: facebook/admin/views/html-moderate-tab.php:16
+#: instagram/admin/views/html-moderate-tab.php:16
+msgid "Want to show or hide only specific posts?"
+msgstr ""
+
+#: facebook/admin/views/html-moderate-tab.php:17
+msgid "Select posts to hide or show from feed."
+msgstr ""
+
+#: facebook/admin/views/html-moderate-tab.php:22
+msgid "Select one"
+msgstr ""
+
+#: facebook/admin/views/html-moderate-tab.php:97
+#: instagram/admin/views/html-moderate-tab.php:66
+msgid "Hide the selected posts"
+msgstr ""
+
+#: facebook/admin/views/html-moderate-tab.php:103
+#: instagram/admin/views/html-moderate-tab.php:72
+msgid "Only show the selected posts"
+msgstr ""
+
+#: facebook/admin/views/html-moderate-tab.php:106
+#: instagram/admin/views/html-moderate-tab.php:76
+msgid "Get feed"
+msgstr ""
+
+#: facebook/admin/views/html-moderate-tab.php:129
+#: instagram/admin/views/html-moderate-tab.php:97
+msgid "Free 7-day PRO trial"
+msgstr ""
+
+#: facebook/admin/views/html-moderate-tab.php:135
+#: instagram/admin/views/html-how-to-use-tab.php:156
+#: instagram/admin/views/html-how-to-use-tab.php:262
+#: instagram/admin/views/html-how-to-use-tab.php:317
+#: instagram/admin/views/html-moderate-tab.php:103
+#, php-format
+msgid ""
+"Upgrade today and get a 30% discount! On the checkout click on \"Have a promotional "
+"code?\" and enter"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:25
+#: facebook/includes/easy-custom-facebook-feed-widget.php:212
+msgid ""
+"No page found, Please connect your Facebook page with plugin first from "
+"authentication tab"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:40
+msgid "Want to customize the layout of post feed?"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:41
+msgid ""
+"Skins allows you to totally customize the look and feel of your post feed in real-"
+"time using WordPress customizer. Skin holds all the design settings like feed layout "
+"(fullwidth, Grid, etc), show hide elements, page header, and single post colors, "
+"margins and a lot of cool settings separately. Questions?"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:43
+msgid "See this support document."
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:48
+#: instagram/admin/views/html-skins-tab.php:51
+msgid "Create New Skin"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:55
+#: instagram/admin/views/html-skins-tab.php:58
+msgid "Show All Skins"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:62
+#: instagram/admin/views/html-skins-tab.php:65
+msgid "Title (optional)"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:71
+#: instagram/admin/views/html-skins-tab.php:74
+msgid "Description (optional)"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:87
+#: instagram/admin/views/html-skins-tab.php:90
+msgid "Upload Skin Image"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:99
+msgid "Thumbnail"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:100
+#: instagram/admin/views/html-skins-tab.php:111
+#: instagram/admin/views/html-skins-tab.php:118
+msgid "Half Width"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:101
+#: instagram/admin/views/html-skins-tab.php:112
+#: instagram/admin/views/html-skins-tab.php:119
+msgid "Full Width"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:105
+#: facebook/admin/views/html-skins-tab.php:114
+#: instagram/admin/views/html-skins-tab.php:102
+msgid "Grid"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:106
+#: facebook/admin/views/html-skins-tab.php:116
+#: instagram/admin/views/html-skins-tab.php:109
+#: instagram/admin/views/html-skins-tab.php:116
+msgid "Masonry"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:107
+#: facebook/admin/views/html-skins-tab.php:117
+#: instagram/admin/views/html-skins-tab.php:110
+#: instagram/admin/views/html-skins-tab.php:117
+msgid "Carousel"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:123
+#: instagram/admin/views/html-skins-tab.php:124
+#: instagram/admin/views/html-skins-tab.php:228
+msgid "Layout"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:133
+msgid ""
+"Please select your Facebook page for preview. It will be for preview only, you can "
+"still use this skin for any page."
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:139
+#: instagram/admin/views/html-skins-tab.php:169
+msgid "Create"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:198
+msgid "Layout: "
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:204
+#: facebook/admin/views/html-skins-tab.php:258
+#: facebook/admin/views/html-skins-tab.php:300
+#: facebook/admin/views/html-skins-tab.php:343
+msgid ""
+"Please select your page first for preview ignorer to add/edit the skin. (This "
+"selection is only for preview, it can be used with any page.)"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:215
+#: facebook/admin/views/html-skins-tab.php:263
+#: facebook/admin/views/html-skins-tab.php:305
+#: facebook/admin/views/html-skins-tab.php:348
+#: instagram/admin/views/html-skins-tab.php:269
+#: instagram/admin/views/html-skins-tab.php:349
+#: instagram/admin/views/html-skins-tab.php:418
+#: instagram/admin/views/html-skins-tab.php:488
+#: instagram/admin/views/html-skins-tab.php:558
+msgid "Edit"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:225
+#: facebook/admin/views/html-skins-tab.php:271
+#: facebook/admin/views/html-skins-tab.php:313
+#: facebook/admin/views/html-skins-tab.php:356
+#: instagram/admin/views/html-skins-tab.php:279
+#: instagram/admin/views/html-skins-tab.php:357
+#: instagram/admin/views/html-skins-tab.php:426
+#: instagram/admin/views/html-skins-tab.php:496
+#: instagram/admin/views/html-skins-tab.php:566
+msgid "Copy Skin ID"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:252
+msgid "Skin - Grid layout"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:256
+#: facebook/admin/views/html-skins-tab.php:277
+msgid "Layout: Grid"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:279
+msgid "This is the Grid demo, skin is included in premium version"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:294
+#: instagram/admin/views/html-skins-tab.php:312
+msgid "Skin - Masonry layout"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:298
+#: facebook/admin/views/html-skins-tab.php:319
+#: instagram/admin/views/html-skins-tab.php:316
+#: instagram/admin/views/html-skins-tab.php:363
+msgid "Layout: Masonry"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:321
+#: instagram/admin/views/html-skins-tab.php:365
+msgid "This is the Masonry demo skin included in premium version"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:337
+#: instagram/admin/views/html-skins-tab.php:381
+msgid "Skin - Carousel layout"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:341
+#: facebook/admin/views/html-skins-tab.php:362
+#: instagram/admin/views/html-skins-tab.php:385
+#: instagram/admin/views/html-skins-tab.php:432
+msgid "Layout: Carousel"
+msgstr ""
+
+#: facebook/admin/views/html-skins-tab.php:364
+msgid "This is the carousel demo skin included in premium version"
+msgstr ""
+
+#: facebook/frontend/easy-facebook-likebox.php:781
+#: instagram/frontend/class-easy-facebook-likebox-instagram-frontend.php:500
+msgid "See less"
+msgstr ""
+
+#: facebook/frontend/easy-facebook-likebox.php:789
+#: instagram/frontend/class-easy-facebook-likebox-instagram-frontend.php:508
+msgid "See more"
+msgstr ""
+
+#: facebook/frontend/easy-facebook-likebox.php:1226
+#: facebook/frontend/easy-facebook-likebox.php:1672
+#: instagram/frontend/class-easy-facebook-likebox-instagram-frontend.php:381
+msgid "No Feeds Found"
+msgstr ""
+
+#: facebook/frontend/easy-facebook-likebox.php:1860
+msgid "No access token found"
+msgstr ""
+
+#: facebook/frontend/easy-facebook-likebox.php:2267
+msgid "No access token found!"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:9
+#: instagram/includes/esf-insta-helper-functions.php:268
+msgid "second"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:10
+#: instagram/includes/esf-insta-helper-functions.php:269
+msgid "seconds"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:11
+#: instagram/includes/esf-insta-helper-functions.php:270
+msgid "minute"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:12
+#: instagram/includes/esf-insta-helper-functions.php:271
+msgid "minutes"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:13
+#: instagram/includes/esf-insta-helper-functions.php:272
+msgid "hour"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:14
+#: instagram/includes/esf-insta-helper-functions.php:273
+msgid "hours"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:15
+#: instagram/includes/esf-insta-helper-functions.php:274
+msgid "day"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:16
+#: instagram/includes/esf-insta-helper-functions.php:275
+msgid "days"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:17
+#: instagram/includes/esf-insta-helper-functions.php:276
+msgid "week"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:18
+#: instagram/includes/esf-insta-helper-functions.php:277
+msgid "weeks"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:19
+#: instagram/includes/esf-insta-helper-functions.php:278
+msgid "month"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:20
+#: instagram/includes/esf-insta-helper-functions.php:279
+msgid "months"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:21
+#: instagram/includes/esf-insta-helper-functions.php:280
+msgid "year"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:22
+#: instagram/includes/esf-insta-helper-functions.php:281
+msgid "years"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:23
+#: instagram/includes/esf-insta-helper-functions.php:282
+msgid "decade"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:26
+#: facebook/frontend/views/html-feed-premium-popup.php:188
+#: facebook/frontend/views/html-feed-premium-popup.php:906
+#: facebook/frontend/views/html-feed-premium-popup.php:960
+#: instagram/includes/esf-insta-helper-functions.php:285
+msgid "ago"
+msgstr ""
+
+#: facebook/frontend/includes/core-functions.php:437
+msgid "Invalid page ID"
+msgstr ""
+
+#: facebook/frontend/views/feed.php:927
+msgid ""
+"We are unable to fetch the group’s feed due to one of the following possible reasons"
+msgstr ""
+
+#: facebook/frontend/views/feed.php:929
+msgid ""
+"You have not authenticated the plugin with your Facebook group. Please go to Easy "
+"Social Feed -> Facebook -> Authenticate -> click on “Connect My Facebook Account” "
+"button and make sure  you select Groups from the popup"
+msgstr ""
+
+#: facebook/frontend/views/feed.php:930
+msgid ""
+"You have not added Easy Social Feed (A) or Easy Social Feed (A)/(B) App in your groups "
+"settings. Please follow the steps on Easy Social Feed -> Facebook -> Authenticate -> "
+"Approved Group(s) -> Important notice to add the app in the group"
+msgstr ""
+
+#: facebook/frontend/views/feed.php:931
+msgid "Please clear the cache, reconnect the plugin and then try again"
+msgstr ""
+
+#: facebook/frontend/views/feed.php:943
+msgid "upcoming"
+msgstr ""
+
+#: facebook/frontend/views/feed.php:952
+msgid "Whoops! Nothing found according to your query, Try changing fanpage ID."
+msgstr ""
+
+#: facebook/frontend/views/html-feed-footer.php:25
+#: instagram/frontend/views/html-feed-footer.php:48
+msgid "No More Found"
+msgstr ""
+
+#: facebook/frontend/views/html-feed-footer.php:27
+#: instagram/frontend/views/html-feed-footer.php:50
+msgid "Loading"
+msgstr ""
+
+#: facebook/frontend/views/html-feed-footer.php:33
+msgid "View All Events"
+msgstr ""
+
+#: facebook/frontend/views/html-feed-header.php:40
+msgid "Category"
+msgstr ""
+
+#: facebook/frontend/views/html-feed-header.php:50
+#: instagram/frontend/views/html-feed-header.php:174
+msgid "Followers"
+msgstr ""
+
+#: facebook/frontend/views/html-feed-meta.php:36
+#: facebook/frontend/views/html-feed-meta.php:169
+msgid "Click To View All Comments"
+msgstr ""
+
+#: facebook/frontend/views/html-feed-meta.php:211
+msgid "View on Facebook"
+msgstr ""
+
+#: facebook/frontend/views/html-feed-meta.php:218
+#: instagram/frontend/views/html-post-meta.php:47
+msgid "Share"
+msgstr ""
+
+#: facebook/frontend/views/html-feed-premium-popup-reactions.php:26
+msgid "All "
+msgstr ""
+
+#: facebook/frontend/views/html-feed-premium-popup.php:818
+#: facebook/frontend/views/templates/template-carousel.php:584
+#: facebook/frontend/views/templates/template-fullwidth.php:944
+#: facebook/frontend/views/templates/template-halfwidth.php:987
+#: facebook/frontend/views/templates/template-masonry.php:614
+#: facebook/frontend/views/templates/template-thumbnail.php:958
+msgid "View Map"
+msgstr ""
+
+#: facebook/frontend/views/html-feed-premium-popup.php:947
+#: instagram/frontend/views/html-feed-popup.php:285
+msgid "View Replies"
+msgstr ""
+
+#: facebook/frontend/views/html-feed-premium-popup.php:956
+#: instagram/frontend/views/html-feed-popup.php:294
+msgid "All replies"
+msgstr ""
+
+#: facebook/frontend/views/templates/template-carousel.php:65
+#: facebook/frontend/views/templates/template-carousel.php:235
+#: facebook/frontend/views/templates/template-carousel.php:266
+#: facebook/frontend/views/templates/template-carousel.php:378
+#: facebook/frontend/views/templates/template-carousel.php:542
+#: facebook/frontend/views/templates/template-fullwidth.php:88
+#: facebook/frontend/views/templates/template-fullwidth.php:321
+#: facebook/frontend/views/templates/template-fullwidth.php:352
+#: facebook/frontend/views/templates/template-fullwidth.php:500
+#: facebook/frontend/views/templates/template-fullwidth.php:689
+#: facebook/frontend/views/templates/template-fullwidth.php:901
+#: facebook/frontend/views/templates/template-halfwidth.php:89
+#: facebook/frontend/views/templates/template-halfwidth.php:342
+#: facebook/frontend/views/templates/template-halfwidth.php:374
+#: facebook/frontend/views/templates/template-halfwidth.php:532
+#: facebook/frontend/views/templates/template-halfwidth.php:725
+#: facebook/frontend/views/templates/template-halfwidth.php:942
+#: facebook/frontend/views/templates/template-halfwidth.php:1088
+#: facebook/frontend/views/templates/template-masonry.php:68
+#: facebook/frontend/views/templates/template-masonry.php:203
+#: facebook/frontend/views/templates/template-masonry.php:266
+#: facebook/frontend/views/templates/template-masonry.php:297
+#: facebook/frontend/views/templates/template-masonry.php:409
+#: facebook/frontend/views/templates/template-masonry.php:573
+#: facebook/frontend/views/templates/template-thumbnail.php:87
+#: facebook/frontend/views/templates/template-thumbnail.php:329
+#: facebook/frontend/views/templates/template-thumbnail.php:362
+#: facebook/frontend/views/templates/template-thumbnail.php:509
+#: facebook/frontend/views/templates/template-thumbnail.php:699
+#: facebook/frontend/views/templates/template-thumbnail.php:915
+#: instagram/frontend/views/templates/template-full_width.php:91
+#: instagram/frontend/views/templates/template-half_width.php:97
+msgid "See More"
+msgstr ""
+
+#: facebook/frontend/views/templates/template-fullwidth.php:183
+#: facebook/frontend/views/templates/template-fullwidth.php:583
+#: facebook/frontend/views/templates/template-halfwidth.php:198
+#: facebook/frontend/views/templates/template-halfwidth.php:616
+#: facebook/frontend/views/templates/template-thumbnail.php:190
+#: facebook/frontend/views/templates/template-thumbnail.php:593
+msgid "Read full story"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:13
+msgid "Drag and drop this widget for facebook feed integration"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:173
+#: facebook/includes/easy-facebook-page-plugin-widget.php:80
+#: instagram/includes/esf-instagram-feed-widget.php:103
+msgid "Title:"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:187
+msgid "Select Page:"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:210
+msgid "List of connected pages, Select one to display it's feeds"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:213
+#: facebook/includes/easy-custom-facebook-feed-widget.php:333
+#: instagram/includes/esf-instagram-feed-widget.php:124
+#: instagram/includes/esf-instagram-feed-widget.php:248
+msgid "Yes, take me there"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:226
+msgid "Any Other Page ID:"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:234
+msgid "ID of any public page which you don't manage EG: maltathemes"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:241
+msgid "Access Token (Optional):"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:249
+msgid ""
+"This step is only required for events filter you can follow the steps explained <a "
+"target=_blank href=https://maltathemes.com/custom-facebook-feed/page-token/>here</"
+"a>. "
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:254
+msgid "Filter Posts:"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:270
+msgid ""
+"Select any filter to display only specific type of posts like page mentioned only "
+"posts and so on."
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:273
+msgid ""
+"We're sorry, posts filter is not included in your plan. Please upgrade to premium "
+"version to unlock this and all other cool features. "
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:274
+#: facebook/includes/easy-custom-facebook-feed-widget.php:381
+#: facebook/includes/easy-custom-facebook-feed-widget.php:405
+#: facebook/includes/easy-facebook-page-plugin-widget.php:135
+#: instagram/includes/esf-instagram-feed-widget.php:306
+#: instagram/includes/esf-instagram-feed-widget.php:329
+msgid "Upgrade to PRO"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:285
+msgid "Filter Events:"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:302
+#: instagram/includes/esf-instagram-feed-widget.php:216
+msgid "Skin:"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:322
+#: instagram/admin/views/html-how-to-use-tab.php:186
+#: instagram/includes/esf-instagram-feed-widget.php:236
+msgid "Skin - Masonry (pro)"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:323
+#: instagram/admin/views/html-how-to-use-tab.php:187
+#: instagram/includes/esf-instagram-feed-widget.php:237
+msgid "Skin - Carousel (pro)"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:324
+msgid "Skin - Grid (pro)"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:330
+msgid ""
+"Skin holds all the design settings like feed layout, page header and single post "
+"colors, margins and alot of cool settings seprately. You can create new skin from "
+"Easy Social Feed > Facebook > Customise(skins) tab."
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:332
+msgid ""
+"WHOOPS, No skin found. You can create new skin from Facebook Likebox - FTA > "
+"Facebook > Skins tab. "
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:341
+#: instagram/includes/esf-instagram-feed-widget.php:256
+msgid "Posts to display:"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:348
+#: instagram/includes/esf-instagram-feed-widget.php:263
+msgid "Define how many posts you want to display in feed"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:354
+#: instagram/includes/esf-instagram-feed-widget.php:269
+msgid "Words limit to show:"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:360
+#: instagram/includes/esf-instagram-feed-widget.php:275
+msgid "Define how many words you want to show in feed"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:380
+#: instagram/includes/esf-instagram-feed-widget.php:328
+msgid ""
+"We're sorry, load more feature is not included in your plan. Please upgrade to "
+"premium version to unlock this and all other cool features."
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:394
+#: facebook/includes/easy-custom-facebook-feed-widget.php:403
+msgid "Live stream only"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:404
+msgid ""
+"We're sorry, live stream feature is not included in your plan. Please upgrade to "
+"premium version to unlock this and all other cool features."
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:416
+msgid "Show like box"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:426
+#: instagram/includes/esf-instagram-feed-widget.php:284
+msgid "Open links in New tab"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:434
+#: instagram/includes/esf-instagram-feed-widget.php:337
+msgid "Check new posts after every:"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:452
+#: instagram/includes/esf-instagram-feed-widget.php:355
+msgid ""
+"Plugin will store the posts in database temporarily and will look for new posts "
+"after every selected time duration"
+msgstr ""
+
+#: facebook/includes/easy-custom-facebook-feed-widget.php:455
+#: facebook/includes/easy-facebook-page-plugin-widget.php:245
+msgid ""
+"Use below shortcode to display like box inside pages, posts or in any shortcode "
+"aware textarea/editor"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:10
+msgid "Easy Facebook Likebox (page plugin)"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:11
+msgid ""
+"Drag and drop this widget for Facebook Likebox or facebook fan page plugin "
+"integration"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:88
+msgid "Fanpage Url:"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:94
+msgid "Enter full URL of the page"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:98
+msgid "Tabs:"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:134
+msgid ""
+"We're sorry, Tabs feature is not included in your plan. Please upgrade to premium "
+"version to unlock this and all other cool features. "
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:141
+msgid "Application ID:"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:151
+msgid "Width:"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:160
+msgid "Height:"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:170
+msgid "Locale:"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:184
+msgid "Language of your page"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:188
+msgid "Locale (Other):"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:195
+msgid ""
+"input locale if you can not find yours in dropdown list in this format e.g fr_FR for "
+"frecnh."
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:213
+msgid "Hide Cover Photo"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:222
+msgid "Show Posts"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:230
+msgid "Hide CTA button"
+msgstr ""
+
+#: facebook/includes/easy-facebook-page-plugin-widget.php:238
+msgid "Use small header"
+msgstr ""
+
+#: includes/class-module-search.php:205 includes/class-module-search.php:210
+#: includes/class-module-search.php:215 includes/class-module-search.php:220
+msgid ""
+"Display a Facebook Page Plugin (previously Facebook Like Box) to attract visitors "
+"and gain likes from your own website."
+msgstr ""
+
+#: includes/class-module-search.php:225 includes/class-module-search.php:230
+#: includes/class-module-search.php:235 includes/class-module-search.php:240
+msgid ""
+"Display a customizable, responsive and SEO friendly feed of your Facebook posts, "
+"images, albums, videos, status, links, and events on your site."
+msgstr ""
+
+#: includes/class-module-search.php:245 includes/class-module-search.php:250
+#: includes/class-module-search.php:255 includes/class-module-search.php:260
+msgid ""
+"Display your stunning photos and videos from your Instagram account on your site. "
+"It’s mobile-friendly, highly customizable, SEO friendly and has multiple layouts."
+msgstr ""
+
+#: includes/class-module-search.php:265 includes/class-module-search.php:270
+msgid ""
+"Display anything in a popup to engage and convert your visitors into subscribers and "
+"customers."
+msgstr ""
+
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:270
+msgid "Please wait! We are generating a preview for you"
+msgstr ""
+
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:303
+msgid "Cache is successfully deleted."
+msgstr ""
+
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:403
+#: instagram/admin/views/html-autenticate-tab.php:141
+#: instagram/admin/views/html-autenticate-tab.php:171
+msgid "Connected Instagram Account"
+msgstr ""
+
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:426
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:568
+msgid "Successfully Authenticated! Taking you to next step"
+msgstr ""
+
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:472
+msgid "Connected Instagram Accounts"
+msgstr ""
+
+#: instagram/admin/class-easy-facebook-likebox-instagram-admin.php:531
+msgid "Instagram account connected with "
+msgstr ""
+
+#: instagram/admin/includes/class-esf-insta-customizer.php:82
+#: instagram/includes/esf-instagram-feed-widget.php:12
+msgid "Easy Instagram Feed"
+msgstr ""
+
+#: instagram/admin/includes/class-esf-insta-customizer.php:302
+msgid ""
+"We are sorry, Layout settings are not included in your plan. Please upgrade to the "
+"premium version to unlock the following settings<ul>\n"
+"                           <li>Number Of Columns</li>\n"
+"                           <li>Show Or Hide Load More Button</li>\n"
+"                           <li>Load More Background Color</li>\n"
+"                           <li>Load More Color</li>\n"
+"                           <li>Load More Hover Background Color</li>\n"
+"                           <li>Load More Hover Color</li>\n"
+"                           </ul>"
+msgstr ""
+
+#: instagram/admin/includes/class-esf-insta-customizer.php:1202
+#: instagram/admin/includes/class-esf-insta-customizer.php:1646
+msgid "Show Or Hide Likes Counter"
+msgstr ""
+
+#: instagram/admin/includes/class-esf-insta-customizer.php:1300
+msgid "Show Or Hide View On Instagram Button"
+msgstr ""
+
+#: instagram/admin/includes/class-esf-insta-customizer.php:1676
+msgid "Show Or Hide View On Instagram Link"
+msgstr ""
+
+#: instagram/admin/includes/class-esf-insta-customizer.php:1725
+msgid ""
+"We are sorry, Media Lightbox Settings are not included in your plan. Please upgrade "
+"to the premium version to unlock the following settings<ul>\n"
+"                           <li>Sidebar Background Color</li>\n"
+"                           <li>Sidebar Content Color</li>\n"
+"                           <li>Show Or Hide PopUp Header</li>\n"
+"                           <li>Show Or Hide Header Logo</li>\n"
+"                           <li>Header Title Color</li>\n"
+"                           <li>Post Time Color</li>\n"
+"                           <li>Show Or Hide Caption</li>\n"
+"                           <li>Show Or Hide Meta Section</li>\n"
+"                           <li>Meta Background Color</li>\n"
+"                           <li>Meta Content Color</li>\n"
+"                           <li>Show Or Hide Reactions Counter</li>\n"
+"                           <li>Show Or Hide Comments Counter</li>\n"
+"                           <li>Show Or Hide View On Facebook Link</li>\n"
+"                           <li>Show Or Hide Comments</li>\n"
+"                           <li>Comments Background Color</li>\n"
+"                           <li>Comments Color</li>\n"
+"                           </ul>"
+msgstr ""
+
+#: instagram/admin/includes/class-esf-insta-skins.php:33
+msgid "MIF Skins"
+msgstr ""
+
+#: instagram/admin/includes/class-esf-insta-skins.php:62
+#: instagram/admin/includes/class-esf-insta-skins.php:123
+#: instagram/admin/includes/class-esf-insta-skins.php:146
+#: instagram/admin/includes/class-esf-insta-skins.php:161
+#: instagram/admin/includes/class-esf-insta-skins.php:176
+msgid ""
+"This is the demo skin created by Easy Social Feed plugin automatically with default "
+"values. You can edit it and change the look & feel of your Feeds."
+msgstr ""
+
+#: instagram/admin/includes/class-esf-insta-skins.php:92
+msgid "Instagram Demo - Customizer"
+msgstr ""
+
+#: instagram/admin/includes/class-esf-insta-skins.php:267
+msgid "No skins found."
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:81
+msgid "Use"
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:157
+msgid ""
+"Do you really want to delete the access token? It will delete the access token saved "
+"in your website databse."
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:163
+msgid "If you want to disconnect plugin app also follow the steps below:"
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:165
+msgid "Go to "
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:167
+msgid "Log in with your username and password"
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:169
+msgid "Click on the user icon located on the top right of your screen."
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:170
+msgid "Go in your Instagram Settings and select “Authorized Apps”"
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:171
+msgid ""
+"You will see a list of the apps & websites that are linked to your Instagram "
+"account. Click “Revoke Access” and “Yes” on the button below which you authenticated"
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:186
+msgid ""
+"Sorry, Plugin is unable to get the accounts data. Please delete the access token and "
+"select accounts in the second step of authentication to give the permission."
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:190
+#: instagram/admin/views/html-autenticate-tab.php:130
+msgid "Connect My Instagram Account"
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:203
+msgid ""
+"We're sorry, Masonry layout is not included in your plan. Please upgrade to premium "
+"version to unlock this and all other cool features."
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:207
+#: instagram/admin/views/html-admin-page-mif.php:233
+#: instagram/admin/views/html-admin-page-mif.php:259
+#: instagram/admin/views/html-admin-page-mif.php:285
+#, php-format
+msgid ""
+"Upgrade today and get a 30% discount! On the checkout click on \"Have a promotional "
+"code?\" and enter "
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:229
+msgid ""
+"We're sorry, Carousel layout is not included in your plan. Please upgrade to premium "
+"version to unlock this and all other cool features."
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:255
+msgid ""
+"We're sorry, Half Width layout is not included in your plan. Please upgrade to "
+"premium version to unlock this and all other cool features."
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:281
+msgid ""
+"We're sorry, Full Width layout is not included in your plan. Please upgrade to "
+"premium version to unlock this and all other cool features."
+msgstr ""
+
+#: instagram/admin/views/html-admin-page-mif.php:303
+msgid ""
+"The Multifeed add-on gives you the ability to display posts of multiple Instagram "
+"accounts in one single feed ordered by date."
+msgstr ""
+
+#: instagram/admin/views/html-autenticate-tab.php:126
+msgid "Let's connect your account with plugin"
+msgstr ""
+
+#: instagram/admin/views/html-autenticate-tab.php:127
+msgid ""
+"Click the button below, log into your Instagram account and authorize the app to get "
+"access token."
+msgstr ""
+
+#: instagram/admin/views/html-autenticate-tab.php:152
+#: instagram/admin/views/html-autenticate-tab.php:197
+msgid "ID"
+msgstr ""
+
+#: instagram/admin/views/html-autenticate-tab.php:218
+msgid ""
+"Please note: This does not give us permission to manage your Instagram accounts, It "
+"simply allows the plugin to retrieve access token and show feeds to your website."
+msgstr ""
+
+#: instagram/admin/views/html-autenticate-tab.php:224
+msgid "Are you connecting a Personal or Business Instagram Profile?"
+msgstr ""
+
+#: instagram/admin/views/html-autenticate-tab.php:231
+msgid "Personal"
+msgstr ""
+
+#: instagram/admin/views/html-autenticate-tab.php:235
+msgid ""
+"The \"Personal\" option can display feeds from personal Instagram account. It is "
+"limited to display only pictures, videos, username and caption."
+msgstr ""
+
+#: instagram/admin/views/html-autenticate-tab.php:242
+msgid "Business"
+msgstr ""
+
+#: instagram/admin/views/html-autenticate-tab.php:246
+msgid ""
+"Used for displaying a user feed from a \"Business\" or \"Creator\" Instagram "
+"account. A Business or Creator account is required for displaying avatar,bio,"
+"comments and likes. See this "
+msgstr ""
+
+#: instagram/admin/views/html-autenticate-tab.php:248
+msgid "support guide"
+msgstr ""
+
+#: instagram/admin/views/html-autenticate-tab.php:248
+msgid "to convert personal account to business account."
+msgstr ""
+
+#: instagram/admin/views/html-clear-cache-tab.php:54
+msgid "Cached Feeds"
+msgstr ""
+
+#: instagram/admin/views/html-clear-cache-tab.php:55
+msgid ""
+"Following are the feeds cached data from Instagram API. Delete the cache to refresh "
+"your feeds manually"
+msgstr ""
+
+#: instagram/admin/views/html-clear-cache-tab.php:63
+msgid "Profile Bio"
+msgstr ""
+
+#: instagram/admin/views/html-clear-cache-tab.php:90
+msgid "Stories"
+msgstr ""
+
+#: instagram/admin/views/html-clear-cache-tab.php:118
+msgid "Feeds"
+msgstr ""
+
+#: instagram/admin/views/html-clear-cache-tab.php:156
+msgid "Whoops! nothing cached at the moment."
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:56
+msgid ""
+"It looks like you have not connected your Instagram account with plugin yet. Please "
+"click on the Connect \"My Instagram Account\" button from authenticate tab to get "
+"the access token from Instagram"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:91
+#: instagram/admin/views/html-moderate-tab.php:51
+#: instagram/admin/views/html-skins-tab.php:156
+#: instagram/admin/views/html-skins-tab.php:258
+#: instagram/admin/views/html-skins-tab.php:341
+#: instagram/admin/views/html-skins-tab.php:410
+#: instagram/admin/views/html-skins-tab.php:480
+#: instagram/admin/views/html-skins-tab.php:550
+#: instagram/includes/esf-instagram-feed-widget.php:154
+msgid "No accounts found, Please connect your Instagram account with plugin first"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:98
+#: instagram/admin/views/html-moderate-tab.php:58
+msgid "Account(s)"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:103
+msgid ""
+"Multifeed Add-on: Display photos and videos from multiple accounts (even not owned "
+"by you - yes works with hashtag as well) in single feed (pro- addon)"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:113
+#: instagram/includes/esf-instagram-feed-widget.php:171
+msgid "Profile Picture"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:116
+#: instagram/includes/esf-instagram-feed-widget.php:187
+msgid "Add Image"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:128
+#: instagram/admin/views/html-how-to-use-tab.php:144
+#: instagram/includes/esf-instagram-feed-widget.php:201
+msgid "Hashtag"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:132
+msgid ""
+"Hashtag feature only works with the Business profiles. Please select “Business” from "
+"Authenticate -> Connect My Instagram Account."
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:155
+msgid ""
+"We're sorry, Hashtag feature is not included in your plan. Please upgrade to premium "
+"version to unlock this and all other cool features."
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:161
+#: instagram/admin/views/html-how-to-use-tab.php:267
+#: instagram/admin/views/html-how-to-use-tab.php:322
+msgid "Upgrade now"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:188
+#: instagram/includes/esf-instagram-feed-widget.php:238
+msgid "Skin - Half Width (pro)"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:189
+#: instagram/includes/esf-instagram-feed-widget.php:239
+msgid "Skin - Full Width (pro)"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:200
+#: instagram/admin/views/html-how-to-use-tab.php:382
+msgid "Feeds Per Page"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:207
+msgid "Caption Words (Leave empty to show full text)"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:231
+#: instagram/admin/views/html-how-to-use-tab.php:354
+msgid "Wrapper Class"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:261
+msgid ""
+"We're sorry, Load more is not included in your plan. Add load more button at the "
+"bottom of each feed to load more photos and videos."
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:289
+#: instagram/admin/views/html-how-to-use-tab.php:305
+#: instagram/includes/esf-instagram-feed-widget.php:296
+#: instagram/includes/esf-instagram-feed-widget.php:304
+msgid "Show Stories"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:293
+msgid ""
+"Instagram Stories feature only works with the Business profiles. Please select "
+"“Business” from Authenticate -> Connect My Instagram Account."
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:316
+msgid "We're sorry, Account Stories are not included in your plan."
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:357
+msgid "You can easily add the custom CSS class to the wraper of your Instagram Feeds."
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:364
+msgid "Accounts"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:367
+msgid ""
+"You can display any of the connected account feeds. Select the account you wish to "
+"display the feeds from list."
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:376
+msgid ""
+"You can totally change the look and feel of your feeds section. Simply paste the "
+"Skin ID in skin_id parameter. You can find the skins in Dashboard -> My Instagram "
+"Feeds -> Skins section."
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:385
+msgid ""
+"You can show only specific feeds. Simply paste the Feeds Per Page number in "
+"feeds_per_page parameter."
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:391
+msgid "Caption Words"
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:394
+msgid ""
+"You can show limited caption words. Simply paste the Caption Words number in "
+"caption_words parameter."
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:403
+msgid ""
+"Feeds Will be automatically refreshed after particular minutes/hours/days. Simply "
+"paste the number of days in cache_unit parameter."
+msgstr ""
+
+#: instagram/admin/views/html-how-to-use-tab.php:412
+msgid ""
+"Define cache duration to refresh feeds automatically. Like after minutes/hours/days "
+"feeds would be refreshed. Simply paste the duration option in cache_duration "
+"parameter"
+msgstr ""
+
+#: instagram/admin/views/html-moderate-tab.php:17
+msgid "Select posts to hide or show from feed"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:43
+msgid "Want to customize the layout of Instagram feed?"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:44
+msgid ""
+"Skins allows you to totally customize the look and feel of your feed in real-time "
+"using WordPress customizer. Skin holds all the design settings like feed layout "
+"(fullwidth, Grid, etc), show hide elements, page header, and single post colors, "
+"margins and a lot of cool settings separately. Questions?"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:46
+msgid "See this support document"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:84
+msgid "Skin Image (optional)"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:164
+msgid "Please select your account to see in preview"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:234
+msgid ""
+"Please select your account first for preview ignorer to add/edit the skin. (This "
+"selection is only for preview, it can be used with any account)"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:294
+msgid ""
+"Whoops! No skin found. Create new skin from button above to totally customize your "
+"feed in real-time."
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:318
+#: instagram/admin/views/html-skins-tab.php:387
+#: instagram/admin/views/html-skins-tab.php:457
+#: instagram/admin/views/html-skins-tab.php:527
+msgid ""
+"Please select your page first for preview ignorer to add/edit the skin. (This "
+"selection is only for preview, it can be used with any page)"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:434
+msgid "This is the Carousel demo skin included in premium version"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:451
+msgid "Skin - Half Width layout"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:455
+#: instagram/admin/views/html-skins-tab.php:502
+msgid "Layout: Half Width"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:504
+msgid "This is the Half Width demo skin included in premium version"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:521
+msgid "Skin - Full Width layout"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:525
+msgid "Layout: full_width"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:572
+msgid "Layout: Full width"
+msgstr ""
+
+#: instagram/admin/views/html-skins-tab.php:574
+msgid "This is the full Width demo skin included in premium version"
+msgstr ""
+
+#: instagram/frontend/class-easy-facebook-likebox-instagram-frontend.php:461
+msgid "Nonce not verified"
+msgstr ""
+
+#: instagram/frontend/class-easy-facebook-likebox-instagram-frontend.php:794
+msgid "No stories found. Please add some stories on your account"
+msgstr ""
+
+#: instagram/frontend/views/feed.php:365
+msgid "Error: "
+msgstr ""
+
+#: instagram/frontend/views/html-feed-footer.php:62
+msgid "Follow on Instagram"
+msgstr ""
+
+#: instagram/frontend/views/html-feed-popup.php:106
+#: instagram/frontend/views/html-feed-popup.php:148
+#: instagram/frontend/views/html-stories-popup.php:57
+msgid "Your browser does not support the video tag"
+msgstr ""
+
+#: instagram/frontend/views/html-feed-popup.php:225
+#: instagram/frontend/views/html-post-meta.php:38
+#: instagram/frontend/views/html-stories-popup.php:106
+msgid "View on Instagram"
+msgstr ""
+
+#: instagram/frontend/views/html-feed-popup.php:232
+msgid "Write a comment..."
+msgstr ""
+
+#: instagram/includes/esf-insta-helper-functions.php:243
+msgid "K"
+msgstr ""
+
+#: instagram/includes/esf-insta-helper-functions.php:247
+msgid "M"
+msgstr ""
+
+#: instagram/includes/esf-insta-helper-functions.php:251
+msgid "B"
+msgstr ""
+
+#: instagram/includes/esf-instagram-feed-widget.php:13
+msgid "Drag and drop this widget for instagram feed integration"
+msgstr ""
+
+#: instagram/includes/esf-instagram-feed-widget.php:123
+msgid ""
+"No account found, Please connect your Instagram account with plugin first from "
+"authentication tab"
+msgstr ""
+
+#: instagram/includes/esf-instagram-feed-widget.php:129
+msgid "Select Account:"
+msgstr ""
+
+#: instagram/includes/esf-instagram-feed-widget.php:162
+msgid "List of connected accounts, Select one to display it's feeds"
+msgstr ""
+
+#: instagram/includes/esf-instagram-feed-widget.php:185
+msgid "Replace Image"
+msgstr ""
+
+#: instagram/includes/esf-instagram-feed-widget.php:209
+msgid "Enter any hashtag EG: wp"
+msgstr ""
+
+#: instagram/includes/esf-instagram-feed-widget.php:245
+msgid ""
+"Skin holds all the design settings like feed layout, page header and single post "
+"colors, margins and a lot of cool settings separately. You can create new skin from "
+"Easy Social Feed > Instagram > Customise(skins) tab."
+msgstr ""
+
+#: instagram/includes/esf-instagram-feed-widget.php:247
+msgid ""
+"WHOOPS, No skin found. You can create new skin from Easy Social Feed > Instagram > "
+"Skins tab. "
+msgstr ""
+
+#: instagram/includes/esf-instagram-feed-widget.php:305
+msgid ""
+"We're sorry, Account Stories not included in your plan. Please upgrade to premium "
+"version to unlock this and all other cool features."
+msgstr ""

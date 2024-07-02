@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "esf-fb/fullwidth",
+  "version": "0.1.0",
+  "title": "Easy Social Feed Facebook Fullwidth",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Display your Facebook feed in a Halfwidth.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "easy-social-feed-facebook-halfwidth",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

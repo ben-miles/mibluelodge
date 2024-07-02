@@ -1,0 +1,11 @@
+//
+// Visibility utilities
+//
+
+.efbl-visible {
+  @include invisible(visible);
+}
+
+.efbl-invisible {
+  @include invisible(hidden);
+}

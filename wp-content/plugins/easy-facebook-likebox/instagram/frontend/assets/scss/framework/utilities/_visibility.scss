@@ -1,0 +1,11 @@
+//
+// Visibility utilities
+//
+
+.esf-insta-visible {
+  @include invisible(visible);
+}
+
+.esf-insta-invisible {
+  @include invisible(hidden);
+}

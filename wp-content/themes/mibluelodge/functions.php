@@ -186,25 +186,9 @@ if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
 				'name'         => 'google-calendar-embed',
 				'label'        => __( 'Google Calendar Embed', 'mibluelodge' ),
 				'inline_style' => "
-				@media (max-width: 800px) {
-					.responsive-google-calendar-embed .google-calendar-embed-month {
-						display: none;
-					}
-					.responsive-google-calendar-embed .google-calendar-embed-agenda {
-						display: block;
-					}
-				 }
-				 @media (min-width: 800px) {
-					.responsive-google-calendar-embed .google-calendar-embed-month {
-						display: block;
-					}
-					.responsive-google-calendar-embed .google-calendar-embed-agenda {
-						display: none;
-					}
-				 }
-				 .responsive-google-calendar-embed {
+				.responsive-google-calendar-embed {
 					position: relative;
-					padding-bottom: 56.25%;
+					padding-bottom: 90%;
 					padding-top: 30px;
 					height: 0;
 					overflow: hidden;
@@ -217,6 +201,23 @@ if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
 					left: 0;
 					width: 100%;
 					height: 100%;
+				 }
+				.responsive-google-calendar-embed .google-calendar-embed-month {
+					display: none;
+				}
+				.responsive-google-calendar-embed .google-calendar-embed-agenda {
+					display: block;
+				}
+				 @media (min-width: 768px) {
+					.responsive-google-calendar-embed {
+						padding-bottom: 60%;
+					}
+					.responsive-google-calendar-embed .google-calendar-embed-month {
+						display: block;
+					}
+					.responsive-google-calendar-embed .google-calendar-embed-agenda {
+						display: none;
+					}
 				 }",
 			)
 		);

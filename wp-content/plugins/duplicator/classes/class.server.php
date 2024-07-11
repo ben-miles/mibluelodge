@@ -1,5 +1,7 @@
 <?php
 
+use Duplicator\Libs\Snap\SnapIO;
+use Duplicator\Libs\Snap\SnapUtil;
 use Duplicator\Libs\Snap\SnapWP;
 
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
@@ -372,5 +374,359 @@ class DUP_Server
             }
         }
         return $result;
+    }
+
+        /**
+     * Returns the server settings data
+     *
+     * @return array<mixed>
+     */
+    public static function getServerSettingsData()
+    {
+        $serverSettings = [];
+
+        //GENERAL SETTINGS
+        $serverSettings[] = [
+            'title'    => __('General', 'duplicator'),
+            'settings' => self::getGeneralServerSettings(),
+        ];
+
+        //WORDPRESS SETTINGS
+        $serverSettings[] = [
+            'title'    => __('WordPress', 'duplicator'),
+            'settings' => self::getWordPressServerSettings(),
+        ];
+
+        //PHP SETTINGS
+        $serverSettings[] = [
+            'title'    => __('PHP', 'duplicator'),
+            'settings' => self::getPHPServerSettings(),
+        ];
+
+        //MYSQL SETTINGS
+        $serverSettings[] = [
+            'title'    => __('MySQL', 'duplicator'),
+            'settings' => self::getMysqlServerSettings(),
+        ];
+
+        // Paths Info
+        $serverSettings[] = [
+            'title'    => __('Paths Info', 'duplicator'),
+            'settings' => self::getPathsSettings(),
+        ];
+
+        //URLs info
+        $urlsSettings = [];
+        foreach (DUP_Archive::getOriginalURLs() as $key => $url) {
+            $urlsSettings[] = [
+                'label'    => __('URL ', 'duplicator') . $key,
+                'logLabel' => 'URL ' . $key,
+                'value'    => $url,
+            ];
+        }
+
+        $serverSettings[] = [
+            'title'    => __('URLs Info', 'duplicator'),
+            'settings' => $urlsSettings,
+        ];
+
+        //Disk Space
+        $home_path          = duplicator_get_home_path();
+        $space              = SnapIO::diskTotalSpace($home_path);
+        $space_free         = SnapIO::diskFreeSpace($home_path);
+        $serverDiskSettings = [
+            [
+                'label'    => __('Free Space', 'duplicator'),
+                'logLabel' => 'Free Space',
+                'value'    => sprintf(
+                    __('%1$s%% -- %2$s from %3$s', 'duplicator'),
+                    round($space_free / $space * 100, 2),
+                    DUP_Util::byteSize($space_free),
+                    DUP_Util::byteSize($space)
+                ),
+                'valueNoteBottom' => __(
+                    'Note: This value is the physical servers hard-drive allocation.
+                    On shared hosts check your control panel for the "TRUE" disk space quota value.',
+                    'duplicator'
+                ),
+            ],
+        ];
+
+        $serverSettings[] = [
+            'title'    => __('Server Disk', 'duplicator'),
+            'settings' => $serverDiskSettings,
+        ];
+
+        return $serverSettings;
+    }
+
+    /**
+     * Returns the geleral server settings
+     *
+     * @return array<mixed>
+     */
+    private static function getGeneralServerSettings()
+    {
+        $ip = __("Can't detect", 'duplicator');
+        if (isset($_SERVER['SERVER_ADDR'])) {
+            $ip = $_SERVER['SERVER_ADDR'];
+        } elseif (isset($_SERVER['SERVER_NAME']) && function_exists('gethostbyname')) {
+            $ip = gethostbyname($_SERVER['SERVER_NAME']);
+        }
+
+        return [
+            [
+                'label'    => __('Duplicator Version', 'duplicator'),
+                'logLabel' => 'Duplicator Version',
+                'value'    => DUPLICATOR_VERSION,
+            ],
+            [
+                'label'    => __('Operating System', 'duplicator'),
+                'logLabel' => 'Operating System',
+                'value'    => PHP_OS,
+            ],
+            [
+                'label'     => __('Timezone', 'duplicator'),
+                'logLabel'  => 'Timezone',
+                'value'     => function_exists('wp_timezone_string') ? wp_timezone_string() :  __('Unknown', 'duplicator'),
+                'valueNote' => sprintf(
+                    _x(
+                        'This is a %1$sWordPress Setting%2$s',
+                        '%1$s and %2$s are the opening and closing anchor tags',
+                        'duplicator'
+                    ),
+                    '<a href="options-general.php">',
+                    '</a>'
+                ),
+            ],
+
+            [
+                'label'    => __('Server Time', 'duplicator'),
+                'logLabel' => 'Server Time',
+                'value'    => current_time('Y-m-d H:i:s'),
+            ],
+            [
+                'label'    => __('Web Server', 'duplicator'),
+                'logLabel' => 'Web Server',
+                'value'    => SnapUtil::sanitizeTextInput(INPUT_SERVER, 'SERVER_SOFTWARE'),
+            ],
+            [
+                'label'    => __('Loaded PHP INI', 'duplicator'),
+                'logLabel' => 'Loaded PHP INI',
+                'value'    => php_ini_loaded_file(),
+            ],
+            [
+                'label'    => __('Server IP', 'duplicator'),
+                'logLabel' => 'Server IP',
+                'value'    => $ip,
+            ],
+            [
+                'label'    => __('Client IP', 'duplicator'),
+                'logLabel' => 'Client IP',
+                'value'    => self::getClientIP(),
+            ],
+            [
+                'label'    => __('Host', 'duplicator'),
+                'logLabel' => 'Host',
+                'value'    => parse_url(get_site_url(), PHP_URL_HOST),
+            ],
+            [
+                'label'    => __('Duplicator Version', 'duplicator'),
+                'logLabel' => 'Duplicator Version',
+                'value'    => DUPLICATOR_VERSION,
+            ],
+        ];
+    }
+
+    /**
+     * Returns the WP server settings
+     *
+     * @return array<mixed>
+     */
+    private static function getWordPressServerSettings()
+    {
+        global $wp_version;
+
+        return [
+            [
+                'label'    => __('WordPress Version', 'duplicator'),
+                'logLabel' => 'WordPress Version',
+                'value'    => $wp_version,
+            ],
+            [
+                'label'    => __('Language', 'duplicator'),
+                'logLabel' => 'Language',
+                'value'    => get_bloginfo('language'),
+            ],
+            [
+                'label'    => __('Charset', 'duplicator'),
+                'logLabel' => 'Charset',
+                'value'    => get_bloginfo('charset'),
+            ],
+            [
+                'label'    => __('Memory Limit', 'duplicator'),
+                'logLabel' => 'Memory Limit',
+                'value'    => WP_MEMORY_LIMIT,
+            ],
+        ];
+    }
+
+    /**
+     * Returns the PHP server settings
+     *
+     * @return array<mixed>
+     */
+    private static function getPHPServerSettings()
+    {
+        return [
+            [
+                'label'    => __('PHP Version', 'duplicator'),
+                'logLabel' => 'PHP Version',
+                'value'    => phpversion(),
+            ],
+            [
+                'label'    => __('PHP SAPI', 'duplicator'),
+                'logLabel' => 'PHP SAPI',
+                'value'    => PHP_SAPI,
+            ],
+            [
+                'label'    => __('User', 'duplicator'),
+                'logLabel' => 'User',
+                'value'    => DUP_Util::getCurrentUser(),
+            ],
+            [
+                'label'     => __('Memory Limit', 'duplicator'),
+                'logLabel'  => 'Memory Limit',
+                'labelLink' => 'http://www.php.net/manual/en/ini.core.php#ini.memory-limit',
+                'value'     => @ini_get('memory_limit'),
+            ],
+            [
+                'label'    => __('Memory In Use', 'duplicator'),
+                'logLabel' => 'Memory In Use',
+                'value'    => size_format(memory_get_usage(true)),
+            ],
+            [
+                'label'        => __('Max Execution Time', 'duplicator'),
+                'logLabel'     => 'Max Execution Time',
+                'labelLink'    => 'http://www.php.net/manual/en/info.configuration.php#ini.max-execution-time',
+                'value'        => @ini_get('max_execution_time'),
+                'valueNote'    => sprintf(
+                    _x('(default) - %1$s', '%1$s = "is dynamic" or "value is fixed" based on settings', 'duplicator'),
+                    set_time_limit(0) ? __('is dynamic', 'duplicator') : __('value is fixed', 'duplicator')
+                ),
+                'valueTooltip' =>
+                __(
+                    'If the value shows dynamic then this means its possible for PHP to run longer than the default. 
+                    If the value is fixed then PHP will not be allowed to run longer than the default.',
+                    'duplicator'
+                ),
+            ],
+            [
+                'label'     => __('open_basedir', 'duplicator'),
+                'logLabel'  => 'open_basedir',
+                'labelLink' => 'http://php.net/manual/en/ini.core.php#ini.open-basedir',
+                'value'     => empty(@ini_get('open_basedir')) ? __('Off', 'duplicator') : @ini_get('open_basedir'),
+            ],
+            [
+                'label'     => __('Shell (exec)', 'duplicator'),
+                'logLabel'  => 'Shell (exec)',
+                'labelLink' => 'https://www.php.net/manual/en/function.exec.php',
+                'value'     => DUP_Util::hasShellExec() ? __('Is Supported', 'duplicator') : __('Not Supported', 'duplicator'),
+            ],
+            [
+                'label'    => __('Shell Exec Zip', 'duplicator'),
+                'logLabel' => 'Shell Exec Zip',
+                'value'    => (DUP_Util::getZipPath() != null) ? __('Is Supported', 'duplicator') : __('Not Supported', 'duplicator'),
+            ],
+            [
+                'label'     => __('Suhosin Extension', 'duplicator'),
+                'logLabel'  => 'Suhosin Extension',
+                'labelLink' => 'https://suhosin.org/stories/index.html',
+                'value'     => extension_loaded('suhosin') ? __('Enabled', 'duplicator') : __('Disabled', 'duplicator'),
+            ],
+            [
+                'label'    => __('Architecture', 'duplicator'),
+                'logLabel' => 'Architecture',
+                'value'    => SnapUtil::getArchitectureString(),
+            ],
+            [
+                'label'    => __('Error Log File', 'duplicator'),
+                'logLabel' => 'Error Log File',
+                'value'    => @ini_get('error_log'),
+            ],
+        ];
+    }
+
+    /**
+     * Returns the MySQL server settings
+     *
+     * @return array<mixed>
+     */
+    public static function getMysqlServerSettings()
+    {
+        return [
+            [
+                'label'    => __('Version', 'duplicator'),
+                'logLabel' => 'Version',
+                'value'    => DUP_DB::getVersion(),
+            ],
+            [
+                'label'    => __('Charset', 'duplicator'),
+                'logLabel' => 'Charset',
+                'value'    => DB_CHARSET,
+            ],
+            [
+                'label'     => __('Wait Timeout', 'duplicator'),
+                'logLabel'  => 'Wait Timeout',
+                'labelLink' => 'http://dev.mysql.com/doc/refman/5.0/en/server-system-variables.html#sysvar_wait_timeout',
+                'value'     => DUP_DB::getVariable('wait_timeout'),
+            ],
+            [
+                'label'     => __('Max Allowed Packets', 'duplicator'),
+                'logLabel'  => 'Max Allowed Packets',
+                'labelLink' => 'http://dev.mysql.com/doc/refman/5.0/en/server-system-variables.html#sysvar_max_allowed_packet',
+                'value'     => DUP_DB::getVariable('max_allowed_packet'),
+            ],
+            [
+                'label'     => __('mysqldump Path', 'duplicator'),
+                'logLabel'  => 'mysqldump Path',
+                'labelLink' => 'http://dev.mysql.com/doc/refman/5.0/en/mysqldump.html',
+                'value'     => DUP_DB::getMySqlDumpPath() !== false ? DUP_DB::getMySqlDumpPath() : __('Path Not Found', 'duplicator'),
+            ],
+        ];
+    }
+
+    /**
+     * Returns the paths settings
+     *
+     * @return array<mixed>
+     */
+    public static function getPathsSettings()
+    {
+        $pathsSettings = [
+            [
+                'label'    => __('Target root path', 'duplicator'),
+                'logLabel' => 'Target root path',
+                'value'    => DUP_Archive::getTargetRootPath(),
+            ],
+        ];
+
+        foreach (DUP_Archive::getOriginalPaths() as $key => $origPath) {
+            $pathsSettings[] = [
+                'label'    => __('Original ', 'duplicator') . $key,
+                'logLabel' => 'Original ' . $key,
+                'value'    => $origPath,
+            ];
+        }
+
+        foreach (DUP_Archive::getArchiveListPaths() as $key => $archivePath) {
+            $pathsSettings[] = [
+                'label'    => __('Archive ', 'duplicator') . $key,
+                'logLabel' => 'Archive ' . $key,
+                'value'    => $archivePath,
+            ];
+        }
+
+        return $pathsSettings;
     }
 }

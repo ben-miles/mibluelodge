@@ -13,7 +13,9 @@ use Exception;
 use Duplicator\Libs\OneClickUpgrade\PluginSilentUpgrader;
 use Duplicator\Libs\OneClickUpgrade\ConnectSkin;
 use DUP_Log;
+use DUP_Settings;
 use Duplicator\Libs\Snap\SnapJson;
+use Duplicator\Libs\Snap\SnapUtil;
 
 class ServicesEducation extends AbstractAjaxService
 {
@@ -36,6 +38,7 @@ class ServicesEducation extends AbstractAjaxService
         $this->addAjaxCall('wp_ajax_duplicator_finalize_oneclick_upr', 'finalizeOneClickUpgrade');
         $this->addAjaxCall('wp_ajax_nopriv_duplicator_lite_run_one_click_upgrade', 'oneClickUpgrade');
         $this->addAjaxCall('wp_ajax_duplicator_lite_run_one_click_upgrade', 'oneClickUpgrade');
+        $this->addAjaxCall('wp_ajax_duplicator_enable_usage_stats', 'enableUsageStats');
     }
 
     /**
@@ -45,6 +48,10 @@ class ServicesEducation extends AbstractAjaxService
      */
     public static function setEmailSubscribedCallback()
     {
+        if (EducationElements::userIsSubscribed()) {
+            return true;
+        }
+
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL, FILTER_NULL_ON_FAILURE);
         if (is_null($email)) {
             throw new \Exception('Invalid email');
@@ -58,7 +65,7 @@ class ServicesEducation extends AbstractAjaxService
 
         if (is_wp_error($response) || 200 !== wp_remote_retrieve_response_code($response)) {
             $error_msg = $response->get_error_code() . ': ' . $response->get_error_message();
-            error_log($error_msg);
+            SnapUtil::errorLog($error_msg);
             throw new \Exception($error_msg);
         }
 
@@ -320,6 +327,37 @@ class ServicesEducation extends AbstractAjaxService
         </p>
         <?php
         return ob_get_clean();
+    }
+
+    /**
+     * Enable usage stats
+     *
+     * @return void
+     */
+    public function enableUsageStats()
+    {
+        AjaxWrapper::json(
+            array(__CLASS__, 'enableUsageStatsCallback'),
+            'duplicator_enable_usage_stats',
+            SnapUtil::sanitizeTextInput(INPUT_POST, 'nonce'),
+            'manage_options'
+        );
+    }
+
+    /**
+     * Enable usage stats callback
+     *
+     * @return void
+     */
+    public static function enableUsageStatsCallback()
+    {
+        $result = true;
+        if (DUP_Settings::Get('usage_tracking') !== true) {
+            DUP_Settings::setUsageTracking(true);
+            $result = DUP_Settings::Save();
+        }
+
+        return $result && self::setEmailSubscribedCallback();
     }
 
     /**

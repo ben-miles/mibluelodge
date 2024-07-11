@@ -18,7 +18,7 @@ defined("ABSPATH") || exit;
 
 <div class="footer">
     <div class="block dup-clearfix">
-        <div class="button-wrap dup-clearfix">
+        <div class="button-wrap">
             <div class="left">
                 <a href="<?php echo esc_url($tplData['packageNonceUrl']); ?>"
                    class="dup-btn dup-btn-block dup-btn-lg dup-btn-orange">

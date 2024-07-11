@@ -559,18 +559,39 @@ class DUPX_Validation_database_service
                 return false;
             }
 
-            $dbName  = PrmMng::getInstance()->getValue(PrmMng::PARAM_DB_NAME);
-            $regex   = '/^GRANT\s+(?!USAGE)(.+)\s+ON\s+(?:\*|`' . preg_quote($dbName, '/') . '`)\..*$/';
-            $matches = null;
+            $dbName     = PrmMng::getInstance()->getValue(PrmMng::PARAM_DB_NAME);
+            $regex      = '/^GRANT\s+(?!USAGE)(.+)\s+ON\s+(\*|`.*?`)\..*$/';
+            $matches    = null;
+            $matchFound = false;
 
             while ($row = mysqli_fetch_array($queryResult)) {
-                if (preg_match($regex, $row[0], $matches)) {
+                if (!preg_match($regex, $row[0], $matches)) {
+                    continue;
+                }
+
+                if (
+                    $matches['2'] === '*' ||
+                    $matches['2'] === $dbName ||
+                    $matches['2'] === addcslashes($dbName, '_%')
+                ) {
                     Log::info('SHOW GRANTS CURRENT DB: ' . $row[0], Log::LV_DEBUG);
+                    $matchFound = true;
+                    break;
+                }
+
+                //The GRANT queries can have wildcarsds in them which we have to take into account.
+                //Turn wildcards into regex expressions and try matching the expression against the DB name.
+                $dbNameRegex = preg_replace('/(?<!\\\\)%/', '.*', $matches['2']); // unescaped % becomes .*
+                $dbNameRegex = preg_replace('/(?<!\\\\)_/', '.', $dbNameRegex);   // unescaped _ becomes .
+                if (preg_match($dbNameRegex, $dbName) === 1) {
+                    Log::info('Grant matched via Wildcard: ' . $dbNameRegex, Log::LV_DEBUG);
+                    Log::info('SHOW GRANTS CURRENT DB: ' . $row[0], Log::LV_DEBUG);
+                    $matchFound = true;
                     break;
                 }
             }
 
-            if (empty($matches)) {
+            if (!$matchFound) {
                 Log::info('GRANTS LINE OF CURRENT DB NOT FOUND');
                 return false;
             }
@@ -579,8 +600,8 @@ class DUPX_Validation_database_service
                 return true;
             }
 
-            $usrePrivileges = preg_split('/\s*,\s*/', $matches['1']);
-            if (($notGrants      = array_diff($grants, $usrePrivileges))) {
+            $userPrivileges = preg_split('/\s*,\s*/', $matches['1']);
+            if (($notGrants = array_diff($grants, $userPrivileges))) {
                 $message = "The mysql user does not have the '" . implode(', ', $notGrants) . "' permission.";
                 Log::info('NO GRANTS: ' . $message);
                 $errorMessages[] = $message;

@@ -9,6 +9,7 @@
  * @var array<string, mixed> $tplData
  */
 
+use Duplicator\Installer\Utils\LinkManager;
 use Duplicator\Utils\Email\EmailSummary;
 
 defined('ABSPATH') || exit;
@@ -31,13 +32,22 @@ $frequency = DUP_Settings::Get('email_summary_frequency');
             </select>
             <p class="description">
                 <?php
-                printf(
-                    _x(
+                $faqUrl = LinkManager::getDocUrl('how-to-disable-email-summaries', 'email_summary', 'how to disable');
+                echo sprintf(
+                    esc_html_x(
                         'You can view the email summary example %1shere%2s.',
                         '%1s and %2s are the opening and close <a> tags to the summary preview link',
                         'duplicator'
                     ),
                     '<a href="' . EmailSummary::getPreviewLink() . '" target="_blank">',
+                    '</a>'
+                ) . ' ' . sprintf(
+                    esc_html_x(
+                        'Learn %1show to disable%2s.',
+                        '%1s and %2s are opening and closing link tags to the documentation.',
+                        'duplicator'
+                    ),
+                    '<a href="' . $faqUrl . '" target="_blank" >',
                     '</a>'
                 );
                 ?>

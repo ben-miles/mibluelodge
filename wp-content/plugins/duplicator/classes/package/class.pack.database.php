@@ -620,13 +620,15 @@ class DUP_Database
      */
     protected static function mysqldumpMemoryCheck($dbSize)
     {
-        if (($mem = SnapUtil::phpIniGet('memory_limit', false)) === false) {
-            $mem = 0;
-        } else {
-            $mem = SnapUtil::convertToBytes($mem);
+        $mem        = SnapUtil::phpIniGet('memory_limit', false);
+        $memInBytes = SnapUtil::convertToBytes($mem);
+
+        // If the memory limit is unknown or unlimited (-1), return true
+        if ($mem === false || $memInBytes <= 0) {
+            return true;
         }
 
-        return (self::requiredMysqlDumpLimit($dbSize) <= $mem);
+        return (self::requiredMysqlDumpLimit($dbSize) <= $memInBytes);
     }
 
     /**

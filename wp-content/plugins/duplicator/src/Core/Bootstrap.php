@@ -28,6 +28,7 @@ use DUP_Web_Services;
 use Duplicator\Ajax\ServicesDashboard;
 use Duplicator\Ajax\ServicesEducation;
 use Duplicator\Ajax\ServicesExtraPlugins;
+use Duplicator\Ajax\ServicesTools;
 use Duplicator\Controllers\EmailSummaryPreviewPageController;
 use Duplicator\Controllers\WelcomeController;
 use Duplicator\Core\Controllers\ControllersManager;
@@ -121,6 +122,8 @@ class Bootstrap
             $extraPlugin->init();
             $educationService = new ServicesEducation();
             $educationService->init();
+            $toolsServices = new ServicesTools();
+            $toolsServices->init();
         }
     }
 

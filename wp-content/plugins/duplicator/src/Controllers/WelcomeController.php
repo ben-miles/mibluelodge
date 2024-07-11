@@ -8,6 +8,7 @@
 
 namespace Duplicator\Controllers;
 
+use Duplicator\Core\Controllers\ControllersManager;
 use Duplicator\Core\Views\TplMng;
 
 /**
@@ -115,7 +116,27 @@ class WelcomeController
             array(),
             DUPLICATOR_VERSION
         );
+        wp_enqueue_script(
+            'duplicator-onboarding',
+            DUPLICATOR_PLUGIN_URL . "assets/js/onboarding.js",
+            array('jquery'),
+            DUPLICATOR_VERSION,
+            true
+        );
+        wp_localize_script(
+            'duplicator-onboarding',
+            'duplicator_onboarding',
+            array(
+                'ajax_url'     => admin_url('admin-ajax.php'),
+                'nonce'        => wp_create_nonce("duplicator_enable_usage_stats"),
+                'email'        => wp_get_current_user()->user_email,
+                'redirect_url' => ControllersManager::getMenuLink(ControllersManager::PACKAGES_SUBMENU_SLUG)
+            )
+        );
+        wp_enqueue_style('dup-font-awesome');
+        wp_enqueue_script('dup-jquery-qtip');
         wp_enqueue_style('dup-plugin-style');
+        wp_enqueue_style('dup-jquery-qtip');
     }
 
     /**

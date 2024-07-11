@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Duplicator 1.5.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/duplicator\n"
-"POT-Creation-Date: 2024-04-17 14:56-0500\n"
+"POT-Creation-Date: 2024-06-27 11:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,15 +55,255 @@ msgstr ""
 msgid "No Log"
 msgstr ""
 
-#: classes/class.server.php:325
+#: classes/class.server.php:327
 msgid "(directory)"
+msgstr ""
+
+#: classes/class.server.php:390 views/packages/details/detail.php:92
+#: views/settings/controller.php:30 views/tools/controller.php:24
+msgid "General"
+msgstr ""
+
+#: classes/class.server.php:396 views/packages/details/detail.php:138
+#: views/packages/main/s2.scan2.php:116
+msgid "WordPress"
+msgstr ""
+
+#: classes/class.server.php:402 views/packages/details/detail.php:142
+msgid "PHP"
+msgstr ""
+
+#: classes/class.server.php:408
+msgid "MySQL"
+msgstr ""
+
+#: classes/class.server.php:414
+msgid "Paths Info"
+msgstr ""
+
+#: classes/class.server.php:422
+msgid "URL "
+msgstr ""
+
+#: classes/class.server.php:429
+msgid "URLs Info"
+msgstr ""
+
+#: classes/class.server.php:439
+msgid "Free Space"
+msgstr ""
+
+#: classes/class.server.php:442
+#, php-format
+msgid "%1$s%% -- %2$s from %3$s"
+msgstr ""
+
+#: classes/class.server.php:448
+msgid ""
+"Note: This value is the physical servers hard-drive allocation.\n"
+"                    On shared hosts check your control panel for the \"TRUE\" disk space quota value."
+msgstr ""
+
+#: classes/class.server.php:456
+msgid "Server Disk"
+msgstr ""
+
+#: classes/class.server.php:470
+msgid "Can't detect"
+msgstr ""
+
+#: classes/class.server.php:479 classes/class.server.php:534
+msgid "Duplicator Version"
+msgstr ""
+
+#: classes/class.server.php:484
+msgid "Operating System"
+msgstr ""
+
+#: classes/class.server.php:489
+msgid "Timezone"
+msgstr ""
+
+#: classes/class.server.php:491 classes/utilities/class.u.php:70
+msgid "Unknown"
+msgstr ""
+
+#: classes/class.server.php:494
+#, php-format
+msgid "This is a %1$sWordPress Setting%2$s"
+msgstr ""
+
+#: classes/class.server.php:504
+msgid "Server Time"
+msgstr ""
+
+#: classes/class.server.php:509 views/packages/main/s2.scan2.php:51
+msgid "Web Server"
+msgstr ""
+
+#: classes/class.server.php:514
+msgid "Loaded PHP INI"
+msgstr ""
+
+#: classes/class.server.php:519
+msgid "Server IP"
+msgstr ""
+
+#: classes/class.server.php:524
+msgid "Client IP"
+msgstr ""
+
+#: classes/class.server.php:529 views/packages/details/detail.php:514
+#: views/packages/main/s1.setup2.php:459
+msgid "Host"
+msgstr ""
+
+#: classes/class.server.php:552 views/packages/main/s2.scan2.php:122
+msgid "WordPress Version"
+msgstr ""
+
+#: classes/class.server.php:557
+msgid "Language"
+msgstr ""
+
+#: classes/class.server.php:562 classes/class.server.php:674
+#: views/packages/main/s1.setup2.php:511
+msgid "Charset"
+msgstr ""
+
+#: classes/class.server.php:567 classes/class.server.php:598
+msgid "Memory Limit"
+msgstr ""
+
+#: classes/class.server.php:583 views/packages/main/s1.setup1.php:109
+#: views/packages/main/s2.scan2.php:56
+msgid "PHP Version"
+msgstr ""
+
+#: classes/class.server.php:588
+msgid "PHP SAPI"
+msgstr ""
+
+#: classes/class.server.php:593 views/packages/details/detail.php:165
+#: views/packages/details/detail.php:522 views/packages/main/s1.setup2.php:498
+msgid "User"
+msgstr ""
+
+#: classes/class.server.php:604
+msgid "Memory In Use"
+msgstr ""
+
+#: classes/class.server.php:609
+msgid "Max Execution Time"
+msgstr ""
+
+#: classes/class.server.php:614
+#, php-format
+msgid "(default) - %1$s"
+msgstr ""
+
+#: classes/class.server.php:615 views/packages/main/s3.build.php:486
+msgid "is dynamic"
+msgstr ""
+
+#: classes/class.server.php:615 views/packages/main/s3.build.php:486
+msgid "value is fixed"
+msgstr ""
+
+#: classes/class.server.php:619
+msgid ""
+"If the value shows dynamic then this means its possible for PHP to run longer than the default. \n"
+"                    If the value is fixed then PHP will not be allowed to run longer than the default."
+msgstr ""
+
+#: classes/class.server.php:625
+msgid "open_basedir"
+msgstr ""
+
+#: classes/class.server.php:628 views/packages/details/detail.php:380
+#: views/packages/details/detail.php:444
+msgid "Off"
+msgstr ""
+
+#: classes/class.server.php:631
+msgid "Shell (exec)"
+msgstr ""
+
+#: classes/class.server.php:634 classes/class.server.php:639
+msgid "Is Supported"
+msgstr ""
+
+#: classes/class.server.php:634 classes/class.server.php:639
+msgid "Not Supported"
+msgstr ""
+
+#: classes/class.server.php:637
+msgid "Shell Exec Zip"
+msgstr ""
+
+#: classes/class.server.php:642
+msgid "Suhosin Extension"
+msgstr ""
+
+#: classes/class.server.php:645
+#: template/admin_pages/settings/general/general.php:190
+#: template/parts/DashboardWidget/sections-section.php:51
+#: views/packages/main/s2.scan3.php:44 views/packages/main/s2.scan3.php:414
+#: views/packages/main/s2.scan3.php:750
+msgid "Enabled"
+msgstr ""
+
+#: classes/class.server.php:645 views/packages/main/s2.scan3.php:750
+msgid "Disabled"
+msgstr ""
+
+#: classes/class.server.php:648
+msgid "Architecture"
+msgstr ""
+
+#: classes/class.server.php:653
+msgid "Error Log File"
+msgstr ""
+
+#: classes/class.server.php:669
+#: template/admin_pages/settings/general/general.php:112
+#: views/packages/details/detail.php:130
+msgid "Version"
+msgstr ""
+
+#: classes/class.server.php:679
+msgid "Wait Timeout"
+msgstr ""
+
+#: classes/class.server.php:685
+msgid "Max Allowed Packets"
+msgstr ""
+
+#: classes/class.server.php:691
+msgid "mysqldump Path"
+msgstr ""
+
+#: classes/class.server.php:694
+msgid "Path Not Found"
+msgstr ""
+
+#: classes/class.server.php:708
+msgid "Target root path"
+msgstr ""
+
+#: classes/class.server.php:716
+msgid "Original "
+msgstr ""
+
+#: classes/class.server.php:724
+msgid "Archive "
 msgstr ""
 
 #: classes/package/class.pack.database.php:600
 msgid "Shell mysql dump error. Change SQL Mode to the \"PHP Code\" in the Duplicator > Settings > Packages."
 msgstr ""
 
-#: classes/package/class.pack.database.php:749
+#: classes/package/class.pack.database.php:751
 msgid "Please contact your DataBase administrator to fix the error."
 msgstr ""
 
@@ -194,7 +434,7 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: classes/ui/class.ui.dialog.php:90 deactivation.php:155
+#: classes/ui/class.ui.dialog.php:90 deactivation.php:156
 msgid "Cancel"
 msgstr ""
 
@@ -204,10 +444,6 @@ msgstr ""
 
 #: classes/utilities/class.u.php:67
 msgid "64-bit"
-msgstr ""
-
-#: classes/utilities/class.u.php:70
-msgid "Unknown"
 msgstr ""
 
 #: classes/utilities/class.u.php:513
@@ -223,7 +459,7 @@ msgstr ""
 msgid "INVALID REQUEST: File not found, please check the backup folder for file."
 msgstr ""
 
-#: ctrls/class.web.services.php:183 deactivation.php:435
+#: ctrls/class.web.services.php:183 deactivation.php:436
 #: src/Views/AdminNotices.php:135
 msgid "Security issue"
 msgstr ""
@@ -248,104 +484,104 @@ msgstr ""
 msgid "Active package object error"
 msgstr ""
 
-#: ctrls/ctrl.tools.php:114 ctrls/ctrl.ui.php:111 deactivation.php:440
+#: ctrls/ctrl.tools.php:114 ctrls/ctrl.ui.php:111 deactivation.php:441
 msgid "Invalid Request."
 msgstr ""
 
-#: deactivation.php:66
+#: deactivation.php:67
 msgid "Need help? We are ready to answer your questions."
 msgstr ""
 
-#: deactivation.php:67
+#: deactivation.php:68
 msgid "Contact Support"
 msgstr ""
 
-#: deactivation.php:71
+#: deactivation.php:72
 msgid "It's not working on my server."
 msgstr ""
 
-#: deactivation.php:73
+#: deactivation.php:74
 msgid "Kindly share what didn't work so we can fix it in future updates..."
 msgstr ""
 
-#: deactivation.php:78
+#: deactivation.php:79
 msgid "It's too confusing to understand."
 msgstr ""
 
-#: deactivation.php:80
+#: deactivation.php:81
 msgid "Please tell us what is not clear so that we can improve it."
 msgstr ""
 
-#: deactivation.php:85
+#: deactivation.php:86
 msgid "I found a different plugin that I like better."
 msgstr ""
 
-#: deactivation.php:87
+#: deactivation.php:88
 msgid "What's the plugin name?"
 msgstr ""
 
-#: deactivation.php:91
+#: deactivation.php:92
 msgid "It does not do what I need."
 msgstr ""
 
-#: deactivation.php:93
+#: deactivation.php:94
 msgid "What does it need to do?"
 msgstr ""
 
-#: deactivation.php:97
+#: deactivation.php:98
 msgid "It's a temporary deactivation, I use the plugin all the time."
 msgstr ""
 
-#: deactivation.php:104
+#: deactivation.php:105
 #, php-format
 msgid "I'm switching over to the %s"
 msgstr ""
 
-#: deactivation.php:105
+#: deactivation.php:106
 msgid "Pro version"
 msgstr ""
 
-#: deactivation.php:147
+#: deactivation.php:148
 msgid "Quick Feedback"
 msgstr ""
 
-#: deactivation.php:149
+#: deactivation.php:150
 msgid "If you have a moment, please let us know why you are deactivating"
 msgstr ""
 
-#: deactivation.php:157 deactivation.php:380
+#: deactivation.php:158 deactivation.php:381
 msgid "Skip & Deactivate"
 msgstr ""
 
-#: deactivation.php:159
+#: deactivation.php:160
 msgid "Send & Deactivate"
 msgstr ""
 
-#: deactivation.php:163
+#: deactivation.php:164
 msgid "Your response is sent anonymously."
 msgstr ""
 
-#: deactivation.php:258 deactivation.php:260
+#: deactivation.php:259 deactivation.php:261
 msgid "Processing"
 msgstr ""
 
-#: deactivation.php:313
+#: deactivation.php:314
 msgid "Please tell us the reason so we can improve it."
 msgstr ""
 
-#: src/Ajax/ServicesEducation.php:288
+#: src/Ajax/ServicesEducation.php:295
 msgid "Invalid license JSON data."
 msgstr ""
 
-#: src/Ajax/ServicesEducation.php:315
+#: src/Ajax/ServicesEducation.php:322
 msgid "Failed to activate license for this website."
 msgstr ""
 
-#: src/Ajax/ServicesEducation.php:318
+#: src/Ajax/ServicesEducation.php:325
 msgid "Message:"
 msgstr ""
 
-#: src/Ajax/ServicesEducation.php:319
+#: src/Ajax/ServicesEducation.php:326
 msgid "Check the license key and try again, if the error persists proceed with manual activation."
 msgstr ""
 
@@ -573,102 +809,101 @@ msgstr ""
 msgid "S3-Compatible (Generic) Cloudian, Cloudn, Connectria, Constant, Exoscal, Eucalyptus, Nifty, Nimbula, Minio, etc..."
 msgstr ""
 
-#: src/Controllers/WelcomeController.php:64
 #: src/Controllers/WelcomeController.php:65
-#: template/admin_pages/welcome/intro.php:27
+#: src/Controllers/WelcomeController.php:66
 msgid "Welcome to Duplicator"
 msgstr ""
 
-#: src/Core/Bootstrap.php:255 src/Core/Bootstrap.php:511
+#: src/Core/Bootstrap.php:258 src/Core/Bootstrap.php:514
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: src/Core/Bootstrap.php:256
+#: src/Core/Bootstrap.php:259
 msgid "NEW!"
 msgstr ""
 
-#: src/Core/Bootstrap.php:260 src/Core/Bootstrap.php:261
+#: src/Core/Bootstrap.php:263 src/Core/Bootstrap.php:264
 #: views/packages/details/controller.php:76
 #: views/packages/main/s3.build.php:124 views/settings/controller.php:36
 msgid "Packages"
 msgstr ""
 
-#: src/Core/Bootstrap.php:270 src/Core/Bootstrap.php:271
+#: src/Core/Bootstrap.php:273 src/Core/Bootstrap.php:274
 #: template/mocks/import/import.php:17 views/packages/main/packages.php:128
 msgid "Import"
 msgstr ""
 
-#: src/Core/Bootstrap.php:281 src/Core/Bootstrap.php:282
+#: src/Core/Bootstrap.php:284 src/Core/Bootstrap.php:285
 #: template/mocks/schedule/schedules.php:16
 msgid "Schedules"
 msgstr ""
 
-#: src/Core/Bootstrap.php:292 src/Core/Bootstrap.php:293
+#: src/Core/Bootstrap.php:295 src/Core/Bootstrap.php:296
 #: template/mocks/storage/storage.php:59 views/packages/details/detail.php:278
 #: views/packages/main/s1.setup2.php:103 views/settings/controller.php:42
 msgid "Storage"
 msgstr ""
 
-#: src/Core/Bootstrap.php:301 src/Core/Bootstrap.php:302
+#: src/Core/Bootstrap.php:304 src/Core/Bootstrap.php:305
 #: views/tools/controller.php:21
 msgid "Tools"
 msgstr ""
 
-#: src/Core/Bootstrap.php:312 src/Core/Bootstrap.php:313
+#: src/Core/Bootstrap.php:315 src/Core/Bootstrap.php:316
 #: template/admin_pages/settings/general/general.php:215
 #: views/settings/controller.php:23
 msgid "Settings"
 msgstr ""
 
-#: src/Core/Bootstrap.php:322
+#: src/Core/Bootstrap.php:325
 msgid "About Duplicator"
 msgstr ""
 
-#: src/Core/Bootstrap.php:323 template/admin_pages/about_us/tabs.php:17
+#: src/Core/Bootstrap.php:326 template/admin_pages/about_us/tabs.php:17
 msgid "About Us"
 msgstr ""
 
-#: src/Core/Bootstrap.php:366 template/parts/Education/subscribe-form.php:26
+#: src/Core/Bootstrap.php:369 template/parts/Education/subscribe-form.php:26
 msgid "Subscribe"
 msgstr ""
 
-#: src/Core/Bootstrap.php:367
+#: src/Core/Bootstrap.php:370
 msgid "Subscribed &#10003"
 msgstr ""
 
-#: src/Core/Bootstrap.php:368
+#: src/Core/Bootstrap.php:371
 msgid "Subscribing..."
 msgstr ""
 
-#: src/Core/Bootstrap.php:369
+#: src/Core/Bootstrap.php:372
 msgid "Failed &#10007"
 msgstr ""
 
-#: src/Core/Bootstrap.php:370
+#: src/Core/Bootstrap.php:373
 msgid "Email subscription failed with message: "
 msgstr ""
 
-#: src/Core/Bootstrap.php:389
+#: src/Core/Bootstrap.php:392
 msgid "Failed to load help content!"
 msgstr ""
 
-#: src/Core/Bootstrap.php:398
+#: src/Core/Bootstrap.php:401
 msgid "Copy to clipboard"
 msgstr ""
 
-#: src/Core/Bootstrap.php:399
+#: src/Core/Bootstrap.php:402
 msgid "copied to clipboard"
 msgstr ""
 
-#: src/Core/Bootstrap.php:400
+#: src/Core/Bootstrap.php:403
 msgid "Unable to copy"
 msgstr ""
 
-#: src/Core/Bootstrap.php:531
+#: src/Core/Bootstrap.php:534
 msgid "Manage Packages"
 msgstr ""
 
-#: src/Core/Bootstrap.php:532 views/settings/license.php:11
+#: src/Core/Bootstrap.php:535 views/settings/license.php:11
 msgid "Manage"
 msgstr ""
 
@@ -1096,6 +1331,10 @@ msgstr ""
 msgid "Sugar Calendar Pro"
 msgstr ""
 
+#: src/Utils/Support/SupportToolkit.php:60
+msgid "Failed to create zip file"
+msgstr ""
+
 #: src/Utils/Upsell.php:40 src/Utils/Upsell.php:66
 #: template/admin_pages/welcome/features.php:54
 msgid "Secure File Encryption"
@@ -1164,6 +1403,10 @@ msgstr ""
 
 #: src/Utils/Upsell.php:81
 msgid "Custom Search & Replace"
+msgstr ""
+
+#: src/Utils/ZipArchiveExtended.php:357
+msgid "ZipArchive PHP module is not installed/enabled. The current package cannot be opened."
 msgstr ""
 
 #: src/Views/AdminNotices.php:194
@@ -1442,17 +1685,12 @@ msgstr ""
 msgid "Lite vs Pro"
 msgstr ""
 
-#: template/admin_pages/settings/general/email_summary.php:19
+#: template/admin_pages/settings/general/email_summary.php:20
 msgid "Email Summary"
 msgstr ""
 
-#: template/admin_pages/settings/general/email_summary.php:23
+#: template/admin_pages/settings/general/email_summary.php:24
 msgid "Frequency"
-msgstr ""
-
-#: template/admin_pages/settings/general/email_summary.php:36
-#, php-format
-msgid "You can view the email summary example %1shere%2s."
 msgstr ""
 
 #: template/admin_pages/settings/general/general.php:25
@@ -1461,14 +1699,6 @@ msgstr ""
 
 #: template/admin_pages/settings/general/general.php:108
 msgid "Plugin"
-msgstr ""
-
-#: template/admin_pages/settings/general/general.php:112
-#: views/packages/details/detail.php:130
-#: views/tools/diagnostics/inc.settings.php:101
-#: views/tools/diagnostics/inc.settings.php:121
-#: views/tools/diagnostics/inc.settings.php:194
-msgid "Version"
 msgstr ""
 
 #: template/admin_pages/settings/general/general.php:120
@@ -1523,14 +1753,6 @@ msgstr ""
 msgid "Trace Log"
 msgstr ""
 
-#: template/admin_pages/settings/general/general.php:190
-#: template/parts/DashboardWidget/sections-section.php:51
-#: views/packages/main/s2.scan3.php:44 views/packages/main/s2.scan3.php:414
-#: views/packages/main/s2.scan3.php:750
-#: views/tools/diagnostics/inc.settings.php:178
-msgid "Enabled"
-msgstr ""
-
 #: template/admin_pages/settings/general/general.php:193
 msgid "Turns on detailed operation logging. Logging will occur in both PHP error and local trace logs."
 msgstr ""
@@ -1568,6 +1790,7 @@ msgid "Archive scan"
 msgstr ""
 
 #: template/admin_pages/settings/general/general.php:237
+#: template/admin_pages/welcome/intro.php:48
 msgid "Skip"
 msgstr ""
 
@@ -1747,7 +1970,6 @@ msgid "See All Features"
 msgstr ""
 
 #: template/admin_pages/welcome/footer.php:25
-#: template/admin_pages/welcome/intro.php:44
 msgid "Create Your First Package"
 msgstr ""
 
@@ -1755,25 +1977,80 @@ msgstr ""
 msgid "Upgrade to Duplicator Pro"
 msgstr ""
 
-#: template/admin_pages/welcome/intro.php:24
+#: template/admin_pages/welcome/intro.php:23
 msgid "Willie the Duplicator mascot"
 msgstr ""
 
-#: template/admin_pages/welcome/intro.php:28
-msgid "Thank you for choosing Duplicator - the most powerful WordPress Migration and Backup plugin in the market."
+#: template/admin_pages/welcome/intro.php:26
+msgid "Never miss an important update"
 msgstr ""
 
-#: template/admin_pages/welcome/intro.php:32
-#: template/admin_pages/welcome/intro.php:34
-msgid "Watch how to create your first form"
+#: template/admin_pages/welcome/intro.php:31
+msgid "Opt in to get email notifications for security & feature updates, educational content, and occasional offers, and to share some basic WordPress environment info. This will help us make the plugin more compatible with your site and better at doing what you need it to."
 msgstr ""
 
-#: template/admin_pages/welcome/intro.php:38
-msgid "Duplicator makes it easy to create backups and migrations in WordPress. Get started by creating a new package or read our quick start guide."
+#: template/admin_pages/welcome/intro.php:40
+msgid "Allow & Continue"
 msgstr ""
 
-#: template/admin_pages/welcome/intro.php:51
-msgid "Read the Full Guide"
+#: template/admin_pages/welcome/intro.php:55
+msgid "This will allow Duplicator to"
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:63
+msgid "View Basic Profile Info"
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:66
+msgid "Basic Profile Info"
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:69
+msgid "Never miss important updates, get security warnings before they become public knowledge, and receive notifications about special offers and awesome new features."
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:78
+msgid "Your WordPress user's: first & last name, and email address"
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:88
+msgid "View Basic Website Info"
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:91
+msgid "Basic Website Info"
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:94
+msgid "To provide additional functionality that's relevant to your website, avoid WordPress or PHP version incompatibilities that can break your website, and recognize which languages & regions the plugin should be translated and tailored to."
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:104
+msgid "Homepage URL & title, WP & PHP versions, and site language"
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:113
+msgid "View Basic Plugin Info"
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:116
+msgid "Current plugin & SDK versions, and if active or uninstalled"
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:126
+msgid "View Plugins & Themes List"
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:129
+msgid "Plugins & Themes List"
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:132
+msgid "To ensure compatibility and avoid conflicts with your installed plugins and themes."
+msgstr ""
+
+#: template/admin_pages/welcome/intro.php:140
+msgid "Names, slugs, versions, and if active or not"
 msgstr ""
 
 #: template/admin_pages/welcome/testimonials.php:20
@@ -2335,6 +2612,10 @@ msgstr ""
 msgid "Dismiss this message."
 msgstr ""
 
+#: template/parts/tools/server_settings_table.php:74
+msgid "Info"
+msgstr ""
+
 #: views/packages/details/controller.php:44
 #, php-format
 msgid "This package contains an error. Please review the %1$spackage log%2$s for details."
@@ -2365,11 +2646,6 @@ msgstr ""
 msgid "[close all]"
 msgstr ""
 
-#: views/packages/details/detail.php:92 views/settings/controller.php:30
-#: views/tools/controller.php:24 views/tools/diagnostics/inc.settings.php:35
-msgid "General"
-msgstr ""
-
 #: views/packages/details/detail.php:106
 msgid "ID"
 msgstr ""
@@ -2395,18 +2671,10 @@ msgstr ""
 msgid "Created"
 msgstr ""
 
-#: views/packages/details/detail.php:138 views/packages/main/s2.scan2.php:116
-msgid "WordPress"
-msgstr ""
-
 #: views/packages/details/detail.php:139 views/packages/details/detail.php:143
 #: views/packages/details/detail.php:148 views/packages/details/detail.php:149
 #: views/packages/details/detail.php:166
 msgid "- unknown -"
-msgstr ""
-
-#: views/packages/details/detail.php:142
-msgid "PHP"
 msgstr ""
 
 #: views/packages/details/detail.php:146
@@ -2431,12 +2699,6 @@ msgstr ""
 
 #: views/packages/details/detail.php:162
 msgid "in-complete"
-msgstr ""
-
-#: views/packages/details/detail.php:165 views/packages/details/detail.php:522
-#: views/packages/main/s1.setup2.php:498
-#: views/tools/diagnostics/inc.settings.php:129
-msgid "User"
 msgstr ""
 
 #: views/packages/details/detail.php:169 views/packages/details/detail.php:401
@@ -2548,13 +2810,7 @@ msgid "Archive Database Only Enabled"
 msgstr ""
 
 #: views/packages/details/detail.php:380 views/packages/details/detail.php:444
-#: views/tools/diagnostics/inc.settings.php:141
 msgid "On"
-msgstr ""
-
-#: views/packages/details/detail.php:380 views/packages/details/detail.php:444
-#: views/tools/diagnostics/inc.settings.php:141
-msgid "Off"
 msgstr ""
 
 #: views/packages/details/detail.php:382 views/packages/main/s2.scan3.php:757
@@ -2618,10 +2874,6 @@ msgstr ""
 
 #: views/packages/details/detail.php:510 views/packages/main/s1.setup2.php:456
 msgid " MySQL Server"
-msgstr ""
-
-#: views/packages/details/detail.php:514 views/packages/main/s1.setup2.php:459
-msgid "Host"
 msgstr ""
 
 #: views/packages/details/detail.php:515 views/packages/details/detail.php:519
@@ -2894,10 +3146,6 @@ msgstr ""
 msgid "PHP Support"
 msgstr ""
 
-#: views/packages/main/s1.setup1.php:109 views/packages/main/s2.scan2.php:56
-msgid "PHP Version"
-msgstr ""
-
 #: views/packages/main/s1.setup1.php:111
 msgid "PHP versions 5.2.9+ or higher is required."
 msgstr ""
@@ -2952,7 +3200,7 @@ msgid "MySQL version 5.0+ or better is required and the PHP MySQLi extension (no
 msgstr ""
 
 #: views/packages/main/s1.setup1.php:216
-#: views/tools/diagnostics/inc.data.php:25
+#: views/tools/diagnostics/inc.data.php:27
 msgid "more info"
 msgstr ""
 
@@ -3168,12 +3416,6 @@ msgstr ""
 msgid "example: DatabaseUserName (value is optional)"
 msgstr ""
 
-#: views/packages/main/s1.setup2.php:511
-#: views/tools/diagnostics/inc.settings.php:109
-#: views/tools/diagnostics/inc.settings.php:202
-msgid "Charset"
-msgstr ""
-
 #: views/packages/main/s1.setup2.php:519
 msgid "example: utf8 (value is optional)"
 msgstr ""
@@ -3349,11 +3591,6 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: views/packages/main/s2.scan2.php:51
-#: views/tools/diagnostics/inc.settings.php:58
-msgid "Web Server"
-msgstr ""
-
 #: views/packages/main/s2.scan2.php:52
 msgid "Supported web servers: "
 msgstr ""
@@ -3400,10 +3637,6 @@ msgstr ""
 
 #: views/packages/main/s2.scan2.php:93
 msgid "<b>Due to these constraints Lite does not officially support the migration of managed hosts.</b> "
-msgstr ""
-
-#: views/packages/main/s2.scan2.php:122
-msgid "WordPress Version"
 msgstr ""
 
 #: views/packages/main/s2.scan2.php:123
@@ -3485,7 +3718,6 @@ msgid ""
 msgstr ""
 
 #: views/packages/main/s2.scan3.php:11
-#: views/tools/diagnostics/inc.settings.php:65
 msgid "Root Path"
 msgstr ""
 
@@ -3897,11 +4129,6 @@ msgstr ""
 msgid "File Filters"
 msgstr ""
 
-#: views/packages/main/s2.scan3.php:750
-#: views/tools/diagnostics/inc.settings.php:178
-msgid "Disabled"
-msgstr ""
-
 #: views/packages/main/s2.scan3.php:764
 msgid "No custom directory filters set."
 msgstr ""
@@ -4216,14 +4443,6 @@ msgstr ""
 
 #: views/packages/main/s3.build.php:484 views/settings/packages.php:208
 msgid "Mode"
-msgstr ""
-
-#: views/packages/main/s3.build.php:486
-msgid "is dynamic"
-msgstr ""
-
-#: views/packages/main/s3.build.php:486
-msgid "value is fixed"
 msgstr ""
 
 #: views/packages/main/s3.build.php:490
@@ -4713,35 +4932,47 @@ msgstr ""
 msgid "Save Storage Settings"
 msgstr ""
 
-#: views/tools/diagnostics/inc.data.php:12
-msgid "Data Cleanup"
+#: views/tools/diagnostics/inc.data.php:14
+msgid "Utils"
 msgstr ""
 
-#: views/tools/diagnostics/inc.data.php:20
+#: views/tools/diagnostics/inc.data.php:22
 msgid "Remove Installation Files"
 msgstr ""
 
-#: views/tools/diagnostics/inc.data.php:24
+#: views/tools/diagnostics/inc.data.php:26
 msgid "Removes all reserved installer files."
 msgstr ""
 
-#: views/tools/diagnostics/inc.data.php:29
+#: views/tools/diagnostics/inc.data.php:31
 msgid "Clicking on the 'Remove Installation Files' button will attempt to remove the installer files used by Duplicator.  These files should not be left on production systems for security reasons. Below are the files that should be removed."
 msgstr ""
 
-#: views/tools/diagnostics/inc.data.php:44
+#: views/tools/diagnostics/inc.data.php:46
 msgid "Clear Build Cache"
 msgstr ""
 
-#: views/tools/diagnostics/inc.data.php:47
+#: views/tools/diagnostics/inc.data.php:49
 msgid "Removes all build data from:"
 msgstr ""
 
 #: views/tools/diagnostics/inc.data.php:59
+msgid "Get Diagnostic Data"
+msgstr ""
+
+#: views/tools/diagnostics/inc.data.php:63
+msgid "Downloads a ZIP archive with all relevant diagnostic information."
+msgstr ""
+
+#: views/tools/diagnostics/inc.data.php:68
+msgid "The ZipArchive extensions is required to create the diagnostic data."
+msgstr ""
+
+#: views/tools/diagnostics/inc.data.php:83
 msgid "Clear Build Cache?"
 msgstr ""
 
-#: views/tools/diagnostics/inc.data.php:60
+#: views/tools/diagnostics/inc.data.php:84
 msgid "This process will remove all build cache files.  Be sure no packages are currently building or else they will be cancelled."
 msgstr ""
 
@@ -4749,156 +4980,8 @@ msgstr ""
 msgid "PHP Information"
 msgstr ""
 
-#: views/tools/diagnostics/inc.settings.php:5
-#: views/tools/diagnostics/inc.settings.php:6
-msgid "unknown"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:29
+#: views/tools/diagnostics/inc.settings.php:13
 msgid "Server Settings"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:38
-msgid "Duplicator Version"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:44
-msgid "Operating System"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:49
-msgid "Timezone"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:54
-msgid "Server Time"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:69
-msgid "ABSPATH"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:73
-msgid "Plugins Path"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:77
-msgid "Loaded PHP INI"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:81
-msgid "Server IP"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:88
-msgid "Can't detect"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:94
-msgid "Client IP"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:105
-msgid "Language"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:113
-msgid "Memory Limit "
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:114
-msgid "Max"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:133
-msgid "Process"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:137
-msgid "Safe Mode"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:146
-msgid "Memory Limit"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:150
-msgid "Memory In Use"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:154
-#: views/tools/diagnostics/inc.settings.php:163
-msgid "Max Execution Time"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:164
-msgid "If the value shows dynamic then this means its possible for PHP to run longer than the default.  If the value is fixed then PHP will not be allowed to run longer than the default."
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:169
-msgid "Shell Exec"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:170
-#: views/tools/diagnostics/inc.settings.php:174
-msgid "Is Supported"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:170
-#: views/tools/diagnostics/inc.settings.php:174
-msgid "Not Supported"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:173
-msgid "Shell Exec Zip"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:177
-msgid "Suhosin Extension"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:181
-msgid "Architecture "
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:187
-msgid "Error Log File "
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:198
-msgid "Comments"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:206
-msgid "Wait Timeout"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:210
-msgid "Max Allowed Packets"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:214
-msgid "msyqldump Path"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:218
-msgid "Server Disk"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:221
-msgid "Free space"
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:224
-msgid "Unable to calculate space on this server."
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:230
-msgid "Note: This value is the physical servers hard-drive allocation."
-msgstr ""
-
-#: views/tools/diagnostics/inc.settings.php:231
-msgid "On shared hosts check your control panel for the 'TRUE' disk space quota value."
 msgstr ""
 
 #: views/tools/diagnostics/inc.validator.php:16

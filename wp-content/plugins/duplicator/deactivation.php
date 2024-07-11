@@ -7,6 +7,7 @@
  */
 
 use Duplicator\Libs\Snap\SnapJson;
+use Duplicator\Libs\Snap\SnapUtil;
 
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 
@@ -465,7 +466,7 @@ if (!function_exists('duplicator_submit_uninstall_reason_action')) {
                 echo 'done';
             } else {
                 $error_msg = $raw_response->get_error_code() . ': ' . $raw_response->get_error_message();
-                error_log($error_msg);
+                SnapUtil::errorLog($error_msg);
                 throw new Exception($error_msg);
             }
         } catch (Exception $ex) {

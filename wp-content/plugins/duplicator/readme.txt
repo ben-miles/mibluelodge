@@ -4,7 +4,7 @@ Tags: migration, backup, duplicate, move, migrate, restore, transfer, clone, aut
 Requires at least: 4.9
 Tested up to: 6.5
 Requires PHP: 5.6.20
-Stable tag: 1.5.9
+Stable tag: 1.5.10
 License: GPLv2
 WordPress migration and backups are much easier with Duplicator! Clone, backup, move and transfer an entire site from one location to another.
 

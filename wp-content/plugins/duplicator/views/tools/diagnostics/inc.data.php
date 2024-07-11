@@ -1,5 +1,7 @@
 <?php
 
+use Duplicator\Utils\Support\SupportToolkit;
+
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 
 ?>
@@ -9,7 +11,7 @@ OPTIONS DATA -->
 <div class="dup-box">
     <div class="dup-box-title">
         <i class="fa fa-th-list"></i>
-        <?php esc_html_e("Data Cleanup", 'duplicator'); ?>
+        <?php esc_html_e("Utils", 'duplicator'); ?>
         <div class="dup-box-arrow"></div>
     </div>
     <div class="dup-box-panel" id="dup-settings-diag-opts-panel" style="<?php echo esc_html($ui_css_opts_panel); ?>">
@@ -46,8 +48,30 @@ OPTIONS DATA -->
                 </td>
                 <td><?php esc_html_e("Removes all build data from:", 'duplicator'); ?> [<?php echo DUP_Settings::getSsdirTmpPath() ?>].</td>
             </tr>
+            <tr>
+                <td>
+                    <button 
+                       type="button"
+                       id="dup-download-diagnostic-data-btn"
+                       class="button button-small dup-fixed-btn" 
+                       <?php disabled(!SupportToolkit::isAvailable()); ?>
+                       >
+                        <?php esc_html_e('Get Diagnostic Data', 'duplicator-pro'); ?>
+                    </button>
+                </td>
+                <td>
+                    <?php esc_html_e('Downloads a ZIP archive with all relevant diagnostic information.', 'duplicator-pro'); ?>
+                    <?php if (!SupportToolkit::isAvailable()) : ?>
+                        <i 
+                           class="fa fa-question-circle data-size-help" 
+                           data-tooltip-title="Diagnostic Data"
+                           data-tooltip="<?php esc_attr_e('The ZipArchive extensions is required to create the diagnostic data.', 'duplicator-pro'); ?>" 
+                           aria-expanded="false">
+                        </i>
+                    <?php endif; ?>
+                </td>
+            </tr>
         </table>
-
     </div>
 </div>
 <br/>
@@ -74,6 +98,10 @@ jQuery(document).ready(function($)
     {
         window.location = '?page=duplicator-tools&tab=diagnostics&action=tmp-cache&_wpnonce=<?php echo esc_js($nonce); ?>';
     }
+
+    $('#dup-download-diagnostic-data-btn').click(function () {
+        window.location = <?php echo json_encode(SupportToolkit::getSupportToolkitDownloadUrl()); ?>;
+    });
 });
 
 

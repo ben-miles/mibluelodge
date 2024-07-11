@@ -56,7 +56,7 @@ class Bootstrap
         }
         if (self::initPhpErrorLog(false) === false) {
             // Enable this only for debugging. Generate a log too alarmist.
-            error_log('DUPLICATOR CAN\'T CHANGE THE PATH OF PHP ERROR LOG FILE', E_USER_NOTICE);
+            SnapUtil::errorLog('DUPLICATOR CAN\'T CHANGE THE PATH OF PHP ERROR LOG FILE', E_USER_NOTICE);
         }
 
         /*
@@ -252,7 +252,7 @@ class Bootstrap
         }
 
         if (!file_exists($logFile)) {
-            error_log("PHP ERROR LOG INIT");
+            SnapUtil::errorLog("PHP ERROR LOG INIT");
         }
 
         return true;

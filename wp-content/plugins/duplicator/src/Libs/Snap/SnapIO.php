@@ -1329,6 +1329,17 @@ INDEXPHP;
     }
 
     /**
+     * Serve error 500 and exit
+     *
+     * @return never
+     */
+    public static function serverError500()
+    {
+        header('HTTP/1.1 500 Internal Server Error');
+        exit;
+    }
+
+    /**
      * Return lasts fine of file
      *
      * @param string $path      Path to the file

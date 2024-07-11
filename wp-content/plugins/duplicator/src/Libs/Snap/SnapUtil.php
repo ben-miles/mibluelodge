@@ -292,6 +292,34 @@ class SnapUtil
     }
 
     /**
+     * Default filter sanitize input text, apply sanitizeNSCharsNewlineTrim function.
+     *
+     * @param int    $type     One of INPUT_GET, INPUT_POST, INPUT_COOKIE, INPUT_SERVER, or INPUT_ENV.
+     * @param string $var_name Name of a variable to get.
+     * @param string $default  default value if dont exists
+     *
+     * @return string
+     */
+    public static function sanitizeTextInput($type, $var_name, $default = '')
+    {
+        $filter  =  FILTER_UNSAFE_RAW;
+        $options = array(
+            'options' => array( 'default' => null),
+        );
+        if ($type == self::INPUT_REQUEST) {
+            $result = self::filterInputRequest($var_name, $filter, $options);
+        } else {
+            $result = filter_input($type, $var_name, $filter, $options);
+        }
+        if (is_null($result)) {
+            return $default;
+        }
+        return self::sanitizeNSCharsNewlineTrim($result);
+    }
+
+
+
+    /**
      * Determines whether a PHP ini value is changeable at runtime.
      *
      * @since 4.6.0
@@ -953,5 +981,23 @@ class SnapUtil
         ) { // phpcs:ignore PHPCompatibility.IniDirectives.RemovedIniDirectives.safe_modeDeprecatedRemoved
             @set_time_limit( $limit ); // @codingStandardsIgnoreLine
         }
+    }
+
+    /**
+     * Wrapper for error_log to call only if it is enabled.
+     *
+     * @param string      $message            The error message that should be logged.
+     * @param int         $message_type       The type of error. It can be 0, 1, 2, 3 or 4.
+     * @param string|null $destination        The destination of the error message. It can be a file, email, or a syslog.
+     * @param string|null $additional_headers Additional headers to be sent with the email.
+     *
+     * @return bool Returns true on success or false on failure.
+     */
+    public static function errorLog($message, $message_type = 0, $destination = null, $additional_headers = null)
+    {
+        if (function_exists('error_log')) {
+            return error_log($message, $message_type, $destination, $additional_headers);
+        }
+        return false;
     }
 }

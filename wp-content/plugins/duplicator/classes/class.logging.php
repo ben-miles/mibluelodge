@@ -207,7 +207,7 @@ class DUP_Log
     public static function errLog($message)
     {
         $message = 'DUP:' . $message;
-        error_log($message);
+        SnapUtil::errorLog($message);
     }
 
     public static function TraceObject($msg, $o, $log_private_members = true)
@@ -280,7 +280,7 @@ class DUP_Log
     public static function error($msg, $detail = '', $behavior = Dup_ErrorBehavior::Quit)
     {
 
-        error_log($msg . ' DETAIL:' . $detail);
+        SnapUtil::errorLog($msg . ' DETAIL:' . $detail);
         $source = self::getStack(debug_backtrace());
 
         $err_msg  = "\n==================================================================================\n";

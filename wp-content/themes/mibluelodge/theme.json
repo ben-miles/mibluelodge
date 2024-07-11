@@ -436,7 +436,7 @@
 				"color": {
 					"text": "var(--wp--preset--color--contrast)"
 				},
-				"css": ".wp-block-calendar table:where(:not(.has-text-color)) th{background-color:var(--wp--preset--color--contrast-2);color:var(--wp--preset--color--base);border-color:var(--wp--preset--color--contrast-2)} & table:where(:not(.has-text-color)) td{border-color:var(--wp--preset--color--contrast-2)}"
+				"css": ".wp-block-calendar table:where(:not(.has-text-color)) th{background-color:var(--wp--preset--color--contrast-2);color:var(--wp--preset--color--white);border-color:var(--wp--preset--color--contrast-2)} & table:where(:not(.has-text-color)) td{border-color:var(--wp--preset--color--contrast-2)}"
 			},
 			"core/categories": {
 				"css": "& {list-style-type:none;} & li{margin-bottom: 0.5rem;}",
@@ -887,8 +887,8 @@
 			}
 		},
 		"color": {
-			"background": "var(--wp--preset--color--base-2)",
-			"text": "var(--wp--preset--color--contrast)"
+			"background": "var(--wp--preset--color--white)",
+			"text": "var(--wp--preset--color--gray-6)"
 		},
 		"css": ":where(.wp-site-blocks *:focus){outline-width:2px;outline-style:solid}\n\nfooter {margin-top:0}\n\n.has-shadow-natural {box-shadow: var(--wp--preset--shadow--natural)}",
 		"elements": {
@@ -896,7 +896,7 @@
 				":active": {
 					"color": {
 						"background": "var(--wp--preset--color--contrast)",
-						"text": "var(--wp--preset--color--base)"
+						"text": "var(--wp--preset--color--white)"
 					}
 				},
 				":focus": {
@@ -905,7 +905,7 @@
 					},
 					"color": {
 						"background": "var(--wp--preset--color--contrast-2)",
-						"text": "var(--wp--preset--color--base)"
+						"text": "var(--wp--preset--color--white)"
 					},
 					"outline": {
 						"color": "var(--wp--preset--color--contrast)",
@@ -917,8 +917,8 @@
 						"color": "var(--wp--preset--color--contrast-2)"
 					},
 					"color": {
-						"background": "var(--wp--preset--color--custom-color-1)",
-						"text": "var(--wp--preset--color--base)"
+						"background": "var(--wp--preset--color--sky-blue-4)",
+						"text": "var(--wp--preset--color--white)"
 					}
 				},
 				"border": {
@@ -926,8 +926,8 @@
 					"radius": ".33rem"
 				},
 				"color": {
-					"background": "var(--wp--preset--color--custom-color-1)",
-					"text": "var(--wp--preset--color--base-2)"
+					"background": "var(--wp--preset--color--sky-blue-3)",
+					"text": "var(--wp--preset--color--white)"
 				},
 				"spacing": {
 					"padding": {

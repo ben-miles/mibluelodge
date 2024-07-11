@@ -31,7 +31,7 @@ class GlobalIntegrationController extends Controller
         }
     }
     
-    public function update()
+    public function updateIntegration()
     {
         try {
             $settingsKey = sanitize_text_field($this->request->get('settings_key'));

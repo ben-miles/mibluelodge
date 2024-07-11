@@ -7,9 +7,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography as Scheme_Typography;
 use Elementor\Group_Control_Background;
-use Elementor\Core\Schemes\Color as Scheme_Color;
 use FluentForm\App\Helpers\Helper;
 
 if (!defined('ABSPATH')) {
@@ -31,6 +29,16 @@ class FluentFormWidget extends Widget_Base
     public function get_icon()
     {
         return 'eicon-form-horizontal';
+    }
+
+    /**
+     * Elementor version compare to 3.0.0
+     *
+     * @return bool|int true if version is 3.0.0 or above
+     */
+    protected function is_v3_or_above()
+    {
+        return version_compare(ELEMENTOR_VERSION, '3.0.0', '>=');
     }
 
     public function get_keywords()
@@ -335,17 +343,24 @@ class FluentFormWidget extends Widget_Base
             ]
         );
 
+        $heading_des_args = [
+            'name'      => 'heading_description_typography',
+            'label'     => __('Typography', 'fluentform'),
+            'selector'  => '{{WRAPPER}} .fluentform-widget-description',
+            'condition' => [
+                'custom_title_description' => 'yes',
+            ],
+        ];
+        if ($this->is_v3_or_above()) {
+            $heading_des_args['global'] = [
+                'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_ACCENT,
+            ];
+        } else {
+            $heading_des_args['scheme']   = \Elementor\Core\Schemes\Typography::TYPOGRAPHY_4;
+        }
         $this->add_group_control(
             Group_Control_Typography::get_type(),
-            [
-                'name'      => 'heading_description_typography',
-                'label'     => __('Typography', 'fluentform'),
-                'scheme'    => Scheme_Typography::TYPOGRAPHY_4,
-                'selector'  => '{{WRAPPER}} .fluentform-widget-description',
-                'condition' => [
-                    'custom_title_description' => 'yes',
-                ],
-            ]
+            $heading_des_args
         );
 
         $this->add_responsive_control(
@@ -1709,35 +1724,49 @@ class FluentFormWidget extends Widget_Base
                 ]
             );
 
+            $prog_label_color_args = [
+                'label'  => __('Label Color', 'fluentform'),
+                'type'   => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .ff-el-progress-status' => 'color: {{VALUE}}',
+                ],
+                'condition' => [
+                    'show_label' => 'yes',
+                ],
+            ];
+            if ($this->is_v3_or_above()) {
+                $prog_label_color_args['global'] = [
+                    'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
+                ];
+            } else {
+                $prog_label_color_args['scheme'] = [
+                    'type'  => \Elementor\Core\Schemes\Color::get_type(),
+                    'value' => \Elementor\Core\Schemes\Color::COLOR_1,
+                ];
+            }
             $this->add_control(
                 'form_progressbar_label_color',
-                [
-                    'label'  => __('Label Color', 'fluentform'),
-                    'type'   => Controls_Manager::COLOR,
-                    'scheme' => [
-                        'type'  => Scheme_Color::get_type(),
-                        'value' => Scheme_Color::COLOR_1,
-                    ],
-                    'selectors' => [
-                        '{{WRAPPER}} .ff-el-progress-status' => 'color: {{VALUE}}',
-                    ],
-                    'condition' => [
-                        'show_label' => 'yes',
-                    ],
-                ]
+                $prog_label_color_args
             );
 
+            $prog_label_typography_args = [
+                'name'      => 'form_progressbar_label_typography',
+                'label'     => __('Typography', 'fluentform'),
+                'selector'  => '{{WRAPPER}} .ff-el-progress-status',
+                'condition' => [
+                    'show_label' => 'yes',
+                ],
+            ];
+            if ($this->is_v3_or_above()) {
+                $prog_label_typography_args['global'] = [
+                    'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_PRIMARY
+                ];
+            } else {
+                $prog_label_typography_args['scheme'] = \Elementor\Core\Schemes\Typography::TYPOGRAPHY_1;
+            }
             $this->add_group_control(
                 Group_Control_Typography::get_type(),
-                [
-                    'name'      => 'form_progressbar_label_typography',
-                    'label'     => __('Typography', 'fluentform'),
-                    'scheme'    => Scheme_Typography::TYPOGRAPHY_1,
-                    'selector'  => '{{WRAPPER}} .ff-el-progress-status',
-                    'condition' => [
-                        'show_label' => 'yes',
-                    ],
-                ]
+                $prog_label_typography_args
             );
 
             $this->add_control(
@@ -1805,22 +1834,29 @@ class FluentFormWidget extends Widget_Base
                 ]
             );
 
+            $prog_color_args = [
+                'label'  => __('Text Color', 'fluentform'),
+                'type'   => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .ff-el-progress-bar span' => 'color: {{VALUE}};',
+                ],
+                'condition' => [
+                    'show_form_progressbar' => 'yes',
+                ],
+            ];
+            if ($this->is_v3_or_above()) {
+                $prog_color_args['global'] = [
+                    'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY
+                ];
+            } else {
+                $prog_color_args['scheme'] = [
+                    'type'  => \Elementor\Core\Schemes\Color::get_type(),
+                    'value' => \Elementor\Core\Schemes\Color::COLOR_1
+                ];
+            }
             $this->add_control(
                 'form_progressbar_color',
-                [
-                    'label'  => __('Text Color', 'fluentform'),
-                    'type'   => Controls_Manager::COLOR,
-                    'scheme' => [
-                        'type'  => Scheme_Color::get_type(),
-                        'value' => Scheme_Color::COLOR_1,
-                    ],
-                    'selectors' => [
-                        '{{WRAPPER}} .ff-el-progress-bar span' => 'color: {{VALUE}};',
-                    ],
-                    'condition' => [
-                        'show_form_progressbar' => 'yes',
-                    ],
-                ]
+                $prog_color_args
             );
 
             $this->add_control(
@@ -1935,14 +1971,21 @@ class FluentFormWidget extends Widget_Base
                 ]
             );
 
+            $page_button_args = [
+                'name'     => 'form_pagination_button_typography',
+                'label'    => __('Typography', 'fluentform'),
+                'selector' => '{{WRAPPER}} .step-nav button',
+            ];
+            if ($this->is_v3_or_above()) {
+                $page_button_args['global'] = [
+                    'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_PRIMARY,
+                ];
+            } else {
+                $page_button_args['scheme'] = \Elementor\Core\Schemes\Typography::TYPOGRAPHY_1;
+            }
             $this->add_group_control(
                 Group_Control_Typography::get_type(),
-                [
-                    'name'     => 'form_pagination_button_typography',
-                    'label'    => __('Typography', 'fluentform'),
-                    'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
-                    'selector' => '{{WRAPPER}} .step-nav button',
-                ]
+                $page_button_args
             );
 
             $this->add_group_control(

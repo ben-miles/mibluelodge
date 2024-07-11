@@ -90,7 +90,7 @@ $router->prefix('logs')->withPolicy('SubmissionPolicy')->group(function ($router
 */
 $router->prefix('integrations')->withPolicy('FormPolicy')->group(function ($router) {
     $router->get('/', 'GlobalIntegrationController@index');
-    $router->post('/', 'GlobalIntegrationController@update');
+    $router->post('/', 'GlobalIntegrationController@updateIntegration');
     $router->post('update-status', 'GlobalIntegrationController@updateModuleStatus');
     
     /*

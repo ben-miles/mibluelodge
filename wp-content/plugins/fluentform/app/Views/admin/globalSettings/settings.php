@@ -15,6 +15,7 @@
         :is="component"
         :current_component="component"
         :app="App"
+        :component_name="component_name"
     ></component>
     <global-search></global-search>
 </div>

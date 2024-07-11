@@ -77,6 +77,9 @@ class Turnstile extends BaseComponent
         $el = "<div class='ff-el-input--content'><div data-fluent_id='" . $form->id . "' name='cf-turnstile-response'>{$turnstileBlock}</div></div>";
 
         $html = "<div class='ff-el-group " . esc_attr($containerClass) . "' >{$label}{$el}</div>";
+        if ($appearance == 'interaction-only') {
+            $html = str_replace("<div class='ff-el-group ' >", "<div class='ff-el-group ' style='margin-bottom: 0;'>", $html);
+        }
     
         $html = apply_filters_deprecated(
             'fluentform_rendering_field_html_' . $elementName,

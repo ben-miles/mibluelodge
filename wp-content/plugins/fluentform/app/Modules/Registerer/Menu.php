@@ -304,7 +304,7 @@ class Menu
                             wp_enqueue_editor();
                             wp_enqueue_media();
                         }
-
+                        do_action('fluentform/loading_settings_assets', $formId);
                         wp_enqueue_script('fluentform_form_settings');
                     } elseif ('editor' == $route) {
                         $this->enqueueEditorAssets();
@@ -1041,11 +1041,11 @@ class Menu
             'hash'  => 'turnstile',
             'title' => 'Turnstile (Beta)',
         ];
-    
-    
-        
+
+        $customLinks = apply_filters('fluentform/global_settings_menu', []);
         $this->app->view->render('admin.globalSettings.menu', [
             'components'       => $components,
+            'customLinks'      => $customLinks,
             'currentComponent' => $currentComponent,
         ]);
     }

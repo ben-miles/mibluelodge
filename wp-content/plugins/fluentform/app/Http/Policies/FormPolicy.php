@@ -33,6 +33,10 @@ class FormPolicy extends Policy
     {
         return Acl::hasPermission('fluentform_settings_manager');
     }
+    public function updateIntegration()
+    {
+        return Acl::hasPermission('fluentform_settings_manager');
+    }
 
     public function ping()
     {

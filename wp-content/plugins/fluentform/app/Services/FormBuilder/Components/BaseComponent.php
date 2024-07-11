@@ -90,7 +90,7 @@ class BaseComponent
             $parseValue = $this->parseEditorSmartCode($dynamicDefaultValue, $form);
             if (is_array($parseValue)) {
                 $defaultValues = $parseValue;
-            } elseif (is_string($parseValue)) {
+            } elseif (!empty($parseValue) && is_string($parseValue)) {
                 $defaultValues = explode(',', $parseValue);
                 $defaultValues = array_map('trim', $defaultValues);
             }

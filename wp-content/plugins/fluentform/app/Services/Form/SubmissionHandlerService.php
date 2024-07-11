@@ -43,6 +43,9 @@ class SubmissionHandlerService
     {
         $this->prepareHandler($formId, $formDataRaw);
         $insertData = $this->handleValidation();
+        if ($returnData = $this->isSpamAndSkipProcessing($insertData)) {
+            return $returnData;
+        }
         $insertId = $this->insertSubmission($insertData, $formDataRaw, $formId);
     
         return $this->processSubmissionData($insertId, $this->formData, $this->form);
@@ -470,6 +473,46 @@ class SubmissionHandlerService
         Helper::setSubmissionMeta($insertId, '_entry_uid_hash', $uidHash, $formId);
         
         return $insertId;
+    }
+
+    protected function isSpamAndSkipProcessing($insertData)
+    {
+        if ('spam' == Arr::get($insertData, 'status')) {
+            $settings = get_option('_fluentform_global_form_settings');
+            if ($settings && 'mark_as_spam_and_skip_processing' == Arr::get($settings, 'misc.akismet_validation')) {
+                return $this->processSpamSubmission($insertData);
+            }
+        }
+        return false;
+    }
+
+    protected function processSpamSubmission($insertData)
+    {
+        if ($insertId = Submission::insertGetId($insertData)) {
+            $uidHash = md5(wp_generate_uuid4() . $insertId);
+            Helper::setSubmissionMeta($insertId, '_entry_uid_hash', $uidHash, $this->form->id);
+            ob_start();
+            $this->submissionService->recordEntryDetails($insertId, $this->form->id, $this->formData);
+            $isError = ob_get_clean();
+            if ($isError) {
+                SubmissionDetails::migrate();
+            }
+            Helper::setSubmissionMeta($insertId, 'is_form_action_fired', 'yes');
+            do_action('fluentform/log_data', [
+                'parent_source_id' => $this->form->id,
+                'source_type'      => 'submission_item',
+                'source_id'        => $insertId,
+                'component'        => 'Akismet Integration',
+                'status'           => 'info',
+                'title'            => __('Skip Submission Processing', 'fluentform'),
+                'description'      => __('Submission marked as spammed. And skip all actions processing', 'fluentform')
+            ]);
+            return [
+                'insert_id' => $insertId,
+                'result'    => $this->getReturnData($insertId, $this->form, $this->formData),
+            ];
+        }
+        return false;
     }
     
 }

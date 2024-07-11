@@ -12,13 +12,7 @@
  * Register block styles.
  */
 
-if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
-	/**
-	 * Register custom block styles
-	 *
-	 * @since mibluelodge 1.0
-	 * @return void
-	 */
+if( !function_exists( 'mibluelodge_block_styles' ) ) {
 	function mibluelodge_block_styles() {
 
 		register_block_style(
@@ -267,8 +261,7 @@ if ( ! function_exists( 'mibluelodge_block_styles' ) ) :
 			)
 		);
 	}
-endif;
-
+}
 add_action( 'init', 'mibluelodge_block_styles' );
 
 /**

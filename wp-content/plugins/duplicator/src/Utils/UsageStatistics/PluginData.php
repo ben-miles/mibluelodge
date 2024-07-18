@@ -339,7 +339,7 @@ class PluginData
      */
     protected function getPluginInfos()
     {
-        if (($installInfo = DUP_LITE_Plugin_Upgrade::getNewInstallInfo()) === false) {
+        if (($installInfo = DUP_LITE_Plugin_Upgrade::getInstallInfo()) === false) {
             $installInfo = array(
                 'version' => null,
                 'time'    => null,

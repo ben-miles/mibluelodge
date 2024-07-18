@@ -4,9 +4,9 @@
  * Plugin Name: Duplicator
  * Plugin URI: https://duplicator.com/
  * Description: Migrate and backup a copy of your WordPress files and database. Duplicate and move a site from one location to another quickly.
- * Version: 1.5.10
+ * Version: 1.5.10.1
  * Requires at least: 4.9
- * Tested up to: 6.5
+ * Tested up to: 6.6
  * Requires PHP: 5.6.20
  * Author: Duplicator
  * Author URI: https://duplicator.com/

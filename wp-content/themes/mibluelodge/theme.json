@@ -231,9 +231,7 @@
 			"wideSize": "1200px"
 		},
 		"spacing": {
-			"spacingScale": {
-				"steps": 0
-			},
+			"defaultSpacingSizes": false,
 			"spacingSizes": [
 				{
 					"name": "1",
@@ -276,6 +274,7 @@
 			]
 		},
 		"typography": {
+			"defaultFontSizes": false,
 			"fluid": true,
 			"fontFamilies": [
 				{
@@ -1024,6 +1023,6 @@
 			"title": "Post Meta"
 		}
 	],
-	"version": 2,
-	"$schema": "https://schemas.wp.org/wp/6.5/theme.json"
+	"version": 3,
+	"$schema": "https://schemas.wp.org/wp/6.6/theme.json"
 }

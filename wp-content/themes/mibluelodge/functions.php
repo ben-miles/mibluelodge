@@ -349,3 +349,11 @@ function db_rerender_url_new_tab( $block_content, $block ) {
 	return $block_content;
 }
 add_filter( 'render_block', 'db_rerender_url_new_tab', 10, 2 );
+
+// Register shortcode that outputs the current year
+function shortcode_current_year() {
+    return date('Y');
+}
+add_shortcode('current_year', 'shortcode_current_year');
+
+

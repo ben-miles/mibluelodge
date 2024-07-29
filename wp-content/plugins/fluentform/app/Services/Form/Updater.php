@@ -137,6 +137,7 @@ class Updater
             'unique_validation_message' => 'sanitize_text_field',
             'advanced_options'          => 'fluentform_options_sanitize',
             'html_codes'                => 'fluentform_sanitize_html',
+            'description'               => 'fluentform_sanitize_html',
         ];
 
         $settingsKeys = array_keys($settingsMap);
@@ -149,7 +150,7 @@ class Updater
 
         $stylePrefKeys = array_keys($stylePrefMap);
 
-        foreach ($fields as $fieldIndex => $field) {
+        foreach ($fields as $fieldIndex => &$field) {
             $element = Arr::get($field, 'element');
 
             if ('container' == $element) {
@@ -159,6 +160,13 @@ class Updater
                 }
 
                 return $fields;
+            }
+
+            // Welcome Screen element button text sanitization
+            if ('welcome_screen' == $element) {
+                if ($value = Arr::get($field, 'settings.button_ui.text')) {
+                    $field['settings']['button_ui']['text'] = sanitize_text_field($value);
+                }
             }
 
             /*

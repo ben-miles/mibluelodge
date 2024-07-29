@@ -339,6 +339,7 @@ function fluentform_iframe_srcdoc_sanitize($value)
     return wp_kses($value, $tags);
 }
 
+
 function fluentform_sanitize_html($html)
 {
     if (!$html) {
@@ -346,9 +347,9 @@ function fluentform_sanitize_html($html)
     }
 
     // Return $html if it's just a plain text
-    if (!preg_match('/<[^>]*>/', $html)) {
-        return $html;
-    }
+//    if (!preg_match('/<[^>]*>/', $html)) {
+//        return $html;
+//    }
 
     $tags = wp_kses_allowed_html('post');
     $tags['style'] = [

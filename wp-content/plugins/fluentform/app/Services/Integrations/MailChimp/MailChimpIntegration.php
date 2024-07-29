@@ -461,8 +461,8 @@ class MailChimpIntegration extends IntegrationManagerController
             'tags'                   => 'sanitize_text_field',
             'tag_ids_selection_type' => 'sanitize_text_field',
             'fieldEmailAddress'      => 'sanitize_text_field',
-            'doubleOptIn'            => 'rest_sanitize_bolean',
-            'resubscribe'            => 'rest_sanitize_bolean',
+            'doubleOptIn'            => 'rest_sanitize_boolean',
+            'resubscribe'            => 'rest_sanitize_boolean',
             'note'                   => 'sanitize_text_field',
         ];
         return fluentform_backend_sanitizer($integration, $sanitizeMap);

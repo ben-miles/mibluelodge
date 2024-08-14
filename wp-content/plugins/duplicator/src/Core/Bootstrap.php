@@ -38,6 +38,8 @@ use Duplicator\Core\Notifications\Notifications;
 use Duplicator\Core\Notifications\Review;
 use Duplicator\Core\Views\TplMng;
 use Duplicator\Utils\CronUtils;
+use Duplicator\Utils\ExtraPlugins\CrossPromotion;
+use Duplicator\Utils\ExtraPlugins\ExtraPluginsMng;
 use Duplicator\Utils\Upsell;
 use Duplicator\Views\DashboardWidget;
 use Duplicator\Views\EducationElements;
@@ -116,6 +118,7 @@ class Bootstrap
             Notifications::init();
             EmailSummaryPreviewPageController::init();
             HelpPageController::init();
+            CrossPromotion::init();
             $dashboardService = new ServicesDashboard();
             $dashboardService->init();
             $extraPlugin = new ServicesExtraPlugins();

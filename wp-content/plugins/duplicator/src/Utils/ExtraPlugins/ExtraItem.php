@@ -2,7 +2,9 @@
 
 namespace Duplicator\Utils\ExtraPlugins;
 
+use DUP_Log;
 use Duplicator\Libs\Snap\SnapString;
+use Duplicator\Utils\ExpireOptions;
 
 class ExtraItem
 {
@@ -11,6 +13,42 @@ class ExtraItem
     const STATUS_ACTIVE        = 2;
     const URL_TYPE_GENERIC     = 0;
     const URL_TYPE_ZIP         = 1;
+    const PLUGIN_API_FIELDS    = [
+        'active_installs'          => false,
+        'added'                    => false,
+        'author'                   => false,
+        'author_block_count'       => false,
+        'author_block_rating'      => false,
+        'author_profile'           => false,
+        'banners'                  => false,
+        'compatibility'            => false,
+        'contributors'             => false,
+        'description'              => false,
+        'donate_link'              => false,
+        'download_link'            => false,
+        'downloaded'               => false,
+        'group'                    => false,
+        'homepage'                 => false,
+        'icons'                    => false,
+        'last_updated'             => false,
+        'name'                     => false,
+        'num_ratings'              => false,
+        'rating'                   => false,
+        'ratings'                  => false,
+        'requires'                 => true,
+        'requires_php'             => true,
+        'reviews'                  => false,
+        'screenshots'              => false,
+        'sections'                 => false,
+        'short_description'        => false,
+        'slug'                     => false,
+        'support_threads'          => false,
+        'support_threads_resolved' => false,
+        'tags'                     => false,
+        'tested'                   => false,
+        'version'                  => false,
+        'versions'                 => false,
+    ];
 
     /**
      * plugin name
@@ -84,7 +122,7 @@ class ExtraItem
     /**
      * Returns plugin slug
      *
-     * @return array
+     * @return string
      */
     public function getSlug()
     {
@@ -110,9 +148,84 @@ class ExtraItem
     {
         static $installedSlugs = null;
         if ($installedSlugs === null) {
+            if (!function_exists('get_plugins')) {
+                require_once ABSPATH . 'wp-admin/includes/plugin.php';
+            }
             $installedSlugs = array_keys(get_plugins());
         }
         return in_array($this->slug, $installedSlugs);
+    }
+
+    /**
+     * Checks of the WP and PHP version requirments pass
+     *
+     * @return bool True if checks pass, false otherwise
+     */
+    public function checkRequirments()
+    {
+        global $wp_version;
+
+        if (($reqs = $this->getRequirments()) === false) {
+            return false;
+        }
+
+        return version_compare($wp_version, $reqs['wp_version'], '>=') &&
+            version_compare(PHP_VERSION, $reqs['php_version'], '>=');
+    }
+
+    /**
+     * Gets the requirments either from the cache (wp_options) or from the remote
+     * API and updates the cache.
+     *
+     * @return array{last_updated:int,wp_version:string,php_version:string}|false The data or false of failure
+     */
+    private function getRequirments()
+    {
+        if (($data = ExpireOptions::get($this->getApiSlug())) === false) {
+            if (($data = $this->getRemoteRequirments()) !== false) {
+                ExpireOptions::set($this->getApiSlug(), $data, 2 * WEEK_IN_SECONDS);
+            } else {
+                return false;
+            }
+        }
+
+        return $data;
+    }
+
+    /**
+     * Returns the slug that should be used with the API calls
+     *
+     * @return string
+     */
+    private function getApiSlug()
+    {
+        return dirname($this->getSlug());
+    }
+
+    /**
+     * Retrieves the PHP and WP version requirments of a plugin from the WP API.
+     *
+     * @return array{wp_version:string,php_version:string}|false The data or false on failure
+     */
+    private function getRemoteRequirments()
+    {
+        if (!function_exists('plugins_api')) {
+            require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+        }
+
+        $response = plugins_api('plugin_information', [
+            'slug'   => $this->getApiSlug(),
+            'fields' => self::PLUGIN_API_FIELDS
+        ]);
+
+        if (is_wp_error($response)) {
+            return false;
+        }
+
+        return [
+            'wp_version'  => $response->requires,
+            'php_version' => $response->requires_php
+        ];
     }
 
     /**

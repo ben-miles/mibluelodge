@@ -1365,3 +1365,65 @@ td.dup-store-promo-area i[data-tooltip].fa-question-circle {
 .margin-right-2 {
     margin-right: 40px;
 }
+
+#dup-notice-duplicator_cross_promotion {
+    border-left-width: 1px;
+}
+
+#dup-cross-promotion > p {
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+#dup-cross-promotion .list {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+    max-width: 1920px;
+}
+
+#dup-cross-promotion .plugin-item {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    flex-grow: 1;
+}
+
+@media (max-width: 1000px) {
+    #dup-cross-promotion  .list {
+      flex-direction: column;
+    }
+}
+
+#dup-cross-promotion .plugin-item h5 {
+    font-size: 16px;
+    margin: 0;
+}
+
+#dup-cross-promotion .plugin-item img {
+    width: 100px;
+    height: 100px;
+}
+
+#dup-cross-promotion .plugin-item .details {
+    flex-grow: 2;
+}
+
+#dup-cross-promotion .plugin-item .details .addon-desc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    line-height: 1.4em;
+    height: 2.8em;
+    transition: height 0.3s ease;
+}
+
+#dup-cross-promotion:hover .plugin-item .details .addon-desc {
+    display: block;
+    overflow: none;
+    height: 7em;
+}

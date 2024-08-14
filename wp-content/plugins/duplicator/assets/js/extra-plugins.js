@@ -60,6 +60,7 @@ var DupExtraPlugins = window.DupExtraPlugins || (function (document, window, $) 
                         console.log(response);
                         if (response.success !== true) {
                             console.log("Plugin installed failed with message: " + response.data.message);
+                            Duplicator.addAdminMessage(response.data.message, "error", {hideDelay: 5000});
                             statusLabel.html(l10nDupExtraPlugins.failure);
                             statusLabel.addClass('status-installed');
                             button.fadeOut(300);

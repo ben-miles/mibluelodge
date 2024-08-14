@@ -2,8 +2,6 @@
 
 namespace Duplicator\Utils\ExtraPlugins;
 
-use Exception;
-
 final class ExtraPluginsMng
 {
     /** @var ?self */
@@ -52,13 +50,23 @@ final class ExtraPluginsMng
     }
 
     /**
+     * Get all plugins
+     *
+     * @return ExtraItem[] All plugin items
+     */
+    public function getAll()
+    {
+        return $this->plugins;
+    }
+
+    /**
      * Returns plugin by slug
      *
      * @param string $slug plugin slug
      *
      * @return false|ExtraItem plugin item or false if not found
      */
-    protected function getBySlug($slug)
+    public function getBySlug($slug)
     {
         if (strlen($slug) === 0) {
             return false;
@@ -481,6 +489,43 @@ final class ExtraPluginsMng
                 'including payments, scheduling, timezones, ticketing, recurring events, and more.', 'duplicator'),
             'https://sugarcalendar.com/?utm_source=duplicatorplugin&utm_medium=link&utm_campaign=About%20Duplicator'
         );
+
+        $result[$item->getSlug()] = $item;
+
+        $item = new ExtraItem(
+            __('WPCode', 'duplicator'),
+            'insert-headers-and-footers/ihaf.php',
+            DUPLICATOR_PLUGIN_URL . 'assets/img/about/plugin-wpcode.png',
+            __('Future proof your WordPress customizations with the most popular code snippet management plugin for WordPress. ' .
+            'Trusted by over 1,500,000+ websites for easily adding code to WordPress right from the admin area.', 'duplicator'),
+            'https://downloads.wordpress.org/plugin/insert-headers-and-footers.zip',
+            'https://wordpress.org/plugins/insert-headers-and-footers/'
+        );
+
+        $result[$item->getSlug()] = $item;
+
+        $item = new ExtraItem(
+            __('Search & Replace Everything', 'duplicator'),
+            'search-replace-wpcode/wsrw.php',
+            DUPLICATOR_PLUGIN_URL . 'assets/img/about/plugin-search-and-replace.png',
+            __('Efficiently manage your website’s content directly from the WordPress admin with Search & Replace Everything by WPCode. ' .
+            'This tool is essential for site migrations, content updates, or any situation where batch text and image replacements are needed.', 'duplicator'),
+            'https://downloads.wordpress.org/plugin/search-replace-wpcode.zip',
+            'https://wordpress.org/plugins/search-replace-wpcode/'
+        );
+
+        $result[$item->getSlug()] = $item;
+
+        $item = new ExtraItem(
+            __('Uncanny Automator', 'duplicator'),
+            'uncanny-automator/uncanny-automator.php',
+            DUPLICATOR_PLUGIN_URL . 'assets/img/about/plugin-uncanny-automator.png',
+            __('Uncanny Automator is the easiest and most powerful way to automate your WordPress site with no code. ' .
+            'Build automations in minutes that connect your WordPress plugins, sites and apps together using billions of recipe combinations.', 'duplicator'),
+            'https://downloads.wordpress.org/plugin/uncanny-automator.zip',
+            'https://wordpress.org/plugins/uncanny-automator/'
+        );
+
         $result[$item->getSlug()] = $item;
 
         return $result;

@@ -23,11 +23,22 @@ class AboutUsController
     public static $liteVsProfeatures = array();
 
     /**
-     * Enqueue assets.
+     * Enqueue assets
      *
      * @return void
      */
     public static function enqueues()
+    {
+        self::enqueueScripts();
+        self::enqueueStyles();
+    }
+
+    /**
+     * Enqueue scripts
+     *
+     * @return void
+     */
+    public static function enqueueScripts()
     {
         wp_enqueue_script(
             'duplicator-extra-plugins',
@@ -55,7 +66,15 @@ class AboutUsController
                 'extra_plugin_install_nonce' => wp_create_nonce('duplicator_install_extra_plugin'),
             )
         );
+    }
 
+    /**
+     * Enqueue styles
+     *
+     * @return void
+     */
+    public static function enqueueStyles()
+    {
         wp_enqueue_style(
             'duplicator-about',
             DUPLICATOR_PLUGIN_URL . "assets/css/about.css",

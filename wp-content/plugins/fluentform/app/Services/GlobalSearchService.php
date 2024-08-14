@@ -265,10 +265,10 @@ class GlobalSearchService
                     "tags"  => ['global integrations', 'drip']
                 ],
                 [
-                    "title" => 'Global Settings > Configure Integration -> Sendinblue',
+                    "title" => 'Global Settings > Configure Integration -> Brevo (formerly SendInBlue)',
                     "icon"  => '',
                     "path"  => '?page=fluent_forms_settings#general-sendinblue-settings',
-                    "tags"  => ['global integrations', 'sendinblue']
+                    "tags"  => ['global integrations', 'sendinblue', 'brevo']
                 ],
                 [
                     "title" => 'Global Settings > Configure Integration -> Automizy',

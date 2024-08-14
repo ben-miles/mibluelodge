@@ -13,6 +13,7 @@ abstract class BaseFieldManager extends BaseComponent
 
     public function __construct($key, $title, $tags = [], $position = 'advanced')
     {
+        parent::__construct();
         $this->key = $key;
         $this->position = $position;
         $this->title = $title;

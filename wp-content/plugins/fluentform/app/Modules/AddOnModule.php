@@ -75,8 +75,8 @@ class AddOnModule
         $addOns = apply_filters('fluentform/global_addons', $addOns);
 
         $addOns['slack'] = [
-            'title'       => 'Slack',
-            'description' => 'Get realtime notification in slack channel when a new submission will be added.',
+            'title'       => __('Slack', 'fluentform'),
+            'description' => __('Get realtime notification in slack channel when a new submission will be added.', 'fluentform'),
             'logo'        => fluentformMix('img/integrations/slack.png'),
             'enabled'     => Helper::isSlackEnabled() ? 'yes' : 'no',
             'config_url'  => '',
@@ -238,7 +238,7 @@ class AddOnModule
             ],
             'moosend' => [
                 'title'        => __('MooSend', 'fluentform'),
-                'description'  => 'Connect MooSend with Fluent Forms and subscribe a contact when a form is submitted.',
+                'description'  => __('Connect MooSend with Fluent Forms and subscribe a contact when a form is submitted.', 'fluentform'),
                 'logo'         => fluentformMix('img/integrations/moosend_logo.png'),
                 'enabled'      => 'no',
                 'purchase_url' => $purchaseUrl,
@@ -277,8 +277,8 @@ class AddOnModule
                 'category'     => 'crm',
             ],
             'sendinblue' => [
-                'title'        => __('SendInBlue', 'fluentform'),
-                'description'  => __('Fluent Forms Sendinblue Module allows you to create contacts on your list, so you can grow your email list.', 'fluentform'),
+                'title'        => __('Brevo (formerly SendInBlue)', 'fluentform'),
+                'description'  => __('Fluent Forms Brevo (formerly SendInBlue) Module allows you to create contacts on your list, so you can grow your email list.', 'fluentform'),
                 'logo'         => fluentformMix('img/integrations/sendinblue.png'),
                 'enabled'      => 'no',
                 'purchase_url' => $purchaseUrl,

@@ -589,5 +589,10 @@ class SubmissionService
         
         return true;
     }
-    
+
+    public function getPrintContent($attr)
+    {
+        $content = (new SubmissionPrint())->getContent($attr);
+        return array('success' => true, 'content' => $content);
+    }
 }

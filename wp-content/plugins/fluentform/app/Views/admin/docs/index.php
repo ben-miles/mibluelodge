@@ -43,7 +43,7 @@
 
                 <div class="el-col el-col-12" style="padding-left: 12px; padding-right: 12px">
                     <div class="ff_card h-100">
-                        <h3 class="mb-3"><?php _e('Get Started with Fluent Forms Wordpress Plugin', 'fluentform') ?></h3>
+                        <h3 class="mb-3"><?php _e('Get Started with Fluent Forms WordPress Plugin', 'fluentform') ?></h3>
                         <p class="text"><?php _e('Getting started with the Fluent Forms is easier than you could imagine. All our customers are not developers and we want to make your life easier.', 'fluentform') ?></p>
                         <div class="ff_video_wrap mt-5">
                             <img class="ff_video_img" src="<?php echo esc_url($public_url); ?>img/video-img.jpg"/>

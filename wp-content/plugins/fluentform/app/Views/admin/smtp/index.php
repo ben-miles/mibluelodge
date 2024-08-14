@@ -46,7 +46,7 @@
                         <li class="mb-3"><i class="el-icon el-icon-success text-success mr-2"></i> Amazon SES</li>
                         <li class="mb-3"><i class="el-icon el-icon-success text-success mr-2"></i> Mailgun</li>
                         <li class="mb-3"><i class="el-icon el-icon-success text-success mr-2"></i> SendGrid</li>
-                        <li class="mb-3"><i class="el-icon el-icon-success text-success mr-2"></i> SendInBlue</li>
+                        <li class="mb-3"><i class="el-icon el-icon-success text-success mr-2"></i> Brevo (formerly SendInBlue)</li>
                         <li class="mb-3"><i class="el-icon el-icon-success text-success mr-2"></i> PepiPost</li>
                         <li class="mb-3"><i class="el-icon el-icon-success text-success mr-2"></i> SparkPost</li>
                         <li class="mb-3"><i class="el-icon el-icon-success text-success mr-2"></i> <?php _e('+ Any SMTP Provider', 'fluentform'); ?></li>

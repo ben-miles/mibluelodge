@@ -322,7 +322,9 @@ class Form
             'turnstile',
             'quiz_score',
             'rangeslider',
-//            'save_progress_button'
+            'save_progress_button',
+            'dynamic_field',
+            'rangeslider'
         ];
 
         $acceptedFieldElements = apply_filters(
@@ -646,8 +648,13 @@ class Form
 
         $form->settings = json_decode($formSettings->value, true);
 
-        if($form->status == 'unpublished' && !Acl::hasAnyFormPermission($formId)) {
-            return '';
+        if ($form->status == 'unpublished') {
+            global $wp_query;
+            $wp_query->set_404();
+            status_header(404);
+            nocache_headers();
+            include(get_query_template('404'));
+            exit();
         }
 
         $metaSettings = $this->getMetaSettings($formId);

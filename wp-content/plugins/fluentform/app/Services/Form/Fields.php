@@ -73,6 +73,11 @@ class Fields
                 if ($notPersonalityType && Arr::exists($field, 'options')) {
                     Arr::forget($field, 'options');
                 }
+            } elseif ('dynamic_field' == $element) {
+                $attrType = Arr::get($field, 'raw.attributes.type');
+                if ('text' == $attrType) {
+                    Arr::forget($field, 'options');
+                }
             }
             Arr::forget($field, 'raw');
         }

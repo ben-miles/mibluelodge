@@ -202,8 +202,8 @@ $element_customization_settings = [
     ],
     'button_ui' => [
         'template'  => 'prevNextButton',
-        'label'     => __('Submit Button', 'fluentform'),
-        'help_text' => __('This is form submission button.', 'fluentform'),
+        'label'     => __('Button Type', 'fluentform'),
+        'help_text' => __('Set as a default button or image icon type button', 'fluentform'),
     ],
     'align' => [
         'template'  => 'radio',
@@ -659,6 +659,21 @@ $element_customization_settings = [
             [
                 'value' => 'custom',
                 'label' => __('Custom', 'fluentform'),
+            ],
+        ],
+    ],
+    'upload_bttn_ui' => [
+        'template'  => 'radio',
+        'label'     => __('Upload Button Interface', 'fluentform'),
+        'help_text' => __('Select how the upload button should work show a dropzone or a button', 'fluentform'),
+        'options'   => [
+            [
+                'value' => '',
+                'label' => __('Button', 'fluentform'),
+            ],
+            [
+                'value' => 'dropzone',
+                'label' => __('Dropzone', 'fluentform'),
             ],
         ],
     ],

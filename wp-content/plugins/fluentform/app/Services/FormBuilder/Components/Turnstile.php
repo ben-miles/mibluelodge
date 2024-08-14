@@ -44,7 +44,7 @@ class Turnstile extends BaseComponent
         if (!wp_script_is('turnstile')) {
             wp_enqueue_script(
                 'turnstile',
-                'https://challenges.cloudflare.com/turnstile/v0/api.js??render=explicit',
+                'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',
                 [],
                 FLUENTFORM_VERSION,
                 true

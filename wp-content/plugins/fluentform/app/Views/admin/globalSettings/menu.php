@@ -266,12 +266,12 @@ use FluentForm\Framework\Helpers\ArrayHelper;
                                 >
                                     <a
                                         class="ff_list_button_link"
-                                        data-hash="custom_component"
+                                        data-hash="<?php echo esc_attr(ArrayHelper::get($customLink, 'hash', 'custom_component')) ?>"
                                         data-settings_key="custom_component"
                                         data-component="custom_component"
                                         data-component_name="<?php echo esc_attr(ArrayHelper::get($customLink, 'component', '')); ?>"
                                         href="<?php echo esc_url(Helper::makeMenuUrl('fluent_forms_settings', [
-                                            'hash' => 'custom_component',
+                                            'hash' => esc_attr(ArrayHelper::get($customLink, 'hash', 'custom_component')),
                                         ])); ?>"
                                     >
                                         <?php echo esc_attr(ArrayHelper::get($customLink, 'title', '')); ?>

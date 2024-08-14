@@ -38,4 +38,9 @@ class SubmissionPolicy extends Policy
     {
         return $this->handleBulkActions();
     }
+
+    public function print()
+    {
+        return $this->handleBulkActions();
+    }
 }

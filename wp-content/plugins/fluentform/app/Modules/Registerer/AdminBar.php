@@ -34,23 +34,20 @@ class AdminBar
         }
 
         foreach ($items as $itemKey => $item) {
+            $arr = [
+                'id'     => $itemKey == 'fluent_form' ? $itemKey : sanitize_title($itemKey),
+                'parent' => $itemKey != 'fluent_form' ? 'fluent_form' : '',
+                'title'  => ArrayHelper::get($item, 'title'),
+                'href'   => ArrayHelper::get($item, 'url'),
+            ];
+            if(ArrayHelper::get($item,'meta')){
+                $arr['meta'] = [
+                    'target' => '_blank',
+                    'rel'    => 'noopener noreferrer',
+                ];
+            }
             $wpAdminBar->add_menu(
-                [
-                    'id'     => $itemKey == 'fluent_form' ? $itemKey : sanitize_title($itemKey),
-                    'parent' => $itemKey != 'fluent_form' ? 'fluent_form' : '',
-                    'title'  => ArrayHelper::get($item, 'title'),
-                    'href'   => admin_url(ArrayHelper::get($item, 'url')),
-                ]
-            );
-
-            do_action_deprecated(
-                "fluentform_admin_nave_menu_{$itemKey}",
-                [
-
-                ],
-                FLUENTFORM_FRAMEWORK_UPGRADE,
-                "fluentform/admin_nav_menu_{$itemKey}",
-                "Use fluentform/admin_nav_menu_{$itemKey} instead of fluentform_admin_nave_menu_{$itemKey}."
+                $arr
             );
             do_action("fluentform/admin_nav_menu_{$itemKey}");
         }
@@ -129,12 +126,12 @@ class AdminBar
             'fluent_form' => [
                 'title'      => $title,
                 'capability' => $currentUserCapability,
-                'url'        => 'admin.php?page=fluent_forms'
+                'url'        => admin_url('admin.php?page=fluent_forms')
             ],
             'all_forms'   => [
                 'title'      => __('Forms', 'fluentform'),
                 'capability' => $currentUserCapability,
-                'url'        => 'admin.php?page=fluent_forms'
+                'url'        => admin_url('admin.php?page=fluent_forms')
             ],
         ];
         
@@ -142,13 +139,13 @@ class AdminBar
             $items['new_form'] = [
                 'title' => __('New Form', 'fluentform'),
                 'capability' => $fromRole ? $settingsCapability : 'fluentform_forms_manager',
-                'url' => 'admin.php?page=fluent_forms#add=1',
+                'url' => admin_url('admin.php?page=fluent_forms#add=1'),
             ];
 
             $items['fluent_forms_all_entries'] = [
                 'title' => $entriesDropdownTitle,
                 'capability' => $fromRole ? $settingsCapability : 'fluentform_entries_viewer',
-                'url' => 'admin.php?page=fluent_forms_all_entries',
+                'url' => admin_url('admin.php?page=fluent_forms_all_entries'),
             ];
             $showPaymentEntries = false;
             $showPaymentEntries = apply_filters_deprecated(
@@ -165,20 +162,30 @@ class AdminBar
                 $items ['fluent_forms_payment_entries'] = [
                     'title'      => __('Payments', 'fluentform'),
                     'capability' => $fromRole ? $settingsCapability : 'fluentform_view_payments',
-                    'url'        => 'admin.php?page=fluent_forms_payment_entries'
+                    'url'        => admin_url('admin.php?page=fluent_forms_payment_entries')
                 ];
             }
          
         }
-        $items = apply_filters_deprecated(
-            'fluentform_admin_menu_bar_items',
-            [
-                $items
-            ],
-            FLUENTFORM_FRAMEWORK_UPGRADE,
-            'fluentform/admin_menu_bar_items',
-            'Use fluentform/admin_menu_bar_items instead of fluentform_admin_menu_bar_items.'
-        );
+        $items['fluent_forms_community'] = [
+            'title'  => esc_html__( 'Community', 'wpforms-lite' ),
+            'url'   => 'https://www.facebook.com/groups/fluentforms/',
+            'meta'   => true
+        ];
+        $items['fluent_forms_doc'] = [
+            'title' => __('Docs','fluentform'),
+            'url' => 'https://wpmanageninja.com/docs/fluent-form/',
+            'meta'   => true
+        ];
+        $items['fluent_forms_doc'] = [
+            'title' => __('Docs','fluentform'),
+            'url' => 'https://wpmanageninja.com/docs/fluent-form/',
+        ];
+        $items['fluent_forms_dev_doc'] = [
+            'title' => __('Developer Docs','fluentform'),
+            'url' => 'https://developers.fluentforms.com/',
+            'meta'   => true
+        ];
         return apply_filters('fluentform/admin_menu_bar_items', $items);
     }
     

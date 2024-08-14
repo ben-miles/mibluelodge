@@ -170,4 +170,21 @@ class SubmissionController extends Controller
             ]);
         }
     }
+    /**
+     * Get printable content
+     * @param SubmissionService $submissionService
+     * @return \WP_REST_Response
+     */
+    public function print(SubmissionService $submissionService)
+    {
+        try {
+            return $this->sendSuccess(
+                $submissionService->getPrintContent($this->request->all())
+            );
+        } catch (Exception $e) {
+            return $this->sendError([
+                'message' => $e->getMessage()
+            ]);
+        }
+    }
 }

@@ -145,7 +145,16 @@ trait MailChimpSubscriber
         }
 
         if ($entry->ip) {
-            $arguments['ip_signup'] = $entry->ip;
+            $ipAddress = $entry->ip;
+
+            // sometimes server returns multiple IP addresses with comma separated value
+            // from multiple IP, getting the first one
+            if (strpos($ipAddress, ',') !== false) {
+                $ipArray = explode(',', $ipAddress);
+                $ipAddress = trim($ipArray[0]);
+            }
+
+            $arguments['ip_signup'] = $ipAddress;
         }
 
         $tags = $this->getSelectedTagIds($feedData, $formData, 'tags');

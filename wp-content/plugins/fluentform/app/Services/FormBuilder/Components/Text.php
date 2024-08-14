@@ -146,7 +146,7 @@ class Text extends BaseComponent
             $data['attributes']['tabindex'] = $tabIndex;
         }
 
-        $data['attributes']['class'] = @trim('ff-el-form-control ' . $data['attributes']['class']);
+        $data['attributes']['class'] = @trim('ff-el-form-control ' . ArrayHelper::get($data, 'attributes.class', ''));
         $data['attributes']['id'] = $this->makeElementId($data, $form);
 
         $elMarkup = $this->buildInputGroup($data, $form);

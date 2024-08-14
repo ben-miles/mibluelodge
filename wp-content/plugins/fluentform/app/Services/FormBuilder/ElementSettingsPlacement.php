@@ -263,11 +263,10 @@ return [
         'general' => [
             'label',
             'btn_text',
+            'upload_bttn_ui',
             'label_placement',
             'admin_field_label',
             'validation_rules',
-            'file_location_type',
-            'upload_file_location',
         ],
         'advanced' => [
             'container_class',
@@ -275,12 +274,15 @@ return [
             'help_message',
             'name',
             'conditional_logics',
+            'file_location_type',
+            'upload_file_location',
         ],
     ],
     'input_image' => [
         'general' => [
             'label',
             'btn_text',
+            'upload_bttn_ui',
             'label_placement',
             'admin_field_label',
             'validation_rules',

@@ -29,7 +29,7 @@ class Easy_Facebook_Likebox {
      *
      * @var     string
      */
-    const VERSION = '6.5.8';
+    const VERSION = '6.5.9';
 
     /**
      *

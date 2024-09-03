@@ -32,21 +32,21 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 	if ( current_user_can( 'editor' ) || current_user_can( 'administrator' ) ) { ?>
 
 		<script>
-		  jQuery(document).ready(function() {
+			jQuery(document).ready(function() {
 			function MIFremoveURLParameter(url, parameter) {
-			  var urlparts = url.split('?');
-			  if (urlparts.length >= 2) {
+				var urlparts = url.split('?');
+				if (urlparts.length >= 2) {
 				var prefix = encodeURIComponent(parameter) + '=';
 				var pars = urlparts[1].split(/[&;]/g);
 				for (var i = pars.length; i-- > 0;) {
-				  if (pars[i].lastIndexOf(prefix, 0) !== -1) {
+					if (pars[i].lastIndexOf(prefix, 0) !== -1) {
 					pars.splice(i, 1);
-				  }
+					}
 				}
 				url = urlparts[0] + '?' + pars.join('&');
 				return url;
-			  }
-			  else { return url; }
+				}
+				else { return url; }
 			}
 
 			esfRemoveNotification();
@@ -62,38 +62,38 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 			jQuery('#efbl_access_token').text("<?php echo $access_token; ?>");
 
 			var data = {
-			  'action': '<?php echo esc_html( $action ); ?>',
-			  'access_token': '<?php echo esc_html( $access_token ); ?>',
-			  'id': 'insta',
-              'nonce' : '<?php echo wp_create_nonce( 'esf-ajax-nonce' ); ?>',
+				'action': '<?php echo esc_html( $action ); ?>',
+				'access_token': '<?php echo esc_html( $access_token ); ?>',
+				'id': 'insta',
+				'nonce' : '<?php echo wp_create_nonce( 'esf-ajax-nonce' ); ?>',
 			};
 
 			jQuery.ajax({
-			  url: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>",
-			  type: 'post',
-			  data: data,
-			  dataType: 'json',
-			  success: function(response) {
+				url: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>",
+				type: 'post',
+				data: data,
+				dataType: 'json',
+				success: function(response) {
 
 				window.history.pushState('newurl', 'newurl', url);
 
 				if (response.success) {
 
-				  var pages_html = response.data['1'];
-				  esfShowNotification(response.data['0'], 3000);
-				  jQuery('.efbl_all_pages').
-					  html(' ').
-					  html(response.data['1']).
-					  slideDown('slow');
-				  jQuery('.fta_noti_holder').fadeOut('slow');
+					var pages_html = response.data['1'];
+					esfShowNotification(response.data['0'], 3000);
+					jQuery('.efbl_all_pages').
+						html(' ').
+						html(response.data['1']).
+						slideDown('slow');
+					jQuery('.fta_noti_holder').fadeOut('slow');
 				}
 				else {
-				  esfShowNotification(response.data, 3000);
+					esfShowNotification(response.data, 3000);
 				}
-			  },
+				},
 			});
 
-		  });
+			});
 		</script>
 		<?php
 	}
@@ -103,7 +103,7 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 	<h5><?php esc_html_e( "Let's connect your account with plugin", 'easy-facebook-likebox' ); ?></h5>
 	<p><?php esc_html_e( 'Click the button below, log into your Instagram account and authorize the app to get access token.', 'easy-facebook-likebox' ); ?></p>
 	<a class="mif_auth_btn mif_auth_btn_st btn  esf-modal-trigger"
-	   href="#mif-authentication-modal">
+		href="#mif-authentication-modal">
 		<img src="<?php echo ESF_INSTA_PLUGIN_URL; ?>/admin/assets/images/insta-logo.png"/><?php esc_html_e( 'Connect My Instagram Account', 'easy-facebook-likebox' ); ?>
 	</a>
 	<span class="mif-or-placeholder"><?php esc_html_e( 'OR', 'easy-facebook-likebox' ); ?></span>
@@ -130,7 +130,7 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 			<?php
 			if ( ! esf_insta_has_connected_account() ) {
 				?>
-				 style="display: none;" <?php } ?>>
+				style="display: none;" <?php } ?>>
 
 			<?php
 			if ( $mif_personal_connected_accounts && esf_insta_instagram_type() == 'personal' ) {
@@ -142,10 +142,10 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 						<li class="collection-header">
 							<h5><?php esc_html_e( 'Connected Instagram Account', 'easy-facebook-likebox' ); ?></h5>
 							<a href="#mif-remove-at"
-							   class="esf-modal-trigger fta-remove-at-btn tooltipped"
-							   data-type="personal" data-position="left"
-							   data-delay="50"
-							   data-tooltip="<?php esc_html_e( 'Delete Access Token', 'easy-facebook-likebox' ); ?>"><span class="dashicons dashicons-trash"></span></a>
+								class="esf-modal-trigger fta-remove-at-btn tooltipped"
+								data-type="personal" data-position="left"
+								data-delay="50"
+								data-tooltip="<?php esc_html_e( 'Delete Access Token', 'easy-facebook-likebox' ); ?>"><span class="dashicons dashicons-trash"></span></a>
 						</li>
 						<li class="collection-item li-<?php esc_attr_e( $personal_id ); ?>">
 							<div class="esf-bio-wrap">
@@ -162,19 +162,18 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 
 					<?php
 				}
-			} else {
+			} elseif ( isset( $fta_settings['plugins']['facebook']['approved_pages'] ) && ! empty( $fta_settings['plugins']['facebook']['approved_pages'] ) ) {
 
 
-				if ( isset( $fta_settings['plugins']['facebook']['approved_pages'] ) && ! empty( $fta_settings['plugins']['facebook']['approved_pages'] ) ) {
-					?>
+				?>
 
 					<ul class="collection with-header">
 						<li class="collection-header">
 							<h5><?php esc_html_e( 'Connected Instagram Account', 'easy-facebook-likebox' ); ?></h5>
 							<a href="#fta-remove-at"
-							   class="esf-modal-trigger fta-remove-at-btn tooltipped"
-							   data-position="left" data-delay="50"
-							   data-tooltip="<?php esc_html_e( 'Delete Access Token', 'easy-facebook-likebox' ); ?>"><span class="dashicons dashicons-trash"></span></a>
+								class="esf-modal-trigger fta-remove-at-btn tooltipped"
+								data-position="left" data-delay="50"
+								data-tooltip="<?php esc_html_e( 'Delete Access Token', 'easy-facebook-likebox' ); ?>"><span class="dashicons dashicons-trash"></span></a>
 						</li>
 
 						<?php
@@ -198,9 +197,9 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 									<li class="collection-item avatar fta_insta_connected_account li-<?php esc_attr_e( $fta_insta_connected_account->ig_id ); ?>">
 
 										<a href="https://www.instagram.com/<?php esc_attr_e( $fta_insta_connected_account->username ); ?>"
-										   target="_blank">
+											target="_blank">
 											<img src="<?php echo esc_url( $profile_pic_url ); ?>"
-												 alt="" class="circle">
+												alt="" class="circle">
 										</a>
 										<div class="esf-bio-wrap">
 										<span class="title"><?php esc_html_e( $fta_insta_connected_account->name ); ?></span>
@@ -208,10 +207,10 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 											<br> <?php esc_html_e( 'ID', 'easy-facebook-likebox' ); ?>
 											: <?php esc_html_e( $fta_insta_connected_account->id ); ?>
 											<span class="dashicons dashicons-admin-page efbl_copy_id tooltipped"
-											   data-position="right"
-											   data-clipboard-text="<?php esc_attr_e( $fta_insta_connected_account->id ); ?>"
-											   data-delay="100"
-											   data-tooltip="<?php esc_html_e( 'Copy', 'easy-facebook-likebox' ); ?>"></span>
+												data-position="right"
+												data-clipboard-text="<?php esc_attr_e( $fta_insta_connected_account->id ); ?>"
+												data-delay="100"
+												data-tooltip="<?php esc_html_e( 'Copy', 'easy-facebook-likebox' ); ?>"></span>
 										</p>
 										</div>
 									</li>
@@ -223,7 +222,7 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 					</ul>
 
 					<?php
-				}
+
 			}
 			?>
 
@@ -241,20 +240,20 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 			<div class="mif-auth-btn-holder">
 
 				<input class="with-gap" name="mif_login_type"
-					   data-url="<?php echo esc_url( $personal_auth_url ); ?>"
-					   value="basic" type="radio" id="mif_basic_type" checked/>
+						data-url="<?php echo esc_url( $personal_auth_url ); ?>"
+						value="basic" disabled type="radio" id="mif_basic_type" checked/>
 				<label for="mif_basic_type"><?php esc_html_e( 'Personal', 'easy-facebook-likebox' ); ?></label>
 				<a href="#" class="mif_info_link">
 					<span class="dashicons dashicons-info-outline"></span>
 				</a>
 				<div class="mif_auth_info_holder">
-					<p><?php esc_html_e( 'The "Personal" option can display feeds from personal Instagram account. It is limited to display only pictures, videos, username and caption.', 'easy-facebook-likebox' ); ?></p>
+					<p><b><?php esc_html_e( 'Due to a temporary issue with the Instagram API, the personal option is currently unavailable. However, you can still display the feed by using the Business option. ', 'easy-facebook-likebox' ); ?></b><?php esc_html_e( 'The "Personal" option can display feeds from personal Instagram account. It is limited to display only pictures, videos, username and caption.', 'easy-facebook-likebox' ); ?></p>
 				</div>
 			</div>
 			<div class="mif-auth-btn-holder">
 				<input class="with-gap" name="mif_login_type"
-					   data-url="<?php echo esc_url( $auth_url ); ?>" value="business"
-					   type="radio" id="mif_business_type"/>
+						data-url="<?php echo esc_url( $auth_url ); ?>" value="business"
+						type="radio" checked id="mif_business_type"/>
 				<label for="mif_business_type"><?php esc_html_e( 'Business', 'easy-facebook-likebox' ); ?></label>
 				<a href="#" class="mif_info_link">
 					<span class="dashicons dashicons-info-outline"></span>
@@ -262,14 +261,14 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 				<div class="mif_auth_info_holder">
 					<p><?php esc_html_e( 'Used for displaying a user feed from a "Business" or "Creator" Instagram account. A Business or Creator account is required for displaying avatar,bio,comments and likes. See this ', 'easy-facebook-likebox' ); ?>
 						<a href="<?php echo esc_url( 'https://easysocialfeed.com/documentation/how-to-connect-instagram-account-with-facebook-page/' ); ?>"
-						   target="_blank"> <?php esc_html_e( 'support guide', 'easy-facebook-likebox' ); ?> </a><?php esc_html_e( 'to convert personal account to business account.', 'easy-facebook-likebox' ); ?>
+							target="_blank"> <?php esc_html_e( 'support guide', 'easy-facebook-likebox' ); ?> </a><?php esc_html_e( 'to convert personal account to business account.', 'easy-facebook-likebox' ); ?>
 					</p>
 				</div>
 			</div>
-			<a href="<?php echo esc_url( $personal_auth_url ); ?>"
-			   class=" btn mif-auth-modal-btn"><?php esc_html_e( 'Connect', 'easy-facebook-likebox' ); ?></a>
+			<a href="<?php echo esc_url( $auth_url ); ?>"
+				class=" btn mif-auth-modal-btn"><?php esc_html_e( 'Connect', 'easy-facebook-likebox' ); ?></a>
 
 		</div>
 	</div>
 
-</div> 
+</div>

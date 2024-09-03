@@ -39,7 +39,7 @@ $auth_url = esc_url(
 		array(
 			'client_id'    => $u_app_ID,
 			'redirect_uri' => 'https://maltathemes.com/efbl/app-' . $u_app_ID . '/index.php',
-			'scope'        => 'pages_read_engagement,pages_read_user_content,instagram_basic,instagram_manage_insights',
+			'scope'        => 'pages_show_list,pages_read_engagement,pages_read_user_content,instagram_basic,instagram_manage_insights,business_management',
 			'state'        => admin_url( 'admin.php?page=mif' ),
 		),
 		'https://www.facebook.com/dialog/oauth'
@@ -72,16 +72,16 @@ if ( isset( $_GET['tab'] ) ) {
 }
 
 if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) ) {
-    $is_free = true;
+	$is_free = true;
 } else {
-    $is_free = false;
+	$is_free = false;
 }
 ?>
 	<div class="fta_wrap_outer <?php esc_attr_e( $hide_sidebar_class ); ?>" 
-												 <?php
-													if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) ) {
-														?>
-  style="width: 78%" <?php } ?>>
+												<?php
+												if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) ) {
+													?>
+	style="width: 78%" <?php } ?>>
 		<div class="mif_wrap z-depth-1">
 		<div class="mif_wrap_inner">
 			<div class="mif_tabs_holder">
@@ -120,19 +120,19 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 							</a>
 						</li>
 
-                        <li class="tab <?php echo $active_tab == 'mif-shoppable' ? 'active' : ''; ?>">
-                            <a class="mif_for_disable mif-shoppable"
-                               href="<?php echo esc_url( admin_url( 'admin.php?page=mif&tab=mif-shoppable' ) ); ?>">
+						<li class="tab <?php echo $active_tab == 'mif-shoppable' ? 'active' : ''; ?>">
+							<a class="mif_for_disable mif-shoppable"
+								href="<?php echo esc_url( admin_url( 'admin.php?page=mif&tab=mif-shoppable' ) ); ?>">
 								<span>
 								<?php
 								esc_html_e( 'Shoppable', 'easy-facebook-likebox' );
 								if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) ) {
 									?>
-                                    (<?php esc_html_e( 'Pro', 'easy-facebook-likebox' ); ?>)
+									(<?php esc_html_e( 'Pro', 'easy-facebook-likebox' ); ?>)
 								<?php } ?>
 								</span>
-                            </a>
-                        </li>
+							</a>
+						</li>
 
 						<?php do_action( 'esf_insta_admin_tab', $fta_settings ); ?>
 
@@ -151,7 +151,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 
 						<div class="mif_tabs_right">
 							<a class=""
-							   href="<?php echo esc_url( admin_url( 'admin.php?page=easy-facebook-likebox' ) ); ?>"><?php esc_html_e( 'Facebook', 'easy-facebook-likebox' ); ?></a>
+								href="<?php echo esc_url( admin_url( 'admin.php?page=easy-facebook-likebox' ) ); ?>"><?php esc_html_e( 'Facebook', 'easy-facebook-likebox' ); ?></a>
 						</div>
 
 					<?php } ?>
@@ -160,32 +160,32 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 				<div class="mif_tab_c_holder">
 					<?php
 
-                    if( 'mif-general' == $active_tab ) {
-                        require_once ESF_INSTA_PLUGIN_DIR . 'admin/views/html-autenticate-tab.php';
-                    }
+					if ( 'mif-general' == $active_tab ) {
+						require_once ESF_INSTA_PLUGIN_DIR . 'admin/views/html-autenticate-tab.php';
+					}
 
-					if( 'mif-shortcode' == $active_tab ) {
+					if ( 'mif-shortcode' == $active_tab ) {
 						require_once ESF_INSTA_PLUGIN_DIR . 'admin/views/html-how-to-use-tab.php';
 					}
 
-					if( 'mif-skins' == $active_tab ) {
+					if ( 'mif-skins' == $active_tab ) {
 						require_once ESF_INSTA_PLUGIN_DIR . 'admin/views/html-skins-tab.php';
 					}
 
-					if( 'mif-moderate' == $active_tab ) {
+					if ( 'mif-moderate' == $active_tab ) {
 						require_once ESF_INSTA_PLUGIN_DIR . 'admin/views/html-moderate-tab.php';
 					}
 
-                    if( 'mif-shoppable' == $active_tab ) {
+					if ( 'mif-shoppable' == $active_tab ) {
 						require_once ESF_INSTA_PLUGIN_DIR . 'admin/views/html-shoppable-tab.php';
 					}
 
-					if( 'mif-cache' == $active_tab ){
+					if ( 'mif-cache' == $active_tab ) {
 						require_once ESF_INSTA_PLUGIN_DIR . 'admin/views/html-clear-cache-tab.php';
 					}
 
-                    do_action( 'esf_insta_admin_tab_content', $fta_settings );
-                    ?>
+					do_action( 'esf_insta_admin_tab_content', $fta_settings );
+					?>
 				</div>
 			</div>
 
@@ -199,9 +199,9 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 					<h5><?php esc_html_e( 'Are you sure?', 'easy-facebook-likebox' ); ?></h5>
 					<p><?php esc_html_e( 'Do you really want to delete the access token? It will delete all the pages data, access tokens, and permissions given to the app.', 'easy-facebook-likebox' ); ?></p>
 					<a class=" btn modal-close"
-					   href="javascript:void(0)"><?php esc_html_e( 'Cancel', 'easy-facebook-likebox' ); ?></a>
+						href="javascript:void(0)"><?php esc_html_e( 'Cancel', 'easy-facebook-likebox' ); ?></a>
 					<a class=" btn efbl_delete_at_confirmed modal-close"
-					   href="javascript:void(0)"><?php esc_html_e( 'Delete', 'easy-facebook-likebox' ); ?></a>
+						href="javascript:void(0)"><?php esc_html_e( 'Delete', 'easy-facebook-likebox' ); ?></a>
 				</div>
 			</div>
 
@@ -213,15 +213,15 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 					<h5><?php esc_html_e( 'Are you sure?', 'easy-facebook-likebox' ); ?></h5>
 					<p><?php esc_html_e( 'Do you really want to delete the access token? It will delete the access token saved in your website databse.', 'easy-facebook-likebox' ); ?></p>
 					<a class=" btn modal-close"
-					   href="javascript:void(0)"><?php esc_html_e( 'Cancel', 'easy-facebook-likebox' ); ?></a>
+						href="javascript:void(0)"><?php esc_html_e( 'Cancel', 'easy-facebook-likebox' ); ?></a>
 					<a class=" btn mif_delete_at_confirmed"
-					   href="#"><?php esc_html_e( 'Delete', 'easy-facebook-likebox' ); ?></a>
+						href="#"><?php esc_html_e( 'Delete', 'easy-facebook-likebox' ); ?></a>
 					<div class="mif-revoke-access-steps">
 						<p><?php esc_html_e( 'If you want to disconnect plugin app also follow the steps below:', 'easy-facebook-likebox' ); ?></p>
 						<ol>
 							<li><?php esc_html_e( 'Go to ', 'easy-facebook-likebox' ); ?>
 								<a target="_blank"
-								   href="<?php echo esc_url( 'https://www.instagram.com/' ); ?>">instagram.com</a> <?php esc_html_e( 'Log in with your username and password', 'easy-facebook-likebox' ); ?>
+									href="<?php echo esc_url( 'https://www.instagram.com/' ); ?>">instagram.com</a> <?php esc_html_e( 'Log in with your username and password', 'easy-facebook-likebox' ); ?>
 							</li>
 							<li><?php esc_html_e( 'Click on the user icon located on the top right of your screen.', 'easy-facebook-likebox' ); ?></li>
 							<li><?php esc_html_e( 'Go in your Instagram Settings and select “Authorized Apps”', 'easy-facebook-likebox' ); ?></li>
@@ -240,7 +240,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 					<p><?php esc_html_e( 'Sorry, Plugin is unable to get the accounts data. Please delete the access token and select accounts in the second step of authentication to give the permission.', 'easy-facebook-likebox' ); ?></p>
 
 					<a class=" efbl_authentication_btn btn"
-					   href="<?php echo esc_url( $auth_url ); ?>"><span class="dashicons dashicons-camera"></span><?php esc_html_e( 'Connect My Instagram Account', 'easy-facebook-likebox' ); ?>
+						href="<?php echo esc_url( $auth_url ); ?>"><span class="dashicons dashicons-camera"></span><?php esc_html_e( 'Connect My Instagram Account', 'easy-facebook-likebox' ); ?>
 					</a>
 				</div>
 			</div>
@@ -254,7 +254,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 					<h5><?php esc_html_e( 'Premium Feature', 'easy-facebook-likebox' ); ?></h5>
 					<p><?php esc_html_e( "We're sorry, Masonry layout is not included in your plan. Please upgrade to premium version to unlock this and all other cool features.", 'easy-facebook-likebox' ); ?>
 						<a target="_blank"
-						   href="<?php echo esc_url( 'https://easysocialfeed.com/my-instagram-feed-demo/masonary' ); ?>"><?php esc_html_e( 'Check out the demo', 'easy-facebook-likebox' ); ?></a>
+							href="<?php echo esc_url( 'https://easysocialfeed.com/my-instagram-feed-demo/masonary' ); ?>"><?php esc_html_e( 'Check out the demo', 'easy-facebook-likebox' ); ?></a>
 					</p>
 					<p><?php esc_html_e( 'Upgrade today and get ' . $banner_info['discount'] . ' discount! On the checkout click on "Have a promotional code?" and enter ', 'easy-facebook-likebox' ); ?>
 						<?php if ( $banner_info['coupon'] ) { ?>
@@ -263,7 +263,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 					</p>
 					<hr/>
 					<a href="<?php echo esc_url( efl_fs()->get_upgrade_url() ); ?>"
-					   class=" btn"><span class="dashicons dashicons-unlock"></span><?php esc_html_e( 'Upgrade to pro', 'easy-facebook-likebox' ); ?>
+						class=" btn"><span class="dashicons dashicons-unlock"></span><?php esc_html_e( 'Upgrade to pro', 'easy-facebook-likebox' ); ?>
 					</a>
 
 				</div>
@@ -281,7 +281,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 						<h5><?php esc_html_e( 'Premium Feature', 'easy-facebook-likebox' ); ?></h5>
 						<p><?php esc_html_e( "We're sorry, Carousel layout is not included in your plan. Please upgrade to premium version to unlock this and all other cool features.", 'easy-facebook-likebox' ); ?>
 							<a target="_blank"
-							   href="<?php echo esc_url( 'https://easysocialfeed.com/my-instagram-feed-demo/carousel' ); ?>"><?php esc_html_e( 'Check out the demo', 'easy-facebook-likebox' ); ?></a>
+								href="<?php echo esc_url( 'https://easysocialfeed.com/my-instagram-feed-demo/carousel' ); ?>"><?php esc_html_e( 'Check out the demo', 'easy-facebook-likebox' ); ?></a>
 						</p>
 						<p><?php esc_html_e( 'Upgrade today and get ' . $banner_info['discount'] . ' discount! On the checkout click on "Have a promotional code?" and enter ', 'easy-facebook-likebox' ); ?>
 							<?php if ( $banner_info['coupon'] ) { ?>
@@ -290,7 +290,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 						</p>
 						<hr/>
 						<a href="<?php echo esc_url( efl_fs()->get_upgrade_url() ); ?>"
-						   class=" btn"><span class="dashicons dashicons-unlock"></span><?php esc_html_e( 'Upgrade to pro', 'easy-facebook-likebox' ); ?>
+							class=" btn"><span class="dashicons dashicons-unlock"></span><?php esc_html_e( 'Upgrade to pro', 'easy-facebook-likebox' ); ?>
 						</a>
 
 					</div>
@@ -300,7 +300,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 
 
 			<div id="mif-free-half_width-upgrade"
-				 class="fta-upgrade-modal esf-modal fadeIn">
+				class="fta-upgrade-modal esf-modal fadeIn">
 				<div class="modal-content">
 
 					<div class="mif-modal-content"><span
@@ -308,7 +308,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 						<h5><?php esc_html_e( 'Premium Feature', 'easy-facebook-likebox' ); ?></h5>
 						<p><?php esc_html_e( "We're sorry, Half Width layout is not included in your plan. Please upgrade to premium version to unlock this and all other cool features.", 'easy-facebook-likebox' ); ?>
 							<a target="_blank"
-							   href="<?php echo esc_url( 'https://easysocialfeed.com/my-instagram-feed-demo/blog-layout' ); ?>"><?php esc_html_e( 'Check out the demo', 'easy-facebook-likebox' ); ?></a>
+								href="<?php echo esc_url( 'https://easysocialfeed.com/my-instagram-feed-demo/blog-layout' ); ?>"><?php esc_html_e( 'Check out the demo', 'easy-facebook-likebox' ); ?></a>
 						</p>
 						<p><?php esc_html_e( 'Upgrade today and get ' . $banner_info['discount'] . ' discount! On the checkout click on "Have a promotional code?" and enter ', 'easy-facebook-likebox' ); ?>
 							<?php if ( $banner_info['coupon'] ) { ?>
@@ -317,7 +317,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 						</p>
 						<hr/>
 						<a href="<?php echo esc_url( efl_fs()->get_upgrade_url() ); ?>"
-						   class=" btn"><span class="dashicons dashicons-lock"></span><?php esc_html_e( 'Upgrade to pro', 'easy-facebook-likebox' ); ?>
+							class=" btn"><span class="dashicons dashicons-lock"></span><?php esc_html_e( 'Upgrade to pro', 'easy-facebook-likebox' ); ?>
 						</a>
 
 					</div>
@@ -327,7 +327,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 
 
 			<div id="mif-free-full_width-upgrade"
-				 class="fta-upgrade-modal esf-modal fadeIn">
+				class="fta-upgrade-modal esf-modal fadeIn">
 				<div class="modal-content">
 
 					<div class="mif-modal-content"><span
@@ -335,7 +335,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 						<h5><?php esc_html_e( 'Premium Feature', 'easy-facebook-likebox' ); ?></h5>
 						<p><?php esc_html_e( "We're sorry, Full Width layout is not included in your plan. Please upgrade to premium version to unlock this and all other cool features.", 'easy-facebook-likebox' ); ?>
 							<a target="_blank"
-							   href="<?php echo esc_url( 'https://easysocialfeed.com/my-instagram-feed-demo/full-width' ); ?>"><?php esc_html_e( 'Check out the demo', 'easy-facebook-likebox' ); ?></a>
+								href="<?php echo esc_url( 'https://easysocialfeed.com/my-instagram-feed-demo/full-width' ); ?>"><?php esc_html_e( 'Check out the demo', 'easy-facebook-likebox' ); ?></a>
 						</p>
 						<p><?php esc_html_e( 'Upgrade today and get ' . $banner_info['coupon'] . ' discount! On the checkout click on "Have a promotional code?" and enter ', 'easy-facebook-likebox' ); ?>
 							<?php if ( $banner_info['coupon'] ) { ?>
@@ -344,7 +344,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 						</p>
 						<hr/>
 						<a href="<?php echo esc_url( efl_fs()->get_upgrade_url() ); ?>"
-						   class=" btn"><span class="dashicons dashicons-unlock"></span><?php esc_html_e( 'Upgrade to pro', 'easy-facebook-likebox' ); ?>
+							class=" btn"><span class="dashicons dashicons-unlock"></span><?php esc_html_e( 'Upgrade to pro', 'easy-facebook-likebox' ); ?>
 						</a>
 
 					</div>
@@ -361,7 +361,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 						</p>
 						<hr>
 						<a href="<?php echo esc_url( admin_url( 'admin.php?slug=esf-multifeed&page=feed-them-all-addons' ) ); ?>"
-						   class=" btn"><span class="dashicons dashicons-unlock"></span><?php esc_html_e( 'Get Started', 'easy-facebook-likebox' ); ?>
+							class=" btn"><span class="dashicons dashicons-unlock"></span><?php esc_html_e( 'Get Started', 'easy-facebook-likebox' ); ?>
 						</a>
 					</div>
 				</div>
@@ -412,7 +412,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 					<?php if ( $banner_info['target'] ) { ?>
 						target="<?php esc_attr_e( $banner_info['target'] ); ?>"
 					<?php } ?>
-				   class="btn"><span class="dashicons dashicons-unlock right"></span>
+					class="btn"><span class="dashicons dashicons-unlock right"></span>
 					<?php esc_html_e( $banner_info['button-text'] ); ?>
 				</a>
 			</div>
@@ -470,7 +470,7 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 								<?php } ?>
 
 								<span title="<?php esc_html_e( '5-Star Rating', 'easy-facebook-likebox' ); ?>"
-									  class="stars">★ ★ ★ ★ ★ </span>
+										class="stars">★ ★ ★ ★ ★ </span>
 
 								<div class="fta-carousel-actions">
 									<a href="<?php echo esc_url( $install_link ); ?>">
@@ -484,8 +484,8 @@ if ( efl_fs()->is_free_plan() || efl_fs()->is_plan( 'facebook_premium', true ) )
 										</a>
 
 									<a class="right"
-									   href="https://wordpress.org/plugins/<?php esc_attr_e( $slug ); ?>"
-									   target="_blank"><?php esc_html_e( 'More Info', 'easy-facebook-likebox' ); ?></a>
+										href="https://wordpress.org/plugins/<?php esc_attr_e( $slug ); ?>"
+										target="_blank"><?php esc_html_e( 'More Info', 'easy-facebook-likebox' ); ?></a>
 								</div>
 
 							</li>

@@ -77,6 +77,14 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 			);
 
 			add_action(
+				'wp_ajax_esf_hide_insta_personal_notice',
+				array(
+					$this,
+					'hide_insta_personal_notice',
+				)
+			);
+
+			add_action(
 				'wp_ajax_esf_hide_free_sidebar',
 				array(
 					$this,
@@ -108,7 +116,6 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 				),
 				1
 			);
-
 		}
 
 		public function esf_hide_notices() {
@@ -120,7 +127,6 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 			}
 
 			echo '<style>.toplevel_page_feed-them-all .wp-menu-image img{padding-top: 4px!important;}</style>';
-
 		}
 
 		/**
@@ -219,7 +225,7 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 					'esf_page',
 				),
 				FTA_PLUGIN_URL . 'admin/assets/images/plugin_icon.png',
-                25
+				25
 			);
 
 			add_submenu_page(
@@ -282,7 +288,7 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 			$esf_settings['plugins'][ $module_name ]['status'] = $module_status;
 
 			$status_updated = update_option( 'fta_settings', $esf_settings );
-				
+
 			if ( $module_status === 'activated' ) {
 				$status = __( ' Activated', 'easy-facebook-likebox' );
 			} else {
@@ -326,9 +332,9 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 
 			$response = wp_remote_request(
 				'https://graph.facebook.com/v4.0/me/permissions?access_token=' . $access_token . '',
-					array(
-						'method' => 'DELETE',
-					)
+				array(
+					'method' => 'DELETE',
+				)
 			);
 			wp_remote_retrieve_body( $response );
 			if ( $delted_data ) {
@@ -357,7 +363,7 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 			$datetime1     = new DateTime( $install_date );
 			$datetime2     = new DateTime( $display_date );
 			$diff_intrval  = round( ( $datetime2->format( 'U' ) - $datetime1->format( 'U' ) ) / ( 60 * 60 * 24 ) );
-			if ( $diff_intrval >=6 && get_site_option( 'fta_supported' ) !== 'yes' ) { ?>
+			if ( $diff_intrval >= 6 && get_site_option( 'fta_supported' ) !== 'yes' ) { ?>
 
 				<div style="position:relative;padding-right:80px;background: #fff;" class="update-nag fta_msg fta_review">
 					<p>
@@ -394,65 +400,57 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 					jQuery('.esf_HideRating').click(function() {
 					var data = {'action': 'esf_hide_rating_notice'};
 						jQuery.ajax({
-							  url: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>",
-							  type: 'post',
-							  data: data,
-							  dataType: 'json',
-							  async: !0,
-							  success: function(e) {
+								url: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>",
+								type: 'post',
+								data: data,
+								dataType: 'json',
+								async: !0,
+								success: function(e) {
 								if(e === 'success'){
 									jQuery('.fta_msg').slideUp('fast');
 								}
-							  },
+								},
 						});
 						});
 				</script>
 				<?php
-			} 
-			
-			if ( get_site_option( 'fta_row_layout_notice' ) !== 'yes' ) { ?>
+			}
 
-							<div style="position:relative;padding-right:80px;background: #fff;" class="update-nag fta_row_notice">
-					<p>
-						<?php esc_html_e( 'We are excited to announce the release of a new layout for our ESF plugin called ', 'easy-facebook-likebox' ); ?> 
-						<b><?php esc_html_e( 'Row', 'easy-facebook-likebox' ); ?>!</b>
-						<?php esc_html_e( 'It will help you display the feed in a single row. Click ', 'easy-facebook-likebox' ); ?>
-						<a href="https://easysocialfeed.com/custom-facebook-feed/row/" target="_blank">
-							<?php esc_html_e( 'here ', 'easy-facebook-likebox' ); ?>
-						</a>
-						<?php esc_html_e( 'to preview of Facebook, and ', 'easy-facebook-likebox' ); ?>
-						<a href="https://easysocialfeed.com/my-instagram-feed-demo/row/" target="_blank">
-							<?php esc_html_e( 'here ', 'easy-facebook-likebox' ); ?>
-						</a>
-						<?php esc_html_e( 'for Instagram', 'easy-facebook-likebox' ); ?>.
-					</p>
-					<div class="fl_support_btns">
-						<div class="esf_hide_row_notice" style="position:absolute;right:10px;cursor:pointer;top:4px;color: #029be4;">
-							<div style="font-weight:bold;" class="dashicons dashicons-no-alt"></div>
-							<span style="margin-left: 2px;">
-								<?php esc_html_e( 'Dismiss', 'easy-facebook-likebox' ); ?>
-							</span>
+			// display Instagram personal notice on instagram dashboard page only
+			if ( isset( $_GET['page'] ) && $_GET['page'] == 'mif' && get_site_option( 'esf_insta_personal_notice' ) !== 'yes' ) {
+				?>
+
+				<div class="fs-notice updated promotion fs-sticky fs-has-title fta_insta_personal_notice">
+							<label class="fs-plugin-title">Easy Social Feed</label>
+					
+							<div style="cursor: pointer;color: #aaa;float: right;" class="esf_hide_insta_personal_notice">
+							<i style="margin-top: 7px;display: inline-block;" class="dashicons dashicons-no" title="Dismiss"></i>
+							<span style="margin-top: 7px;display: inline-block;">Dismiss</span>
 						</div>
+					
+					<div class="fs-notice-body">
+					<?php esc_html_e( 'Due to a temporary issue with the Instagram API, the personal option is currently unavailable. However, you can still display the feed by using the Business option.', 'easy-facebook-likebox' ); ?>
 					</div>
 				</div>
 				<script>
-					jQuery('.esf_hide_row_notice').click(function() {
-					var data = {'action': 'esf_hide_row_notice'};
+					jQuery('.esf_hide_insta_personal_notice').click(function() {
+					var data = {'action': 'esf_hide_insta_personal_notice'};
 						jQuery.ajax({
-							  url: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>",
-							  type: 'post',
-							  data: data,
-							  dataType: 'json',
-							  async: !0,
-							  success: function(e) {
+								url: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>",
+								type: 'post',
+								data: data,
+								dataType: 'json',
+								async: !0,
+								success: function(e) {
 								if(e === 'success'){
-									jQuery('.fta_row_notice').slideUp('fast');
+									jQuery('.fta_insta_personal_notice').slideUp('fast');
 								}
-							  },
+								},
 						});
 						});
 				</script>
-			<?php	}
+				<?php
+			}
 
 			return false;
 		}
@@ -477,6 +475,15 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 			wp_die();
 		}
 
+		/**
+		 * Hide Instagram personal notice permenately
+		 */
+		public function hide_insta_personal_notice() {
+			update_site_option( 'esf_insta_personal_notice', 'yes' );
+			echo wp_json_encode( array( 'success' ) );
+			wp_die();
+		}
+
 
 		/**
 		 * Hide sidebar for free users
@@ -497,7 +504,6 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 			} else {
 				wp_send_json_error( __( 'Something went wrong! Please try again', 'easy-facebook-likebox' ) );
 			}
-
 		}
 
 
@@ -632,7 +638,6 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 
 				}
 			}
-
 		}
 
 		/**
@@ -692,7 +697,6 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 			}
 
 			return $return_arr;
-
 		}
 
 		public function mt_plugins_info() {
@@ -770,62 +774,62 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 		}
 
 		/**
-         * Add affilate on the addons page
-         *
+		 * Add affilate on the addons page
+		 *
 		 * @return false|void
 		 */
 		public function add_affilates() {
 			$screen = get_current_screen();
 
-            if( $screen->id !== 'easy-social-feed_page_feed-them-all-addons' ) {
-                return false;
-            } ?>
-            <div class="esf-affilates-wrap" style="display: none;">
-                <div class="esf-affilates">
-                    <div class="esf-affilates__logo">
-                        <img src="<?php echo FTA_PLUGIN_URL . 'admin/assets/images/accessibe-logo.svg'; ?>" alt="Affilates Logo">
-                    </div>
-                    <div class="esf-affilates__content">
-                        <h1 class="esf-affilates__title"><?php esc_html_e('Website Accessibility', 'easy-facebook-likebox'); ?></h1>
-                        <p class="esf-affilates__desc"><?php esc_html_e('Fully automated web accessibility technology that complies with the WCAG 2.1 and keeps your website accessible at all times', 'easy-facebook-likebox'); ?></p>
-                        <a class="button button-primary" href="https://accessibe.com/a/a2fxxop" target="_blank"><?php esc_html_e('Get it', 'easy-facebook-likebox'); ?></a>
-                    </div>
-                </div>
-            </div>
-            <script>
-                jQuery(document).ready(function ($) {
-                   const html =  $('.esf-affilates-wrap').html();
-                     $('.easy-social-feed_page_feed-them-all-addons #poststuff').prepend(html);
-                });
-            </script>
-            <style>
-                .easy-social-feed_page_feed-them-all-addons #poststuff {
-                    display: flex;
-                }
-                .easy-social-feed_page_feed-them-all-addons .esf-affilates {
-                    max-width: 300px;
-                    padding: 20px;
-                    background-color: #fff;
-                    text-align: center;
-                    margin-top: 13px;
-                }
-                .easy-social-feed_page_feed-them-all-addons .esf-affilates .esf-affilates__title {
-                    font-weight: bold;
-                }
-                .easy-social-feed_page_feed-them-all-addons .esf-affilates .esf-affilates__logo,
-                .easy-social-feed_page_feed-them-all-addons .esf-affilates .esf-affilates__title,
-                .easy-social-feed_page_feed-them-all-addons .esf-affilates .esf-affilates__desc {
-                    padding-bottom: 20px;
-                    margin: 0;
-                }
-                .easy-social-feed_page_feed-them-all-addons .esf-affilates .esf-affilates__logo {
-                    max-width: 150px;
-                    float: none;
-                    margin: 0 auto;
-                }
-            </style>
-            <?php
-
+			if ( $screen->id !== 'easy-social-feed_page_feed-them-all-addons' ) {
+				return false;
+			}
+			?>
+			<div class="esf-affilates-wrap" style="display: none;">
+				<div class="esf-affilates">
+					<div class="esf-affilates__logo">
+						<img src="<?php echo FTA_PLUGIN_URL . 'admin/assets/images/accessibe-logo.svg'; ?>" alt="Affilates Logo">
+					</div>
+					<div class="esf-affilates__content">
+						<h1 class="esf-affilates__title"><?php esc_html_e( 'Website Accessibility', 'easy-facebook-likebox' ); ?></h1>
+						<p class="esf-affilates__desc"><?php esc_html_e( 'Fully automated web accessibility technology that complies with the WCAG 2.1 and keeps your website accessible at all times', 'easy-facebook-likebox' ); ?></p>
+						<a class="button button-primary" href="https://accessibe.com/a/a2fxxop" target="_blank"><?php esc_html_e( 'Get it', 'easy-facebook-likebox' ); ?></a>
+					</div>
+				</div>
+			</div>
+			<script>
+				jQuery(document).ready(function ($) {
+					const html =  $('.esf-affilates-wrap').html();
+					$('.easy-social-feed_page_feed-them-all-addons #poststuff').prepend(html);
+				});
+			</script>
+			<style>
+				.easy-social-feed_page_feed-them-all-addons #poststuff {
+					display: flex;
+				}
+				.easy-social-feed_page_feed-them-all-addons .esf-affilates {
+					max-width: 300px;
+					padding: 20px;
+					background-color: #fff;
+					text-align: center;
+					margin-top: 13px;
+				}
+				.easy-social-feed_page_feed-them-all-addons .esf-affilates .esf-affilates__title {
+					font-weight: bold;
+				}
+				.easy-social-feed_page_feed-them-all-addons .esf-affilates .esf-affilates__logo,
+				.easy-social-feed_page_feed-them-all-addons .esf-affilates .esf-affilates__title,
+				.easy-social-feed_page_feed-them-all-addons .esf-affilates .esf-affilates__desc {
+					padding-bottom: 20px;
+					margin: 0;
+				}
+				.easy-social-feed_page_feed-them-all-addons .esf-affilates .esf-affilates__logo {
+					max-width: 150px;
+					float: none;
+					margin: 0 auto;
+				}
+			</style>
+			<?php
 		}
 	}
 

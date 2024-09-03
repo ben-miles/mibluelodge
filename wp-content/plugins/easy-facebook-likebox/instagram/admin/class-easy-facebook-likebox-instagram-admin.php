@@ -232,11 +232,10 @@ if ( !class_exists( 'ESF_Instagram_Admin' ) ) {
             $self_decoded_data = $this->esf_insta_get_data( $self_data );
             if ( isset( $self_decoded_data->error ) && !empty( $self_decoded_data->error ) ) {
                 wp_send_json_error( $self_decoded_data->error->message );
-            } else {
-                if ( isset( $self_decoded_data ) && !empty( $self_decoded_data ) ) {
-                    $FTA = new Feed_Them_All();
-                    $fta_settings = $FTA->fta_get_settings();
-                    $mif_accounts_html .= '<ul class="collection with-header"> <li class="collection-header"><h5>' . __( 'Connected Instagram Account', 'easy-facebook-likebox' ) . '</h5> 
+            } elseif ( isset( $self_decoded_data ) && !empty( $self_decoded_data ) ) {
+                $FTA = new Feed_Them_All();
+                $fta_settings = $FTA->fta_get_settings();
+                $mif_accounts_html .= '<ul class="collection with-header"> <li class="collection-header"><h5>' . __( 'Connected Instagram Account', 'easy-facebook-likebox' ) . '</h5> 
 				<a href="#fta-remove-at" class="modal-trigger fta-remove-at-btn tooltipped" data-type="personal" data-position="left" data-delay="50" data-tooltip="' . __( 'Delete Access Token', 'easy-facebook-likebox' ) . '"><span class="dashicons dashicons-trash"></span></a></li>
 				<li class="collection-item li-' . $self_decoded_data->id . '">
 				 <div class="esf-bio-wrap">    
@@ -245,19 +244,18 @@ if ( !class_exists( 'ESF_Instagram_Admin' ) ) {
 			   </div>
 				</li>
 			</ul>';
-                    $fta_settings['plugins']['instagram']['instagram_connected_account'][$self_decoded_data->id];
-                    $fta_settings['plugins']['instagram']['instagram_connected_account'][$self_decoded_data->id]['username'] = $self_decoded_data->username;
-                    $fta_settings['plugins']['instagram']['instagram_connected_account'][$self_decoded_data->id]['access_token'] = $access_token;
-                    $fta_settings['plugins']['instagram']['selected_type'] = 'personal';
-                    $mif_saved = update_option( 'fta_settings', $fta_settings );
-                    if ( isset( $mif_saved ) ) {
-                        wp_send_json_success( [__( 'Successfully Authenticated!', 'easy-facebook-likebox' ), $mif_accounts_html] );
-                    } else {
-                        wp_send_json_error( __( 'Something went wrong! Refresh the page and try again', 'easy-facebook-likebox' ) );
-                    }
+                $fta_settings['plugins']['instagram']['instagram_connected_account'][$self_decoded_data->id];
+                $fta_settings['plugins']['instagram']['instagram_connected_account'][$self_decoded_data->id]['username'] = $self_decoded_data->username;
+                $fta_settings['plugins']['instagram']['instagram_connected_account'][$self_decoded_data->id]['access_token'] = $access_token;
+                $fta_settings['plugins']['instagram']['selected_type'] = 'personal';
+                $mif_saved = update_option( 'fta_settings', $fta_settings );
+                if ( isset( $mif_saved ) ) {
+                    wp_send_json_success( array(__( 'Successfully Authenticated!', 'easy-facebook-likebox' ), $mif_accounts_html) );
                 } else {
                     wp_send_json_error( __( 'Something went wrong! Refresh the page and try again', 'easy-facebook-likebox' ) );
                 }
+            } else {
+                wp_send_json_error( __( 'Something went wrong! Refresh the page and try again', 'easy-facebook-likebox' ) );
             }
         }
 
@@ -269,14 +267,14 @@ if ( !class_exists( 'ESF_Instagram_Admin' ) ) {
                 $access_token = sanitize_text_field( $_POST['access_token'] );
                 $id = sanitize_text_field( $_POST['id'] );
                 $fta_api_url = 'https://graph.facebook.com/me/accounts?fields=access_token,username,id,name,fan_count,category,about&access_token=' . $access_token;
-                $args = [
+                $args = array(
                     'timeout'   => 150,
                     'sslverify' => false,
-                ];
+                );
                 $fta_pages = wp_remote_get( $fta_api_url, $args );
                 if ( is_array( $fta_pages ) && !is_wp_error( $fta_pages ) ) {
                     $fb_pages = json_decode( $fta_pages['body'] );
-                    $approved_pages = [];
+                    $approved_pages = array();
                     if ( $fb_pages->data ) {
                         $title = __( 'Connected Instagram Accounts', 'easy-facebook-likebox' );
                         $efbl_all_pages_html = '<ul class="collection with-header"> <li class="collection-header"><h5>' . $title . '</h5> 
@@ -356,7 +354,7 @@ if ( !class_exists( 'ESF_Instagram_Admin' ) ) {
                         }
                         $fta_settings['plugins']['instagram']['selected_type'] = 'business';
                         update_option( 'fta_settings', $fta_settings );
-                        wp_send_json_success( [__( 'Successfully Authenticated!', 'easy-facebook-likebox' ), $efbl_all_pages_html] );
+                        wp_send_json_success( array(__( 'Successfully Authenticated!', 'easy-facebook-likebox' ), $efbl_all_pages_html) );
                     } else {
                         wp_send_json_error( __( 'No page found', 'easy-facebook-likebox' ) );
                     }

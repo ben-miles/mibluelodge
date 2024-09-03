@@ -4,6 +4,9 @@
  * Replace them with your own styles or remove the file completely.
  */
 .wp-block-esf-fb-halfwidth {
+	.esf-block-btns .is-primary {
+		margin-right: 10px;
+	}
 	.esf-fb-no-pages {
 		display: flex;
 		flex-direction: column;

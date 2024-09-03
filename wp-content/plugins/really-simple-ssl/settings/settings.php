@@ -840,6 +840,7 @@ function rsssl_sanitize_field($value, string $type, string $id)
 		case 'host':
 		case 'text':
 		case 'license':
+		case 'password':
 		case 'captcha_key':
 		case 'postdropdown':
 			return sanitize_text_field($value);
@@ -850,8 +851,6 @@ function rsssl_sanitize_field($value, string $type, string $id)
 				$value = array($value);
 			}
 			return array_map('sanitize_text_field', $value);
-		case 'password':
-			return rsssl_encode_password($value);
 		case 'email':
 			return sanitize_email($value);
 		case 'url':
@@ -875,41 +874,6 @@ function rsssl_sanitize_field($value, string $type, string $id)
 		default:
 			return sanitize_text_field($value);
 	}
-}
-
-/**
- * Sanitize and encode a password
- *
- * @param $password
- *
- * @return mixed|string
- */
-function rsssl_encode_password($password)
-{
-	if (!rsssl_user_can_manage()) {
-		return $password;
-	}
-	if (strlen(trim($password)) === 0) {
-		return $password;
-	}
-
-	$password = sanitize_text_field($password);
-	if (strpos($password, 'rsssl_') !== FALSE) {
-		return $password;
-	}
-
-	$key = get_site_option('rsssl_key');
-	if (!$key) {
-		update_site_option('rsssl_key', time());
-		$key = get_site_option('rsssl_key');
-	}
-
-	$ivlength = openssl_cipher_iv_length('aes-256-cbc');
-	$iv = openssl_random_pseudo_bytes($ivlength);
-	$ciphertext_raw = openssl_encrypt($password, 'aes-256-cbc', $key, 0, $iv);
-	$key = base64_encode($iv . $ciphertext_raw);
-
-	return 'rsssl_' . $key;
 }
 
 /**

@@ -1,8 +1,11 @@
 <?php
+
 defined( 'ABSPATH' ) or die();
 
+require_once rsssl_path . '/lib/admin/class-helper.php';
+use RSSSL\lib\admin\Helper;
 class rsssl_admin {
-
+    use Helper;
 	private static $_this;
 	public $wpconfig_siteurl_not_fixed   = false;
 	public $no_server_variable           = false;
@@ -362,8 +365,11 @@ class rsssl_admin {
 				update_option( 'active_plugins', $current );
 			}
 			do_action( 'rsssl_deactivate' );
+
+			rsssl_clear_scheduled_hooks();
+
 			wp_redirect( admin_url( 'plugins.php' ) );
-			exit;
+            exit;
 		}
 	}
 
@@ -605,7 +611,7 @@ class rsssl_admin {
 	 */
 
 	public function wpconfig_is_writable() {
-		$wpconfig_path = $this->find_wp_config_path();
+		$wpconfig_path = $this->wpconfig_path();
 		if ( empty( $wpconfig_path ) ) {
 			return false;
 		}
@@ -657,29 +663,6 @@ class rsssl_admin {
 	}
 
 	/**
-	 * Find the path to wp-config
-	 *
-	 * @since  2.1
-	 *
-	 * @access public
-	 * @return string|false
-	 *
-	 */
-
-	public function find_wp_config_path() {
-		$location_of_wp_config = ABSPATH;
-		if ( ! file_exists( ABSPATH . 'wp-config.php' ) && file_exists( dirname( ABSPATH ) . '/wp-config.php' ) ) {
-			$location_of_wp_config = dirname( ABSPATH );
-		}
-		$location_of_wp_config = trailingslashit( $location_of_wp_config );
-		$wpconfig_path         = $location_of_wp_config . 'wp-config.php';
-		if ( file_exists( $wpconfig_path ) ) {
-			return apply_filters('rsssl_wpconfig_path', $wpconfig_path );
-		}
-		return apply_filters('rsssl_wpconfig_path', false );
-	}
-
-	/**
 	 * remove https from defined siteurl and homeurl in the wpconfig, if present
 	 *
 	 * @since  2.1
@@ -693,7 +676,7 @@ class rsssl_admin {
 		if ( ! rsssl_user_can_manage() ) {
 			return;
 		}
-		$wpconfig_path = $this->find_wp_config_path();
+		$wpconfig_path = $this->wpconfig_path();
 		if ( ! empty( $wpconfig_path ) ) {
 			$wpconfig    = file_get_contents( $wpconfig_path );
 			$homeurl_pos = strpos( $wpconfig, "define('WP_HOME','https://" );
@@ -722,7 +705,7 @@ class rsssl_admin {
 			return;
 		}
 
-		$wpconfig_path = $this->find_wp_config_path();
+		$wpconfig_path = $this->wpconfig_path();
 		if ( empty( $wpconfig_path ) ) {
 			return;
 		}
@@ -752,7 +735,7 @@ class rsssl_admin {
 		if ( ! rsssl_user_can_manage() ) {
 			return;
 		}
-		$wpconfig_path = $this->find_wp_config_path();
+		$wpconfig_path = $this->wpconfig_path();
 		if ( empty( $wpconfig_path ) ) {
 			return;
 		}
@@ -784,7 +767,7 @@ class rsssl_admin {
 	 */
 
 	public function wpconfig_has_fixes() {
-		$wpconfig_path = $this->find_wp_config_path();
+		$wpconfig_path = $this->wpconfig_path();
 		if ( empty( $wpconfig_path ) ) {
 			return false;
 		}
@@ -818,7 +801,7 @@ class rsssl_admin {
 			return;
 		}
 
-		$wpconfig_path = $this->find_wp_config_path();
+		$wpconfig_path = $this->wpconfig_path();
 		if ( empty( $wpconfig_path ) ) {
 			return;
 		}
@@ -860,7 +843,7 @@ class rsssl_admin {
 			return;
 		}
 
-		$wpconfig_path = $this->find_wp_config_path();
+		$wpconfig_path = $this->wpconfig_path();
 		if ( empty( $wpconfig_path ) ) {
 			return;
 		}
@@ -986,7 +969,7 @@ class rsssl_admin {
 			return;
 		}
 
-		$wpconfig_path = $this->find_wp_config_path();
+		$wpconfig_path = $this->wpconfig_path();
 		if ( empty( $wpconfig_path ) ) {
 			return;
 		}
@@ -2609,9 +2592,7 @@ class rsssl_admin {
 					$output   = call_user_func(array($base()->{$class}, $function));
 				} else {
 					$output = false;
-					if ( defined('WP_DEBUG') && WP_DEBUG ) {
-                        error_log('Really Simple SSL: ' . $func . ' not found');
-                    }
+                    $this->log( $func . ' not found');
 				}
 			} else {
 				$output = $func();
@@ -2703,7 +2684,7 @@ class rsssl_admin {
 	 */
 
 	public function secure_cookie_settings_status() {
-		$wpconfig_path = $this->find_wp_config_path();
+		$wpconfig_path = $this->wpconfig_path();
 		if ( ! $wpconfig_path ) {
 			return 'wpconfig-not-writable';
 		}
@@ -2740,7 +2721,7 @@ class rsssl_admin {
 
 		//only if cookie settings were not inserted yet
 		if ( $this->secure_cookie_settings_status() !== 'set' ) {
-			$wpconfig_path = RSSSL()->admin->find_wp_config_path();
+			$wpconfig_path = $this->wpconfig_path();
 			if ( empty( $wpconfig_path ) ) {
 				return;
 			}

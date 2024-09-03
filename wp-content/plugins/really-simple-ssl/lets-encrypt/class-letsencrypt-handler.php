@@ -2,6 +2,8 @@
 defined('ABSPATH') or die("you do not have access to this page!");
 
 require_once rsssl_le_path . 'vendor/autoload.php';
+require_once rsssl_path . 'lib/admin/class-encryption.php';
+use RSSSL\lib\admin\Encryption;
 use LE_ACME2\Account;
 use LE_ACME2\Authorizer\AbstractDNSWriter;
 use LE_ACME2\Authorizer\DNS;
@@ -12,6 +14,7 @@ use LE_ACME2\Utilities\Certificate;
 use LE_ACME2\Utilities\Logger;
 
 class rsssl_letsencrypt_handler {
+	use Encryption;
 
 	private static $_this;
 	/**
@@ -29,6 +32,8 @@ class rsssl_letsencrypt_handler {
 		if ( isset( self::$_this ) ) {
 			wp_die();
 		}
+
+		add_action('admin_init', array($this, 'upgrade'));
 
 		//loading of these hooks is stricter. The class can be used in the notices, which are needed on the generic dashboard
 		//These functionality is not needed on the dashboard, so should only be loaded in strict circumstances
@@ -157,10 +162,21 @@ class rsssl_letsencrypt_handler {
 	public function after_save_field(
 		$fieldname, $fieldvalue, $prev_value, $type
 	) {
-		rsssl_progress_add('domain');
+		rsssl_progress_add( 'domain' );
 		//only run when changes have been made
 		if ( $fieldvalue === $prev_value ) {
 			return;
+		}
+
+		$options = [
+			'directadmin_password',
+			'cpanel_password',
+			'cloudways_api_key',
+			'plesk_password',
+		];
+
+		if ( in_array($fieldname, $options) && strpos( $fieldvalue, 'rsssl_' ) === false ) {
+			rsssl_update_option($fieldname, $this->encrypt_with_prefix($fieldvalue) );
 		}
 
 		if ( $fieldname==='other_host_type' ){
@@ -1811,6 +1827,36 @@ class rsssl_letsencrypt_handler {
 		return new RSSSL_RESPONSE($status, $action, $message);
 	}
 
+	public function upgrade(){
+		if ( get_option('rsssl_upgrade_le_key') ) {
+			// Check if the encryption key is not empty before upgrading. On slow servers, the write to wp-config.php can be
+			// incomplete before the plugin gets here
+			$key = $this->get_encryption_key();
+			if ( empty( $key ) ) {
+				return;
+			}
+			delete_option('rsssl_upgrade_le_key');
+			$site_key = get_site_option( 'rsssl_le_key');
+			if ( $site_key ) {
+				$options = [
+					'directadmin_password',
+					'cpanel_password',
+					'cloudways_api_key',
+					'plesk_password',
+				];
+				foreach ( $options as $option ) {
+					$option_value = rsssl_get_option( $option );
+					if ( $option_value ) {
+						$decrypted = $this->decrypt_if_prefixed( $option_value, 'rsssl_', $site_key);
+						$encrypted = $this->encrypt_with_prefix($decrypted);
+						rsssl_update_option($option, $encrypted);
+					}
+				}
+				delete_site_option( 'rsssl_le_key');
+			}
+		}
+	}
+
 	/**
 	 * Cleanup the default message a bit
 	 *
@@ -1824,33 +1870,4 @@ class rsssl_letsencrypt_handler {
 			'Error creating new order ::',
 		), '', $msg);
     }
-
-	/**
-	 * Decode a string
-	 * @param $string
-	 *
-	 * @return string
-	 */
-    public function decode($string){
-		if ( !wp_doing_cron() && !rsssl_user_can_manage() ) {
-			return '';
-		}
-
-		if ( strpos( $string , 'rsssl_') !== FALSE ) {
-			$key = get_site_option( 'rsssl_key' );
-			$string = str_replace('rsssl_', '', $string);
-
-			// To decrypt, split the encrypted data from our IV
-			$ivlength = openssl_cipher_iv_length('aes-256-cbc');
-			$iv = substr(base64_decode($string), 0, $ivlength);
-			$encrypted_data = substr(base64_decode($string), $ivlength);
-
-			$decrypted =  openssl_decrypt($encrypted_data, 'aes-256-cbc', $key, 0, $iv);
-			return $decrypted;
-		}
-
-		//not encoded, return
-		return $string;
-	}
-
 }

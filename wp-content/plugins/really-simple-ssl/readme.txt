@@ -4,9 +4,9 @@ Donate link: https://www.paypal.me/reallysimplessl
 Tags: Security, SSL, https, HSTS, mixed content
 Requires at least: 5.9
 License: GPL2
-Tested up to: 6.6
+Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 8.1.6
+Stable tag: 8.3.0.1
 
 Easily improve site security with WordPress hardening, vulnerability detection and SSL certificate generation.
 
@@ -131,12 +131,20 @@ The plugin checks your certificate before enabling, but if, for example, you mig
 If you can't deactivate, do not just remove the plugin folder to uninstall! Follow these [instructions](https://really-simple-ssl.com/knowledge-base/uninstall-websitebackend-not-accessible/) instead.
 
 == Changelog ==
-= 8.1.6 =
-* July 29th, 2024
-* Fix: code for two modules loaded even if not enabled.
-* Improvement: added filter to write to other file than the wp-config.php
-* Improvement: added a constant which prevents inserting the .htaccess auto prepend rule
-* Improvement: several bug fixes in the Let's Encrypt generation
+= 8.3.0.1 =
+* Fix: Issues with the decryption model
+
+= 8.3.0 =
+* August 12th, 2024
+* Feature: Password security scan. This feature scans your users for weak passwords, and allows you to enforce non-compromised passwords.
+* Fix: Fixed some strings that were not translatable. This has been resolved.
+* Fix: Premium support link did not work. Now links to the correct page.
+* Improvement: Disable the cron schedules on deactivation.
+* Fix: Links in emails were sometimes not correct. This has been fixed.
+* Fix: Fatal error on permission detection. This has been resolved.
+* Improvement: Custom header for the license checks for better compatibility with some hosting environments.
+* Improvement: Added option to disable X-powered-by header.
+* Improvement: New improved encryption method for some settings.
 
 = 8.1.5 =
 * June 21th, 2024

@@ -58,9 +58,25 @@ if (!class_exists("rsssl_vulnerabilities")) {
 	        add_filter('rsssl_vulnerability_data', array($this, 'get_stats'));
 
 	        //now we add the action to the cron.
-	        add_filter('rsssl_every_three_hours_cron', array($this, 'run_cron'));
+	        add_action('rsssl_three_hours_cron', array($this, 'run_cron'));
 	        add_filter('rsssl_notices', [$this, 'show_help_notices'], 10, 1);
 	        add_action( 'rsssl_after_save_field', array( $this, 'maybe_delete_local_files' ), 10, 4 );
+	        add_action( 'rsssl_upgrade', array( $this, 'upgrade_encrypted_files') );
+        }
+
+	    /**
+         * Upgrade to the new encryption system by deleting all files en re-downloading
+         *
+	     * @return void
+	     */
+        public function upgrade_encrypted_files($prev_version) : void {
+	        if ( $prev_version && version_compare( $prev_version, '8.3.0', '<' ) ) {
+		        //delete all files and reload
+		        Rsssl_File_Storage::DeleteAll();
+		        $this->force_reload_files();
+		        delete_option( 'rsssl_hashkey' );
+            }
+
         }
 
 //	    /**

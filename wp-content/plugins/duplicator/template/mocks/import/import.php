@@ -24,7 +24,7 @@ defined("ABSPATH") || exit;
                     <?php
                     printf(
                         esc_html_x(
-                            'Step %1$s1%2$s of 2: Upload Archive',
+                            'Step %1$s1%2$s of 2: Upload Backup',
                             '%1$s and %2$s are opening and closing span tags',
                             'duplicator'
                         ),
@@ -53,7 +53,7 @@ defined("ABSPATH") || exit;
                                 <i class="fa fa-download fa-2x">
                                 </i>
                                 <span class="dup-drag-drop-message">
-                                  Drag &amp; Drop Archive File Here
+                                  Drag &amp; Drop Backup File Here
                                 </span>
                                 <input 
                                     id="dup-import-dd-btn" 
@@ -83,7 +83,7 @@ defined("ABSPATH") || exit;
             <table class="dup-import-avail-packs packages-list">
                 <thead>
                     <tr>
-                        <th class="name">Archives</th>
+                        <th class="name">Backups</th>
                         <th class="size">Size</th>
                         <th class="created">Created</th>
                         <th class="funcs">Status</th>

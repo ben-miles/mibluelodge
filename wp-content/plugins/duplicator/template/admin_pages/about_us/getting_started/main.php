@@ -26,3 +26,5 @@ defined('ABSPATH') || exit;
 TplMng::getInstance()->render('admin_pages/about_us/getting_started/first_package');
 
 TplMng::getInstance()->render('admin_pages/about_us/getting_started/get_pro');
+?>
+</div>

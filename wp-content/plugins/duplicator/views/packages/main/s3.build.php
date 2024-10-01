@@ -19,10 +19,10 @@ $active_package_present = true;
 
 if (DUP_Settings::Get('installer_name_mode') == DUP_Settings::INSTALLER_NAME_MODE_SIMPLE) {
     $txtInstallHelpMsg = __("When clicking the Installer download button, the 'Save as' dialog will default the name to 'installer.php'. "
-        . "To improve the security and get more information, goto: Settings ❯ Packages Tab ❯ Installer Name option.", 'duplicator');
+        . "To improve the security and get more information, goto: Settings ❯ Backups Tab ❯ Installer Name option.", 'duplicator');
 } else {
     $txtInstallHelpMsg = __("When clicking the Installer download button, the 'Save as' dialog will save the name as '[name]_[hash]_[time]_installer.php'. "
-        . "This is the secure and recommended option.  For more information goto: Settings ❯ Packages Tab ❯ Installer Name Option.  To quickly copy the hashed "
+        . "This is the secure and recommended option.  For more information goto: Settings ❯ Backups Tab ❯ Installer Name Option.  To quickly copy the hashed "
         . "installer name, to your clipboard use the copy icon link.", 'duplicator');
 }
 ?>
@@ -114,14 +114,14 @@ TOOL BAR:STEPS -->
                 </div>
                 <div id="dup-wiz-title" class="dup-guide-txt-color">
                     <i class="fab fa-wordpress"></i>
-                    <?php esc_html_e('Step 3: Build and download the package files.', 'duplicator'); ?>
+                    <?php esc_html_e('Step 3: Build and download the Backup files.', 'duplicator'); ?>
                 </div>
             </div>
         </td>
         <td style="padding-bottom:4px">
             <span>
                 <a id="dup-packages-btn" href="?page=duplicator" class="button <?php echo ($active_package_present ? 'no-display' : ''); ?>">
-                    <?php esc_html_e("Packages", 'duplicator'); ?>
+                    <?php esc_html_e("Backups", 'duplicator'); ?>
                 </a>
             </span>
             <?php
@@ -147,7 +147,7 @@ TOOL BAR:STEPS -->
 <div id="dup-build-progress-bar-wrapper">
     <?php do_action('duplicator_build_progress_header'); ?>
     <div id="dup-progress-bar-area">
-        <div class="dup-progress-title"><?php esc_html_e('Building Package', 'duplicator'); ?> <i class="fa fa-cog fa-spin"></i> <span id="dup-progress-percent">0%</span></div>
+        <div class="dup-progress-title"><?php esc_html_e('Building Backup', 'duplicator'); ?> <i class="fa fa-cog fa-spin"></i> <span id="dup-progress-percent">0%</span></div>
         <div id="dup-progress-bar"></div>
         <b><?php esc_html_e('Please Wait...', 'duplicator'); ?></b><br/><br/>
         <i><?php esc_html_e('Keep this window open and do not close during the build process.', 'duplicator'); ?></i><br/>
@@ -164,7 +164,7 @@ TOOL BAR:STEPS -->
         SUCCESS MESSAGE -->
         <div id="dup-msg-success" style="display:none">
             <div class="hdr-pack-complete">
-                <i class="far fa-check-square fa-lg"></i> <?php esc_html_e('Package Build Completed', 'duplicator'); ?>
+                <i class="far fa-check-square fa-lg"></i> <?php esc_html_e('Backup Build Completed', 'duplicator'); ?>
             </div>
 
             <div class="dup-msg-success-stats">
@@ -174,12 +174,12 @@ TOOL BAR:STEPS -->
             <!-- DOWNLOAD FILES -->
             <fieldset class="download-area">
                 <legend>
-                    &nbsp; <i class="fa fa-download"></i> <?php esc_html_e("Download Package Files", 'duplicator') ?>  &nbsp;
+                    &nbsp; <i class="fa fa-download"></i> <?php esc_html_e("Download Backup Files", 'duplicator') ?>  &nbsp;
                 </legend>
                 <button id="dup-btn-installer" class="button button-primary button-large" title="<?php esc_attr_e("Click to download installer file", 'duplicator') ?>">
                     <i class="fa fa-bolt fa-sm"></i> <?php esc_html_e("Installer", 'duplicator') ?> &nbsp;
                 </button> &nbsp;
-                <button id="dup-btn-archive" class="button button-primary button-large" title="<?php esc_attr_e("Click to download archive file", 'duplicator') ?>">
+                <button id="dup-btn-archive" class="button button-primary button-large" title="<?php esc_attr_e("Click to download Backup file", 'duplicator') ?>">
                     <i class="far fa-file-archive"></i> <?php esc_html_e("Archive", 'duplicator') ?>
                     <span id="dup-btn-archive-size" class="dup-btn-size"></span> &nbsp;
                 </button>
@@ -191,7 +191,7 @@ TOOL BAR:STEPS -->
                     <sup>
                         <i class="fas fa-question-circle fa-sm" style='font-size:11px'
                             data-tooltip-title="<?php esc_attr_e("Download Both Files:", 'duplicator'); ?>"
-                            data-tooltip="<?php esc_attr_e('Clicking this button will open the installer and archive download prompts one after the other with one click verses '
+                            data-tooltip="<?php esc_attr_e('Clicking this button will open the installer and Backup download prompts one after the other with one click verses '
                                 . 'downloading each file separately with two clicks.  On some browsers you may have to disable pop-up warnings on this domain for this to '
                                 . 'work correctly.', 'duplicator'); ?>">
                         </i>
@@ -232,7 +232,7 @@ TOOL BAR:STEPS -->
 
             <div class="dup-howto-exe">
                 <div class="dup-howto-exe-title">
-                    <?php esc_html_e('How to install this package?', 'duplicator'); ?>
+                    <?php esc_html_e('How to install this Backup?', 'duplicator'); ?>
                 </div>
                 <div class="dup-howto-exe-info">
                     <div class="dup-howto-exe-area">
@@ -271,7 +271,7 @@ TOOL BAR:STEPS -->
                             <!-- IMPORT -->
                             <i class="fas fa-arrow-alt-circle-down fa-sm fa-fw"></i>
                             <a href="<?php echo esc_url(LinkManager::getDocUrl('import-install', 'build_success', 'Import Install')); ?>" target="_blank">
-                                <?php esc_html_e('Import Archive and Overwrite Site', 'duplicator'); ?>
+                                <?php esc_html_e('Import Backup and Overwrite Site', 'duplicator'); ?>
                             </a>
                             <sup class="modes">
                                 <i class="fas fa-external-link-alt fa-xs"></i>
@@ -330,12 +330,12 @@ TOOL BAR:STEPS -->
                     <b><i class="far fa-file-alt fa-sm"></i> <?php esc_html_e('Overview', 'duplicator'); ?></b><br/>
                     <?php esc_html_e('Please follow these steps:', 'duplicator'); ?>
                     <ol>
-                        <li><?php esc_html_e('On the scanner step check to make sure your package is under 500MB. If not see additional options below.', 'duplicator'); ?></li>
+                        <li><?php esc_html_e('On the scanner step check to make sure your Backup is under 500MB. If not see additional options below.', 'duplicator'); ?></li>
                         <li>
-                            <?php esc_html_e('Go to Duplicator &gt; Settings &gt; Packages Tab &gt; Archive Engine &gt;', 'duplicator'); ?>
+                            <?php esc_html_e('Go to Duplicator &gt; Settings &gt; Backups Tab &gt; Backup Engine &gt;', 'duplicator'); ?>
                             <a href="admin.php?page=duplicator-settings&tab=package"><?php esc_html_e('Enable DupArchive', 'duplicator'); ?></a>
                         </li>
-                        <li><?php esc_html_e('Build a new package using the new engine format.', 'duplicator'); ?></li>
+                        <li><?php esc_html_e('Build a new Backup using the new engine format.', 'duplicator'); ?></li>
                     </ol>
 
                     <small style="font-style:italic">
@@ -371,7 +371,7 @@ TOOL BAR:STEPS -->
 
                         echo '	<br/><br/>';
 
-                        esc_html_e('For example, you could  filter out the  "/wp-content/uploads/" folder to create the package then move the files from that directory over manually.  '
+                        esc_html_e('For example, you could  filter out the  "/wp-content/uploads/" folder to create the Backup then move the files from that directory over manually.  '
                             . 'If this work-flow is not desired or does not work please check-out the other options below.', 'duplicator');
                         ?>
                     <br/><br/>
@@ -387,7 +387,7 @@ TOOL BAR:STEPS -->
                             esc_html__('Build Folder:', 'duplicator'),
                             DUP_Settings::getSsdirTmpPath(),
                             __("On some servers the build will continue to run in the background. To validate if a build is still running; open the 'tmp' folder above and see "
-                                . "if the archive file is growing in size or check the main packages screen to see if the package completed. If it is not then your server "
+                                . "if the Backup file is growing in size or check the main Backups screen to see if the Backup completed. If it is not then your server "
                                 . "has strict timeout constraints.", 'duplicator')
                         );
                         ?>
@@ -405,19 +405,19 @@ TOOL BAR:STEPS -->
                 <div class="dup-box-panel" style="display:none">
 
                     <?php esc_html_e('A two-part install minimizes server load and can avoid I/O and CPU issues encountered on some budget hosts. With this procedure you simply build a '
-                        . '\'database-only\' archive, manually move the website files, and then run the installer to complete the process.', 'duplicator');
+                        . '\'database-only\' Backup, manually move the website files, and then run the installer to complete the process.', 'duplicator');
 ?><br/><br/>
 
                     <b><i class="far fa-file-alt fa-sm"></i><?php esc_html_e(' Overview', 'duplicator'); ?></b><br/>
                         <?php esc_html_e('Please follow these steps:', 'duplicator'); ?><br/>
                     <ol>
                         <li><?php esc_html_e('Click the button below to go back to Step 1.', 'duplicator'); ?></li>
-                        <li><?php esc_html_e('On Step 1 the "Archive Only the Database" checkbox will be auto checked.', 'duplicator'); ?></li>
+                        <li><?php esc_html_e('On Step 1 the "Backup Only the Database" checkbox will be auto checked.', 'duplicator'); ?></li>
                         <li>
                             <?php
                                 printf(
                                     esc_html_x(
-                                        'Complete the package build and follow the %1$sQuick Start Two-Part Install Instructions%2$s',
+                                        'Complete the Backup build and follow the %1$sQuick Start Two-Part Install Instructions%2$s',
                                         '1: opening link, 2: closing link',
                                         'duplicator'
                                     ),
@@ -524,7 +524,7 @@ TOOL BAR:STEPS -->
                         <br/>
                         <i class="fas fa-file-contract fa-fw "></i>
                         <a href='javascript:void(0)' style="color:maroon" onclick='Duplicator.OpenLogWindow(true)'>
-                            <?php esc_html_e('See Package Log For Complete Details', 'duplicator'); ?>
+                            <?php esc_html_e('See Backup Log For Complete Details', 'duplicator'); ?>
                         </a>
                     </div>
                 </div>
@@ -579,7 +579,7 @@ jQuery(document).ready(function ($) {
                     var status = xHr.status + ' -' + data.statusText;
                     var response = (xHr.responseText != undefined && xHr.responseText.trim().length > 1)
                         ? xHr.responseText.trim()
-                        : 'No client side error - see package log file';
+                        : 'No client side error - see Backup log file';
                     $('#dup-msg-error-response-status span.data').html(status)
                     $('#dup-msg-error-response-text span.data').html(response);
                     console.log(xHr);
@@ -589,7 +589,7 @@ jQuery(document).ready(function ($) {
                 if ((data != null) && (typeof (data) != 'undefined') && data.status == 1) {
                     Duplicator.Pack.WireDownloadLinks(data);
                 } else {
-                    var message = (typeof (data.error) != 'undefined' && data.error.length) ? data.error :'Error processing package';
+                    var message = (typeof (data.error) != 'undefined' && data.error.length) ? data.error :'Error processing Backup';
                     Duplicator.Pack.DupArchiveProcessingFailed(message);
                 }
 
@@ -600,7 +600,7 @@ jQuery(document).ready(function ($) {
                 var status = xHr.status + ' -' + data.statusText;
                 var response = (xHr.responseText != undefined && xHr.responseText.trim().length > 1)
                     ? xHr.responseText.trim()
-                    : 'No client side error - see package log file';
+                    : 'No client side error - see Backup log file';
                 $('#dup-msg-error-response-status span.data').html(status)
                 $('#dup-msg-error-response-text span.data').html(response);
                 console.log(xHr);
@@ -665,7 +665,7 @@ jQuery(document).ready(function ($) {
                             console.log("CreateDupArchive:archive has completed");
                             if (data.failures.length > 0) {
                                 console.log(data.failures);
-                                var errorMessage = "CreateDupArchive:Problems during package creation. These may be non-critical so continue with install.\n------\n";
+                                var errorMessage = "CreateDupArchive:Problems during Backup creation. These may be non-critical so continue with install.\n------\n";
                                 var len = data.failures.length;
 
                                 for (var j = 0; j < len; j++) {
@@ -817,7 +817,7 @@ jQuery(document).ready(function ($) {
         } else {
             console.log('Too many failures.' + errorText);
             // Processing problem
-            Duplicator.Pack.DupArchiveProcessingFailed("Too many retries when building DupArchive package. " + errorText);
+            Duplicator.Pack.DupArchiveProcessingFailed("Too many retries when building DupArchive Backup. " + errorText);
         }
     };
 

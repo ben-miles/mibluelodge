@@ -81,7 +81,7 @@ THICK-BOX DIALOGS: -->
 <?php
     $confirmClearBuildCache             = new DUP_UI_Dialog();
     $confirmClearBuildCache->title      = __('Clear Build Cache?', 'duplicator');
-    $confirmClearBuildCache->message    = __('This process will remove all build cache files.  Be sure no packages are currently building or else they will be cancelled.', 'duplicator');
+    $confirmClearBuildCache->message    = __('This process will remove all build cache files. Be sure no backups are currently building or else they will be cancelled.', 'duplicator');
     $confirmClearBuildCache->jscallback = 'Duplicator.Tools.ClearBuildCache()';
     $confirmClearBuildCache->initConfirm();
 ?>

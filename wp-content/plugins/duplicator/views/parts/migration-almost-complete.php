@@ -28,7 +28,7 @@ $url     = DUP_CTRL_Tools::getDiagnosticURL();
         ?>
         <br/>
         <?php
-        esc_html_e('Go to: Tools > General > Information  > Stored Data > and click the "Remove Installation Files" button', 'duplicator'); ?><br>
+        esc_html_e('Go to: Duplicator > Tools > General > Information > Utils and click the "Remove Installation Files" button', 'duplicator'); ?><br>
         <a id="dpro-notice-action-general-site-page" href="<?php echo $url; ?>">
             <?php esc_html_e('Take me there now!', 'duplicator'); ?>
         </a>

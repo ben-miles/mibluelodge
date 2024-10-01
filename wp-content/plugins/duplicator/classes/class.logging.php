@@ -303,7 +303,7 @@ class DUP_Log
 
             case Dup_ErrorBehavior::Quit:
                 DUP_LOG::trace("quitting");
-                die("DUPLICATOR ERROR: Please see the 'Package Log' file link below.");
+                die("DUPLICATOR ERROR: Please see the 'Backup Log' file link below.");
                 break;
 
             default:

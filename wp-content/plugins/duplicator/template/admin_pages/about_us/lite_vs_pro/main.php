@@ -24,7 +24,7 @@ use Duplicator\Utils\Upsell;
         <h1 class="centered">
             <?php
             echo wp_kses(
-                esc_html__(
+                __(
                     '<strong>Lite</strong> vs <strong>Pro</strong>',
                     'duplicator'
                 ),

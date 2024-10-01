@@ -83,7 +83,7 @@ function duplicator_package_build()
         DUP_Settings::Set('active_package_id', $Package->ID);
         DUP_Settings::Save();
         if (!is_readable(DUP_Settings::getSsdirTmpPath() . "/{$Package->ScanFile}")) {
-            die("The scan result file was not found.  Please run the scan step before building the package.");
+            die("The scan result file was not found.  Please run the scan step before building the Backup.");
         }
 
         $Package->runZipBuild();
@@ -146,15 +146,15 @@ function duplicator_duparchive_package_build()
     } else {
         if (($package = DUP_Package::getByID($active_package_id)) == null) {
             DUP_Log::Info('[CTRL DUP ARCIVE] ERROR: Get package by id ' . $active_package_id . ' FAILED');
-            die('Get package by id ' . $active_package_id . ' FAILED');
+            die('Get Backup by id ' . $active_package_id . ' FAILED');
         }
         DUP_Log::Info('[CTRL DUP ARCIVE] PACKAGE GET BY ID ' . $active_package_id . ' | STATUS:' . $package->Status);
     // DUP_Log::TraceObject("getting active package by id {$active_package_id}", $package);
     }
 
     if (!is_readable(DUP_Settings::getSsdirTmpPath() . "/{$package->ScanFile}")) {
-        DUP_Log::Info('[CTRL DUP ARCIVE] ERROR: The scan result file was not found.  Please run the scan step before building the package.');
-        die("The scan result file was not found.  Please run the scan step before building the package.");
+        DUP_Log::Info('[CTRL DUP ARCIVE] ERROR: The scan result file was not found.  Please run the scan step before building the Backup.');
+        die("The scan result file was not found.  Please run the scan step before building the Backup.");
     }
 
     if ($package === null) {
@@ -189,7 +189,7 @@ function duplicator_duparchive_package_build()
         DUP_Log::Info('[CTRL DUP ARCIVE] COMPLETED PACKAGE STATUS: ' . $package->Status);
         if ($package->Status == DUP_PackageStatus::ERROR) {
             DUP_Log::Info('[CTRL DUP ARCIVE] ERROR');
-            $error_message = __('Error building DupArchive package', 'duplicator') . '<br/>';
+            $error_message = __('Error building DupArchive Backup', 'duplicator') . '<br/>';
             foreach ($json['failures'] as $failure) {
                 $error_message .= implode(',', $failure->description);
             }
@@ -301,7 +301,7 @@ function duplicator_active_package_info()
             $id      = DUP_Settings::Get('active_package_id');
             $package = DUP_Package::getByID($id);
             if (is_null($package)) {
-                throw new Exception(__('Active package object error', 'duplicator'));
+                throw new Exception(__('Active Backup object error', 'duplicator'));
             }
             $result['active_package']['status']      = $package->Status;
             $result['active_package']['size']        = $package->getArchiveSize();
@@ -333,7 +333,6 @@ class DUP_CTRL_Package extends DUP_CTRL_Base
     public function __construct()
     {
         add_action('wp_ajax_DUP_CTRL_Package_addQuickFilters', array($this, 'addQuickFilters'));
-        add_action('wp_ajax_DUP_CTRL_Package_getPackageFile', array($this, 'getPackageFile'));
         add_action('wp_ajax_DUP_CTRL_Package_getActivePackageStatus', array($this, 'getActivePackageStatus'));
     }
 

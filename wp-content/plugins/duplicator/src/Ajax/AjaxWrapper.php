@@ -57,7 +57,7 @@ class AjaxWrapper
         try {
             DUP_Handler::init_error_handler();
             $nonce = SnapUtil::sanitizeNSCharsNewline($nonce);
-            if (!is_null($nonceaction) && !wp_verify_nonce($nonce, $nonceaction)) {
+            if (is_null($nonceaction) || !wp_verify_nonce($nonce, $nonceaction)) {
                 DUP_Log::trace('Security issue');
                 throw new Exception('Security issue');
             }

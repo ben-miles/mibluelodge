@@ -84,7 +84,7 @@ defined("ABSPATH") || exit;
                 <input type="button" class="button action" value="<?php esc_html_e('Apply', 'duplicator') ?>">
                 <span class="btn-separator"></span>
                 <a href="#" class="button grey-icon"
-                   title="Settings">
+                   title="<?php esc_attr_e('Settings', 'duplicator') ?>">
                     <i class="fas fa-sliders-h fa-fw"></i>
                 </a>
             </td>

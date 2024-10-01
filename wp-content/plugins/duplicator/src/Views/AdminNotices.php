@@ -221,7 +221,7 @@ class AdminNotices
                 $title = __('Migration Almost Complete!', 'duplicator');
                 $msg   = __(
                     'Reserved Duplicator installation files have been detected in the root directory.  Please delete these installation files to '
-                    . 'avoid security issues. <br/> Go to:Duplicator > Tools > Information >Stored Data and click the "Remove Installation Files" button',
+                    . 'avoid security issues. <br/> Go to: Duplicator > Tools > General > Information > Utils and click the "Remove Installation Files" button',
                     'duplicator'
                 );
 
@@ -379,7 +379,7 @@ class AdminNotices
                         <?php
                         printf(
                             esc_html__(
-                                'You created over %d packages with Duplicator. Great job! If you can spare a minute, 
+                                'You created over %d backups with Duplicator. Great job! If you can spare a minute, 
                                 please help us by leaving a five star review on WordPress.org.',
                                 'duplicator'
                             ),

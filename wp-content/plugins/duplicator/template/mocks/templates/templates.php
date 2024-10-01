@@ -39,7 +39,7 @@ defined("ABSPATH") || exit;
     <table class="widefat dup-template-list-tbl striped">
         <thead>
         <tr>
-            <th class="col-check"><input type="checkbox" title="Select all packages"></th>
+            <th class="col-check"><input type="checkbox" title="Select all Backups"></th>
             <th class="col-name">Name</th>
             <th class="col-recover">Recovery</th>
             <th class="col-empty"></th>

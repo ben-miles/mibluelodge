@@ -22,7 +22,7 @@ defined("ABSPATH") || exit;
             <div class="left">
                 <a href="<?php echo esc_url($tplData['packageNonceUrl']); ?>"
                    class="dup-btn dup-btn-block dup-btn-lg dup-btn-orange">
-                    <?php esc_html_e('Create Your First Package', 'duplicator'); ?>
+                    <?php esc_html_e('Create Your First Backup', 'duplicator'); ?>
                 </a>
             </div>
             <div class="right">

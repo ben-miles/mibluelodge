@@ -24,10 +24,10 @@ $packageTablerowCount = 0;
 
 if (DUP_Settings::Get('installer_name_mode') == DUP_Settings::INSTALLER_NAME_MODE_SIMPLE) {
     $packageExeNameModeMsg = __("When clicking the Installer download button, the 'Save as' dialog is currently defaulting the name to 'installer.php'. "
-        . "To improve the security and get more information, go to: Settings > Packages Tab > Installer > Name option or click on the gear icon at the top of this page.", 'duplicator');
+        . "To improve the security and get more information, go to: Settings > Backups Tab > Installer > Name option or click on the gear icon at the top of this page.", 'duplicator');
 } else {
     $packageExeNameModeMsg = __("When clicking the Installer download button, the 'Save as' dialog is defaulting the name to '[name]_[hash]_[time]_installer.php'. "
-        . "This is the secure and recommended option.  For more information, go to: Settings > Packages Tab > Installer > Name or click on the gear icon at the top of this page.<br/><br/>"
+        . "This is the secure and recommended option.  For more information, go to: Settings > Backups Tab > Installer > Name or click on the gear icon at the top of this page.<br/><br/>"
         . "To quickly copy the hashed installer name, to your clipboard use the copy icon link or click the installer name and manually copy the selected text.", 'duplicator');
 }
 ?>
@@ -94,7 +94,7 @@ if (DUP_Settings::Get('installer_name_mode') == DUP_Settings::INSTALLER_NAME_MOD
                     <option value="-1" selected="selected">
                         <?php esc_html_e("Bulk Actions", 'duplicator') ?>
                     </option>
-                    <option value="delete" title="<?php esc_attr_e("Delete selected package(s)", 'duplicator') ?>">
+                    <option value="delete" title="<?php esc_attr_e("Delete selected backup(s)", 'duplicator') ?>">
                         <?php esc_html_e("Delete", 'duplicator') ?>
                     </option>
                 </select>
@@ -110,7 +110,7 @@ if (DUP_Settings::Get('installer_name_mode') == DUP_Settings::INSTALLER_NAME_MOD
                 <a 
                     href="<?php echo esc_url(ControllersManager::getMenuLink(ControllersManager::SETTINGS_SUBMENU_SLUG, 'package')); ?>" 
                     class="button" 
-                    title="<?php esc_attr_e("Package Settings", 'duplicator'); ?>"
+                    title="<?php esc_attr_e("Backup Settings", 'duplicator'); ?>"
                 >
                     <i class="fas fa-sliders-h"></i>
                 </a>
@@ -157,8 +157,8 @@ if (DUP_Settings::Get('installer_name_mode') == DUP_Settings::INSTALLER_NAME_MOD
                     <td>
                         <div id='dup-list-alert-nodata'>
                             <i class="fa fa-archive fa-sm"></i> 
-                            <?php esc_html_e("No Packages Found", 'duplicator'); ?><br/>
-                            <i><?php esc_html_e("Click 'Create New' to Archive Site", 'duplicator'); ?></i><br/>
+                            <?php esc_html_e("No Backups Found", 'duplicator'); ?><br/>
+                            <i><?php esc_html_e("Click 'Create New' to Backup Site", 'duplicator'); ?></i><br/>
                             <div class="dup-quick-start" <?php echo ($is_mu) ? 'style="display:none"' : ''; ?>>
                                 <b><?php esc_html_e("New to Duplicator?", 'duplicator'); ?></b><br/>
                                 <a href="<?php echo esc_url(LinkManager::getCategoryUrl(LinkManager::QUICK_START_CAT, 'package_list_no_package', 'Quick Start')); ?>" target="_blank">
@@ -189,7 +189,7 @@ if (DUP_Settings::Get('installer_name_mode') == DUP_Settings::INSTALLER_NAME_MOD
             <thead>
                 <tr>
                     <th style="width: 30px;">
-                        <input type="checkbox" id="dup-bulk-action-all"  title="<?php esc_attr_e("Select all packages", 'duplicator') ?>" style="margin-left:12px" onclick="Duplicator.Pack.SetDeleteAll()" />
+                        <input type="checkbox" id="dup-bulk-action-all"  title="<?php esc_attr_e("Select all Backups", 'duplicator') ?>" style="margin-left:12px" onclick="Duplicator.Pack.SetDeleteAll()" />
                     </th>
                     <th style="width: 100px;" ><?php esc_html_e("Created", 'duplicator') ?></th>
                     <th style="width: 70px;"><?php esc_html_e("Size", 'duplicator') ?></th>
@@ -202,7 +202,7 @@ if (DUP_Settings::Get('installer_name_mode') == DUP_Settings::INSTALLER_NAME_MOD
                         </i>
                     </th>
                     <th style="text-align:center; width: 200px;">
-                        <?php esc_html_e("Package", 'duplicator') ?>
+                        <?php esc_html_e("Backup", 'duplicator') ?>
                     </th>
                 </tr>
             </thead>
@@ -210,8 +210,8 @@ if (DUP_Settings::Get('installer_name_mode') == DUP_Settings::INSTALLER_NAME_MOD
                 <td colspan="6">
                     <div id='dup-list-alert-nodata'>
                         <i class="fa fa-archive fa-sm"></i>
-                        <?php esc_html_e("No Packages Found", 'duplicator'); ?><br/>
-                        <i><?php esc_html_e("Click 'Create New' to Archive Site", 'duplicator'); ?></i><br/>
+                        <?php esc_html_e("No Backups Found", 'duplicator'); ?><br/>
+                        <i><?php esc_html_e("Click 'Create New' to Backup Site", 'duplicator'); ?></i><br/>
                         <div class="dup-quick-start">
                             <?php esc_html_e("New to Duplicator?", 'duplicator'); ?><br/>
                             <a href="<?php echo esc_url(LinkManager::getCategoryUrl(LinkManager::QUICK_START_CAT, 'package_list_processing', 'Quick Start')); ?>" target="_blank">
@@ -249,18 +249,18 @@ if (DUP_Settings::Get('installer_name_mode') == DUP_Settings::INSTALLER_NAME_MOD
                             <?php
                             echo DUP_Package::getCreatedDateFormat($Package->Created, DUP_Settings::get_create_date_format());
                             echo ' ' . ($pack_build_mode ?
-                                "<sup title='" . __('Archive created as zip file', 'duplicator') . "'>zip</sup>" :
-                                "<sup title='" . __('Archive created as daf file', 'duplicator') . "'>daf</sup>");
+                                "<sup title='" . __('Backup created as zip file', 'duplicator') . "'>zip</sup>" :
+                                "<sup title='" . __('Backup created as daf file', 'duplicator') . "'>daf</sup>");
                             ?>
                         </td>
                         <td class="pack-size"><?php echo DUP_Util::byteSize($pack_archive_size); ?></td>
                         <td class='pack-name'>
                             <?php echo ($pack_dbonly) ? "{$pack_name} <sup title='" . esc_attr(__('Database Only', 'duplicator')) . "'>DB</sup>" : esc_html($pack_name); ?><br/>
                             <span class="building-info" >
-                                <i class="fa fa-cog fa-sm fa-spin"></i> <b><?php esc_html_e('Building Package', 'duplicator') ?></b> <span class="perc"><?php echo $pack_perc; ?></span>%
+                                <i class="fa fa-cog fa-sm fa-spin"></i> <b><?php esc_html_e('Building Backup', 'duplicator') ?></b> <span class="perc"><?php echo $pack_perc; ?></span>%
                                 &nbsp; <i class="fas fa-question-circle fa-sm" style="color:#2C8021"
-                                          data-tooltip-title="<?php esc_attr_e("Package Build Running", 'duplicator'); ?>"
-                                          data-tooltip="<?php esc_attr_e('To stop or reset this package build goto Settings > Advanced > Reset Packages', 'duplicator'); ?>"></i>
+                                          data-tooltip-title="<?php esc_attr_e("Backup Build Running", 'duplicator'); ?>"
+                                          data-tooltip="<?php esc_attr_e('To stop or reset this Backup build goto Settings > Advanced > Reset Backups', 'duplicator'); ?>"></i>
                             </span>
                         </td>
                         <td class="inst-name">
@@ -294,9 +294,9 @@ if (DUP_Settings::Get('installer_name_mode') == DUP_Settings::INSTALLER_NAME_MOD
                                 id="<?php echo esc_attr("{$uniqueid}_archive.zip"); ?>" 
                                 class="button no-select"
                                 onclick="Duplicator.Pack.DownloadFile(<?php echo SnapJson::jsonEncodeEscAttr($Package->getPackageFileDownloadInfo(DUP_PackageFileType::Archive)); ?>); return false;">
-                                <i class="far fa-file-archive"></i> <?php esc_html_e("Archive", 'duplicator') ?>
+                                <i class="far fa-file-archive"></i> <?php esc_html_e("Backup", 'duplicator') ?>
                             </button>
-                            <button type="button" class="button no-select" title="<?php esc_attr_e("Package Details", 'duplicator') ?>" onclick="Duplicator.Pack.OpenPackageDetails(<?php echo "{$Package->ID}"; ?>);">
+                            <button type="button" class="button no-select" title="<?php esc_attr_e("Backup Details", 'duplicator') ?>" onclick="Duplicator.Pack.OpenPackageDetails(<?php echo "{$Package->ID}"; ?>);">
                                 <i class="fa fa-archive fa-sm" ></i>
                             </button>
                         </td>
@@ -379,13 +379,13 @@ $alert1->initAlert();
 $alert2           = new DUP_UI_Dialog();
 $alert2->title    = __('Selection Required', 'duplicator', 'duplicator');
 $alert2->message  = '<i class="fa fa-exclamation-triangle fa-sm"></i>&nbsp;';
-$alert2->message .= __('No selections made! Please select at least one package to delete.', 'duplicator');
+$alert2->message .= __('No selections made! Please select at least one Backup to delete.', 'duplicator');
 $alert2->initAlert();
 
 $confirm1               = new DUP_UI_Dialog();
-$confirm1->title        = __('Delete Packages?', 'duplicator');
-$confirm1->message      = __('Are you sure you want to delete the selected package(s)?', 'duplicator');
-$confirm1->progressText = __('Removing Packages, Please Wait...', 'duplicator');
+$confirm1->title        = __('Delete Backups?', 'duplicator');
+$confirm1->message      = __('Are you sure you want to delete the selected Backup(s)?', 'duplicator');
+$confirm1->progressText = __('Removing Backups, Please Wait...', 'duplicator');
 $confirm1->jscallback   = 'Duplicator.Pack.Delete()';
 $confirm1->initConfirm();
 
@@ -398,7 +398,7 @@ $alert3->initAlert();
 
 $alertPackRunning          = new DUP_UI_Dialog();
 $alertPackRunning->title   = __('Alert!', 'duplicator');
-$alertPackRunning->message = __('A package is being processed. Retry later.', 'duplicator');
+$alertPackRunning->message = __('A Backup is being processed. Retry later.', 'duplicator');
 $alertPackRunning->initAlert();
 ?>
 
@@ -408,11 +408,11 @@ DIALOG: HELP DIALOG -->
     <b><?php esc_html_e("Common Questions:", 'duplicator') ?></b><hr size='1'/>
     <i class="far fa-file-alt fa-sm"></i>
     <a href="<?php echo esc_url(LinkManager::getDocUrl('backup-site', 'packages_help_popup', 'create_package')); ?>" target="_blank">
-        <?php esc_html_e("How do I create a package", 'duplicator') ?>
+        <?php esc_html_e("How do I create a Backup", 'duplicator') ?>
     </a> <br/>
     <i class="far fa-file-alt fa-sm"></i> 
     <a href="<?php echo esc_url(LinkManager::getDocUrl('classic-install', 'packages_help_popup', 'classic_install')); ?>" target="_blank">
-        <?php esc_html_e('How do I install a package?', 'duplicator'); ?>
+        <?php esc_html_e('How do I install a Backup?', 'duplicator'); ?>
     </a>  <br/>
     <i class="far fa-file-code"></i>
     <a href="<?php echo esc_url(LinkManager::getCategoryUrl(LinkManager::TROUBLESHOOTING_CAT, 'packages_help_popup', 'FAQ')); ?>" target="_blank">

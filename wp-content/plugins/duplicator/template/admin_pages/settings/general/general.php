@@ -215,29 +215,29 @@ $unhook_third_party_css = DUP_Settings::Get('unhook_third_party_css');
             <th scope="row"><label><?php esc_html_e("Settings", 'duplicator'); ?></label></th>
             <td>
                 <button class="button" onclick="Duplicator.Pack.ConfirmResetAll(); return false;">
-                    <i class="fas fa-redo fa-sm"></i> <?php esc_html_e('Reset Packages', 'duplicator'); ?>
+                    <i class="fas fa-redo fa-sm"></i> <?php esc_html_e('Reset Backups', 'duplicator'); ?>
                 </button>
                 <p class="description">
                     <?php
-                    esc_html_e("This process will reset all packages by deleting those without a completed status, reset the active package id and perform a "
+                    esc_html_e("This process will reset all Backups by deleting those without a completed status, reset the active Backup id and perform a "
                         . "cleanup of the build tmp file.", 'duplicator');
                     ?>
                     <i class="fas fa-question-circle fa-sm"
                        data-tooltip-title="<?php esc_attr_e("Reset Settings", 'duplicator'); ?>"
                        data-tooltip="<?php
-                        esc_attr_e('This action should only be used if the packages screen is having issues or a build is stuck.', 'duplicator'); ?>">
+                        esc_attr_e('This action should only be used if the Backups screen is having issues or a build is stuck.', 'duplicator'); ?>">
                     </i>
                 </p>
             </td>
         </tr>
         <tr valign="top">
-            <th scope="row"><label><?php esc_html_e('Archive scan', 'duplicator'); ?></label></th>
+            <th scope="row"><label><?php esc_html_e('Backup scan', 'duplicator'); ?></label></th>
             <td>
                 <input type="checkbox" name="skip_archive_scan" id="_skip_archive_scan" <?php checked($skip_archive_scan, true); ?> value="1" />
                 <label for="_skip_archive_scan"><?php esc_html_e("Skip", 'duplicator') ?> </label><br/>
                 <p class="description">
                     <?php
-                    esc_html_e('If enabled all files check on scan will be skipped before package creation.  '
+                    esc_html_e('If enabled all files check on scan will be skipped before Backup creation.  '
                         . 'In some cases, this option can be beneficial if the scan process is having issues running or returning errors.', 'duplicator');
                     ?>
                 </p>
@@ -291,8 +291,8 @@ $unhook_third_party_css = DUP_Settings::Get('unhook_third_party_css');
 THICK-BOX DIALOGS: -->
 <?php
 $reset_confirm                 = new DUP_UI_Dialog();
-$reset_confirm->title          = __('Reset Packages ?', 'duplicator');
-$reset_confirm->message        = __('This will clear and reset all of the current temporary packages.  Would you like to continue?', 'duplicator');
+$reset_confirm->title          = __('Reset Backups ?', 'duplicator');
+$reset_confirm->message        = __('This will clear and reset all of the current temporary Backups.  Would you like to continue?', 'duplicator');
 $reset_confirm->progressText   = __('Resetting settings, Please Wait...', 'duplicator');
 $reset_confirm->jscallback     = 'Duplicator.Pack.ResetAll()';
 $reset_confirm->progressOn     = false;
@@ -306,7 +306,7 @@ $msg_ajax_error = new DUP_UI_Messages(
     __('AJAX Call Error!', 'duplicator') . '<br>' .
     sprintf(
         _x(
-            'AJAX error encountered when resetting packages. Please see %1$sthis FAQ entry%2$s for possible resolutions.',
+            'AJAX error encountered when resetting Backups. Please see %1$sthis FAQ entry%2$s for possible resolutions.',
             '1 and 2 are opening and closing <a> tags',
             'duplicator'
         ),
@@ -363,7 +363,7 @@ $msg_response_success->initMessage();
                     }
 
                     if (result.success) {
-                        var message = '<?php _e('Packages successfully reset', 'duplicator'); ?>';
+                        var message = '<?php _e('Backups successfully reset', 'duplicator'); ?>';
                         if (msgDebug) {
                             console.log(result.data.message);
                             console.log(result.data.html);

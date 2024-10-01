@@ -27,7 +27,7 @@ defined("ABSPATH") || exit;
         <?php endforeach; ?>
     </ul>
     <i>
-        <?php esc_html_e('Set up one-time storage locations and automatically push the package to your destination.', 'duplicator'); ?><br>
+        <?php esc_html_e('Set up one-time storage locations and automatically push the Backup to your destination.', 'duplicator'); ?><br>
     </i>
     <p>
         <a href="<?php echo esc_url(Upsell::getCampaignUrl($tplData['utm_medium'], 'Popup Upgrade Now')); ?>"

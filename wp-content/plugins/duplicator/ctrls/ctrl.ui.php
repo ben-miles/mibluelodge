@@ -1,5 +1,7 @@
 <?php
 
+use Duplicator\Libs\Snap\SnapUtil;
+
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 // Exit if accessed directly
 if (! defined('DUPLICATOR_VERSION')) {
@@ -52,56 +54,34 @@ class DUP_CTRL_UI extends DUP_CTRL_Base
             'key'     => '',
             'value'   => ''
         );
+
         $isValid = true;
+        $states  = false;
+        if (isset($_POST['states'])) {
+            $states = is_scalar($_POST['states']) ? [$_POST['states']] : $_POST['states'];
+        }
 
-        $inputData = filter_input_array(INPUT_POST, array(
-            'states' => array(
-                'filter'  => FILTER_UNSAFE_RAW,
-                'flags'   => FILTER_FORCE_ARRAY,
-                'options' => array(
-                    'default' => array()
-                )
-            ),
-            'key'    => array(
-                'filter'  => FILTER_UNSAFE_RAW,
-                'options' => array(
-                    'default' => false
-                )
-            ),
-            'value'  => array(
-                'filter'  => FILTER_UNSAFE_RAW,
-                'options' => array(
-                    'default' => false
-                )
-            )
-        ));
+        $mainKey   = SnapUtil::sanitizeTextInput(INPUT_POST, 'key', false);
+        $mainValue = SnapUtil::sanitizeTextInput(INPUT_POST, 'value', false);
 
-        if (is_array($inputData) && is_array($inputData['states'])) {
-            foreach ($inputData['states'] as $index => $state) {
-                $filteredState = filter_var_array($state, array(
-                    'key'   => array(
-                        'filter'  => FILTER_UNSAFE_RAW,
-                        'options' => array(
-                            'default' => false
-                        )
-                    ),
-                    'value' => array(
-                        'filter'  => FILTER_UNSAFE_RAW,
-                        'options' => array(
-                            'default' => false
-                        )
-                    )
-                ));
+        if ($states !== false) {
+            foreach ($states as $index => $state) {
+                $key   = isset($state['key']) ? SnapUtil::sanitizeNSCharsNewline($state['key']) : false;
+                $value = isset($state['value']) ? SnapUtil::sanitizeNSCharsNewline($state['value']) : false;
 
-                if ($filteredState['key'] === false && $filteredState['value']) {
+                if ($key == false && $value == false) {
                     $isValid = false;
                     break;
                 }
-                $inputData['states'][$index] = $filteredState;
+
+                $states[$index] = [
+                    'key'   => $key,
+                    'value' => $value,
+                ];
             }
         }
 
-        if ($inputData['key'] === false || $inputData['value'] === false) {
+        if ($states === false && ($mainKey === false || $mainValue === false)) {
             $isValid = false;
         }
 
@@ -111,10 +91,10 @@ class DUP_CTRL_UI extends DUP_CTRL_Base
                 throw new Exception(__('Invalid Request.', 'duplicator'));
             }
 
-            if (!empty($inputData['states'])) {
+            if ($states !== false && count($states) > 0) {
                 $view_state = DUP_UI_ViewState::getArray();
                 $last_key   = '';
-                foreach ($inputData['states'] as $state) {
+                foreach ($states as $state) {
                     $view_state[$state['key']] = $state['value'];
                     $last_key                  = $state['key'];
                 }
@@ -122,9 +102,9 @@ class DUP_CTRL_UI extends DUP_CTRL_Base
                 $payload['key']     = esc_html($last_key);
                 $payload['value']   = esc_html($view_state[$last_key]);
             } else {
-                $payload['success'] = DUP_UI_ViewState::save($inputData['key'], $inputData['value']);
-                $payload['key']     = esc_html($inputData['key']);
-                $payload['value']   = esc_html($inputData['value']);
+                $payload['success'] = DUP_UI_ViewState::save($mainKey, $mainValue);
+                $payload['key']     = esc_html($mainKey);
+                $payload['value']   = esc_html($mainValue);
             }
 
             //RETURN RESULT

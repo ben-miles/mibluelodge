@@ -347,7 +347,7 @@ class DUP_Package
             $this->Name,
             DUP_Validator::FILTER_VALIDATE_NOT_EMPTY,
             array(  'valkey' => 'Name' ,
-                    'errmsg' => __('Package name can\'t be empty', 'duplicator'),
+                    'errmsg' => __('Backup name can\'t be empty', 'duplicator'),
                 )
         );
 
@@ -906,7 +906,7 @@ class DUP_Package
 
         if (!strstr($exe_done_txt, 'DUPLICATOR_INSTALLER_EOF') && !$this->BuildProgress->failed) {
             //$this->BuildProgress->failed = true;
-            $error_message = 'ERROR: Installer file not complete.  The end of file marker was not found.  Please try to re-create the package.';
+            $error_message = 'ERROR: Installer file not complete.  The end of file marker was not found.  Please try to re-create the Backup.';
 
             $this->BuildProgress->set_failed($error_message);
             $this->setStatus(DUP_PackageStatus::ERROR);
@@ -937,7 +937,7 @@ class DUP_Package
             if (file_exists($scan_filepath)) {
                 $json = file_get_contents($scan_filepath);
             } else {
-                $error_message = sprintf(__("Can't find Scanfile %s. Please ensure there no non-English characters in the package or schedule name.", 'duplicator'), $scan_filepath);
+                $error_message = sprintf(__("Can't find Scanfile %s. Please ensure there no non-English characters in the Backup or schedule name.", 'duplicator'), $scan_filepath);
 
                 $this->BuildProgress->set_failed($error_message);
                 $this->setStatus(DUP_PackageStatus::ERROR);
@@ -1287,7 +1287,7 @@ class DUP_Package
         if ($this->BuildProgress->failed) {
             DUP_LOG::Trace("build progress failed so setting package to failed");
             $this->setStatus(DUP_PackageStatus::ERROR);
-            $message = "Package creation failed.";
+            $message = "Backup creation failed.";
             DUP_Log::Trace($message);
             return true;
         }
@@ -1515,7 +1515,7 @@ class DUP_Package
         $packageObj = serialize($this);
 
         if (!$packageObj) {
-            DUP_Log::error("Package SetStatus was unable to serialize package object while updating record.");
+            DUP_Log::error("Backup SetStatus was unable to serialize package object while updating record.");
         }
 
         $wpdb->flush();

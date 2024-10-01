@@ -163,7 +163,7 @@ class DashboardWidget
     public static function getLastBackupString()
     {
         if (DUP_Package::isPackageRunning()) {
-            return '<span class="spinner"></span> <b>' . esc_html__('A package is currently running.', 'duplicator') . '</b>';
+            return '<span class="spinner"></span> <b>' . esc_html__('A Backup is currently running.', 'duplicator') . '</b>';
         }
 
         /** @var DUP_Package[] */
@@ -180,7 +180,7 @@ class DashboardWidget
         );
 
         if (empty($lastPackage)) {
-            return '<b>' . esc_html__('No packages have been created yet.', 'duplicator') . '</b>';
+            return '<b>' . esc_html__('No Backups have been created yet.', 'duplicator') . '</b>';
         }
 
         $createdTime = date_i18n(get_option('date_format'), strtotime($lastPackage[0]->Created));

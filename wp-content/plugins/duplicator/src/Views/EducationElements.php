@@ -111,8 +111,8 @@ class EducationElements
             __('Recovery Points - Recovery Points provides protection against mistakes and bad updates by letting you ' .
                 'quickly rollback your system to a known, good state.', 'duplicator'),
             __('Secure File Encryption - Protect and secure the archive file with industry-standard AES-256 encryption', 'duplicator'),
-            __('Server to Server Import - Direct package import from source server or cloud storage using URL. No need ' .
-                'to download the package to your desktop machine first.', 'duplicator'),
+            __('Server to Server Import - Direct Backup import from source server or cloud storage using URL. No need ' .
+                'to download the Backup to your desktop machine first.', 'duplicator'),
             __('File & Database Table Filters - Use file and database filters to pick and choose exactly what you want to ' .
                 'backup or transfer. No bloat!', 'duplicator'),
             __('Large Site Support - Duplicator Pro has developed a new way to package backups especially tailored for ' .

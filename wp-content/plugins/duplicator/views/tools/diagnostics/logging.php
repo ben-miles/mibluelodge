@@ -166,7 +166,7 @@ jQuery(document).ready(function($)
 <?php if (! $logfound) :   ?>
     <div style="padding:20px">
         <h2><?php esc_html_e("Log file not found or unreadable", 'duplicator') ?>.</h2>
-        <?php esc_html_e("Try to create a package, since no log files were found in the snapshots directory with the extension *.log", 'duplicator') ?>.<br/><br/>
+        <?php esc_html_e("Try to create a Backup, since no log files were found in the snapshots directory with the extension *.log", 'duplicator') ?>.<br/><br/>
         <?php esc_html_e("Reasons for log file not showing", 'duplicator') ?>: <br/>
         - <?php esc_html_e("The web server does not support returning .log file extentions", 'duplicator') ?>. <br/>
         - <?php esc_html_e("The snapshots directory does not have the correct permissions to write files.  Try setting the permissions to 755", 'duplicator') ?>. <br/>
@@ -212,7 +212,7 @@ jQuery(document).ready(function($)
                 </div>
 
                 <div class="dup-log-hdr">
-                    <?php esc_html_e("Package Logs", 'duplicator') ?>
+                    <?php esc_html_e("Backup Logs", 'duplicator') ?>
                     <small><?php esc_html_e("Top 20", 'duplicator') ?></small>
                 </div>
 

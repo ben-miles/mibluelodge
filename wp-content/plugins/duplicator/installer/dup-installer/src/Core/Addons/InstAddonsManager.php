@@ -62,7 +62,7 @@ final class InstAddonsManager
     {
         foreach ($this->addons as $addon) {
             if ($addon->canEnable() && $addon->hasDependencies()) {
-                $this->addonsEnabled[] = $addon->getSlug();
+                $this->enabledAddons[] = $addon->getSlug();
                 $addon->init();
                 Log::info('ADDON ' . $addon->getAddonFile() . ' ENABLED', Log::LV_DETAILED);
             } else {

@@ -364,6 +364,8 @@ class DUP_Archive
             $this->FilterInfo->Dirs->Instance  = strlen($this->FilterDirs) > 0 ? array_map('DUP_Util::safePath', explode(";", $this->FilterDirs)) : array();
             $this->FilterInfo->Files->Instance = strlen($this->FilterFiles) > 0 ? array_map('DUP_Util::safePath', explode(";", $this->FilterFiles)) : array();
             $this->FilterInfo->Exts->Instance  = explode(";", $this->FilterExts);
+            // Remove blank entries
+            $this->FilterInfo->Exts->Instance = array_filter(array_map('trim', $this->FilterInfo->Exts->Instance));
         }
 
         //FILTER: CORE ITMES
@@ -429,8 +431,9 @@ class DUP_Archive
             $this->FilterInfo->Files->Global[] = $config_file_path;
         }
 
-        $this->FilterDirsAll    = array_merge($this->FilterInfo->Dirs->Instance, $this->FilterInfo->Dirs->Core);
-        $this->FilterExtsAll    = array_merge($this->FilterInfo->Exts->Instance, $this->FilterInfo->Exts->Core);
+        $this->FilterDirsAll = array_merge($this->FilterInfo->Dirs->Instance, $this->FilterInfo->Dirs->Core);
+        $this->FilterExtsAll = array_merge($this->FilterInfo->Exts->Instance, $this->FilterInfo->Exts->Core);
+        DUP_Log::traceObject('FilterExtsAll:', $this->FilterExtsAll);
         $this->FilterFilesAll   = array_merge($this->FilterInfo->Files->Instance, $this->FilterInfo->Files->Global);
         $abs_path               = duplicator_get_abs_path();
         $this->FilterFilesAll[] = $abs_path . '/.htaccess';

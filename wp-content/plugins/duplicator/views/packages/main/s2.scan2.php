@@ -60,17 +60,17 @@ SYSTEM AND WORDPRESS -->
         $test = ini_get("open_basedir");
         $test = ($test) ? 'ON' : 'OFF';
         echo '<hr size="1" /><span id="data-srv-php-openbase"></span>&nbsp;<b>' . esc_html__('PHP Open Base Dir', 'duplicator') . ":</b>&nbsp; '{$test}' <br/>";
-        _e('Issues might occur when [open_basedir] is enabled. Work with your server admin to disable this value in the php.ini file if you’re having issues building a package.', 'duplicator');
+        _e('Issues might occur when [open_basedir] is enabled. Work with your server admin to disable this value in the php.ini file if you’re having issues building a Backup.', 'duplicator');
         echo "&nbsp;<i><a href='http://php.net/manual/en/ini.core.php#ini.open-basedir' target='_blank'>[" . esc_html__('details', 'duplicator') . "]</a></i><br/>";
 
         //MAX_EXECUTION_TIME
         $test = (@set_time_limit(0)) ? 0 : ini_get("max_execution_time");
         echo '<hr size="1" /><span id="data-srv-php-maxtime"></span>&nbsp;<b>' . esc_html__('PHP Max Execution Time', 'duplicator') . ":</b>&nbsp; '{$test}' <br/>";
-        _e('Timeouts may occur for larger packages when [max_execution_time] time in the php.ini is too low.  A value of 0 (recommended) indicates that PHP has no time limits. '
+        _e('Timeouts may occur for larger Backups when [max_execution_time] time in the php.ini is too low.  A value of 0 (recommended) indicates that PHP has no time limits. '
             . 'An attempt is made to override this value if the server allows it.', 'duplicator');
         echo '<br/><br/>';
         _e('Note: Timeouts can also be set at the web server layer, so if the PHP max timeout passes and you still see a build timeout messages, then your web server could be killing '
-            . 'the process.   If you are on a budget host and limited on processing time, consider using the database or file filters to shrink the size of your overall package.   '
+            . 'the process.   If you are on a budget host and limited on processing time, consider using the database or file filters to shrink the size of your overall Backup.   '
             . 'However use caution as excluding the wrong resources can cause your install to not work properly.', 'duplicator');
         echo "&nbsp;<i><a href='http://www.php.net/manual/en/info.configuration.php#ini.max-execution-time' target='_blank'>[" . esc_html__('details', 'duplicator')  . "]</a></i>";
         if ($zip_check != null) {
@@ -87,15 +87,15 @@ SYSTEM AND WORDPRESS -->
         _e('A managed host is a WordPress host that tightly controls the server environment so that the software running on it can be closely ‘managed’ by the hosting company. '
             . 'Managed hosts typically have constraints imposed to facilitate this management, including the locking down of certain files and directories as well as non-standard configurations.', 'duplicator');
         echo '<br/><br/>';
-        _e('Duplicator Lite allows users to build a package on managed hosts, however, the installer may not properly install packages created on managed hosts due to the non-standard configurations of managed hosts. '
-            . 'It is also possible the package engine of Duplicator Lite won’t be able to capture all of the necessary data of a site running on a managed host.', 'duplicator');
+        _e('Duplicator Lite allows users to build a Backup on managed hosts, however, the installer may not properly install Backups created on managed hosts due to the non-standard configurations of managed hosts. '
+            . 'It is also possible the Backup engine of Duplicator Lite won’t be able to capture all of the necessary data of a site running on a managed host.', 'duplicator');
         echo '<br/><br/>';
         _e('<b>Due to these constraints Lite does not officially support the migration of managed hosts.</b> ');
         printf(
             esc_html_x(
-                'It\'s possible one could get the package to install but it may require custom manual effort. 
+                'It\'s possible one could get the Backup to install but it may require custom manual effort. 
                 To get support and the advanced installer processing required for managed host support we encourage users to %1$supgrade to Duplicator Pro%2$s.
-                Pro has more sophisticated package and installer logic and accounts for odd configurations associated with managed hosts.',
+                Pro has more sophisticated Backup and installer logic and accounts for odd configurations associated with managed hosts.',
                 '1 and 2 are <a> tags',
                 'duplicator'
             ),
@@ -130,7 +130,7 @@ WP SETTINGS -->
                 $filter_text = "";
         if ($core_dir_notice) {
             echo '<small id="data-srv-wp-core-missing-dirs">';
-               esc_html_e("The core WordPress paths below will NOT be included in the archive. These paths are required for WordPress to function!", 'duplicator');
+               esc_html_e("The core WordPress paths below will NOT be included in the Backup. These paths are required for WordPress to function!", 'duplicator');
                echo "<br/>";
             foreach ($core_dir_included as $core_dir) {
                      echo '&nbsp; &nbsp; <b><i class="fa fa-exclamation-circle scan-warn"></i>&nbsp;' . $core_dir . '</b><br/>';
@@ -141,7 +141,7 @@ WP SETTINGS -->
 
         if ($core_file_notice) {
             echo '<small id="data-srv-wp-core-missing-dirs">';
-               esc_html_e("The core WordPress file below will NOT be included in the archive. This file is required for WordPress to function!", 'duplicator');
+               esc_html_e("The core WordPress file below will NOT be included in the Backup. This file is required for WordPress to function!", 'duplicator');
                echo "<br/>";
             foreach ($core_files_included as $core_file) {
                       echo '&nbsp; &nbsp; <b><i class="fa fa-exclamation-circle scan-warn"></i>&nbsp;' . $core_file . '</b><br/>';
@@ -166,7 +166,7 @@ WP SETTINGS -->
 
         if (!$core_dir_notice && !$core_file_notice) :
             esc_html_e("If the scanner is unable to locate the wp-config.php file in the root directory, then you will need to manually copy it to its new location. "
-                    . "This check will also look for core WordPress paths that should be included in the archive for WordPress to work correctly.", 'duplicator');
+                    . "This check will also look for core WordPress paths that should be included in the Backup for WordPress to work correctly.", 'duplicator');
         endif;
 
 
@@ -176,7 +176,7 @@ WP SETTINGS -->
         $cache_path = DUP_Util::safePath(WP_CONTENT_DIR) . '/cache';
         $cache_size = DUP_Util::byteSize(DUP_Util::getDirectorySize($cache_path));
         echo '<hr size="1" /><span id="data-srv-wp-cache"></span>&nbsp;<b>' . esc_html__('Cache Path', 'duplicator') . ":</b>&nbsp; '".esc_html($cache_path)."' (".esc_html($cache_size).") <br/>";
-        _e("Cached data will lead to issues at install time and increases your archive size. Empty your cache directory before building the package by using  "
+        _e("Cached data will lead to issues at install time and increases your Backup size. Empty your cache directory before building the Backup by using  "
             . "your cache plugins clear cache feature.  Use caution if manually removing files the cache folder. The cache "
             . "size minimum threshold that triggers this warning is currently set at ", 'duplicator');
         echo esc_html(DUP_Util::byteSize(DUPLICATOR_SCAN_CACHESIZE)) . '.';
@@ -189,7 +189,7 @@ WP SETTINGS -->
                 . 'subsite scenarios.', 'duplicator');
             echo '<br/><br/>';
 
-            esc_html_e('While it is not recommended you can still continue with the build of this package.  At install time additional manual custom configurations will '
+            esc_html_e('While it is not recommended you can still continue with the build of this Backup.  At install time additional manual custom configurations will '
                 . 'need to be made to finalize this multisite migration.  Please note that any support requests for mulitsite with Duplicator Lite will not be supported.', 'duplicator');
             echo "&nbsp;<i><a href='" .  esc_url(Upsell::getCampaignUrl('package-build-scan', 'Not Multisite Get Pro'))  . "' target='_blank'>[" . esc_html__('upgrade to pro', 'duplicator') . "]</a></i>";
         } else {
@@ -214,12 +214,12 @@ MIGRATION STATUS -->
             <div class="container">
                 <div class="data">
                     {{#if ARC.Status.CanbeMigratePackage}}
-                        <?php esc_html_e("The package created here can be migrated to a new server.", 'duplicator'); ?>
+                        <?php esc_html_e("The Backup created here can be migrated to a new server.", 'duplicator'); ?>
                     {{else}}
                         <span style="color: red;">
                             <?php
-                            esc_html_e("The package created here cannot be migrated to a new server.
-                                The Package created here can be restored on the same server.", 'duplicator');
+                            esc_html_e("The Backup created here cannot be migrated to a new server.
+                                The Backup created here can be restored on the same server.", 'duplicator');
                             ?>
                         </span>
                     {{/if}}

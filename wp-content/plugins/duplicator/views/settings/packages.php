@@ -11,7 +11,7 @@ global $wp_version;
 global $wpdb;
 
 $action_updated     = null;
-$action_response    = __("Package Settings Saved", 'duplicator');
+$action_response    = __("Backup Settings Saved", 'duplicator');
 $mysqldump_exe_file = '';
 
 //SAVE RESULTS
@@ -247,11 +247,11 @@ $installerNameMode      = DUP_Settings::Get('installer_name_mode');
     </table>
 
 
-    <h3 class="title"><?php esc_html_e("Archive", 'duplicator') ?> </h3>
+    <h3 class="title"><?php esc_html_e("Backup", 'duplicator') ?> </h3>
     <hr size="1" />
     <table class="form-table">
         <tr>
-            <th scope="row"><label><?php esc_html_e('Archive Engine', 'duplicator'); ?></label></th>
+            <th scope="row"><label><?php esc_html_e('Backup Engine', 'duplicator'); ?></label></th>
             <td>
                 <div class="engine-radio">
                     <input type="radio" name="archive_build_mode" id="archive_build_mode1" onclick="Duplicator.Pack.ToggleArchiveEngine()"
@@ -270,7 +270,7 @@ $installerNameMode      = DUP_Settings::Get('installer_name_mode');
                 <!-- ZIPARCHIVE -->
                 <div id="engine-details-1" style="display:none">
                     <p class="description">
-                        <?php esc_html_e('Creates a archive format (archive.zip).', 'duplicator');?><br/>
+                        <?php esc_html_e('Creates a Backup format (archive.zip).', 'duplicator');?><br/>
                         <i>
                             <?php
                                 esc_html_e('This option uses the internal PHP ZipArchive classes to create a zip file.', 'duplicator');
@@ -285,7 +285,7 @@ $installerNameMode      = DUP_Settings::Get('installer_name_mode');
                 <!-- DUPARCHIVE -->
                 <div id="engine-details-2" style="display:none">
                     <p class="description">
-                        <?php esc_html_e('Creates a custom archive format (archive.daf).', 'duplicator'); ?>
+                        <?php esc_html_e('Creates a custom Backup format (archive.daf).', 'duplicator'); ?>
                         <br/>
                         <i>
                             <?php esc_html_e('This option is recommended for large sites or sites on constrained servers.', 'duplicator'); ?>
@@ -316,7 +316,7 @@ $installerNameMode      = DUP_Settings::Get('installer_name_mode');
                     <?php
                     esc_html_e("This will attempt to keep a network connection established for large archives.", 'duplicator');
                     echo '&nbsp; ';
-                    esc_html_e(' Valid only when Archive Engine for ZipArchive is enabled.', 'duplicator');
+                    esc_html_e(' Valid only when Backup Engine for ZipArchive is enabled.', 'duplicator');
                     ?>
                 </p>
             </td>
@@ -368,7 +368,7 @@ $installerNameMode      = DUP_Settings::Get('installer_name_mode');
                         esc_html_e(
                             'This setting specifies the name of the installer used at download-time.  Independent of the value of this setting, you can '
                             . 'change the name of the installer in the "Save as" file dialog at download-time.  If you choose to use a custom name, '
-                            . 'use a file name that is known only to you. Installer filenames must end in "php".  Changes to the archive file should not '
+                            . 'use a file name that is known only to you. Installer filenames must end in "php".  Changes to the Backup file should not '
                             . 'be made.',
                             'duplicator'
                         );
@@ -384,7 +384,7 @@ $installerNameMode      = DUP_Settings::Get('installer_name_mode');
                         <i>
                             <i class="fas fa-info-circle fa-sm"></i>
                             <?php
-                            esc_html_e('Tip: Each row on the packages screen includes a copy button to copy the installer name to the clipboard.  '
+                            esc_html_e('Tip: Each row on the Backups screen includes a copy button to copy the installer name to the clipboard.  '
                                 . 'Paste the installer name from the clipboard into the URL being used to install the destination site.  '
                                 . 'This feature is handy when using the secure installer name.', 'duplicator');
                             ?>
@@ -425,7 +425,7 @@ $installerNameMode      = DUP_Settings::Get('installer_name_mode');
                     </optgroup>
                 </select>
                 <p class="description">
-                    <?php esc_html_e("The UTC date format shown in the 'Created' column on the Packages screen.", 'duplicator'); ?> <br/>
+                    <?php esc_html_e("The UTC date format shown in the 'Created' column on the Backups screen.", 'duplicator'); ?> <br/>
                     <i><?php esc_html_e("To use WordPress timezone formats consider an upgrade to Duplicator Pro.", 'duplicator'); ?></i>
                 </p>
             </td>
@@ -435,7 +435,7 @@ $installerNameMode      = DUP_Settings::Get('installer_name_mode');
 
     <p class="submit" style="margin: 20px 0px 0xp 5px;">
         <br/>
-        <input type="submit" name="submit" id="submit" class="button-primary" value="<?php esc_attr_e("Save Package Settings", 'duplicator') ?>" style="display: inline-block;" />
+        <input type="submit" name="submit" id="submit" class="button-primary" value="<?php esc_attr_e("Save Backup Settings", 'duplicator') ?>" style="display: inline-block;" />
     </p>
 </form>
 

@@ -17,7 +17,7 @@ defined("ABSPATH") || exit;
 <div>
     <b>
         <?php _e('All information sent to the server is anonymous.', 'duplicator'); ?><br>
-        <?php _e('No information about storage or package\'s content are sent.', 'duplicator'); ?>
+        <?php _e('No information about storage or Backup\'s content are sent.', 'duplicator'); ?>
     </b>
 </div>
 <br>
@@ -80,7 +80,7 @@ defined("ABSPATH") || exit;
         <?php
         _e(
             '<b>Site info:</b> General information about the site such as database, file size, number of users, and sites in case it is a multisite. 
-            This is useful for us to understand the critical issues of package creation.',
+            This is useful for us to understand the critical issues of Backup creation.',
             'duplicator'
         );
         ?>
@@ -88,7 +88,7 @@ defined("ABSPATH") || exit;
     <li>
         <?php
         _e(
-            '<b>Packages infos:</b> Information about the packages created and the type of components included.',
+            '<b>Backups infos:</b> Information about the Backups created and the type of components included.',
             'duplicator'
         );
         ?>

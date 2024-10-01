@@ -131,7 +131,7 @@ class DuplicatorLiteUninstall // phpcs:ignore
     {
         $optionsTableName = $GLOBALS['wpdb']->base_prefix . "options";
         $dupOptionNames   = $GLOBALS['wpdb']->get_col(
-            "SELECT `option_name` FROM `{$optionsTableName}` WHERE `option_name` REGEXP '^duplicator_(?!pro_|expire_)'"
+            "SELECT `option_name` FROM `{$optionsTableName}` WHERE `option_name` REGEXP '^duplicator_(?!pro_)'"
         );
 
         foreach ($dupOptionNames as $dupOptionName) {

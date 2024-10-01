@@ -18,7 +18,7 @@ defined("ABSPATH") || exit;
             __(
                 'In addition to the <a href="%s" target="_blank" rel="noopener noreferrer">classic installer method</a> ' .
                 'on an empty site, Duplicator Pro now supports Drag and Drop migrations and site restores! Simply drag ' .
-                'the bundled site archive to the site you wish to overwrite.',
+                'the bundled site Backup to the site you wish to overwrite.',
                 'duplicator'
             ),
             array(

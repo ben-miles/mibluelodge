@@ -38,7 +38,7 @@ if (!defined('DUPXABSPATH')) {
     define('DUPXABSPATH', dirname(__FILE__));
 }
 
-define('DUPX_VERSION', '1.5.10.2');
+define('DUPX_VERSION', '1.5.11');
 define('DUPX_INIT', str_replace('\\', '/', dirname(__FILE__)));
 define('DUPX_ROOT', preg_match('/^[\\\\\/]?$/', dirname(DUPX_INIT)) ? '/' : dirname(DUPX_INIT));
 

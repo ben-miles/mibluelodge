@@ -20,8 +20,8 @@ defined("ABSPATH") || exit;
 <p>
     <?php
     _e(
-        'Instead of manually configuring the same themes and plugins over and over, just configure one site and bundle it into a Duplicator package. ' .
-        'Install the package to create a pre-configured site on as many locations as you want!',
+        'Instead of manually configuring the same themes and plugins over and over, just configure one site and bundle it into a Duplicator Backup. ' .
+        'Install the Backup to create a pre-configured site on as many locations as you want!',
         'duplicator'
     );
     ?>

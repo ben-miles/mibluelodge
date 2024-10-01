@@ -302,7 +302,7 @@ class SnapUtil
      */
     public static function sanitizeTextInput($type, $var_name, $default = '')
     {
-        $filter  =  FILTER_UNSAFE_RAW;
+        $filter  = FILTER_UNSAFE_RAW;
         $options = array(
             'options' => array( 'default' => null),
         );
@@ -472,7 +472,7 @@ class SnapUtil
      */
     public static function filterInputDefaultSanitizeString($type, $var_name, $default = '')
     {
-        $filter  =  FILTER_UNSAFE_RAW;
+        $filter  = FILTER_UNSAFE_RAW;
         $options = array(
             'options' => array( 'default' => null)
         );

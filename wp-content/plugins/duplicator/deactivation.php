@@ -401,35 +401,9 @@ if (!function_exists('duplicator_submit_uninstall_reason_action')) {
     function duplicator_submit_uninstall_reason_action()
     {
         DUP_Handler::init_error_handler();
-        $isValid   = true;
-        $inputData = filter_input_array(INPUT_POST, array(
-            'reason_id' => array(
-                'filter'  => FILTER_UNSAFE_RAW,
-                'flags'   => FILTER_REQUIRE_SCALAR,
-                'options' => array(
-                    'default' => false
-                )
-            ),
-            'plugin' => array(
-                'filter'  => FILTER_UNSAFE_RAW,
-                'flags'   => FILTER_REQUIRE_SCALAR,
-                'options' => array(
-                    'default' => false
-                )
-            ),
-            'reason_info' => array(
-                'filter'  => FILTER_UNSAFE_RAW,
-                'flags'   => FILTER_REQUIRE_SCALAR,
-                'options' => array(
-                    'default' => ''
-                )
-            )
-        ));
-        $reason_id = $inputData['reason_id'];
-        $basename  = $inputData['plugin'];
-        if (!$reason_id || !$basename) {
-            $isValid = false;
-        }
+
+        $reason_id = SnapUtil::sanitizeTextInput(SnapUtil::INPUT_REQUEST, 'reason_id', false);
+        $basename  = SnapUtil::sanitizeTextInput(SnapUtil::INPUT_REQUEST, 'plugin', false);
 
         try {
             if (!wp_verify_nonce($_POST['duplicator_ajax_nonce'], 'duplicator_ajax_nonce')) {
@@ -437,7 +411,7 @@ if (!function_exists('duplicator_submit_uninstall_reason_action')) {
             }
 
             DUP_Util::hasCapability('export', DUP_Util::SECURE_ISSUE_THROW);
-            if (!$isValid) {
+            if (!$reason_id || !$basename) {
                 throw new Exception(__('Invalid Request.', 'duplicator'));
             }
 

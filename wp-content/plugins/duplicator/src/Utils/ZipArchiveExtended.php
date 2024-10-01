@@ -354,7 +354,7 @@ class ZipArchiveExtended
     public static function searchRegex($path, $regex, $password = '')
     {
         if (!self::isPhpZipAvailable()) {
-            throw new Exception(__('ZipArchive PHP module is not installed/enabled. The current package cannot be opened.', 'duplicator'));
+            throw new Exception(__('ZipArchive PHP module is not installed/enabled. The current Backup cannot be opened.', 'duplicator'));
         }
 
         $zip = new ZipArchive();

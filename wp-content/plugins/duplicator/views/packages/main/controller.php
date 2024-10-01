@@ -8,7 +8,7 @@ $_GET['_wpnonce'] = isset($_GET['_wpnonce']) ? $_GET['_wpnonce'] : null;
 
 $txt_invalid_msg1 = __("An invalid request was made to this page.", 'duplicator');
 $txt_invalid_msg2 = __("Please retry by going to the", 'duplicator');
-$txt_invalid_lnk  = __("Packages Screen", 'duplicator');
+$txt_invalid_lnk  = __("Backups Screen", 'duplicator');
 
 switch ($current_tab) {
     case 'new1':
@@ -56,19 +56,19 @@ switch ($current_tab) {
 <?php
 switch ($current_tab) {
     case 'list':
-        duplicator_header(__("Packages &raquo; All", 'duplicator'));
+        duplicator_header(__("Backups &raquo; All", 'duplicator'));
         include(DUPLICATOR_PLUGIN_PATH . 'views/packages/main/packages.php');
         break;
     case 'new1':
-        duplicator_header(__("Packages &raquo; New", 'duplicator'));
+        duplicator_header(__("Backups &raquo; New", 'duplicator'));
         include(DUPLICATOR_PLUGIN_PATH . 'views/packages/main/s1.setup1.php');
         break;
     case 'new2':
-        duplicator_header(__("Packages &raquo; New", 'duplicator'));
+        duplicator_header(__("Backups &raquo; New", 'duplicator'));
         include(DUPLICATOR_PLUGIN_PATH . 'views/packages/main/s2.scan1.php');
         break;
     case 'new3':
-        duplicator_header(__("Packages &raquo; New", 'duplicator'));
+        duplicator_header(__("Backups &raquo; New", 'duplicator'));
         include(DUPLICATOR_PLUGIN_PATH . 'views/packages/main/s3.build.php');
         break;
 }

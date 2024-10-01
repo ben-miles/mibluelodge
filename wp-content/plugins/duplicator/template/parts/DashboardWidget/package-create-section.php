@@ -19,9 +19,9 @@ defined("ABSPATH") or die("");
  * @var array<string, mixed> $tplData
  */
 
-$tooltipTitle   = esc_attr__('Package creation', 'duplicator');
+$tooltipTitle   = esc_attr__('Backup creation', 'duplicator');
 $tooltipContent = esc_attr__(
-    'This will create a new package. If a package is currently running then this button will be disabled.',
+    'This will create a new Backup. If a Backup is currently running then this button will be disabled.',
     'duplicator'
 );
 

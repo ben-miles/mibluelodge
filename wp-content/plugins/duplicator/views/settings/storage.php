@@ -1,6 +1,7 @@
 <?php
 
 use Duplicator\Controllers\StorageController;
+use Duplicator\Libs\Snap\SnapUtil;
 
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 ?>
@@ -16,9 +17,10 @@ defined('ABSPATH') || defined('DUPXABSPATH') || exit;
     $action_response = esc_html__("Storage Settings Saved", 'duplicator');
 
     //SAVE RESULTS
-    if (filter_input(INPUT_POST, 'action', FILTER_UNSAFE_RAW) === 'save') {
+    if ($_POST['action'] === 'save') {
         //Nonce Check
-        if (!wp_verify_nonce(filter_input(INPUT_POST, 'dup_storage_settings_save_nonce_field', FILTER_UNSAFE_RAW), 'dup_settings_save')) {
+        $nonce = SnapUtil::sanitizeTextInput(INPUT_POST, 'dup_storage_settings_save_nonce_field');
+        if (!wp_verify_nonce($nonce, 'dup_settings_save')) {
             die('Invalid token permissions to perform this request.');
         }
 
@@ -90,7 +92,7 @@ defined('ABSPATH') || defined('DUPXABSPATH') || exit;
                     </p>
                     <p class="description">
                         <?php
-                        esc_html_e("The storage location is where all package files are stored to disk. If your host has troubles writing content to the 'Legacy Path' then use "
+                        esc_html_e("The storage location is where all Backup files are stored to disk. If your host has troubles writing content to the 'Legacy Path' then use "
                             . "the 'Contents Path'.  Upon clicking the save button all files are moved to the new location and the previous path is removed.", 'duplicator');
                         ?><br/>
 

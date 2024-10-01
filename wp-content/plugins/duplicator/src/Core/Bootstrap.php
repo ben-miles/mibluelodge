@@ -263,8 +263,8 @@ class Bootstrap
         return array(
             array(
                 'parent_slug' => 'duplicator',
-                'page_title'  => __('Packages', 'duplicator'),
-                'menu_title'  => __('Packages', 'duplicator'),
+                'page_title'  => __('Backups', 'duplicator'),
+                'menu_title'  => __('Backups', 'duplicator'),
                 'capability'  => 'export',
                 'menu_slug'   => ControllersManager::MAIN_MENU_SLUG,
                 'callback'    => function () {
@@ -273,8 +273,8 @@ class Bootstrap
             ),
             array(
                 'parent_slug'            => 'duplicator',
-                'page_title'             => __('Import', 'duplicator'),
-                'menu_title'             => __('Import', 'duplicator'),
+                'page_title'             => __('Import Backups', 'duplicator'),
+                'menu_title'             => __('Import Backups', 'duplicator'),
                 'capability'             => 'export',
                 'menu_slug'              => ControllersManager::IMPORT_SUBMENU_SLUG,
                 'callback'               => function () {
@@ -284,8 +284,8 @@ class Bootstrap
             ),
             array(
                 'parent_slug'            => 'duplicator',
-                'page_title'             => __('Schedules', 'duplicator'),
-                'menu_title'             => __('Schedules', 'duplicator') . $dupMenuNew,
+                'page_title'             => __('Schedule Backups', 'duplicator'),
+                'menu_title'             => __('Schedule Backups', 'duplicator') . $dupMenuNew,
                 'capability'             => 'export',
                 'menu_slug'              => ControllersManager::SCHEDULES_SUBMENU_SLUG,
                 'callback'               => function () {
@@ -534,7 +534,7 @@ class Bootstrap
         $plugin = plugin_basename(DUPLICATOR_LITE_FILE);
         // create link
         if ($file == $plugin) {
-            $links[] = '<a href="admin.php?page=duplicator" title="' . esc_attr__('Manage Packages', 'duplicator') . '" style="">' .
+            $links[] = '<a href="admin.php?page=duplicator" title="' . esc_attr__('Manage Backups', 'duplicator') . '" style="">' .
                 esc_html__('Manage', 'duplicator') .
                 '</a>';
             return $links;

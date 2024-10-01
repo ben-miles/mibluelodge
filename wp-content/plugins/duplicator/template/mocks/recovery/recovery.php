@@ -66,7 +66,7 @@ defined("ABSPATH") || exit;
                         <label>
                             <i class="fas fa-question-circle fa-sm">
                             </i>
-                            <b>Step 1 :</b> <i>Choose Recovery Point Archive</i>
+                            <b>Step 1 :</b> <i>Choose Recovery Point Backup</i>
                         </label>
                         <div class="dup-pro-recovery-point-selector-area">
                             <select class="recovery-select" name="recovery_package">

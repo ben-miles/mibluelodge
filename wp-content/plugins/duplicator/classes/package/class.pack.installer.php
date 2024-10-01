@@ -858,10 +858,10 @@ HEADER;
 
         if ($failed) {
             DUP_Log::info(__('ARCHIVE CONSISTENCY TEST: FAIL', 'duplicator'));
-            throw new \Exception("Zip for package " . $this->Package->ID . " didn't passed consistency test");
+            throw new \Exception("Zip for Backup " . $this->Package->ID . " didn't passed consistency test");
         } else {
             DUP_Log::info(__('ARCHIVE CONSISTENCY TEST: PASS', 'duplicator'));
-            DUP_Log::trace("Zip for package " . $this->Package->ID . " passed consistency test");
+            DUP_Log::trace("Zip for Backup " . $this->Package->ID . " passed consistency test");
         }
 
         $zip->close();

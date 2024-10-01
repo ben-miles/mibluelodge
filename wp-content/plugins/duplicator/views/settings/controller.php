@@ -33,7 +33,7 @@ $current_tab = isset($_REQUEST['tab']) ? sanitize_text_field($_REQUEST['tab']) :
             href="<?php echo esc_url(ControllersManager::getMenuLink(ControllersManager::SETTINGS_SUBMENU_SLUG, 'package')); ?> " 
             class="nav-tab <?php echo ($current_tab == 'package') ? 'nav-tab-active' : '' ?>"
         >
-            <?php esc_html_e('Packages', 'duplicator'); ?>
+            <?php esc_html_e('Backups', 'duplicator'); ?>
         </a>
         <a 
             href="<?php echo esc_url(ControllersManager::getMenuLink(ControllersManager::SETTINGS_SUBMENU_SLUG, 'storage')); ?> " 

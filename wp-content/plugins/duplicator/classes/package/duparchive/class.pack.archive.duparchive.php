@@ -32,7 +32,7 @@ class DUP_DupArchive
         try {
             DUP_Log::Open($package->NameHash);
             if ($buildProgress->retries > DUPLICATOR_MAX_BUILD_RETRIES) {
-                $error_msg = __('Package build appears stuck so marking package as failed. Is the Max Worker Time set too high?.', 'duplicator');
+                $error_msg = __('Backup build appears stuck so marking Backup as failed. Is the Max Worker Time set too high?.', 'duplicator');
                 DUP_Log::error(esc_html__('Build Failure', 'duplicator'), esc_html($error_msg), Dup_ErrorBehavior::LogOnly);
         //$buildProgress->failed = true;
                 $buildProgress->set_failed($error_msg);
@@ -68,7 +68,7 @@ class DUP_DupArchive
                 }
             } else {
                 DUP_Log::trace("**** scan file $scanFilepath doesn't exist!!");
-                $errorMessage = sprintf(__("ERROR: Can't find Scanfile %s. Please ensure there no non-English characters in the package or schedule name.", 'duplicator'), $scanFilepath);
+                $errorMessage = sprintf(__("ERROR: Can't find Scanfile %s. Please ensure there no non-English characters in the Backup or schedule name.", 'duplicator'), $scanFilepath);
                 DUP_Log::error($errorMessage, '', Dup_ErrorBehavior::LogOnly);
             //$buildProgress->failed = true;
                         $buildProgress->set_failed($errorMessage);
@@ -258,7 +258,7 @@ class DUP_DupArchive
         // Have to have a catchall since the main system that calls this function is not prepared to handle exceptions
             DUP_Log::trace('Top level create Exception:' . $ex->getMessage() . ':' . $ex->getTraceAsString());
         //$buildProgress->failed = true;
-            $buildProgress->set_failed('Error encoundtered creating archive. See package log');
+            $buildProgress->set_failed('Error encoundtered creating archive. See Backup log');
             return true;
         }
 

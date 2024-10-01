@@ -597,7 +597,7 @@ class DUP_Database
                      */
             DUP_Log::Info('MYSQL DUMP ERROR ' . print_r($mysqlResult, true));
             DUP_Log::error(
-                __('Shell mysql dump error. Change SQL Mode to the "PHP Code" in the Duplicator > Settings > Packages.', 'duplicator'),
+                __('Shell mysql dump error. Change SQL Mode to the "PHP Code" in the Duplicator > Settings > Backups.', 'duplicator'),
                 implode("\n", SnapIO::getLastLinesOfFile(
                     $this->tempDbPath,
                     DUPLICATOR_DB_MYSQLDUMP_ERROR_CONTAINING_LINE_COUNT,

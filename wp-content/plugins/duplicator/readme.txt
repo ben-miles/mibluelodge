@@ -4,7 +4,7 @@ Tags: migration, backup, clone, migrate, restore
 Requires at least: 4.9
 Tested up to: 6.6
 Requires PHP: 5.6.20
-Stable tag: 1.5.10.2
+Stable tag: 1.5.11
 License: GPLv2
 WordPress migrations and backups are much easier with Duplicator! Backup, migrate, clone, copy, move and transfer an entire site. Zero Downtime!
 
@@ -29,10 +29,10 @@ Duplicator is the most powerful backup and migration plugin available. It enable
 * Perform a full WordPress migration without struggling with messy import/export sql scripts
 
 = Migrate WordPress and Run WordPress Backups =
-Duplicator creates a backup that bundles all the site's plugins, themes, content, database, and WordPress files into a simple zip file. This file can then be used to easily migrate a WordPress site to any location you wish.  Move on the same server, across servers and pretty much any location a WordPress site can be hosted.  *WordPress is not required for installation* since the package contains all site files.
+Duplicator creates a backup that bundles all the site's plugins, themes, content, database, and WordPress files into a simple zip file. This file can then be used to easily migrate a WordPress site to any location you wish.  Move on the same server, across servers and pretty much any location a WordPress site can be hosted.  *WordPress is not required for installation* since the backup contains all site files.
 
 = Improve Your Workflow with Pre-Bundled Sites =
-Duplicator lets you make your own preconfigured sites to eliminate rework.  Instead of manually configuring your favorite theme, set of plugins or content over and over, now just configure a single site and bundle it up into a Duplicator package. Once you have the bundled site, you can migrate the WordPress site over and over to different locations to instantly create many preconfigured sites!
+Duplicator lets you make your own preconfigured sites to eliminate rework.  Instead of manually configuring your favorite theme, set of plugins or content over and over, now just configure a single site and bundle it up into a Duplicator Backup. Once you have the bundled site, you can migrate the WordPress site over and over to different locations to instantly create many preconfigured sites!
 
 = Duplicator Pro =
 Duplicator Pro takes Duplicator to the next level with features you'll really appreciate, such as:
@@ -83,9 +83,9 @@ We make WordPress backups and migrations as easy as possible. The underlying log
 
 == Screenshots ==
 
-1. Main Interface for all Packages
-2. Create Package Step 1
-3. Create Package Step 2
+1. Main Interface for all Backups
+2. Create Backup Step 1
+3. Create Backup Step 2
 4. Build Process
 5. Installer Screen
 
@@ -98,7 +98,7 @@ Yes. Please see [all documents](https://duplicator.com/knowledge-base/?utm_sourc
 1. Upload `duplicator` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Click on the Duplicator link from the main menu
-4. Check out the help by clicking the help icon and create your first package.
+4. Check out the help by clicking the help icon and create your first backup.
 
 The Duplicator requires php 5.3 or higher.
 

@@ -157,7 +157,7 @@ class DUPX_ArchiveConfig
     {
         $result = array();
         foreach ($this->wpInfo->adminUsers as $user) {
-            $result[$user->id] = $user->user_login;
+            $result[$user->ID] = $user->user_login;
         }
         return $result;
     }

@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: Really Simple SSL
+ * Plugin Name: Really Simple Security
  * Plugin URI: https://really-simple-ssl.com
- * Description: Lightweight SSL & Hardening Plugin
- * Version: 8.3.0.1
+ * Description: Easily improve site security with WordPress Hardening, Two-Factor Authentication (2FA), Login Protection, Vulnerability Detection and SSL certificate generation.
+ * Version: 9.0.2
  * Requires at least: 5.9
  * Requires PHP: 7.4
- * Author: Really Simple Plugins
+ * Author: Really Simple Security
  * Author URI: https://really-simple-plugins.com
  * License: GPL2
  * Text Domain: really-simple-ssl
@@ -103,7 +103,7 @@ if ( !class_exists('REALLY_SIMPLE_SSL')) {
 			if ( !defined('rsssl_file') ){
 				define('rsssl_file', __FILE__);
 			}
-			define('rsssl_version', '8.3.0.1');
+			define('rsssl_version', '9.0.2');
 			define('rsssl_le_cron_generation_renewal_check', 20);
 			define('rsssl_le_manual_generation_renewal_check', 15);
 		}
@@ -141,6 +141,7 @@ if ( !class_exists('REALLY_SIMPLE_SSL')) {
 
 			require_once( rsssl_path . 'lets-encrypt/cron.php' );
 			require_once( rsssl_path . '/security/security.php');
+            require_once( rsssl_path . '/rsssl-auto-loader.php' );
 		}
 
 		private function hooks()

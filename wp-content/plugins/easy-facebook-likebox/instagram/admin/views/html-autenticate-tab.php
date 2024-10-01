@@ -241,19 +241,19 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 
 				<input class="with-gap" name="mif_login_type"
 						data-url="<?php echo esc_url( $personal_auth_url ); ?>"
-						value="basic" disabled type="radio" id="mif_basic_type" checked/>
+						value="basic" type="radio" id="mif_basic_type" checked/>
 				<label for="mif_basic_type"><?php esc_html_e( 'Personal', 'easy-facebook-likebox' ); ?></label>
 				<a href="#" class="mif_info_link">
 					<span class="dashicons dashicons-info-outline"></span>
 				</a>
 				<div class="mif_auth_info_holder">
-					<p><b><?php esc_html_e( 'Due to a temporary issue with the Instagram API, the personal option is currently unavailable. However, you can still display the feed by using the Business option. ', 'easy-facebook-likebox' ); ?></b><?php esc_html_e( 'The "Personal" option can display feeds from personal Instagram account. It is limited to display only pictures, videos, username and caption.', 'easy-facebook-likebox' ); ?></p>
+					<p><?php esc_html_e( 'The "Personal" option can display feeds from personal Instagram account. It is limited to display only pictures, videos, username and caption.', 'easy-facebook-likebox' ); ?></p>
 				</div>
 			</div>
 			<div class="mif-auth-btn-holder">
 				<input class="with-gap" name="mif_login_type"
 						data-url="<?php echo esc_url( $auth_url ); ?>" value="business"
-						type="radio" checked id="mif_business_type"/>
+						type="radio" id="mif_business_type"/>
 				<label for="mif_business_type"><?php esc_html_e( 'Business', 'easy-facebook-likebox' ); ?></label>
 				<a href="#" class="mif_info_link">
 					<span class="dashicons dashicons-info-outline"></span>
@@ -265,7 +265,7 @@ if ( ( isset( $_GET['access_token'] ) && ! empty( $_GET['access_token'] ) ) || (
 					</p>
 				</div>
 			</div>
-			<a href="<?php echo esc_url( $auth_url ); ?>"
+			<a href="<?php echo esc_url( $personal_auth_url ); ?>"
 				class=" btn mif-auth-modal-btn"><?php esc_html_e( 'Connect', 'easy-facebook-likebox' ); ?></a>
 
 		</div>

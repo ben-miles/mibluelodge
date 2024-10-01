@@ -77,14 +77,6 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 			);
 
 			add_action(
-				'wp_ajax_esf_hide_insta_personal_notice',
-				array(
-					$this,
-					'hide_insta_personal_notice',
-				)
-			);
-
-			add_action(
 				'wp_ajax_esf_hide_free_sidebar',
 				array(
 					$this,
@@ -416,42 +408,6 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 				<?php
 			}
 
-			// display Instagram personal notice on instagram dashboard page only
-			if ( isset( $_GET['page'] ) && $_GET['page'] == 'mif' && get_site_option( 'esf_insta_personal_notice' ) !== 'yes' ) {
-				?>
-
-				<div class="fs-notice updated promotion fs-sticky fs-has-title fta_insta_personal_notice">
-							<label class="fs-plugin-title">Easy Social Feed</label>
-					
-							<div style="cursor: pointer;color: #aaa;float: right;" class="esf_hide_insta_personal_notice">
-							<i style="margin-top: 7px;display: inline-block;" class="dashicons dashicons-no" title="Dismiss"></i>
-							<span style="margin-top: 7px;display: inline-block;">Dismiss</span>
-						</div>
-					
-					<div class="fs-notice-body">
-					<?php esc_html_e( 'Due to a temporary issue with the Instagram API, the personal option is currently unavailable. However, you can still display the feed by using the Business option.', 'easy-facebook-likebox' ); ?>
-					</div>
-				</div>
-				<script>
-					jQuery('.esf_hide_insta_personal_notice').click(function() {
-					var data = {'action': 'esf_hide_insta_personal_notice'};
-						jQuery.ajax({
-								url: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>",
-								type: 'post',
-								data: data,
-								dataType: 'json',
-								async: !0,
-								success: function(e) {
-								if(e === 'success'){
-									jQuery('.fta_insta_personal_notice').slideUp('fast');
-								}
-								},
-						});
-						});
-				</script>
-				<?php
-			}
-
 			return false;
 		}
 
@@ -474,16 +430,6 @@ if ( ! class_exists( 'ESF_Admin' ) ) {
 			echo wp_json_encode( array( 'success' ) );
 			wp_die();
 		}
-
-		/**
-		 * Hide Instagram personal notice permenately
-		 */
-		public function hide_insta_personal_notice() {
-			update_site_option( 'esf_insta_personal_notice', 'yes' );
-			echo wp_json_encode( array( 'success' ) );
-			wp_die();
-		}
-
 
 		/**
 		 * Hide sidebar for free users

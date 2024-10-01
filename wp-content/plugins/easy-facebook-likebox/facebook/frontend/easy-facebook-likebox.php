@@ -29,7 +29,7 @@ class Easy_Facebook_Likebox {
      *
      * @var     string
      */
-    const VERSION = '6.5.9';
+    const VERSION = '6.6.1';
 
     /**
      *
@@ -441,7 +441,7 @@ class Easy_Facebook_Likebox {
         // Get page access token
         if ( $approved_pages ) {
             foreach ( $approved_pages as $efbl_page ) {
-                if ( !is_numeric( $page_id ) && $efbl_page['username'] && $efbl_page['username'] == $page_id ) {
+                if ( !is_numeric( $page_id ) && isset( $efbl_page['username'] ) && $efbl_page['username'] == $page_id ) {
                     $page_id = $efbl_page['id'];
                 }
                 if ( $efbl_page['id'] == $page_id ) {

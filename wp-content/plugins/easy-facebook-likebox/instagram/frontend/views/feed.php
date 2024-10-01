@@ -110,7 +110,7 @@ if ( $is_shoppable ) {
 ?>
 
 <div id="esf-insta-feed"
-	 class="esf-insta-wrap esf_insta_feed_wraper esf-instagram-type-<?php 
+	class="esf-insta-wrap esf_insta_feed_wraper esf-instagram-type-<?php 
 echo esc_attr( $mif_instagram_type );
 ?>  <?php 
 echo esc_attr( $wrapper_class );
@@ -156,7 +156,7 @@ if ( !isset( $esf_insta_feed->error ) && !empty( $esf_insta_feed->data ) && !iss
     ?>" <?php 
     echo esc_attr( $carousel_atts );
     ?>
-		 data-template="<?php 
+		data-template="<?php 
     echo esc_attr( $selected_template );
     ?>">
 
@@ -179,6 +179,7 @@ if ( !isset( $esf_insta_feed->error ) && !empty( $esf_insta_feed->data ) && !iss
             $caption = '';
             $created_time = $feed->timestamp;
             $story_id = $feed->id;
+            $profile_picture = $esf_insta_user_data->profile_picture_url;
             $permalink = $feed->permalink;
             $link_text = __( 'View on Instagram', 'easy-facebook-likebox' );
             $click_behaviour = 'direct_link';
@@ -207,12 +208,10 @@ if ( !isset( $esf_insta_feed->error ) && !empty( $esf_insta_feed->data ) && !iss
                 } else {
                     $video_url = null;
                 }
+            } elseif ( $feed->media_url ) {
+                $thumbnail_url = $feed->media_url;
             } else {
-                if ( $feed->media_url ) {
-                    $thumbnail_url = $feed->media_url;
-                } else {
-                    $thumbnail_url = null;
-                }
+                $thumbnail_url = null;
             }
             if ( $thumbnail_url ) {
                 $thumbnail_url = esf_serve_media_locally( $story_id, $thumbnail_url, 'instagram' );
@@ -265,7 +264,7 @@ if ( !isset( $esf_insta_feed->error ) && !empty( $esf_insta_feed->data ) && !iss
                 }
             }
             require $esf_feed_templateurl;
-            $i++;
+            ++$i;
             if ( $i == $feeds_per_page ) {
                 break;
             }
@@ -295,10 +294,10 @@ if ( !isset( $esf_insta_feed->error ) && !empty( $esf_insta_feed->data ) && !iss
 }
 if ( isset( $esf_insta_feed->error ) || isset( $esf_insta_feed->data->error->message ) ) {
     ?>
-                <p class="esf_insta_error_msg"><?php 
+				<p class="esf_insta_error_msg"><?php 
     echo __( 'Error: ', 'easy-facebook-likebox' );
     ?>
-					<?php 
+			<?php 
     if ( isset( $esf_insta_feed->error->message ) ) {
         esc_html_e( $esf_insta_feed->error->message );
     }
@@ -306,7 +305,7 @@ if ( isset( $esf_insta_feed->error ) || isset( $esf_insta_feed->data->error->mes
         esc_html_e( $esf_insta_feed->data->error->message );
     }
     ?>
-                </p>
+				</p>
 			<?php 
 }
 ?>

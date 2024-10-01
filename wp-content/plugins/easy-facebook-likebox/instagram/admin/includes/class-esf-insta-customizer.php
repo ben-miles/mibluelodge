@@ -41,9 +41,9 @@ if ( !class_exists( 'ESF_Insta_Customizer' ) ) {
             $skin_values = get_option( 'mif_skin_' . $skin_id, false );
             $selected_layout = get_post_meta( $skin_id, 'layout', true );
             if ( !$selected_layout ) {
-                $selected_layout = strtolower( $skin_values['layout_option'] );
+                $selected_layout = ( is_string( $selected_layout ) ? strtolower( $selected_layout ) : '' );
             }
-            $selected_layout = strtolower( $selected_layout );
+            $selected_layout = ( is_string( $selected_layout ) ? strtolower( $selected_layout ) : '' );
             global $mif_skins;
             /* Adding our efbl panel in customizer.*/
             $wp_customize->add_panel( 'mif_customize_panel', array(

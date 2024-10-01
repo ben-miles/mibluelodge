@@ -252,6 +252,10 @@ if ( !function_exists( 'efbl_readable_count' ) ) {
 }
 if ( !function_exists( 'ecff_makeClickableLinks' ) ) {
     function ecff_makeClickableLinks(  $value, $protocols = array('http', 'mail', 'https'), array $attributes = array()  ) {
+        // Ensure $value is a string
+        if ( is_null( $value ) ) {
+            $value = '';
+        }
         // Link attributes
         $attr = '';
         foreach ( $attributes as $key => $val ) {

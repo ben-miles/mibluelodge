@@ -3,7 +3,7 @@ Contributors: DaNish Ali, maltathemes, sjaved
 Tags: Instagram feed, Instagram photos, Instagram gallery, Facebook feed, Facebook posts
 Requires at least: 3.3
 Tested up to: 6.6
-Stable tag: 6.5.9
+Stable tag: 6.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -174,6 +174,16 @@ http://wordpress.org/support/topic/need-feed-back-on-plugin-feature/
 23. Instagram skins/layouts panel
 
 == Changelog ==
+= 6.6.1 =
+* Fixed: PHP Warning with the latest PHP version
+* Fixed: Multifeed profile picture issue
+* Fixed: Multifeed Shoppable settings issue
+* Fixed: Minor issues
+
+= 6.6.0 =
+* Added: Instagram personal account again
+* Fixed: Security issue
+
 = 6.5.9 =
 * Added: Temporary issue with Instagram personal api notice
 * Updated: Freemius SDK

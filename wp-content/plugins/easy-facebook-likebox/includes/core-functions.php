@@ -267,3 +267,21 @@ if( ! function_exists( 'esf_check_ajax_referer' ) ) {
 
 	}
 }
+
+if ( ! function_exists( 'esf_get_design_value' ) ) {
+	/**
+	 * Get design value
+	 *
+	 * @param array $skin
+	 * @param string $key
+	 * @param string $default
+	 *
+	 * @since 6.6.1
+	 */
+	function esf_get_design_value( $skin, $key, $default = '' ) {
+		if ( ! $key || ! $skin ) {
+			return $default;
+		}
+		return isset( $skin['design'][ $key ] ) ? $skin['design'][ $key ] : $default;
+	}
+}

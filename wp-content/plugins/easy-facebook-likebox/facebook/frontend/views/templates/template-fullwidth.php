@@ -231,7 +231,9 @@ if ( $is_album_feed ) {
             esc_attr_e( $link_target );
             ?>">
 									<?php 
-            esc_html_e( $story->attachments->data['0']->title );
+            if ( isset( $story->attachments->data['0']->title ) ) {
+                esc_html_e( $story->attachments->data['0']->title );
+            }
             ?>
 								</a>
 							</p>
@@ -444,7 +446,9 @@ if ( $is_album_feed ) {
         esc_attr_e( $link_target );
         ?>" rel="nofollow">
 								<?php 
-        esc_html_e( $story->attachments->data['0']->title );
+        if ( isset( $story->attachments->data['0']->title ) ) {
+            esc_html_e( $story->attachments->data['0']->title );
+        }
         ?>
 							</a>
 						</p>
@@ -453,7 +457,9 @@ if ( $is_album_feed ) {
             ?>
 
 							<p class="efbl_link_description"><?php 
-            esc_html_e( $story->attachments->data['0']->description );
+            if ( isset( $story->attachments->data['0']->description ) ) {
+                esc_html_e( $story->attachments->data['0']->description );
+            }
             ?></p>
 						<?php 
         }

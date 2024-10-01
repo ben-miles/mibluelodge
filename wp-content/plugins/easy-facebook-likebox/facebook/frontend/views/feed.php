@@ -172,7 +172,6 @@ if ( isset( $efbl_posts ) && !empty( $efbl_posts ) ) {
                 $id_exploded = explode( '_', $story_id );
             }
             $page_id = $id_exploded[0];
-            $page_id = $fanpage_id;
             if ( 'events' == $filter ) {
                 $page_id = $story->owner->id;
             }

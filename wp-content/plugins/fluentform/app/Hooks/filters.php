@@ -33,7 +33,10 @@ add_filter('fluentform/get_global_settings_values', function ($values, $key) {
         if (in_array('_fluentform_global_default_message_setting_fields', $key)) {
             $values['_fluentform_global_default_message_setting_fields'] = \FluentForm\App\Helpers\Helper::globalDefaultMessageSettingFields();
         }
-        if (in_array('_fluentform_global_form_settings', $key) && !isset($values['_fluentform_global_form_settings']['default_messages'])) {
+
+        if (in_array('_fluentform_global_form_settings', $key) &&
+            !\FluentForm\Framework\Helpers\ArrayHelper::isTrue($values, '_fluentform_global_form_settings.default_messages')
+        ) {
             $values['_fluentform_global_form_settings']['default_messages'] = \FluentForm\App\Helpers\Helper::getAllGlobalDefaultMessages();
         }
     }
@@ -300,6 +303,11 @@ $app->addFilter('fluentform/disabled_analytics', function ($status) {
 $app->addFilter('fluentform/permission_callback', function ($status, $permission) {
     return  \FluentForm\App\Modules\Acl\Acl::getCurrentUserCapability();
 }, 10, 2);
+
+// Get current user allowed form ids, if current user has specific form permission
+$app->addFilter('fluentform/current_user_allowed_forms', function ($form){
+    return \FluentForm\App\Services\Manager\FormManagerService::getUserAllowedForms();
+});
 
 $app->addFilter('fluentform/validate_input_item_input_email', ['\FluentForm\App\Helpers\Helper', 'isUniqueValidation'], 10, 5);
 

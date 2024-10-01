@@ -2,6 +2,7 @@
 
 namespace FluentForm\App\Services;
 
+use FluentForm\App\Helpers\Helper;
 use FluentForm\App\Helpers\Str;
 use FluentForm\Framework\Helpers\ArrayHelper as Arr;
 
@@ -51,6 +52,10 @@ class ConditionAssesor
                 return false;
             }
             $inputValue = Arr::get($inputs, $accessor);
+
+            if ($numericFormatter = Arr::get($conditional, 'numeric_formatter')) {
+                $inputValue = Helper::getNumericValue($inputValue, $numericFormatter);
+            }
 
             switch ($conditional['operator']) {
                 case '=':

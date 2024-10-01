@@ -2,7 +2,6 @@
 
 namespace FluentForm\App\Modules\Widgets;
 
-use Elementor\Plugin as Elementor;
 use FluentForm\App\Modules\Widgets\FluentFormWidget;
 
 class ElementorWidget
@@ -15,11 +14,9 @@ class ElementorWidget
         add_action('elementor/widgets/register', [$this, 'init_widgets']);
     }
 
-    public function init_widgets()
+    public function init_widgets($widgets_manager)
     {
         $this->enqueueAssets();
-
-        $widgets_manager = Elementor::instance()->widgets_manager;
 
         if (file_exists(FLUENTFORM_DIR_PATH . 'app/Modules/Widgets/FluentFormWidget.php')) {
             require_once FLUENTFORM_DIR_PATH . 'app/Modules/Widgets/FluentFormWidget.php';

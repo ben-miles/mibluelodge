@@ -23,6 +23,8 @@ class Scheduler
         } else {
             $settings = $defaults;
         }
+        $settings = apply_filters('fluentform/email_summary_settings', $settings);
+    
         if($settings['status'] == 'no') {
             return;
         }

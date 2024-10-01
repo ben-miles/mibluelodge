@@ -145,7 +145,7 @@ class FluentFormWidget extends Widget_Base
         $this->add_control(
             'labels_switch',
             [
-                'label'        => __('Labels', 'fluentform'),
+                'label'        => __('Labels ', 'fluentform'),
                 'type'         => Controls_Manager::SWITCHER,
                 'default'      => 'yes',
                 'label_on'     => __('Show', 'fluentform'),
@@ -535,7 +535,6 @@ class FluentFormWidget extends Widget_Base
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
-
         $this->add_control(
             'form_label_text_color',
             [
@@ -546,7 +545,7 @@ class FluentFormWidget extends Widget_Base
                 ],
             ]
         );
-
+        
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
@@ -555,6 +554,42 @@ class FluentFormWidget extends Widget_Base
                 'selector' => '{{WRAPPER}} .fluentform-widget-wrapper .ff-el-input--label label',
             ]
         );
+        
+        $this->add_control(
+            'form_label_asterisk_color',
+            [
+                'label'     => __('Asterisk Color', 'fluentform'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .ff-el-is-required.asterisk-right label:after' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+        $this->add_control(
+            'form_label_asterisk_size',
+            [
+                'label' => __('Asterisk Size', 'fluentform'),
+                'type'  => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min'  => 0,
+                        'max'  => 30,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min'  => 0,
+                        'max'  => 30,
+                        'step' => 1,
+                    ],
+                ],
+                'size_units' => ['px', 'em', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .ff-el-is-required.asterisk-right label:after' => 'font-size: {{SIZE}}{{UNIT}}',
+                ],
+                'separator' => 'before',
+            ]
+        );
+     
 
         $this->end_controls_section();
     }

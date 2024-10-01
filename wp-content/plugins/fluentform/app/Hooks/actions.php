@@ -789,6 +789,12 @@ $app->addAction('fluentform/before_insert_submission', function ($insertData, $r
     $honeyPot->verify($insertData, $requestData, $form->id);
 }, 9, 3);
 
+// Maybe update current user allowed form ids,
+// if current user has specific form permission and capable to create form
+$app->addAction('fluentform/inserted_new_form', function ($formId){
+    \FluentForm\App\Services\Manager\FormManagerService::maybeAddUserAllowedFormIds($formId);
+});
+
 add_action('fluentform/log_data', function ($data) use ($app) {
     $dataLogger = new \FluentForm\App\Modules\Logger\DataLogger($app);
     $dataLogger->log($data);
@@ -1069,6 +1075,10 @@ if (function_exists('register_block_type')) {
     });
 }
 
+
+add_action('fluentform/before_updating_form',function ($form, $postData){
+    (new FluentForm\App\Services\Form\HistoryService())->init($form, $postData);
+},10,2);
 // require the CLI
 if (defined('WP_CLI') && WP_CLI) {
     \WP_CLI::add_command('fluentform', '\FluentForm\App\Modules\CLI\Commands');

@@ -3,6 +3,7 @@
 namespace FluentForm\App\Api;
 
 use FluentForm\App\Helpers\Helper;
+use FluentForm\App\Services\Manager\FormManagerService;
 use FluentForm\Framework\Helpers\ArrayHelper;
 
 class Form
@@ -36,6 +37,10 @@ class Form
 
         if ($status && 'all' != $status) {
             $query->where('status', $status);
+        }
+
+        if ($allowIds = FormManagerService::getUserAllowedForms()) {
+            $query->whereIn('id', $allowIds);
         }
 
         if ($filter_by && !$is_filter_by_conv_or_step_form) {

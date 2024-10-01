@@ -2,6 +2,7 @@
 
 namespace FluentForm\App\Modules\Acl;
 
+use FluentForm\App\Services\Manager\FormManagerService;
 use FluentForm\Framework\Helpers\ArrayHelper;
 
 class Acl
@@ -116,6 +117,9 @@ class Acl
 
     public static function hasPermission($permissions, $formId = false)
     {
+        if ($formId && !FormManagerService::hasFormPermission($formId)) {
+            return false;
+        }
         $userCapability = static::getCurrentUserCapability();
 
         if ($userCapability) {

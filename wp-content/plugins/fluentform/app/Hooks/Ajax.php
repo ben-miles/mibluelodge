@@ -26,7 +26,7 @@ $app->addAction('wp_ajax_fluentform_submit', function () use ($app) {
  * REST API seems not working for some servers with Mod Security Enabled
  */
 $app->addAction('wp_ajax_fluentform-form-update', function () use ($app) {
-    Acl::verify('fluentform_forms_manager');
+    Acl::verify('fluentform_forms_manager', $app->request->get('form_id'));
     try {
         $data = $app->request->all();
         $isValidJson = (!empty($data['formFields'])) && json_decode($data['formFields'], true);
@@ -366,7 +366,7 @@ $app->addAction('wp_ajax_fluentform_install_fluentsmtp', function () {
 
 // Export forms
 $app->addAction('wp_ajax_fluentform-export-forms', function () use ($app) {
-    Acl::verify('fluentform_settings_manager');
+    Acl::verify('fluentform_settings_manager', $app->request->get('forms'));
     (new \FluentForm\App\Modules\Transfer\Transfer())->exportForms();
 });
 

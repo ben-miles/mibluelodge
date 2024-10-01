@@ -6,6 +6,7 @@ use FluentForm\App\Models\Log;
 use FluentForm\App\Models\Form;
 use FluentForm\App\Helpers\Helper;
 use FluentForm\App\Models\Scheduler;
+use FluentForm\App\Services\Manager\FormManagerService;
 use FluentForm\Framework\Support\Arr;
 use FluentForm\Framework\Support\Collection;
 use FluentForm\Framework\Validator\ValidationException;
@@ -23,7 +24,10 @@ class Logger
         $startDate = Arr::get($dateRange, 0);
         $endDate = Arr::get($dateRange, 1);
         [$table, $model, $columns, $join, $componentColumn, $dateColumn] = $this->getBases($type);
-    
+
+        if (!$formIds && $allowForms = FormManagerService::getUserAllowedForms()) {
+            $formIds = $allowForms;
+        }
         $logsQuery = $model->select($columns)
             ->leftJoin('fluentform_forms', 'fluentform_forms.id', '=', $join)
             ->orderBy($table . '.id', $sortBy)
@@ -159,6 +163,11 @@ class Logger
         });
 
         $formIds = $logs->pluck('form_id')->unique()->filter()->toArray();
+        if ($allowForms = FormManagerService::getUserAllowedForms()) {
+            $formIds = array_filter($formIds, function($value) use ($allowForms) {
+                return in_array($value, $allowForms);
+            });
+        }
 
         $forms = Form::select('id', 'title')->whereIn('id', $formIds)->get();
 

@@ -190,7 +190,7 @@ class Form
         $defaultSettings = [
             'confirmation' => [
                 'redirectTo'           => 'samePage',
-                'messageToShow'        => __('Thank you for your message. We will get in touch with you shortly', 'fluentform'),
+                'messageToShow'        => __('Thank you for your message. We will get in touch with you shortly.', 'fluentform'),
                 'customPage'           => null,
                 'samePageFormBehavior' => 'hide_form',
                 'customUrl'            => null,

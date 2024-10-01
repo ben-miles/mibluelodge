@@ -51,34 +51,8 @@ class Converter
             $field = apply_filters('fluentform/rendering_field_data_' . $field['element'], $field, $form);
             
             $validationsRules = self::resolveValidationsRules($field, $form);
-
-            $question = [
-                'id'              => ArrayHelper::get($field, 'attributes.name'),
-                'name'            => ArrayHelper::get($field, 'attributes.name'),
-                'title'           => ArrayHelper::get($field, 'settings.label'),
-                'type'            => ArrayHelper::get($allowedFields, $field['element']),
-                'ff_input_type'   => ArrayHelper::get($field, 'element'),
-                'container_class' => ArrayHelper::get($field, 'settings.container_class'),
-                'placeholder'     => ArrayHelper::get($field, 'attributes.placeholder'),
-                'maxLength'       => ArrayHelper::get($field, 'attributes.maxlength'),
-                'required'        => ArrayHelper::get($validationsRules, 'required.value'),
-                'requiredMsg'     => ArrayHelper::get($validationsRules, 'required.message'),
-                'errorMessage'    => ArrayHelper::get($validationsRules, 'required.message'),
-                'validationRules' => $validationsRules,
-                'tagline'         => ArrayHelper::get($field, 'settings.help_message'),
-                'style_pref'      => ArrayHelper::get($field, 'style_pref', [
-                    'layout'           => 'default',
-                    'media'            => '',
-                    'brightness'       => 0,
-                    'alt_text'         => '',
-                    'media_x_position' => 50,
-                    'media_y_position' => 50,
-                ]),
-                'conditional_logics'   => self::parseConditionalLogic($field),
-                'calculation_settings' => ArrayHelper::get($field, 'settings.calculation_settings'),
-                'is_calculable'        => ArrayHelper::get($field, 'settings.calc_value_status', false),
-                'has_save_and_resume'  => $hasSaveAndResume
-            ];
+    
+            $question = static::buildBaseQuestion($field, $validationsRules, $form);
 
             if (!$hasSaveAndResume && $answer = self::setDefaultValue(ArrayHelper::get($field, 'attributes.value'), $field, $form)) {
                 $question['answer'] = $answer;
@@ -189,6 +163,7 @@ class Converter
                     }
                 }
             } elseif ('input_name' === $field['element']) {
+                
                 foreach ($field['fields'] as $item) {
                     if ($item['settings']['visible']) {
                         $itemName = ArrayHelper::get($item, 'attributes.name');
@@ -212,9 +187,9 @@ class Converter
                             ];
                             $question['required'] = true;
                         }
-                        if ($defaultValue = self::setDefaultValue(ArrayHelper::get($item, 'attributes.value'), $item, $form)) {
-                            $item['attributes']['value'] = $defaultValue;
-                        }
+                        
+                        $item['attributes']['value'] = (new Component(wpFluentForm()))->replaceEditorSmartCodes(ArrayHelper::get($item, 'attributes.value'), $form);
+    
                         $question['fields'][] = wp_parse_args($itemQuestion, $item);
                     }
                 }
@@ -766,6 +741,37 @@ class Converter
 
         return json_encode($formFields);
     }
+    
+    private static function buildBaseQuestion($field, $validationsRules, $form)
+    {
+        return [
+            'id'              => ArrayHelper::get($field, 'attributes.name'),
+            'name'            => ArrayHelper::get($field, 'attributes.name'),
+            'title'           => ArrayHelper::get($field, 'settings.label'),
+            'type'            => ArrayHelper::get(static::fieldTypes(), $field['element']),
+            'ff_input_type'   => ArrayHelper::get($field, 'element'),
+            'container_class' => ArrayHelper::get($field, 'settings.container_class'),
+            'placeholder'     => ArrayHelper::get($field, 'attributes.placeholder'),
+            'maxLength'       => ArrayHelper::get($field, 'attributes.maxlength'),
+            'required'        => ArrayHelper::get($validationsRules, 'required.value'),
+            'requiredMsg'     => ArrayHelper::get($validationsRules, 'required.message'),
+            'errorMessage'    => ArrayHelper::get($validationsRules, 'required.message'),
+            'validationRules' => $validationsRules,
+            'tagline'         => ArrayHelper::get($field, 'settings.help_message'),
+            'style_pref'      => ArrayHelper::get($field, 'style_pref', [
+                'layout'           => 'default',
+                'media'            => '',
+                'brightness'       => 0,
+                'alt_text'         => '',
+                'media_x_position' => 50,
+                'media_y_position' => 50,
+            ]),
+            'conditional_logics'   => self::parseConditionalLogic($field),
+            'calculation_settings' => ArrayHelper::get($field, 'settings.calculation_settings'),
+            'is_calculable'        => ArrayHelper::get($field, 'settings.calc_value_status', false),
+            'has_save_and_resume'  => static::hasSaveAndResume($form)
+        ];
+    }
 
     public static function fieldTypes()
     {
@@ -970,7 +976,7 @@ class Converter
     {
         if ($dynamicValue = ArrayHelper::get($field, 'settings.dynamic_default_value')) {
             $dynamicVal = (new Component(wpFluentForm()))->replaceEditorSmartCodes($dynamicValue, $form);
-
+            
             $element = $field['element'];
 
             if ($dynamicVal && 'input_checkbox' == $element) {

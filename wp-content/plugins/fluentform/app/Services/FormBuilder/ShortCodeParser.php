@@ -160,7 +160,7 @@ class ShortCodeParser
             }
 
             if ($isUrl) {
-                $value = urlencode($value);
+                $value = rawurlencode($value);
             }
 
             return $value;

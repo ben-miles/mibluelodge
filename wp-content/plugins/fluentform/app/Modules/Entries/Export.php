@@ -8,6 +8,9 @@ use FluentForm\Framework\Foundation\Application;
 use FluentForm\Framework\Helpers\ArrayHelper as Arr;
 use FluentForm\App\Helpers\Helper;
 
+/**
+ * @deprecated deprecated use FluentForm\App\Services\Transfer
+ */
 class Export
 {
     /**
@@ -46,6 +49,7 @@ class Export
     /**
      * Only used exports form partial entries
      *
+     * @deprecated deprecated use FluentForm\App\Services\Transfer::exportEntries
      * @todo:: refactor.
      */
     public function index()

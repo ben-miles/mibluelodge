@@ -196,6 +196,10 @@ class FormValidationService
             );
             $errors = apply_filters('fluentform/validation_user_update_errors', $errors, $formData, $this->form, $fields);
         }
+
+        if ('update' == Arr::get(Helper::getFormMeta($this->form->id, 'postFeeds'), 'post_form_type')) {
+            $errors = apply_filters('fluentform/validation_post_update_errors', $errors, $formData, $this->form, $fields);
+        }
         
         if ($errors) {
             throw new ValidationException('', 423, null,  ['errors' => $errors]);

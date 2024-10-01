@@ -16,26 +16,26 @@ class FormPolicy extends Policy
      */
     public function verifyRequest(Request $request)
     {
-        return Acl::hasPermission('fluentform_forms_manager');
+        return Acl::hasPermission('fluentform_forms_manager', $request->get('form_id'));
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return Acl::hasPermission('fluentform_dashboard_access');
+        return Acl::hasPermission('fluentform_dashboard_access', $request->get('form_id'));
     }
 
-    public function templates()
+    public function templates(Request $request)
     {
-        return Acl::hasAnyFormPermission();
+        return Acl::hasAnyFormPermission($request->get('form_id'));
     }
 
-    public function updateModuleStatus()
+    public function updateModuleStatus(Request $request)
     {
-        return Acl::hasPermission('fluentform_settings_manager');
+        return Acl::hasPermission('fluentform_settings_manager', $request->get('form_id'));
     }
-    public function updateIntegration()
+    public function updateIntegration(Request $request)
     {
-        return Acl::hasPermission('fluentform_settings_manager');
+        return Acl::hasPermission('fluentform_settings_manager', $request->get('form_id'));
     }
 
     public function ping()

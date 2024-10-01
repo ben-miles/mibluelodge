@@ -359,7 +359,7 @@ class SubmissionHandlerService
                         $paramArray = explode('=', $queryParam);
                         if (!empty($paramArray[1])) {
                             if (strpos($paramArray[1], '%') === false) {
-                                $params[$paramArray[0]] = urlencode($paramArray[1]);
+                                $params[$paramArray[0]] = rawurlencode($paramArray[1]);
                             } else {
                                 // Param string is URL-encoded
                                 $params[$paramArray[0]] = $paramArray[1];
@@ -384,7 +384,7 @@ class SubmissionHandlerService
                 true
             );
     
-            $redirectUrl = apply_filters('fluentform/redirect_url_value', wp_sanitize_redirect(urldecode($redirectUrl)), $insertId, $form, $formData);
+            $redirectUrl = apply_filters('fluentform/redirect_url_value', wp_sanitize_redirect(rawurldecode($redirectUrl)), $insertId, $form, $formData);
             $returnData = [
                 'redirectUrl' => esc_url_raw($redirectUrl),
                 'message'     => fluentform_sanitize_html($message),

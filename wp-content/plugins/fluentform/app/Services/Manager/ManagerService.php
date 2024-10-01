@@ -2,6 +2,7 @@
 
 namespace FluentForm\App\Services\Manager;
 
+use FluentForm\App\Helpers\Helper;
 use FluentForm\App\Modules\Acl\Acl;
 use FluentForm\Framework\Support\Arr;
 use FluentForm\Framework\Validator\ValidationException;
@@ -26,22 +27,32 @@ class ManagerService
         $managers = [];
 
         foreach ($query->get_results() as $user) {
+            $allowedForms = FormManagerService::getUserAllowedForms($user->ID);
+            $hasSpecificFormsPermission = FormManagerService::hasSpecificFormsPermission($user->ID);
             $managers[] = [
                 'id'          => $user->ID,
                 'first_name'  => $user->first_name,
                 'last_name'   => $user->last_name,
                 'email'       => $user->user_email,
                 'permissions' => Acl::getUserPermissions($user),
-                'roles'       => $this->getUserRoles($user->roles)
+                'forms'       => $allowedForms ? $allowedForms : false,
+                'roles'       => $this->getUserRoles($user->roles),
+                'has_specific_forms_permission'=> $hasSpecificFormsPermission ? 'yes' : 'no',
             ];
         }
 
         $total = $query->get_total();
 
+        $forms = Helper::getForms();
+        if ($forms) {
+            Arr::forget($forms, 0);
+        }
+
         return ([
             'managers'  => $managers,
             'total' => $total,
             'permissions' => Acl::getReadablePermissions(),
+            'forms' => $forms,
         ]);
     }
     
@@ -62,7 +73,14 @@ class ManagerService
         Acl::attachPermissions($user, $permissions);
         
         update_user_meta($user->ID, '_fluent_forms_has_role', 1);
-        
+
+        FormManagerService::updateHasSpecificFormsPermission($user->ID , Arr::get($manager, 'has_specific_forms_permission'));
+
+        // Add allowed forms for user
+        if ('yes' === Arr::get($manager, 'has_specific_forms_permission')) {
+            FormManagerService::addUserAllowedForms(Arr::get($manager, 'forms', []), $user->ID);
+        }
+
         $updatedUser = [
             'id'          => $user->ID,
             'first_name'  => $user->first_name,

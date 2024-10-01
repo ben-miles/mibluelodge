@@ -700,12 +700,19 @@ class Component
             'enabled' => false,
         ];
 
+        if (!empty($formBuilder->validationRules)) {
+            $formBuilder->validationRules = fluentform_backend_sanitizer($formBuilder->validationRules, [
+                'message' => 'fluentform_sanitize_html'
+            ]);
+        }
+
         $form_vars = [
             'id'               => $form->id,
             'settings'         => $formSettings,
             'form_instance'    => $instanceCssClass,
             'form_id_selector' => 'fluentform_' . $form->id,
             'rules'            => $formBuilder->validationRules,
+            'debounce_time'    => apply_filters('fluentform/show_hide_elements_debounce_time', 300),
         ];
 
         if ($conditionals = $formBuilder->conditions) {

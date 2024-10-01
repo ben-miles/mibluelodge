@@ -209,6 +209,9 @@ class Form
 
         if ((isset($request[$paramKey])) && !wp_doing_ajax()) {
             $formId = (int) ArrayHelper::get($request, $paramKey);
+            if (!Helper::isConversionForm($formId)) {
+                return;
+            }
             $shareKey = ArrayHelper::get($request, 'form');
             $this->renderFormHtml($formId, $shareKey);
         }

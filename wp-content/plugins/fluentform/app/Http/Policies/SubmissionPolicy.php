@@ -16,31 +16,32 @@ class SubmissionPolicy extends Policy
      */
     public function verifyRequest(Request $request)
     {
-        return Acl::hasPermission('fluentform_entries_viewer');
+
+        return Acl::hasPermission('fluentform_entries_viewer', $request->get('form_id'));
     }
 
-    public function handleBulkActions()
+    public function handleBulkActions(Request $request)
     {
-        return Acl::hasPermission('fluentform_manage_entries');
+        return Acl::hasPermission('fluentform_manage_entries', $request->get('form_id'));
     }
 
-    public function updateStatus()
+    public function updateStatus(Request $request)
     {
-        return $this->handleBulkActions();
+        return $this->handleBulkActions($request);
     }
 
-    public function toggleIsFavorite()
+    public function toggleIsFavorite(Request $request)
     {
-        return $this->handleBulkActions();
+        return $this->handleBulkActions($request);
     }
 
-    public function remove()
+    public function remove(Request $request)
     {
-        return $this->handleBulkActions();
+        return $this->handleBulkActions($request);
     }
 
-    public function print()
+    public function print(Request $request)
     {
-        return $this->handleBulkActions();
+        return $this->handleBulkActions($request);
     }
 }

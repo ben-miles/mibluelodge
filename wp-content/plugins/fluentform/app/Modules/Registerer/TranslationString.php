@@ -930,6 +930,10 @@ class TranslationString
     {
         $i18n = array(
             'Managers' => __('Managers', 'fluentform'),
+            'Enable Specific Forms Permission' => __('Enable Specific Forms Permission', 'fluentform'),
+            'Access to Forms' => __('Access to Forms', 'fluentform'),
+            'Select specific forms to grant permission. Leave blank to give the manager access to all forms.' => __('Select specific forms to grant permission. Leave blank to give the manager access to all forms.', 'fluentform'),
+            'Select forms (leave blank for all)' => __('Select forms (leave blank for all)', 'fluentform'),
             'Add Manager' => __('Add Manager', 'fluentform'),
             'Global Layout Settings' => __('Global Layout Settings', 'fluentform'),
             'Administrators have full access to Fluent Forms. Add other managers giving specific permissions.' => __('Administrators have full access to Fluent Forms. Add other managers giving specific permissions.', 'fluentform'),

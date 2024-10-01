@@ -24,6 +24,8 @@ $router->prefix('forms')->withPolicy('FormPolicy')->group(function ($router) {
         $router->get('fields', 'FormController@fields');
         $router->get('shortcodes', 'FormController@shortcodes');
         $router->get('findShortCodePage', 'FormController@findShortCodePage');
+        $router->get('editHistory', 'FormController@formEditHistory');
+        $router->post('clearHistory', 'FormController@clearEditHistory');
     });
 });
 

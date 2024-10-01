@@ -4,6 +4,7 @@ namespace FluentForm\App\Http\Controllers;
 
 use Exception;
 use FluentForm\App\Services\Form\FormService;
+use FluentForm\App\Services\Form\HistoryService;
 
 class FormController extends Controller
 {
@@ -145,6 +146,7 @@ class FormController extends Controller
             'components'          => $components,
             'disabled_components' => $disabledComponents,
             'shortcodes'          => fluentFormEditorShortCodes(),
+            'edit_history'        => HistoryService::get($formId)
         ]);
     }
 
@@ -166,7 +168,28 @@ class FormController extends Controller
     {
         return $this->sendSuccess($formService->findShortCodePage($formId));
     }
-
+    
+    public function formEditHistory(HistoryService $historyService, $formId)
+    {
+        return $this->sendSuccess($historyService::get($formId));
+    
+    }
+    public function clearEditHistory(HistoryService $historyService)
+    {
+        try {
+            $id =  (int)$this->request->get('form_id');
+          
+            $historyService->delete($id);
+            return $this->sendSuccess([
+                'message' => __('Successfully deleted edit history.', 'fluentform'),
+            ]);
+        } catch (Exception $e) {
+            return $this->sendError([
+                'message' => $e->getMessage(),
+            ], 422);
+        }
+    
+    }
     public function ping()
     {
         return ['message' => 'pong'];

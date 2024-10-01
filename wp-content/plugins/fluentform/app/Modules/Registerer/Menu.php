@@ -8,6 +8,7 @@ use FluentForm\App\Modules\Acl\Acl;
 use FluentForm\App\Modules\AddOnModule;
 use FluentForm\App\Modules\DocumentationModule;
 use FluentForm\App\Services\FluentConversational\Classes\Converter\Converter;
+use FluentForm\App\Services\Manager\FormManagerService;
 use FluentForm\Framework\Foundation\Application;
 use FluentForm\Framework\Helpers\ArrayHelper;
 
@@ -120,6 +121,7 @@ class Menu
             FLUENTFORM_VERSION,
             true
         );
+
 
         wp_register_style(
             'fluentform_editor_style',
@@ -294,7 +296,7 @@ class Menu
                 wp_enqueue_script('clipboard');
                 wp_enqueue_script('copier');
 
-                if (Acl::hasPermission('fluentform_forms_manager')) {
+                if (Acl::hasPermission('fluentform_forms_manager', $formId)) {
                     if ('settings' == $route) {
                         if (function_exists('wp_enqueue_editor')) {
                             add_filter('user_can_richedit', function ($status) {
@@ -425,8 +427,12 @@ class Menu
             $entriesTitle = __('Entries', 'fluentform');
 
             if (Helper::isFluentAdminPage()) {
+                $allowForms = FormManagerService::getUserAllowedForms();
                 $entriesCount = wpFluent()->table('fluentform_submissions')
                     ->where('status', 'unread')
+                    ->when($allowForms, function ($q) use ($allowForms){
+                        return $q->whereIn('form_id', $allowForms);
+                    })
                     ->count();
 
                 if ($entriesCount) {
@@ -544,7 +550,7 @@ class Menu
 
             $hasPermission = apply_filters(
                 'fluentform/inner_route_has_permission',
-                Acl::hasPermission($toVerifyPermission),
+                Acl::hasPermission($toVerifyPermission, $formId),
                 $route,
                 $formId
             );
@@ -578,7 +584,7 @@ class Menu
 
         $formAdminMenus = [];
 
-        if (Acl::hasPermission('fluentform_forms_manager')) {
+        if (Acl::hasPermission('fluentform_forms_manager', $form_id)) {
             $formAdminMenus = [
                 'editor' => [
                     'slug'  => 'editor',
@@ -595,7 +601,7 @@ class Menu
             ];
         }
 
-        if (Acl::hasPermission('fluentform_entries_viewer')) {
+        if (Acl::hasPermission('fluentform_entries_viewer', $form_id)) {
             $formAdminMenus['entries'] = [
                 'slug'  => 'entries',
                 'hash'  => '/',
@@ -756,7 +762,11 @@ class Menu
             (new ActivationHandler())->migrate();
         }
 
-        $formsCount = wpFluent()->table('fluentform_forms')->count();
+        if ($allowForms = FormManagerService::getUserAllowedForms()) {
+            $formsCount = wpFluent()->table('fluentform_forms')->whereIn('id', $allowForms)->count();
+        } else {
+            $formsCount = wpFluent()->table('fluentform_forms')->count();
+        }
 
         $isDisabledAnalytics = apply_filters_deprecated(
             'fluentform-disabled_analytics',
@@ -1066,9 +1076,13 @@ class Menu
 
     public function renderTransfer()
     {
+        $allowForms = FormManagerService::getUserAllowedForms();
         $forms = wpFluent()->table('fluentform_forms')
             ->orderBy('id', 'desc')
             ->select(['id', 'title'])
+            ->when($allowForms, function ($q) use ($allowForms){
+                return $q->whereIn('id', $allowForms);
+            })
             ->get();
 
         wp_localize_script('fluentform-transfer-js', 'FluentFormApp', [

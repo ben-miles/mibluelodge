@@ -3,6 +3,7 @@
 namespace FluentForm\App\Models;
 
 use Exception;
+use FluentForm\App\Services\Manager\FormManagerService;
 use FluentForm\Framework\Support\Arr;
 
 class Submission extends Model
@@ -291,6 +292,7 @@ class Submission extends Model
     public function allSubmissions($attributes = []) {
         $customQuery = $this->customQuery($attributes);
         $search = Arr::get($attributes, 'search');
+        $allowFormIds = FormManagerService::getUserAllowedForms();
 
         $result = $customQuery
             ->with([
@@ -299,6 +301,9 @@ class Submission extends Model
                 }
             ])
             ->select(['id', 'form_id', 'status', 'created_at', 'browser', 'currency', 'total_paid'])
+            ->when($allowFormIds, function ($q) use ($allowFormIds){
+                return $q->whereIn('form_id', $allowFormIds);
+            })
             ->when($search, function ($q) use ($search){
                 return $q->orWhereHas('form', function ($q) use ($search) {
                     return $q->orWhere('title', 'LIKE', "%{$search}%");
@@ -320,6 +325,9 @@ class Submission extends Model
     public function availableForms()
     {
         $form = new Form();
+        if ($allowForms = FormManagerService::getUserAllowedForms()) {
+            return $form->select('id', 'title')->whereIn('id', $allowForms)->get();
+        }
         return $form->select('id', 'title')->get();
     }
 

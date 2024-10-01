@@ -3,6 +3,7 @@
 namespace FluentForm\App\Modules\Registerer;
 
 use FluentForm\App\Modules\Acl\Acl;
+use FluentForm\App\Services\Manager\FormManagerService;
 use FluentForm\Framework\Helpers\ArrayHelper;
 
 class AdminBar
@@ -108,9 +109,13 @@ class AdminBar
         } else {
             $title = __('Fluent Forms', 'fluentform');
         }
-    
+
+        $allowForms = FormManagerService::getUserAllowedForms();
         $hasUnreadSubmissions = wpFluent()->table('fluentform_submissions')
             ->where('status', 'unread')
+            ->when($allowForms, function ($q) use ($allowForms){
+                return $q->whereIn('form_id', $allowForms);
+            })
             ->count();
 
         $entriesDropdownTitle = __('Entries', 'fluentform');

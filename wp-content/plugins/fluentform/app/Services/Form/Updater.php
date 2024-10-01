@@ -17,7 +17,7 @@ class Updater
         $formFields = Arr::get($attributes, 'formFields');
         $status = Arr::get($attributes, 'status', 'published');
         $title = sanitize_text_field(Arr::get($attributes, 'title'));
-
+      
         $this->validate([
             'title'      => $title,
             'formFields' => $formFields,
@@ -50,6 +50,12 @@ class Updater
             $formFields = $this->sanitizeFields($formFields);
             $data['form_fields'] = $formFields;
             
+            /**
+             * Fires before a Form is updated.
+             * @since 5.2.1
+             */
+            do_action('fluentform/before_updating_form', $form, $data);
+    
             $form->fill($data);
 
             if (FormFieldsParser::hasPaymentFields($form)) {
@@ -59,6 +65,7 @@ class Updater
             }
 
             $this->updatePrimaryEmail($form);
+            
         }
 
         $form->fill($data)->save();
@@ -199,6 +206,17 @@ class Updater
 
                 foreach ($settings as $key => $value) {
                     $fields[$fieldIndex]['style_pref'][$key] = call_user_func($stylePrefMap[$key], $value);
+                }
+            }
+    
+            $validationRules = Arr::get($field, 'settings.validation_rules');
+            if (!empty($validationRules)) {
+                foreach ($validationRules as $key => $rule) {
+                    if (isset($rule['message'])) {
+                        $message = $rule['message'];
+                        $field['settings']['validation_rules'][$key]['message'] = wp_kses_post($message);
+                        continue;
+                    }
                 }
             }
         }

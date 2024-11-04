@@ -5,7 +5,7 @@ namespace Duplicator\Views;
 use Closure;
 use DUP_Server;
 use Duplicator\Core\MigrationMng;
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Utils\LinkManager;
 use Duplicator\Libs\Snap\SnapUtil;
 use Duplicator\Core\Controllers\ControllersManager;
 use Duplicator\Utils\Autoloader;

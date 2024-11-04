@@ -1,6 +1,6 @@
 <?php
 
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Utils\LinkManager;
 
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 require_once(DUPLICATOR_PLUGIN_PATH . '/views/inc.header.php');

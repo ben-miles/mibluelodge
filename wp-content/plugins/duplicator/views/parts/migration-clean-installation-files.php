@@ -4,7 +4,7 @@
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 
 use Duplicator\Core\MigrationMng;
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Utils\LinkManager;
 use Duplicator\Views\AdminNotices;
 
 ?>

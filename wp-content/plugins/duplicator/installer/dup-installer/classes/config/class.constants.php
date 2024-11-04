@@ -13,7 +13,7 @@
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 
 use Duplicator\Installer\Core\Bootstrap;
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Installer\Utils\InstallerLinkManager;
 
 class DUPX_Constants
 {
@@ -68,7 +68,7 @@ class DUPX_Constants
         $GLOBALS['ZIP_ARC_CHUNK_EXTRACT_DISP_NOTICE_MIN_EXPECTED_EXTRACT_TIME'] = 10 * 60 * 60; // 10 minutes
         $GLOBALS['ZIP_ARC_CHUNK_EXTRACT_DISP_NEXT_NOTICE_INTERVAL']             = 5 * 60 * 60; // 5 minutes
 
-        $helpUrl         = LinkManager::getDocUrl('how-to-handle-various-install-scenarios', 'install', 'additional help');
+        $helpUrl         = InstallerLinkManager::getDocUrl('how-to-handle-various-install-scenarios', 'install', 'additional help');
         $additional_msg  = ' for additional details ';
         $additional_msg .= '<a href="' . $helpUrl . '" target="_blank">click here</a>.';
 

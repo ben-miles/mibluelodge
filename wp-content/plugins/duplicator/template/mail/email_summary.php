@@ -9,7 +9,7 @@
 
 defined("ABSPATH") or die("");
 
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Utils\LinkManager;
 use Duplicator\Utils\Upsell;
 use Duplicator\Utils\Email\EmailHelper;
 use Duplicator\Utils\Email\EmailSummary;

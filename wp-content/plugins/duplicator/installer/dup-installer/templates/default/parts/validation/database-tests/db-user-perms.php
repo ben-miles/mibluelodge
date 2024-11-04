@@ -5,7 +5,7 @@
  * @package templates/default
  */
 
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Installer\Utils\InstallerLinkManager;
 
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 
@@ -137,7 +137,7 @@ $statusClass = $testResult == DUPX_Validation_test_db_user_perms::LV_PASS ? 'gre
     </li>
     <li>
         <a
-            href="<?php echo LinkManager::getDocUrl('how-to-fix-database-connection-issues', 'install', 'validation db user perms'); ?>" 
+            href="<?php echo InstallerLinkManager::getDocUrl('how-to-fix-database-connection-issues', 'install', 'validation db user perms'); ?>" 
             target="_help"
             title="I'm running into issues with the Database what can I do?"
         >

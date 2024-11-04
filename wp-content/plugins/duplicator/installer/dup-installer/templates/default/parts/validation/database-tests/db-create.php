@@ -5,7 +5,7 @@
  * @package templates/default
  */
 
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Installer\Utils\InstallerLinkManager;
 
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 
@@ -72,7 +72,7 @@ $statusClass = $isOk ? 'green' : 'red';
     <?php } ?>
     <li>
         <a 
-            href="<?php echo LinkManager::getDocUrl('how-to-fix-database-connection-issues', 'install', 'validation db create'); ?>" 
+            href="<?php echo InstallerLinkManager::getDocUrl('how-to-fix-database-connection-issues', 'install', 'validation db create'); ?>" 
             target="_help"
             title="I'm running into issues with the Database what can I do?"
         >

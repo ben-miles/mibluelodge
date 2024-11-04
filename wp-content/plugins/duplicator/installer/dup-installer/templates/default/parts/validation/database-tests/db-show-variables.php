@@ -5,7 +5,7 @@
  * @package templates/default
  */
 
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Installer\Utils\InstallerLinkManager;
 
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 
@@ -32,7 +32,7 @@ defined('ABSPATH') || defined('DUPXABSPATH') || exit;
     "SHOW VARIABLES" when called from PHP.  <br/><br/>
 
     Additional FAQ resources for this issue can be found here:<br/>
-    <a href="<?php echo LinkManager::getDocUrl('digital-ocean-digitalocean-com', 'install', 'validation digital ocean'); ?>" target="_blank">
+    <a href="<?php echo InstallerLinkManager::getDocUrl('digital-ocean-digitalocean-com', 'install', 'validation digital ocean'); ?>" target="_blank">
         Digital Ocean --  digitalocean.com
     </a>
 </p>

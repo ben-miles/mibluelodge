@@ -8,7 +8,7 @@
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 
 use Duplicator\Installer\Core\Params\PrmMng;
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Installer\Utils\InstallerLinkManager;
 
 /**
  * Variables
@@ -120,14 +120,18 @@ use Duplicator\Installer\Utils\LinkManager;
         the cause could be an external security service like "Imunify 360".
         If this is the case 
         <a 
-            href="<?php echo LinkManager::getDocUrl('how-to-fix-installer-archive-extraction-issues', 'install', 'validation writable deactivate checks'); ?>" 
+            href="<?php echo InstallerLinkManager::getDocUrl(
+                'how-to-fix-installer-archive-extraction-issues',
+                'install',
+                'validation writable deactivate checks'
+            ); ?>" 
             target="_blank"
         >
             deactivate the checks
         </a> 
         temporarily, and run the installation again.
     </li>
-    <?php $faqUrl = LinkManager::getDocUrl('how-to-fix-installer-archive-extraction-issues', 'install', 'validation writable documentation'); ?>
+    <?php $faqUrl = InstallerLinkManager::getDocUrl('how-to-fix-installer-archive-extraction-issues', 'install', 'validation writable documentation'); ?>
     <li>
         Check <a href="<?php echo $faqUrl; ?>" target="_blank">our online documentation</a>
     </li>

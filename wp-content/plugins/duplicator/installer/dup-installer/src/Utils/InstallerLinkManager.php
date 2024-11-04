@@ -9,7 +9,7 @@ namespace Duplicator\Installer\Utils;
 /**
  * Link manager class
  */
-class LinkManager
+class InstallerLinkManager
 {
     /** @var string Duplicator website url */
     const DUPLICATOR_URL = 'https://duplicator.com/';
@@ -38,7 +38,7 @@ class LinkManager
      */
     public static function getPostUrl($slug, $medium = '', $content = '')
     {
-        return self::buildUrl($slug, $medium, $content);
+        return static::buildUrl($slug, $medium, $content);
     }
 
     /**
@@ -54,7 +54,7 @@ class LinkManager
         if ($slug !== '') {
             $paths[] = $slug;
         }
-        return self::buildUrl($paths, $medium, $content);
+        return static::buildUrl($paths, $medium, $content);
     }
 
     /**
@@ -70,7 +70,7 @@ class LinkManager
         if ($slug !== '') {
             $paths[] = $slug;
         }
-        return self::buildUrl($paths, $medium, $content);
+        return static::buildUrl($paths, $medium, $content);
     }
 
     /**
@@ -80,7 +80,7 @@ class LinkManager
      *
      * @return string The url with path and utm params
      */
-    private static function buildUrl($paths, $medium, $content)
+    protected static function buildUrl($paths, $medium, $content)
     {
         $utmData = array(
             'utm_source'   => 'WordPress',

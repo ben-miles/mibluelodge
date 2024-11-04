@@ -1,6 +1,6 @@
 <?php
 
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Installer\Utils\InstallerLinkManager;
 
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 ?>
@@ -13,7 +13,7 @@ The system validation checks help to make sure the system is ready for install. 
 accessible to users.   The series of checks will alert if there are any items that need attention.   An overview of the different status codes can all
 be found online in the FAQ titled
 <a 
-    href="<?php echo LinkManager::getDocUrl('how-to-fix-installer-validation-checks', 'install', 'validation fixes'); ?>" 
+    href="<?php echo InstallerLinkManager::getDocUrl('how-to-fix-installer-validation-checks', 'install', 'validation fixes'); ?>" 
     target="_blank"
 >
     How to fix installer validation checks? 

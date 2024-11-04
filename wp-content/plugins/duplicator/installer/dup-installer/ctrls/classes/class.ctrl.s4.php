@@ -8,7 +8,7 @@
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 
 use Duplicator\Installer\Core\Params\PrmMng;
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Installer\Utils\InstallerLinkManager;
 
 final class DUPX_Ctrl_S4
 {
@@ -39,7 +39,7 @@ final class DUPX_Ctrl_S4
         $finalReportData = $paramsManager->getValue(PrmMng::PARAM_FINAL_REPORT_DATA);
         $nManager        = DUPX_NOTICE_MANAGER::getInstance();
         $logLink         = DUPX_View_Funcs::installerLogLink(false);
-        $faqUrl          = LinkManager::getDocUrl('how-to-fix-database-write-issues', 'final-report', 'How to Fix Database Write Issues');
+        $faqUrl          = InstallerLinkManager::getDocUrl('how-to-fix-database-write-issues', 'final-report', 'How to Fix Database Write Issues');
 
         if ($finalReportData['extraction']['query_errs'] > 0) {
             $longMsg = <<<LONGMSG

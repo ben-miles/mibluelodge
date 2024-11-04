@@ -14,7 +14,7 @@ defined("ABSPATH") || exit;
  * @var array<string, mixed> $tplData
  */
 
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Utils\LinkManager;
 use Duplicator\Libs\Snap\SnapUtil;
 use Duplicator\Core\Views\TplMng;
 

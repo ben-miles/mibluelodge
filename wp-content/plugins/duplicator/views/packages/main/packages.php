@@ -2,7 +2,7 @@
 
 use Duplicator\Core\Controllers\ControllersManager;
 use Duplicator\Libs\Snap\SnapJson;
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Utils\LinkManager;
 use Duplicator\Utils\Upsell;
 use Duplicator\Views\ViewHelper;
 use Duplicator\Core\Notifications\Notifications;

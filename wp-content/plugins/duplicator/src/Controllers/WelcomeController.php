@@ -97,6 +97,18 @@ class WelcomeController
             return;
         }
 
+        /**
+         * Filter to disable the onboarding redirect.
+         *
+         * @since 1.5.11.1
+         *
+         * @param bool $disable True to disable the onboarding redirect.
+         */
+        if (apply_filters('duplicator_disable_onboarding_redirect', false)) {
+            delete_option(self::REDIRECT_OPT_KEY);
+            return;
+        }
+
         delete_option(self::REDIRECT_OPT_KEY);
 
         wp_safe_redirect(admin_url('index.php?page=' . WelcomeController::SLUG));

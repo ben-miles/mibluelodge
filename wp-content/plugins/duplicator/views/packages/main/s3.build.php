@@ -1,6 +1,6 @@
 <?php
 
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Utils\LinkManager;
 use Duplicator\Utils\Upsell;
 use Duplicator\Views\EducationElements;
 use Duplicator\Views\AdminNotices;

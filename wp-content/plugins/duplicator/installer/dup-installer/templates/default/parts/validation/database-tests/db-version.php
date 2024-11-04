@@ -5,7 +5,7 @@
  * @package templates/default
  */
 
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Installer\Utils\InstallerLinkManager;
 
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 
@@ -41,7 +41,7 @@ defined('ABSPATH') || defined('DUPXABSPATH') || exit;
     <li>Contact your host and have them upgrade your MySQL server.</li>
     <li>
         <a 
-            href="<?php echo LinkManager::getDocUrl('how-to-fix-database-connection-issues', 'install', 'validation db version'); ?>" 
+            href="<?php echo InstallerLinkManager::getDocUrl('how-to-fix-database-connection-issues', 'install', 'validation db version'); ?>" 
             target="_help"
             title="I'm running into issues with the Database what can I do?"
         >

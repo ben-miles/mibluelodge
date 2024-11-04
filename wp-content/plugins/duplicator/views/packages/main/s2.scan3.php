@@ -1,6 +1,6 @@
 <?php
 
-use Duplicator\Installer\Utils\LinkManager;
+use Duplicator\Utils\LinkManager;
 use Duplicator\Utils\Upsell;
 
 defined('ABSPATH') || defined('DUPXABSPATH') || exit;
